@@ -13,4 +13,4 @@ categories = [
   ['bicicletas-de-carretera', 'carretera'],
 ]
 year_re = ['(20[2-3]\d)_FULL_']
-exclude_name = '\bframe ?set\b|\bcuadro\b|\bframe kit\b'
+exclude_name = '\bframe ?set\b|\bcuadro\b|\bframe kit\b|young hero|\byouth\b|\bkids?\b|\b2[04]"'

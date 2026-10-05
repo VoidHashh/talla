@@ -1,0 +1,16 @@
+name = "Colnago"
+discovery = "sitemap"
+sitemaps = ["https://www.colnago.com/es-es/sitemap/products.xml"]
+# Bicicletas completas: fichas de familia (/premium-bikes/, sin precio) y de producto (/products/bicicleta-…, con precio EUR).
+include = ['/es-es/premium-bikes/[^/]+-bike$', '/es-es/products/bicicleta-[^/]+$']
+exclude = ['/bicicleta-tt\d', '/t1rs-track']
+categories = [
+  ['bicicleta-tt|t1rs|track', ''],
+  ['g3-x|g4-x|c68-gravel', 'gravel'],
+  ['premium-bikes/|/products/bicicleta-', 'carretera'],
+]
+name_strip = ['\s*\|.*$', '^Bicicleta (?:de carreras |de acero |Gravel )?(?:de )?']
+# La geometría está en un PDF por modelo (tabla con fila de título + cabecera Size/Stack/Reach). Se toma el PDF de geometría de la propia ficha.
+geometry_pdf_re = '''(https://[^"'\s\\]*(?:Geometrie%20schede/|geometry-chart|geomtries|geometry-table|scheda-a4|scheda-geometria|C68_road|sloping%20guide)[^"'\s\\]*\.pdf)'''
+no_render_retry = true
+exclude_name = '\bframe\b|frameset|\bkit\b'

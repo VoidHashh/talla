@@ -1,0 +1,22 @@
+name = "Conor"
+discovery = "listing"
+# PrestaShop sin sitemap: listados por categoría (todos los productos en una página).
+listing_pages = [
+  "https://conorbikes.com/es/22-bicicletas-carretera?resultsPerPage=99999",
+  "https://conorbikes.com/es/81-bicicletas-gravel?resultsPerPage=99999",
+  "https://conorbikes.com/es/20-mtb?resultsPerPage=99999",
+  "https://conorbikes.com/es/15-bicicletas-electricas-montana?resultsPerPage=99999",
+]
+link_re = '/es/[^/]+/\d+-\d+-[^/]+\.html$'
+categories = [
+  ['/es/15-bicicletas-electricas-montana', 'emtb'],
+  ['/es/20-mtb', 'mtb'],
+  ['/es/81-bicicletas-gravel', 'gravel'],
+  ['/es/22-bicicletas-carretera', 'carretera'],
+]
+# La geometría es una imagen en la pestaña "Geometría" (descripción del producto): cola de visión.
+geometry_img_re = '''<img[^>]+src=["'](https://conorbikes\.com/img/cms/+[^"']+\.(?:png|jpe?g|webp))'''
+exclude_name = '\bcuadro\b|\bframe\b|\bkit\b'
+no_render_retry = true     # páginas renderizadas en servidor: no reintentar con Chrome si falta la geometría
+# Precio en <meta property="product:price:amount"> con product:price:currency = EUR
+price_re = 'product:price:amount" content="([\d.]+)'

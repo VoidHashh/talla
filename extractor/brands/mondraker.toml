@@ -1,0 +1,14 @@
+name = "Mondraker"
+discovery = "listing"
+# Las URLs son planas y sin categoría. El menú principal (presente en cualquier página) lista solo la gama vigente,
+# mientras que los listados de categoría arrastran temporadas anteriores; por eso se descubre desde una página
+# sin listado propio y se filtra por familia de modelo.
+listing_pages = ["https://mondraker.com/es/es/about-us"]
+link_re = '/es/es/(?:(?:summum|anark|foxy|raze|f-podium|podium|arid|dune|neat|sly|zendit|crafty|level|scree)[a-z0-9_-]*|2023-raze[a-z0-9-]*|prime-(?:r\d|s$)[a-z0-9-]*|mondraker-unlimited-gulf)(?:\?|$)'
+exclude = ['frameset|frmst|/(?:arid-carbon|f-podium|podium)-unlimited|anark-shred|unlimited-gulf|summum-dh-legacy|scree-all-you-need|zendit-avinox']
+categories = [
+  ['/es/es/(summum|anark|foxy|raze|2023-raze|f-podium|podium)', 'mtb'],
+  ['/es/es/arid', 'gravel'],
+  ['/es/es/(dune|neat|sly|zendit|crafty|level|scree|prime|mondraker-unlimited-gulf)', 'emtb'],
+]
+exclude_name = '\bframe ?set\b|\bcuadro\b|\bframe\b|\bkit\b'

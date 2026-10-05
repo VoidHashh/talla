@@ -1,0 +1,19 @@
+name = "Look"
+discovery = "listing"
+listing_pages = [
+  "https://www.lookcycle.com/es-es/productos/bicis/carretera",
+  "https://www.lookcycle.com/es-es/productos/bicis/carretera/aero",
+  "https://www.lookcycle.com/es-es/productos/bicis/carretera/altitude",
+  "https://www.lookcycle.com/es-es/productos/bicis/carretera/endurance",
+  "https://www.lookcycle.com/es-es/productos/bicis/gravel",
+  "https://www.lookcycle.com/es-es/productos/bicis/gravel/gravel",
+]
+link_re = '/es-es/productos/bicis/(carretera|gravel)/(?:[^/?#]+/)*[^/?#]*\d\d[^/?#]*$'
+exclude = ['frame', 'outlet', '/e-bike/', '/e-gravel/', '/e-765', '/pista/', '/triatlon/']
+categories = [
+  ['/bicis/gravel/', 'gravel'],
+  ['/bicis/carretera/', 'carretera'],
+]
+name_strip = ['\s*[–-]\s*(Bicicleta|Bici)\b.*$']
+# Precio en el JS de la ficha: var availableOptions = {..."price":"9.190,00 €"} (web es-es, euros)
+price_re = 'availableOptions\s*=\s*\{.*?"price":"([\d.,]+)\s*€'

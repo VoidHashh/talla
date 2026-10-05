@@ -14,7 +14,10 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from . import readers
 from .fetch import Blocked, Fetcher
-from .geometry import STANDARD_LETTERS, Geometry, best_geometry, heights_from_text, parse_matrix, size_parts
+from .geometry import (
+    STANDARD_LETTERS, Geometry, best_geometry, heights_from_tables, heights_from_text, order_sizes, parse_matrix,
+    size_parts,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 STAGING = ROOT / "data" / "staging"
@@ -126,7 +129,10 @@ def discover(cfg: dict, fx: Fetcher, log) -> list[Product]:
                     log(f"    · listado no disponible: {e}")
                     break
                 new = 0
-                for href in re.findall(r'href=["\']([^"\'#]+)', html):
+                # Enlaces en href y también URL absolutas dentro de JSON incrustado (https:\/\/…).
+                flat = re.sub(r"\\+/", "/", html)
+                candidates = re.findall(r'href=["\']([^"\'#]+)', html) + re.findall(r'https?://[^\s"\'<>\\]+', flat)
+                for href in candidates:
                     u = urljoin(lp, href.replace("&amp;", "&"))
                     if link_re.search(u) and keep(u):
                         key = canonical(u) if cfg.get("strip_query", True) else u
@@ -141,10 +147,14 @@ def discover(cfg: dict, fx: Fetcher, log) -> list[Product]:
 
 
 def _sitemap_text(fx: Fetcher, url: str) -> str:
+    """Los sitemaps se piden con httpx aunque la marca use Chrome (Chrome muestra el XML como página)."""
     if url.endswith(".gz"):
         page = fx.get_binary(url, ".gz")
         return gzip.decompress(page.path.read_bytes()).decode("utf-8", "replace")
-    return fx.get(url).text
+    try:
+        return fx.get_binary(url, ".xml").path.read_text(encoding="utf-8", errors="replace")
+    except Blocked:
+        return fx.get(url).text
 
 
 # ---------------------------------------------------------------- lectura de producto
@@ -163,6 +173,8 @@ def product_meta(html: str, url: str, cfg: dict) -> dict:
         if str(ld.get("@type")) in ("Product", "ProductGroup", "['Product']") and ld.get("name"):
             name = str(ld["name"]).strip()
             break
+    if cfg.get("name_source") == "h1":
+        name = readers.h1_text(html) or name
     name = name or readers.meta_content(html, "og:title") or readers.h1_text(html) or ""
     for suffix in cfg.get("name_strip", []):
         name = re.sub(suffix, "", name, flags=re.I).strip()
@@ -188,6 +200,17 @@ def product_meta(html: str, url: str, cfg: dict) -> dict:
                 walk(v)
 
     walk(lds)
+    if not prices and cfg.get("price_re"):
+        # Webs españolas sin JSON-LD de precio: regex de la marca (grupo 1), siempre en euros.
+        for m in re.finditer(cfg["price_re"], html):
+            try:
+                raw = m.group(1).strip()
+                if "," in raw or re.fullmatch(r"\d{1,3}(\.\d{3})+", raw):  # formato español: 9.190,00 / 3.299
+                    raw = raw.replace(".", "").replace(",", ".")
+                prices.append(float(raw))
+            except ValueError:
+                pass
+            break
     if cfg.get("price_cents"):
         prices = [p / 100 for p in prices]
     prices = [p for p in prices if p > 0]
@@ -230,19 +253,52 @@ def find_geometry(html: str, page_url: str, cfg: dict, fx: Fetcher, brand_key: s
             gurl = cfg["geometry_url"].format(*m.groups())
             try:
                 ghtml = fx.get(gurl, render=cfg.get("render", False)).text
-                g = best_geometry(readers.html_tables(ghtml), height_re)
+                if cfg.get("geometry_table_after"):
+                    # Página con varias tablas (guía global): solo lo que sigue al nombre del modelo.
+                    # De todas las menciones del modelo, la más cercana a la tabla que la sigue (no la del menú).
+                    best = None
+                    for a in re.finditer(cfg["geometry_table_after"].format(re.escape(m.group(1))), ghtml, re.I):
+                        t = ghtml.find("<table", a.end())
+                        if t != -1 and (best is None or t - a.end() < best[1] - best[0]):
+                            best = (a.end(), t)
+                    if not best:
+                        return None, "", gurl, f"modelo '{m.group(1)}' no encontrado en {gurl}"
+                    ghtml = ghtml[best[0]:]
+                gtables = readers.html_tables(ghtml)
+                if cfg.get("geometry_table_after"):
+                    gtables = gtables[:1]
+                if cfg.get("json_key"):
+                    for data in readers.json_after_key(ghtml, cfg["json_key"]):
+                        jg = best_geometry(readers.json_tables(data), height_re, cfg.get('geometry_unit'))
+                        if jg and not best_geometry(gtables, height_re, cfg.get('geometry_unit')):
+                            if jg.heights is None:
+                                jg.heights = heights_from_tables(gtables, jg.sizes)
+                            return jg, "json", gurl, None
+                g = best_geometry(gtables, height_re, cfg.get('geometry_unit'))
                 if g:
+                    if g.heights is None:
+                        g.heights = heights_from_tables(gtables, g.sizes) or heights_from_text(ghtml, g.sizes)
                     return g, "html", gurl, None
             except Blocked as e:
                 return None, "", gurl, str(e)
 
-    g = best_geometry(readers.html_tables(html), height_re)
+    tables = readers.html_tables(html)
+    if cfg.get("collapse_unit_columns"):
+        tables = [readers.collapse_unit_columns(t) for t in tables]
+    if cfg.get("size_attr"):
+        tables += readers.attr_tables(html, cfg["size_attr"])
+    if cfg.get("size_tabs_re"):
+        tables += readers.tab_tables(html, cfg["size_tabs_re"])
+    g = best_geometry(tables, height_re, cfg.get('geometry_unit'))
     if g:
         if g.heights is None:
-            g.heights = heights_from_text(html, g.sizes)
+            g.heights = heights_from_tables(tables, g.sizes) or heights_from_text(html, g.sizes)
         return g, "html", page_url, None
-    for data in readers.embedded_json(html):
-        g = best_geometry(readers.json_tables(data), height_re)
+    json_sources = readers.embedded_json(html)
+    if cfg.get("json_key"):
+        json_sources += readers.json_after_key(html, cfg["json_key"])
+    for data in json_sources:
+        g = best_geometry(readers.json_tables(data), height_re, cfg.get('geometry_unit'))
         if g:
             return g, "json", page_url, None
 
@@ -252,7 +308,7 @@ def find_geometry(html: str, page_url: str, cfg: dict, fx: Fetcher, brand_key: s
             purl = urljoin(page_url, m.group(1) if m.groups() else m.group(0))
             try:
                 pdf = fx.get_binary(purl, ".pdf")
-                g = best_geometry(readers.pdf_tables(pdf.path), height_re)
+                g = best_geometry(readers.pdf_tables(pdf.path), height_re, cfg.get('geometry_unit'))
                 if g:
                     return g, "pdf", purl, None
                 return None, "", purl, "PDF sin tabla de stack/reach legible"
@@ -356,15 +412,21 @@ def validate_family(rows: list[dict], vcfg: dict) -> tuple[list[dict], list[tupl
         for r in rows:
             r.update(height_min="", height_max="", height_original="", height_unit="")
 
-    prev = {"stack": None, "reach": None}
+    # Progresión por grupo de rueda: algunas tablas mezclan tallas 27.5 y 29 ("M - 27.5", "S - 29").
+    def wheel(label: str) -> str:
+        m = re.search(r"(?:-|/|\s)\s*(2[4-9](?:\.5)?|650b|700c)\s*\"?\s*$", label, re.I)
+        return m.group(1).lower() if m else ""
+
+    prev: dict[tuple[str, str], float] = {}
     family_error = None
     for r in rows:
         for k in ("stack", "reach"):
             v = float(r[k]) if r[k] else None
-            if v is not None and prev[k] is not None and v < prev[k]:
-                family_error = f"{k} decrece al subir de talla ({r['size_label']}: {fmt(v)} < {fmt(prev[k])})"
+            key = (wheel(r["size_label"]), k)
+            if v is not None and key in prev and v < prev[key]:
+                family_error = f"{k} decrece al subir de talla ({r['size_label']}: {fmt(v)} < {fmt(prev[key])})"
             if v is not None:
-                prev[k] = v
+                prev[key] = v
 
     for r in rows:
         errs = []
@@ -429,7 +491,11 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
             n_fetched += 1
             meta = product_meta(page.text, prod.url, cfg)
             if not pre_cat:
-                category = classify(cfg, " ".join([prod.url, prod.hints, meta["crumbs"], meta["name"]]))
+                brand_cat = ""
+                if cfg.get("category_text_re"):
+                    m = re.search(cfg["category_text_re"], page.text)
+                    brand_cat = m.group(1) if m else ""
+                category = classify(cfg, " ".join([prod.url, prod.hints, meta["crumbs"], meta["name"], brand_cat]))
                 if category is None:
                     res.skip("fuera de alcance (categoría)")
                     continue
@@ -449,6 +515,7 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
             if g is None:
                 res.failures.append((prod.url, why or "sin geometría"))
                 continue
+            g = order_sizes(g)
             meta.update(category=category, url=prod.url)
             built.append((meta, g, method if page.method == "httpx" else method, src))
             if (i + 1) % 25 == 0:

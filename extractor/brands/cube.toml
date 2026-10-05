@@ -1,0 +1,25 @@
+name = "Cube"
+discovery = "listing"
+# Tienda oficial es-es (Shopware). Un listado por familia; la categoría sale de la URL del listado.
+listing_pages = [
+  "https://www.cube.eu/es-es/bikes/road/road-race",
+  "https://www.cube.eu/es-es/bikes/gravel/nuroad",
+  "https://www.cube.eu/es-es/bikes/mountainbike/hardtail",
+  "https://www.cube.eu/es-es/bikes/mountainbike/fullsuspension",
+  "https://www.cube.eu/es-es/e-bikes/mountainbike/fullsuspension",
+  "https://www.cube.eu/es-es/e-bikes/mountainbike/hardtail/reaction-hybrid",
+]
+# Las bicis tienen artículo de 6-7 cifras; los accesorios y la ropa, de 5 (el menú de cada página enlaza todo).
+link_re = '/es-es/cube-[^/]+/\d{6,}$'
+# Infantiles (rookie, ruedas 16-26"), cuadros sueltos y otras gamas que se cuelan en los listados.
+exclude = ['rookie', '-(160|200|240|260)-', 'flying-circus', 'frameset', 'aruba', 'nulane', 'kathmandu', 'town', 'editor']
+categories = [
+  ['/es-es/e-bikes/mountainbike/', 'emtb'],
+  ['/es-es/bikes/mountainbike/', 'mtb'],
+  ['/es-es/bikes/gravel/', 'gravel'],
+  ['/es-es/bikes/road/', 'carretera'],
+]
+price_re = 'PVP\*\s*([\d.,]+)\s*EUR'
+# El nombre incluye el color en minúsculas al final ("… SLT slategrey´n´prizm"): se quita para no duplicar el modelo por colores.
+name_strip = ['(?-i:(\s+[a-z]\S*)+$)']
+exclude_name = '\bframeset\b|\bcuadro\b|\bkit\b|\bkids?\b'

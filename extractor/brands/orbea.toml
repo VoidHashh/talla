@@ -1,0 +1,35 @@
+name = "Orbea"
+discovery = "listing"
+browser = true            # httpx recibe 403 (Cloudflare): siempre Chrome real
+listing_render = true
+listing_pages = [
+  "https://www.orbea.com/es-es/catalogo/bicicletas-carretera-orca",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-carretera-avant",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-carretera-terra",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-oiz",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-alma",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-laufey",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-occam",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-rallon",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-onna",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-rise",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-urrun",
+  "https://www.orbea.com/es-es/catalogo/bicicletas-montana-wild",
+]
+link_re = '^https://www\.orbea\.com/es-es/[a-z0-9-]+(\?|$)'
+exclude = ['/es-es/(contacto|soporte|buscar|editar-carrito|unete-a-orbea|cuenta|terminos-condiciones|m|p|catalogo)\b']
+classify_by_url = false
+# item_category del dataLayer de la propia Orbea (p. ej. ROAD, GRAVEL, MTB, E-MTB)
+category_text_re = '"item_category":"([^"]+)","item_category2":"([^"]+)"'
+categories = [
+  ['bicicletas-montana-(rise|urrun|wild)', 'emtb'],
+  ['bicicletas-montana-', 'mtb'],
+  ['bicicletas-carretera-terra', 'gravel'],
+  ['bicicletas-carretera-(orca|avant)', 'carretera'],
+]
+# Etiquetas en inglés (Reach/Stack) en la versión internacional de la misma ficha; precio y nombre de la ficha es-es.
+geometry_url = "https://www.orbea.com/en-int/{0}"
+geometry_url_param = 'orbea\.com/es-es/([a-z0-9-]+)'
+price_re = '"event":"view_item","ecommerce":\{"currency":"EUR","items":\[\{[^\]]*?"price":([\d.]+)'
+exclude_name = '\bcuadro\b|frameset|\bkit\b'
+json_key = "geometries"

@@ -1,0 +1,23 @@
+name = "KTM"
+discovery = "listing"
+# Solo EN/DE (ktm-bikes.at). Los sitemaps de producto mezclan componentes y accesorios (4800 URLs): se usan los listados por categoría.
+listing_pages = [
+  "https://www.ktm-bikes.at/bikes/list/bikes-roadbike",
+  "https://www.ktm-bikes.at/bikes/list/bikes-gravel",
+  "https://www.ktm-bikes.at/bikes/list/bikes-mountainbike",
+  "https://www.ktm-bikes.at/e-bikes/list/e-bikes-mountainbike",
+  "https://www.ktm-bikes.at/light-ebikes/list/light-e-bikes-mountainbike",
+]
+link_re = '/(?:bikes|e-bikes|light-ebikes)/detail/mx\d+'
+categories = [
+  ['light-e-bikes-mountainbike|e-bikes-mountainbike', 'emtb'],
+  ['bikes-mountainbike', 'mtb'],
+  ['bikes-gravel', 'gravel'],
+  ['bikes-roadbike', 'carretera'],
+]
+no_render_retry = true
+exclude_name = '\bframe\b|frameset|\bkit\b|\bkids?\b|mini me'
+# Geometría: una pestaña por talla (<a href="#geometry-ID">) con pares th/td.
+size_tabs_re = 'geometry-\d+'
+# Precio de venta recomendado (SRP) en euros de la web austriaca: <div class="product-price">3.299 € <span>SRP</span>
+price_re = 'class="product-price[^"]*"[^>]*>\s*([\d.]+(?:,\d+)?)\s*(?:&euro;|€)'

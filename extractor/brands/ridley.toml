@@ -1,0 +1,18 @@
+name = "Ridley"
+# Estado: BLOQUEADA a falta de un cambio genérico. La tabla de geometría de cada ficha (<table class="table--geo">) viene
+# con filas etiquetadas solo con letras (A..J, S, R) y la página no publica la leyenda: parse_matrix no encuentra
+# "Stack"/"Reach". Hace falta un alias de etiquetas por marca (p. ej. geometry_row_alias = {S = "Stack", R = "Reach"})
+# confirmado por una fuente oficial de Ridley. sitemap_products.xml da 504 (timeout del servidor), por eso el
+# descubrimiento es por listado renderizado con Chrome (la categoría "road" lista todos los SKU, incluido gravel).
+discovery = "listing"
+listing_render = true
+listing_pages = ["https://www.ridley-bikes.com/es_ES/bikes/categories/road"]
+link_re = '/es_ES/bikes/SBI[A-Z0-9]+$'
+classify_by_url = false
+categories = [
+  ['/ (Triatl|Ciclocross|Cyclocross|Kids|Ni[ñn]os|MTB|Monta)', ''],
+  ['/ Gravel /', 'gravel'],
+  ['/ Carretera /', 'carretera'],
+]
+name_strip = ['\s+\w+\(\w+\)$']
+exclude_name = '^E-|\bE-'

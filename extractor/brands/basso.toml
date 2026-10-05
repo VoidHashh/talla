@@ -1,0 +1,9 @@
+name = "Basso"
+discovery = "listing"
+listing_pages = ["https://bassobikes.com/en/bikes/road-bikes", "https://bassobikes.com/en/bikes/gravel-bikes"]
+link_re = '/en/bikes/(road|gravel)-bikes/[^/?#]+$'
+categories = [
+  ['/gravel-bikes/', 'gravel'],
+  ['/road-bikes/', 'carretera'],
+]
+name_strip = ['\s*\|.*$']

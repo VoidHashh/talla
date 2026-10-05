@@ -1,0 +1,13 @@
+name = "Factor"
+# Geometría en window.__remixContext → frameGeometry.geometry = {"headers": [...], "rows": [[...], ...]}.
+# Sin robots.txt (404) ni sitemap: listado /bikes. Precios solo en USD → price_eur vacío. Sin rangos de altura.
+discovery = "listing"
+listing_pages = ["https://factorbikes.com/bikes"]
+link_re = 'factorbikes\.com/bikes/[a-z0-9-]+$'
+exclude = ['/bikes/(hanzo|hanzo-track|hanzo-track-paris-edition|raiden-track|slick|one-sp|bugatti-factor-one|factor-monza-rapha-edition-2026|factor-one-spongebob-edition-2026)$']
+categories = [
+  ['/bikes/(elara|aluto|sarana)(\s|$)', 'gravel'],
+  ['/bikes/(monza|o2-vam|ostro-vam|one)(\s|$)', 'carretera'],
+  ['/bikes/(lando-ht|lando-xc-fox)(\s|$)', 'mtb'],
+]
+name_strip = ['\s*\|.*$', '^Factor\s+', '\s+Aero Gravel Race Bike$']

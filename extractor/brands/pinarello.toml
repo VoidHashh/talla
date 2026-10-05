@@ -1,0 +1,25 @@
+name = "Pinarello"
+discovery = "listing"
+# Sin sitemap. Región Europa (pinarello.com/europe/en). La tabla de geometría está en la ficha de cada variante
+# (/bikes/<cat>/<serie>/<familia>/<variante>), no en la página de familia: se listan las familias vigentes
+# ("new-…" = generación actual; dogma-x y pinarello-x son la generación anterior y quedan fuera).
+# Fuera de alcance: Bolide (TT/pista), Crossista (ciclocross), Nytro (eléctricas), ediciones especiales / Maat (a medida).
+listing_pages = [
+  "https://pinarello.com/europe/en/bikes/road/competition/new-dogma-f",
+  "https://pinarello.com/europe/en/bikes/road/competition/new-pinarello-f",
+  "https://pinarello.com/europe/en/bikes/road/endurance/new-dogma-x",
+  "https://pinarello.com/europe/en/bikes/road/endurance/new-pinarello-x",
+  "https://pinarello.com/europe/en/bikes/gravel/competition/dogma-gr",
+  "https://pinarello.com/europe/en/bikes/gravel/competition/new-grevil-f",
+  "https://pinarello.com/europe/en/bikes/mtb/competition/dogma-xc",
+  "https://pinarello.com/europe/en/bikes/mtb/competition/xc-series",
+]
+link_re = '/europe/en/bikes/(?:road|gravel|mtb)/[^/]+/[^/]+/[^/]+$'
+categories = [
+  ['/bikes/mtb/', 'mtb'],
+  ['/bikes/gravel/', 'gravel'],
+  ['/bikes/road/', 'carretera'],
+]
+no_render_retry = true
+exclude_name = '\bframe\b|frameset|\bkit\b'
+name_strip = ['\s*\|.*$']

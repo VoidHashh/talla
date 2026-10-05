@@ -108,17 +108,21 @@ def _transpose(m):
     return [list(col) for col in zip(*rows)]
 
 
-def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None) -> Geometry | None:
+def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None, unit: str | None = None) -> Geometry | None:
     """Devuelve la geometría si la matriz contiene filas de stack y reach con valores por talla."""
     if not m or len(m) < 2:
         return None
-    first_row = " ".join(m[0][1:])
-    if STACK_RE.search(first_row) and REACH_RE.search(first_row):
-        m = _transpose(m)
+    # Tallas en filas y cotas en columnas (a veces con una fila de título antes, p. ej. "Road" en PDFs).
+    for i in (0, 1):
+        if i < len(m) and STACK_RE.search(" ".join(m[i][1:])) and REACH_RE.search(" ".join(m[i][1:])):
+            m = _transpose(m[i:])
+            break
 
-    # Fila de cabecera: la primera con ≥2 celdas que parecen tallas.
+    # Fila de cabecera: si empieza por "Talla/Size" es la cabecera; si no, la primera con ≥2 celdas que parecen tallas.
     header_idx, start = None, None
-    for i, row in enumerate(m[:4]):
+    if len(m[0]) > 1 and SIZE_WORD_RE.match(m[0][0].strip()) and all(c.strip() for c in m[0][1:3]):
+        header_idx, start = 0, 1
+    for i, row in enumerate(m[:4] if header_idx is None else []):
         idx = [j for j, c in enumerate(row) if j > 0 and _is_size_like(c)]
         if len(idx) >= 2:
             header_idx, start = i, idx[0]
@@ -138,14 +142,21 @@ def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None) -> Geo
     for row in m[header_idx + 1 :]:
         label = " ".join(c for c in row[:start] if c).strip()
         values = (row[start : start + n] + [""] * n)[:n]
-        if not label or not any(values):
+        if not any(values):
             continue
+        if not label:
+            # Sin etiqueta solo se conserva si todos los valores son rangos de altura en cm ("155-165 cm").
+            if not all(re.search(r"\d\s*cm", v, re.I) for v in values if v.strip()):
+                continue
+            label = "(altura, fila sin etiqueta)"
         if label in rows:
             label = f"{label} #{sum(1 for k in rows if k.startswith(label))+1}"
         rows[label] = values
 
     def pick(rx):
-        cands = [k for k in rows if rx.search(k) and not NOT_FRAME_RE.search(k)]
+        # Títulos tipo "Fit (Stack and Reach)" no son una fila de datos.
+        cands = [k for k in rows if rx.search(k) and not NOT_FRAME_RE.search(k)
+                 and not (STACK_RE.search(k) and REACH_RE.search(k))]
         # Preferir la fila en mm si hay varias unidades.
         cands.sort(key=lambda k: (
             0 if FRAME_RE.search(k) else 1,
@@ -160,8 +171,17 @@ def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None) -> Geo
     warnings: list[str] = []
 
     def nums(key):
-        vals = [parse_number(v) for v in rows[key]]
-        if any(v is not None and v < 100 for v in vals):  # en cm o pulgadas: no se usa como mm
+        cells = rows[key]
+        # Dos posiciones publicadas (flip-chip "Hi/Lo"): se usa la primera; el texto original queda en geometry_raw.
+        if any(re.fullmatch(r"\s*\d+(?:[.,]\d+)?\s*/\s*\d+(?:[.,]\d+)?\s*", v) for v in cells):
+            warnings.append(f"'{key}' publica dos posiciones (p. ej. Hi/Lo): se usa la primera")
+            cells = [v.split("/")[0] for v in cells]
+        vals = [parse_number(v) for v in cells]
+        declared_cm = bool(re.search(r"\(cm\)|\bcm\b|en cm|in cm", key, re.I)) or unit == "cm"
+        if declared_cm and all(v is None or 25 <= v <= 90 for v in vals):
+            warnings.append(f"'{key}' publicado en cm: convertido a mm (×10)")
+            return [v * 10 if v is not None else None for v in vals]
+        if any(v is not None and v < 100 for v in vals):  # en cm o pulgadas sin declarar: no se usa como mm
             warnings.append(f"'{key}' no parece estar en mm")
             return [None] * n
         return vals
@@ -188,11 +208,11 @@ def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None) -> Geo
     return Geometry(sizes, stack, reach, heights, rows, warnings)
 
 
-def best_geometry(matrices, height_re=None) -> Geometry | None:
+def best_geometry(matrices, height_re=None, unit=None) -> Geometry | None:
     """La tabla con más tallas que tenga stack y reach numéricos."""
     best = None
     for m in matrices:
-        g = parse_matrix(m, height_re)
+        g = parse_matrix(m, height_re, unit)
         if g and any(v is not None for v in g.stack) and (best is None or len(g.sizes) > len(best.sizes)):
             best = g
     return best
@@ -241,3 +261,55 @@ def heights_from_text(html: str, sizes: list[str]) -> list[Height | None] | None
                 return out
     return None
 
+
+
+def heights_from_tables(matrices, sizes: list[str]) -> list[Height | None] | None:
+    """Tabla de tallas aparte de la geometría (talla en la 1.ª columna, una columna de altura del ciclista).
+
+    Solo se acepta si la columna de tallas coincide exactamente con las tallas de la geometría.
+    """
+    for m in matrices:
+        if len(m) < 2:
+            continue
+        col0 = [r[0].strip() for r in m[1:] if r]
+        if col0 != sizes:
+            continue
+        for j, head in enumerate(m[0]):
+            if j == 0 or NOT_HEIGHT_RE.search(head):
+                continue
+            if HEIGHT_RE.search(head) or re.match(r"\s*(altura|height|estatura|körpergröße|taille)\b", head, re.I):
+                hs = [parse_height(r[j]) if j < len(r) else None for r in m[1:]]
+                if all(hs) and all(120 <= x <= 215 for h in hs for x in (h.min, h.max) if x is not None):
+                    return hs
+    return None
+
+
+_RANK = {k: i for i, ks in enumerate(
+    [["XXXS", "3XS"], ["XXS", "2XS"], ["XS"], ["S"], ["S/M"], ["M"], ["M/L"], ["L"], ["XL"], ["XXL", "2XL"], ["XXXL", "3XL"]]
+) for k in ks}
+
+
+def order_sizes(g: Geometry) -> Geometry:
+    """Ordena las columnas de menor a mayor cuando todas las tallas son letras estándar o todas numéricas.
+
+    Algunas marcas publican la tabla desordenada (p. ej. M, L, XS, S, XL); si no se puede ordenar con
+    seguridad, se deja el orden publicado.
+    """
+    labels = [re.sub(r"\s+", "", s.upper()) for s in g.sizes]
+    if all(lbl in _RANK for lbl in labels):
+        keys = [_RANK[lbl] for lbl in labels]
+    elif all(re.fullmatch(r"\d{2,3}(\.\d)?", lbl) for lbl in labels):
+        keys = [float(lbl) for lbl in labels]
+    else:
+        return g
+    idx = sorted(range(len(keys)), key=lambda i: keys[i])
+    if idx == list(range(len(keys))):
+        return g
+
+    def pick(seq):
+        return [seq[i] for i in idx] if seq is not None else None
+
+    return Geometry(
+        sizes=pick(g.sizes), stack=pick(g.stack), reach=pick(g.reach), heights=pick(g.heights),
+        rows={k: pick(v) for k, v in g.rows.items()}, warnings=g.warnings + ["columnas de talla reordenadas"],
+    )

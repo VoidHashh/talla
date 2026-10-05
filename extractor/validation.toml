@@ -8,8 +8,8 @@ height = [120, 215]     # cm
 price_eur = [150, 25000]
 
 [mtb]
-stack = [520, 780]
-reach = [360, 560]
+stack = [480, 780]   # Coluer Flair talla S publica 515
+reach = [340, 560]
 
 [emtb]
 stack = [520, 800]

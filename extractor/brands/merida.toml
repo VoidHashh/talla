@@ -1,0 +1,33 @@
+name = "Merida"
+discovery = "listing"
+# Buscador de bicis oficial (es-es): un listado por subcategoría de Merida. La categoría sale de la URL del listado (hints).
+# Orden: primero los listados más específicos (la primera aparición de una bici fija su categoría).
+listing_pages = [
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/silex-48/root/bikes-subcategory",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/mission-362/root/bikes-subcategory",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/road-race-7/root/bikes-subcategory",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/road-race-aero-8/root/bikes-subcategory",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/road-endurance-202/root/bikes-subcategory",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/e-mtb-dobles-134/root/e-mtb",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/e-mtb-rigidas-135/root/e-mtb",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/mtb-dobles-72/root/mtb-full-suspension",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/mtb-rigidas-73/root/mtb-hardtails",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/xc-maraton-1",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/trail-2/root/bikes-subcategory",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/enduro-4/root/bikes-subcategory",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/all-mountain-3/root/bikes-subcategory",
+  "https://www.merida-bikes.com/es-es/bikefinder/tag/marathon-trail-278/root/bikes-subcategory",
+]
+no_render_retry = true     # las tablas vienen en el HTML del servidor
+link_re = '/es-es/bike/\d+/[a-z0-9-]+$'
+categories = [
+  ['/bike/\d+/(ebigtour|efloat|espresso|crossway|speeder|dirt|time-warp)', ''],
+  ['e-mtb-', 'emtb'],
+  ['/tag/(silex|mission)-', 'gravel'],
+  ['/tag/road-', 'carretera'],
+  ['/tag/(mtb-|xc-maraton|trail-|enduro-|all-mountain|marathon-trail)', 'mtb'],
+]
+# El año de modelo está en la ruta de la imagen de cabecera (.../bikes/2027/..._MY27.tif).
+year_re = ['/bikes/(20[2-3]\d)/']
+name_strip = ['\s*-\s*MERIDA BIKES$']
+exclude_name = '\bcuadro\b|\bframe\b|frameset|\bkit\b'

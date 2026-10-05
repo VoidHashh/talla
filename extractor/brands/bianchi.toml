@@ -1,0 +1,15 @@
+name = "Bianchi"
+discovery = "sitemap"
+# Solo la tienda por defecto (italiano, precios en EUR); /en/ y /tr/ son traducciones de las mismas fichas.
+sitemaps = ["https://www.bianchi.com/product-sitemap.xml"]
+include = ['^https://www\.bianchi\.com/shop/(bikes/(road/(aero|all-rounder)|gravel|mtb)|e-bike/e-mtb)/.+']
+categories = [
+  ['/shop/e-bike/e-mtb/', 'emtb'],
+  ['/shop/bikes/mtb/', 'mtb'],
+  ['/shop/bikes/gravel/', 'gravel'],
+  ['/shop/bikes/road/', 'carretera'],
+]
+exclude_name = '\bframe ?set\b|\btelaio\b|\bkit\b|\bframe\b'
+# La tabla de geometría usa códigos de letra del dibujo oficial de la ficha (X = reach horizontal, Y = stack vertical,
+# comprobado en el dibujo). Requiere la opción header_alias (pendiente de añadir al pipeline).
+header_alias = { X = "Reach", Y = "Stack" }

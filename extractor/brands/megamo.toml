@@ -1,0 +1,24 @@
+name = "Megamo"
+discovery = "listing"
+# Sin sitemap: listados de categoría de la tienda española (cada ficha acaba en "(26)" / "(27)" = año de modelo).
+listing_pages = [
+  "https://www.megamo.com/es/bicicletas/carretera",
+  "https://www.megamo.com/es/bicicletas/gravel",
+  "https://www.megamo.com/es/bicicletas/montaña",
+  "https://www.megamo.com/es/e-bike/e-full-suspension",
+  "https://www.megamo.com/es/e-bike/e-hardtail",
+]
+link_re = '/es/(?:bicicletas|e-bike)/[^?#]+-\(2\d\)(?:-\d+)?$'
+categories = [
+  ['junior|frameset|/kids|bmx|urbanas|e-road|e-gravel', ''],
+  ['/es/e-bike/', 'emtb'],
+  ['/es/bicicletas/gravel/', 'gravel'],
+  ['/es/bicicletas/carretera/', 'carretera'],
+  ['/es/bicicletas/monta', 'mtb'],
+]
+year_re = ['\((2\d)\)']
+name_strip = ['\s*[-|]\s*(?:Megamo Bicycles|E-MTB.*)$', '\s*\(2\d\)']
+exclude_name = '\bframe ?set\b|\bcuadro\b|\bkit\b'
+no_render_retry = true   # páginas estáticas: sin tabla = sin tabla, no repetir con Chrome
+# Reason/Ryal (MY27 e-MTB) publican la geometría solo como SVG sin texto: se encola para transcripción.
+geometry_img_re = '(/biblioteca/items/\d+/\d*geometria_(?:Reason|Ryal)[^"\s]*\.svg)'

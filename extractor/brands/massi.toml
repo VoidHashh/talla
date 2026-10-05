@@ -1,0 +1,20 @@
+name = "Massi"
+discovery = "sitemap"
+sitemaps = [
+  "https://www.massi.bike/product-sitemap.xml",
+  "https://www.massi.bike/product-sitemap2.xml",
+  "https://www.massi.bike/product-sitemap3.xml",
+]
+# Solo fichas en español de bicicletas completas (prefijo de categoría en la URL). Fuera: Sonic/Ecross/Amper (e-road/e-gravel).
+include = ['/product/(?:carretera|gravel|mtb-rigida|mtb-doble-suspension|e-bike)-massi-[^/]+-es/?$']
+exclude = ['/product/e-bike-massi-(?:sonic|ecross|amper)']
+categories = [
+  ['/product/e-bike-massi-k2', 'emtb'],
+  ['/product/mtb-', 'mtb'],
+  ['/product/gravel-', 'gravel'],
+  ['/product/carretera-', 'carretera'],
+]
+name_strip = ['\s*-\s*$']
+# La geometría es una imagen PNG (tabla SIZE/A..G/REACH/STACK): se descarga a data/vision/massi/ para transcribirla con visión.
+geometry_img_re = '(https://www\.massi\.bike/wp-content/uploads/[^"\s]*geo[^"\s]*?(?<!mov)\.(?:png|jpg|jpeg|webp))'
+no_render_retry = true

@@ -1,0 +1,39 @@
+name = "Trek"
+discovery = "listing"
+# Tienda oficial es_ES. Los listados B200 (carretera/gravel) y B300 (montaña/eléctricas) paginan con ?q=:relevance&page=N (N desde 0).
+listing_pages = [
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-carretera/c/B200/?q=:relevance&page=0",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-carretera/c/B200/?q=:relevance&page=1",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-carretera/c/B200/?q=:relevance&page=2",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-carretera/c/B200/?q=:relevance&page=3",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-carretera/c/B200/?q=:relevance&page=4",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-carretera/c/B200/?q=:relevance&page=5",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=0",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=1",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=2",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=3",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=4",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=5",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=6",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=7",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=8",
+  "https://www.trekbikes.com/es/es_ES/bicicletas/bicicletas-de-monta%C3%B1a/c/B300/?q=:relevance&page=9",
+]
+listing_render = true      # el listado se pinta con JS
+render = true              # la geometría la pinta un componente JS (<geometry-container>)
+link_re = '/es/es_ES/bicicletas/[^?]*/p/\d+/?(\?|$)'
+exclude = ['/cuadro-', '/kit-', 'frameset']
+categories = [
+  ['/bicicletas-de-monta[^/]*/bicicletas-el[^/]*ctricas-de-monta', 'emtb'],
+  ['/bicicletas/(bicicletas-el|bicicletas-h|bicicletas-de-ni|bicicletas-urbanas|bicicletas-de-turismo|bicicletas-diamant|race-shop|bicicletas-de-hombre|bicicletas-de-mujer)', ''],
+  ['triatl|ciclocross|fat-bikes|para-ni', ''],
+  ['/bicicletas-de-monta', 'mtb'],
+  ['/bicicletas-de-carretera/bicicletas-de-gravel', 'gravel'],
+  ['/bicicletas-de-carretera/', 'carretera'],
+]
+geometry_unit = "cm"        # la geometría de Trek está publicada en cm (57.5 = 575 mm)
+# JSON-LD con Offer sin priceCurrency: la tienda es_ES vende en EUR.
+price_re = '"@type":"Offer"[^}]*?"price":(\d+(?:\.\d+)?)'
+exclude_name = '\bcuadro\b|\bm.dulo\b|\bkit\b|frameset'
+# Año de modelo en el nombre de la imagen principal: .../DomaneSLR9AXS-27-79928-A-Primary (27 = MY2027).
+year_re = ['-(2\d)-\d+-[A-Z]-Primary']

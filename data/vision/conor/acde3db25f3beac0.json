@@ -1,0 +1,50 @@
+{
+  "image_url": "https://conorbikes.com/img/cms//h20250924133948_953.png",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    ""
+  ],
+  "rows": [
+    [
+      "1 Seat Tube",
+      "381"
+    ],
+    [
+      "2 Top Tube",
+      "550"
+    ],
+    [
+      "3 Head Tube",
+      "115"
+    ],
+    [
+      "4 Chainstay",
+      "435"
+    ],
+    [
+      "5 BB Drop",
+      "57"
+    ],
+    [
+      "6 Wheelbase",
+      "1050"
+    ],
+    [
+      "7 Reach",
+      "380"
+    ],
+    [
+      "8 Stack",
+      "591"
+    ],
+    [
+      "9 Head Angle",
+      "70°"
+    ],
+    [
+      "10 Seat Angle",
+      "74°"
+    ]
+  ]
+}

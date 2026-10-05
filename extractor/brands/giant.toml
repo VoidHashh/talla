@@ -1,0 +1,18 @@
+name = "Giant"
+discovery = "sitemap"
+# El sitemap de es-es mezcla años de modelo; solo se descargan las fichas de bici del año vigente (-2027).
+sitemaps = ["https://static.giant-bicycles.com/sitemaps/sitemap-giant-es-es.xml"]
+include = ['/es/[a-z0-9-]+-2027$']
+exclude = ['/es/(bikes-|cuadro|kit-|casco|ruedas|manillar|sillin|potencia|culotte|maillot|chaqueta|porta|bolsa|cesta|slr-|energypak|accesorio|contact-|ridecontrol|cycling-)', 'frameset']
+# La URL lleva el nombre de la gama; no hay categoría en la URL. Primera coincidencia gana, "" = fuera de alcance.
+categories = [
+  ['/es/[a-z0-9-]*(trinity|tcx|glory|anytour|newtour|explore|escape|roam|seek|dailytour|ltz)', ''],
+  ['/es/(defy|revolt|contend|propel|tcr)[a-z0-9-]*eplus', ''],
+  ['/es/(trance|talon|stance|fathom|reign|anthem|xtc)[a-z0-9-]*eplus', 'emtb'],
+  ['/es/(talon|anthem|xtc|trance|reign|fathom|stance)', 'mtb'],
+  ['/es/(propel|tcr|defy|contend)', 'carretera'],
+  ['/es/revolt', 'gravel'],
+]
+exclude_name = '\bcuadro\b|\bframe ?set\b|\bkit\b|\bframe\b'
+# El precio está en <meta property=product:price:amount content=" 4599"> (moneda EUR), no en JSON-LD.
+price_re = 'product:price:amount"?\s+content="?\s*([\d.,]+)'

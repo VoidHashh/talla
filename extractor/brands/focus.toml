@@ -1,0 +1,11 @@
+name = "Focus"
+discovery = "sitemap"
+sitemaps = ["https://www.focus-bikes.com/media/sitemaps/location_0_sitemap_es_es.xml"]
+# Gama vigente en la tienda española (listados /es_es/bikes/*): una página por build.
+# Fuera: e-allround (trekking), Raven/Mares (sin builds en España), años anteriores (jam-6-9-24, jam2-6-x…) y JAM² SL 8.7/8.8 (categoría "Sale" en el listado).
+include = ['/es_es/(izalco-max-(8-[789]|9-[789])|atlas-(6-7|6-8-eqp|6-9|8-7|8-8|8-9)|jam-(7|8|9|ltd)|sam-(8|9)|thron-(7|8|9)|jarifa2-6-(7|7-x|8)|jam2-sl-(9-0|9-9)|vam2-sl-(8-7|9-0|9-8|9-9))$']
+categories = [
+  ['/es_es/izalco-max-', 'carretera'],
+  ['/es_es/atlas-', 'gravel'],
+  ['/es_es/(jam|sam|thron|jarifa2|jam2-sl|vam2-sl)-', 'emtb'],
+]

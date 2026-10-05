@@ -1,0 +1,22 @@
+name = "Coluer"
+discovery = "listing"
+# WooCommerce: el sitemap de producto cierra la conexión con httpx; los listados por categoría (sin paginar) listan todo.
+listing_pages = [
+  "https://coluer.com/categoria/carretera/",
+  "https://coluer.com/categoria/gravel/",
+  "https://coluer.com/categoria/bicicletas/montana/",
+]
+link_re = 'https://coluer\.com/catalogue/[^/]+/$'
+categories = [
+  ['/categoria/bicicletas/montana/', 'mtb'],
+  ['/categoria/gravel/', 'gravel'],
+  ['/categoria/carretera/', 'carretera'],
+]
+# Año de modelo = atributo pa_modelyear-myNN del contenedor del producto (no el de los productos relacionados).
+year_re = ['<div id="product-\d+" class="[^"]*pa_modelyear-my(\d\d)']
+exclude_name = '\bcuadro\b|\bframe\b|\bkit\b'
+no_render_retry = true     # páginas renderizadas en servidor: no reintentar con Chrome si falta la geometría
+# Fichas antiguas (MY23) de modelos que ya tienen ficha MY27 sin geometría publicada: no se usa la geometría antigua.
+exclude = ['/catalogue/limbo-29[23]-mbdt']
+# Fichas antiguas con la geometría solo en imagen (la tabla HTML no lleva etiquetas): cola de visión.
+geometry_img_re = '''(https://coluer\.com/wp-content/uploads/[^"'\s]*Geom[^"'\s]*\.(?:png|jpe?g))'''

@@ -1,0 +1,20 @@
+name = "BH"
+discovery = "listing"
+# Los listados de la tienda española solo muestran la gama vigente (las URLs antiguas siguen en el sitemap).
+listing_pages = [
+  "https://www.bhbikes.com/es_ES/bicicletas/carretera/competicion-carretera",
+  "https://www.bhbikes.com/es_ES/bicicletas/carretera/gravel",
+  "https://www.bhbikes.com/es_ES/bicicletas/montana/xc-cross-country-y-down-country",
+  "https://www.bhbikes.com/es_ES/bicicletas/montana/trail",
+  "https://www.bhbikes.com/es_ES/bicicletas/montana/sport",
+  "https://www.bhbikes.com/es_ES/bicicletas-electricas",
+]
+link_re = '/es_ES/bicicletas[^?#"]*-[a-z]{1,2}\d{3,4}(?:\?|$)'
+categories = [
+  ['ciclocross|triatlon|kids|ninos|hibrida|urbana|fitness|bicicleta-electrica-carretera|bicicletas-electricas-de-gravel|outlet|ultimas_unidades', ''],
+  ['bicicletas-electricas-de-(trail|enduro|mtb-sport|cross-country)', 'emtb'],
+  ['bicicletas/montana', 'mtb'],
+  ['bicicletas/carretera/gravel', 'gravel'],
+  ['bicicletas/carretera/competicion', 'carretera'],
+]
+exclude_name = '\bcuadro\b|frameset|\bkit\b'

@@ -1,0 +1,11 @@
+name = "Cervélo"
+discovery = "sitemap"
+sitemaps = ["https://www.cervelo.com/es-ES/sitemap.xml"]
+# Solo la gama vigente (una página por modelo). Fuera: triatlón/CLM (P, PX, ZFS, ZHT), ciclocross (R5-CX),
+# e-road (Rouvida), años anteriores (…-2021, …-2023) y ediciones especiales sin tabla.
+include = ['/es-ES/bikes/(r5|s5|soloist|caledonia|caledonia-5|aspero|aspero-5)$']
+categories = [
+  ['/aspero', 'gravel'],
+  ['/(r5|s5|soloist|caledonia)', 'carretera'],
+]
+name_strip = ['\s*\|.*$', '\s*-\s*Road Bike$', '\s+(Classic |Carbon |Aero )?(Road|Gravel) Bike$', '\s+E-Bike$']

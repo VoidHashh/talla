@@ -1,0 +1,17 @@
+name = "Aurum"
+# Las fichas /es/<modelo>/ no traen tabla de geometría. La geometría oficial por talla está en la guía global
+# https://aurumbikes.com/size-guide/ con UNA tabla por modelo (MAGMA, ESSENTIA, MANTO) y una fila de altura sin etiqueta.
+discovery = "listing"
+listing_pages = ["https://aurumbikes.com/es/"]
+link_re = 'aurumbikes\.com/es/(magma|essentia|manto)/$'
+categories = [
+  ['/es/manto/', 'gravel'],
+  ['/es/(magma|essentia)/', 'carretera'],
+]
+name_strip = ['^AURUM Bikes\s*-\s*', '^Explora el rendimiento sin límites en gravel con\s+', '\s*[:|-].*$']
+geometry_url = "https://aurumbikes.com/size-guide/"
+geometry_url_param = '/es/(magma|essentia|manto)/'
+geometry_table_after = '>\s*{0}\s*<'
+# Precio en texto "ELIGE TU MAGMA DESDE 9.073,79€" (web es, euros)
+price_re = '(?i)desde\s*([\d.]+,\d{2})\s*€'
+price_is_from = true

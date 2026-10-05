@@ -1,0 +1,24 @@
+name = "Wilier"
+discovery = "sitemap"
+# Sitemap en español; la ficha vigente de cada modelo cuelga de /es/bicicletas/<categoría>/<modelo>.
+# Fuera: /archivo-de-bicicletas/ (años anteriores), fichas "-my20xx" (año anterior), contrarreloj/triatlón y e-bikes salvo e-MTB.
+sitemaps = ["https://www.wilier.com/_/assets/sitemap-es-bikes.xml"]
+include = ['/es/bicicletas/(?:carretera|gravel|mtb|e-bike)/[^/]+$']
+exclude = ['-my20\d\d$']
+# El og:title no siempre es el nombre (rave-sl: "La Culture de la Velocidad"): se usa el <h1>.
+name_source = "h1"
+categories = [
+  ['/e-bike/urta-hybrid', 'emtb'],
+  ['/e-bike/', ''],
+  ['contrarreloj|triatlon', ''],
+  ['/mtb/', 'mtb'],
+  ['/gravel/', 'gravel'],
+  ['/carretera/', 'carretera'],
+]
+# og:title = "Filante SLR - Bicicleta de Carrera Racing | Wilier Triestina"
+name_strip = ['\s*\|.*$', '\s+-\s+.*$', '\s*:.*$', '^Nueva\s+(?:Wilier\s+)?']
+no_render_retry = true
+exclude_name = '\bframe\b|frameset|\bkit\b'
+# Precio en texto "Desde 6.999,00 €" (web es, euros)
+price_re = 'Desde\s*([\d.]+,\d{2})\s*€'
+price_is_from = true

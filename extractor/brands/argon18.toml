@@ -1,0 +1,16 @@
+name = "Argon 18"
+# La geometría ("Fit (Stack and Reach)") no es una <table> sino <div class="cell label">/<div data-geometry-size="XS">,
+# con la unidad declarada en la página: "cm" (se convierte a mm, ×10).
+# Solo las páginas de configuración /en/bikes/<familia>/<modelo>/<build> tienen la tabla (las de modelo no).
+# Precios solo en USD (sin EUR) → price_eur vacío. Sin rangos de altura (los "44-46" de la cabecera son tallas de cuadro en cm).
+discovery = "listing"
+listing_pages = ["https://www.argon18.com/en/bikes"]
+link_re = 'argon18\.com/en/bikes/(gravel|road|all-road)/[^/]+/[^/?#]+$'
+exclude = ['frameset', '/e-performance/', '/track', 'legacy']
+categories = [
+  ['/bikes/gravel/', 'gravel'],
+  ['/bikes/(road|all-road)/', 'carretera'],
+]
+name_strip = ['\s*\|.*$']
+size_attr = "data-geometry-size"
+geometry_unit = "cm"
