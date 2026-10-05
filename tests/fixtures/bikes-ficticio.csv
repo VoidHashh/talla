@@ -1,0 +1,6 @@
+brand,model,year,category,size_label,size_cm,height_min,height_max,stack,reach,price_eur,product_url,source_url,verified_at
+MarcaFicticiaA,Modelo Ficticio 1,2026,carretera,S,52,160,170,530,380,1500,https://ficticia-a.invalid/m1,https://ficticia-a.invalid/tallas,2026-01-01
+MarcaFicticiaA,Modelo Ficticio 1,2026,carretera,M,54,170,180,550,390,1500,https://ficticia-a.invalid/m1,https://ficticia-a.invalid/tallas,2026-01-01
+MarcaFicticiaA,Modelo Ficticio 2,2026,carretera,M,55,172,182,560,388,2500,,https://ficticia-a.invalid/tallas,2026-01-01
+MarcaFicticiaB,Modelo Ficticio 3,2025,carretera,M,54,168,178,,,,,https://ficticia-b.invalid/tallas,2026-01-01
+MarcaFicticiaB,Modelo Ficticio 4,2026,gravel,"M",54,170,180,570,385,"1800",,https://ficticia-b.invalid/tallas,2026-01-01
