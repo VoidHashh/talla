@@ -1,0 +1,16 @@
+name = "Decathlon"
+# decathlon.es rechaza la verificación humana en el Chrome controlado por el extractor (y responde 403 a httpx).
+# Por eso las fichas las guarda el usuario desde su propio navegador en data/manual/decathlon/
+# ("Guardar como…" → "Página web, solo HTML"). La URL de cada ficha sale de su <link rel="canonical">.
+discovery = "local"
+local_dir = "data/manual/decathlon"
+classify_by_url = false
+categories = [
+  ['ocasi[oó]n|segunda mano|reacondicionad', ''],
+  ['el[ée]ctric[ao].*monta|e-?mtb|e-st|e-expl', 'emtb'],
+  ['el[ée]ctric|e-edr|e-grvl', ''],
+  ['gravel|grvl', 'gravel'],
+  ['monta[ñn]a|mtb|rockrider', 'mtb'],
+  ['carretera|van rysel|triban|edr|ncr|rcr', 'carretera'],
+]
+exclude_name = '\bcuadro\b|\bframe\b|\bkit\b|infantil|niñ[oa]s?\b|\b2[04]"'

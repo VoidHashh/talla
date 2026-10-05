@@ -25,3 +25,6 @@ geometry_img_re = '(/biblioteca/items/\d+/\d*geometria_(?:Reason|Ryal)[^"\s]*\.s
 price_re = 'num_preu">\s*([\d.,]+)\s*€'
 # Geometría maquetada con <span>: tallas (class="tallas"), etiqueta (geoseccion) y valores (geomedida), dentro de "tabla9".
 span_table = { header = "tallas", label = "geoseccion2?", value = "geomedida2?", start = 'class="taula_geometria"', end = 'fitguide|class="tabla3' }
+# FIT GUIDE: X-SMALL…X-LARGE (equivalencia aprobada por el usuario) con valores sin unidad ("165 - 172", "< 165", "188 <").
+height_label_alias = { XS = "X-SMALL", S = "SMALL", M = "MEDIUM", L = "LARGE", XL = "X-LARGE" }
+height_text_no_cm = true

@@ -2,16 +2,16 @@
 # Clave = nombre exacto de data/brands.csv.
 
 ["Decathlon"]
-note = "Bloqueada: decathlon.es responde 403 a httpx y en Chrome pide verificación humana; quedó sin resolver en 2 intentos de 15 min. Reintentar con el usuario delante: python -m extractor run decathlon (falta la configuración de listados, que requiere ver la web)."
+note = "Pendiente de fichas guardadas a mano: decathlon.es rechaza la verificación humana en el Chrome automatizado (en el Chrome normal del usuario sí funciona). Guardar las fichas en data/manual/decathlon/ y ejecutar python -m extractor run decathlon."
 
 ["Ridley"]
 note = "Bloqueada: la tabla de geometría solo tiene filas con letras (A…J, S, R) y la web no publica la leyenda; S/R parecen stack/reach pero no está confirmado por la marca."
 
 ["Santa Cruz"]
-note = "Sin altura: la guía de tallas usa nombres (X-Small, Small…) y la geometría XS/SM/MD…; la marca no publica la equivalencia. V10 publica 3 posiciones de reach y se rechaza."
+note = "Altura de la guía de tallas (X-Small, Small…) con la equivalencia XS/SM/MD/LG aprobada por el usuario. V10 publica 3 posiciones de reach y se rechaza."
 
 ["Megamo"]
-note = "Sin altura: la FIT GUIDE usa X-SMALL/SMALL… y la geometría XS/S…; sin equivalencia publicada. Reason/Ryal (MY27) solo publican el dibujo SVG sin valores."
+note = "Altura de la FIT GUIDE (X-SMALL…X-LARGE) con equivalencia aprobada por el usuario. Reason/Ryal (MY27) solo publican el dibujo SVG sin valores."
 
 ["Lapierre"]
 note = "Rechazos por stack/reach no crecientes publicados así en la web (p. ej. Sensium: S 542 > M 530)."
@@ -20,7 +20,7 @@ note = "Rechazos por stack/reach no crecientes publicados así en la web (p. ej.
 note = "Sin precio en la web. Dogma F rechazada: reach publicado no creciente (540: 396,7 > 560: 393,4)."
 
 ["Bianchi"]
-note = "Stack/Reach leídos de las filas Y/X de la tabla según el dibujo oficial de cotas (revisar). Tienda italiana en EUR; sin año de modelo."
+note = "Stack/Reach leídos de las filas Y/X de la tabla según el dibujo oficial de cotas (aprobado por el usuario). Tienda italiana en EUR; sin año de modelo."
 
 ["Trek"]
 note = "Stack/Reach = 'Altura del cuadro'/'Alcance del cuadro' (geometryFrameStack/Reach de la API de Trek), publicados en cm."
@@ -39,3 +39,9 @@ note = "Geometría por visión (data/vision/massi/). Sin precio en la web."
 
 ["Cannondale"]
 note = "Geometría por visión (28 tablas en data/vision/cannondale/), publicada en cm."
+
+["Specialized"]
+note = "Altura de la guía oficial /es/es/size-guide (pestaña Bikes) por familia; sin altura si la guía no cubre todas las tallas de la geometría. Rechazos: stack/reach publicados no crecientes (Chisel, Epic). El botón 'Guía de tallas' de la ficha es una calculadora (no se usa)."
+
+["Cube"]
+note = "Sin altura: la talla solo se ofrece con un calculador (no se usa). Rechazos: reach publicado no creciente (Nuroad, Attain), por eso no queda gravel."

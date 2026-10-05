@@ -28,3 +28,5 @@ categories = [
   ['bicicletas-de-ruta', 'carretera'],
 ]
 exclude_name = '\bcuadro\b|frameset|\bkit\b'
+# Guía oficial de alturas por familia: /es/es/size-guide, pestaña "Bikes" (tablas "Height (Cm) | Size").
+height_guide = { url = "https://www.specialized.com/es/es/size-guide", click_text = "Bikes" }

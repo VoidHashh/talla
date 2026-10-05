@@ -353,3 +353,18 @@ def span_tables(html: str, header: str, label: str, value: str, start: str = "",
     if not sizes or not rows:
         return []
     return [[[""] + sizes] + [r for r in rows if len(r) > 1]]
+
+
+def titled_tables(html: str) -> list[tuple[str, Matrix]]:
+    """Cada <table> con el último encabezado o texto destacado que la precede (nombre de familia en guías)."""
+    out = []
+    pos = 0
+    for m in re.finditer(r"<table\b.*?</table>", html, re.S | re.I):
+        before = html[pos:m.start()]
+        heads = re.findall(r"<(h[1-6]|strong|b|p|span|div)[^>]*>([^<]{2,60})</\1>", before[-4000:], re.I)
+        title = htmllib.unescape(heads[-1][1]).strip() if heads else ""
+        tables = html_tables(m.group(0))
+        if tables:
+            out.append((title, tables[0]))
+        pos = m.end()
+    return out

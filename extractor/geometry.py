@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+from html import unescape as htmlunescape
 from dataclasses import dataclass, field
 
 STACK_RE = re.compile(r"\bstacks?\b|^pila$", re.I)
@@ -262,15 +263,17 @@ def size_parts(label: str) -> tuple[str | None, float | None]:
     return letter, num
 
 
-def heights_from_text(html: str, sizes: list[str]) -> list[Height | None] | None:
+def heights_from_text(html: str, sizes: list[str], require_cm: bool = True) -> list[Height | None] | None:
     """Guía de tallas maquetada sin <table>: cada talla seguida de su rango en cm, en orden.
 
     Solo se acepta si aparecen TODAS las tallas de la geometría, en orden y con rangos crecientes.
     """
     text = re.sub(r"<script.*?</script>|<style.*?</style>", " ", html, flags=re.S | re.I)
-    text = re.sub(r"<[^>]+>", " | ", text)
-    text = re.sub(r"(\s*\|\s*)+", " | ", re.sub(r"&#39;|&apos;", "'", text))
+    text = htmlunescape(re.sub(r"<[^>]+>", " | ", text)).replace("\xa0", " ")
+    text = re.sub(r"(\s*\|\s*)+", " | ", text)
     rng = r"((?:[<>≤≥]\s*)?1\d{2}\s*cm(?:\s*\|?\s*[^|]{0,12}\|?\s*)?(?:\s*[-–]\s*(?:\|\s*)*1\d{2}\s*cm)?|1\d{2}\s*[-–]\s*1\d{2}\s*cm|1\d{2}\s*cm\s*\+)"
+    if not require_cm:  # guías que publican "165 - 172", "< 165", "188 <" sin unidad (en cm)
+        rng = r"((?:[<>≤≥]\s*)?1\d{2}(?:\s*[-–]\s*1\d{2})?(?:\s*[<>+])?)"
     for start in [m.start() for m in re.finditer(rf"\|\s*{re.escape(sizes[0])}\s*\|", text)]:
         pos, out = start, []
         for size in sizes:
@@ -282,8 +285,9 @@ def heights_from_text(html: str, sizes: list[str]) -> list[Height | None] | None
             out.append(parse_height(raw))
             pos = m.end()
         if len(out) == len(sizes) and all(out):
+            # Rangos no decrecientes ("< 165" seguido de "165 - 172" es válido) y no todos iguales.
             mins = [h.min or h.max for h in out]
-            if all(a < b for a, b in zip(mins, mins[1:])):
+            if all(a <= b for a, b in zip(mins, mins[1:])) and len(set(mins)) > 1:
                 return out
     return None
 

@@ -13,9 +13,9 @@
   "warnings": [],
   "blocked_reason": null,
   "fetch": {
-    "httpx": 1,
+    "httpx": 0,
     "browser": 0,
-    "cache": 99,
+    "cache": 100,
     "challenges": 0
   },
   "methods": [
@@ -23,5 +23,5 @@
   ],
   "with_height": 556,
   "with_price": 96,
-  "generated_at": "2026-10-05T16:19:15"
+  "generated_at": "2026-10-05T18:30:57"
 }

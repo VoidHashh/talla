@@ -197,18 +197,58 @@
       "reason": "sin tabla de geometría en la página"
     }
   ],
-  "warnings": [],
+  "warnings": [
+    "Allez Comp: guía de tallas 'Allez' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura",
+    "Allez Sport - Shimano Tiagra: guía de tallas 'Allez' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura",
+    "Allez: guía de tallas 'Allez' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura",
+    "Roubaix SL8 Expert - Shimano Ultegra Di2: guía de tallas 'Roubaix' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61', '64']: sin altura",
+    "Roubaix SL8 Comp: guía de tallas 'Roubaix' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61', '64']: sin altura",
+    "S-Works Diverge 4: SRAM RED XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Pro LTD - Shimano XTR/GRX Di2: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Pro: SRAM Force XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Pro - SRAM Force XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Expert - Shimano GRX Di2: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Expert: SRAM Rival XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Expert - SRAM Rival XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Comp Carbon - SRAM Apex AXS/S1000: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Sport Carbon - Shimano GRX 600: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Comp Alloy - SRAM Apex: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge 4 Sport Alloy - Shimano CUES: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
+    "Diverge E5: guía de tallas 'Diverge' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura",
+    "S-Works Epic 9 LTD: Built for Legends: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "S-Works Epic 9: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "S-Works Epic 9 Ultralight LTD: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "Epic 9 Pro: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "Epic 9 Expert: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "Epic 9 Comp: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "Epic 9 Sport: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "S-Works Epic 8: guía de tallas 'Epic' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "Epic 8 Pro: guía de tallas 'Epic' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
+    "Epic 8 Expert Di2: guía de tallas 'Epic' no cubre todas las tallas ['XS', 'S', 'M', 'L', 'XL']: sin altura",
+    "Epic 8 Expert: guía de tallas 'Epic' no cubre todas las tallas ['XS', 'S', 'M', 'L', 'XL']: sin altura",
+    "Rockhopper Expert: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura",
+    "Rockhopper Comp: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura",
+    "Rockhopper Sport: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XXL - 29', 'XL - 29']: sin altura",
+    "Rockhopper: guía de tallas 'Rockhopper' no cubre todas las tallas ['XXS - 26', 'XS - 27.5', 'S - 27.5', 'S - 29', 'M - 27.5', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura",
+    "Status 170 2: guía de tallas 'Status' no cubre todas las tallas ['S1', 'S2', 'S3', 'S4', 'S5']: sin altura",
+    "S-Works Turbo Levo R Ultra Light: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29']: sin altura",
+    "S-Works Turbo Levo R: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura",
+    "Turbo Levo R Pro: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura",
+    "Turbo Levo R Expert: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S1 - 27.5', 'S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura",
+    "Turbo Levo R Comp: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S1 - 27.5', 'S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura",
+    "Turbo Levo R Comp Alloy: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S1 - 27.5', 'S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura"
+  ],
   "blocked_reason": null,
   "fetch": {
     "httpx": 0,
     "browser": 0,
-    "cache": 158,
+    "cache": 159,
     "challenges": 0
   },
   "methods": [
     "html"
   ],
-  "with_height": 0,
+  "with_height": 328,
   "with_price": 96,
-  "generated_at": "2026-10-05T16:20:17"
+  "generated_at": "2026-10-05T18:31:31"
 }

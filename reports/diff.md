@@ -1,13 +1,13 @@
 # Informe de carga — staging vs data/bikes.csv
 
-Generado: 2026-10-05 16:28. `data/bikes.csv` no se ha modificado.
+Generado: 2026-10-05 18:32. `data/bikes.csv` no se ha modificado.
 
 | Marca | Estado | Modelos | Tallas | Familias | Con altura | Con precio € | Motivo / avisos |
 |---|---|---:|---:|---:|---:|---:|---|
 | Giant | con avisos | 38 | 212 | 11 | 176 | 37 | 3 productos sin datos |
 | Merida | con avisos | 65 | 285 | 36 | 0 | 0 | 10 avisos |
-| Trek | con avisos | 148 | 643 | 61 | 552 | 148 | 5 productos sin datos; 330 avisos |
-| Specialized | con avisos | 96 | 556 | 34 | 0 | 96 | 5 productos sin datos; 33 tallas rechazadas |
+| Trek | con avisos | 148 | 643 | 61 | 549 | 148 | 5 productos sin datos; 330 avisos |
+| Specialized | con avisos | 96 | 556 | 34 | 328 | 96 | 5 productos sin datos; 33 tallas rechazadas; 39 avisos |
 | Scott | con avisos | 77 | 389 | 26 | 0 | 54 | 9 productos sin datos; 9 tallas rechazadas; 2 avisos |
 | Canyon | OK | 96 | 556 | 40 | 556 | 96 |  |
 | Cube | con avisos | 78 | 376 | 22 | 0 | 78 | 139 tallas rechazadas; 50 avisos |
@@ -15,7 +15,7 @@ Generado: 2026-10-05 16:28. `data/bikes.csv` no se ha modificado.
 | Cannondale | con avisos | 80 | 433 | 27 | 0 | 80 | 19 productos sin datos; 150 avisos |
 | Cervélo | OK | 7 | 42 | 7 | 0 | 0 |  |
 | Focus | OK | 30 | 147 | 11 | 0 | 30 |  |
-| Santa Cruz | con avisos | 82 | 411 | 16 | 0 | 82 | 8 tallas rechazadas; 110 avisos |
+| Santa Cruz | con avisos | 82 | 411 | 16 | 90 | 82 | 8 tallas rechazadas; 110 avisos |
 | Lapierre | con avisos | 57 | 270 | 21 | 0 | 57 | 2 productos sin datos; 38 tallas rechazadas |
 | Ghost | con avisos | 39 | 157 | 17 | 0 | 39 | 1 avisos |
 | Haibike | con avisos | 29 | 112 | 14 | 0 | 29 | 1 productos sin datos; 13 tallas rechazadas; 1 avisos |
@@ -23,12 +23,12 @@ Generado: 2026-10-05 16:28. `data/bikes.csv` no se ha modificado.
 | BH | con avisos | 84 | 355 | 30 | 0 | 65 | 2 productos sin datos |
 | Mondraker | con avisos | 46 | 210 | 18 | 0 | 46 | 14 tallas rechazadas; 8 avisos |
 | MMR | OK | 58 | 236 | 19 | 236 | 58 |  |
-| Megamo | con avisos | 87 | 373 | 19 | 0 | 87 | 22 productos sin datos |
+| Megamo | con avisos | 87 | 373 | 19 | 179 | 87 | 22 productos sin datos |
 | Berria | con avisos | 34 | 156 | 10 | 156 | 34 | 1 productos sin datos; 2 tallas rechazadas |
 | Massi | con avisos | 68 | 296 | 12 | 0 | 0 | 84 tallas rechazadas |
 | Conor | con avisos | 30 | 115 | 11 | 0 | 30 | 1 productos sin datos; 3 tallas rechazadas |
 | Coluer | con avisos | 29 | 97 | 14 | 0 | 29 | 6 productos sin datos |
-| Decathlon | bloqueada | 0 | 0 | 0 | 0 | 0 | Bloqueada: decathlon.es responde 403 a httpx y en Chrome pide verificación humana; quedó sin resolver en 2 intentos de 15 min. Reintentar con el usuario delante: python -m extractor run decathlon (falta la configuración de listados, que requiere ver la web). |
+| Decathlon | bloqueada | 0 | 0 | 0 | 0 | 0 | no se encontraron productos (sitemap/listado/JSON) |
 | KTM | con avisos | 108 | 477 | 32 | 0 | 108 | 4 productos sin datos |
 | Pinarello | con avisos | 28 | 212 | 9 | 0 | 0 | 55 tallas rechazadas |
 | Colnago | con avisos | 13 | 82 | 8 | 0 | 5 | 3 productos sin datos |
@@ -163,7 +163,7 @@ Diff con bikes.csv: **+643** tallas nuevas, **−0** que desaparecen, **~0** con
 | Fuel EX 9.9 X0 AXS T-Type Gen 6 [d9507e43] | mtb | S | 572 | 433 | — | Fuel EX 9.9 X0 AXS T-Type Gen 6 (9499) |
 | Fuel EX [db85755a] | mtb | S · M · L · XL | 610 · 624 · 638 · 651 | 431 · 460 · 485 · 510 | 155–165 · 165–178 · 178–188 · 188–196 | Fuel EX 5 Gen 7 (2499); Fuel EX 8 Gen 7 (3499); Fuel EX 9 Eagle 90 Gen 7 (5499); Fuel EX 9 X0 AXS Gen 7 (6499); Fuel EX 9 XT Di2 Gen 7 (5999); Fuel EX 9 XT Gen 7 (5499) |
 | Fuel EX [f9fd2baa] | mtb | S · M · L · XL · XXL | 610 · 624 · 638 · 651 · 665 | 431 · 460 · 485 · 510 · 530 | 155–165 · 165–178 · 178–188 · 188–196 · 196–203 | Fuel EX 9.8 Eagle 90 Gen 7 (6499); Fuel EX 9.8 XT Di2 Gen 7 (6999); Fuel EX 9.8 XT Gen 7 (6499); Fuel EX 9.9 X0 AXS Gen 7 (8499) |
-| Fuel EXe 9.7 [93f2f079] | emtb | M | 625 | 459 | 165–177 | Fuel EXe 9.7 (5499) |
+| Fuel EXe 9.7 [93f2f079] | emtb | M | 625 | 459 | — | Fuel EXe 9.7 (5499) |
 | Fuel LX 9 [1718a93c] | mtb | S · M · L · XL | 619 · 633 · 647 · 661 | 418 · 448 · 473 · 498 | 155–165 · 165–178 · 178–188 · 188–196 | Fuel LX 9 Eagle 90 Gen 7 (5699); Fuel LX 9 X0 AXS Gen 7 (6699); Fuel LX 9 XT Di2 Gen 7 (6199); Fuel LX 9 XT Gen 7 (5699) |
 | Fuel LX [db86e5ff] | mtb | S · M · L · XL · XXL | 619 · 633 · 647 · 661 · 674 | 418 · 448 · 473 · 498 · 518 | 155–165 · 165–178 · 178–188 · 188–196 · 196–203 | Fuel LX 9.8 Eagle 90 Gen 7 (6699); Fuel LX 9.8 XT Di2 Gen 7 (7199); Fuel LX 9.8 XT Gen 7 (6699); Fuel LX 9.9 X0 AXS Gen 7 (8699) |
 | Fuel MX 9 [e9eb5bc8] | mtb | S · M · L · XL | 613 · 627 · 641 · 654 | 426 · 456 · 482 · 507 | 155–165 · 165–178 · 178–188 · 188–196 | Fuel MX 9 Eagle 90 Gen 7 (5499); Fuel MX 9 X0 AXS Gen 7 (6499); Fuel MX 9 XT Di2 Gen 7 (5999); Fuel MX 9 XT Gen 7 (5499) |
@@ -200,7 +200,7 @@ Diff con bikes.csv: **+643** tallas nuevas, **−0** que desaparecen, **~0** con
 | Top Fuel 7 SX Gen 2 [316a8ccf] | mtb | M · ML · L | 590 · 590 · 599 | 445 · 461 · 475 | — · — · — | Top Fuel 7 SX Gen 2 (2699) |
 | Top Fuel 8 Gen 4 [66384e13] | mtb | S · M · ML · L · XL | 570 · 603 · 607 · 612 · 630 | 417 · 447 · 462 · 477 · 507 | 155–165 · 165–178 · 173–180 · 178–188 · 188–196 | Top Fuel 8 Gen 4 (3599) |
 | Top Fuel 9.8 XT Di2 Gen 4 [8c23c918] | mtb | S · M · ML · L · XL | 566 · 599 · 604 · 608 · 626 | 422 · 452 · 467 · 482 · 512 | 155–165 · 165–178 · 173–180 · 178–188 · 188–196 | Top Fuel 9.8 XT Di2 Gen 4 (6999) |
-| Top Fuel 9.9 [6fe35e34] | mtb | S | 566 | 422 | 155–165 | Top Fuel 9.9 XTR Di2 Gen 4 (8499); Top Fuel 9.9 XX AXS Gen 4 (11499) |
+| Top Fuel 9.9 [6fe35e34] | mtb | S | 566 | 422 | — | Top Fuel 9.9 XTR Di2 Gen 4 (8499); Top Fuel 9.9 XX AXS Gen 4 (11499) |
 | Émonda ALR 5 [176ff2dc] | carretera | 56cm · 62cm | 577 · 634 | 387 · 398 | — · — | Émonda ALR 5 (1899) |
 
 <details><summary>Productos en alcance sin datos</summary>
@@ -422,42 +422,44 @@ Descartados: fuera de alcance (URL/tipo): 39, año de modelo anterior: 28, dupli
 
 ## Specialized — con avisos
 
-Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 143. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 158, 'challenges': 0}.
+**Nota:** Altura de la guía oficial /es/es/size-guide (pestaña Bikes) por familia; sin altura si la guía no cubre todas las tallas de la geometría. Rechazos: stack/reach publicados no crecientes (Chisel, Epic). El botón 'Guía de tallas' de la ficha es una calculadora (no se usa).
+
+Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 143. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 159, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
-| Aethos 2 Pro - SRAM Force AXS [b910e174] | carretera | 49 · 52 · 54 · 56 · 58 · 61 | 522 · 538 · 559 · 580 · 606 · 627 | 373 · 377 · 384 · 391 · 398 · 404 | — · — · — · — · — · — | Aethos 2 Expert - Shimano Ultegra Di2 (6299); Aethos 2 Expert: SRAM Force AXS (6299); Aethos 2 Pro - SRAM Force AXS (8699); Aethos 2 Pro - Shimano Ultegra Di2 (8499); S-Works Aethos 2 - SRAM RED AXS (13999); S-Works Aethos 2 - Shimano Dura-Ace Di2 (13499) |
+| Aethos 2 Pro - SRAM Force AXS [b910e174] | carretera | 49 · 52 · 54 · 56 · 58 · 61 | 522 · 538 · 559 · 580 · 606 · 627 | 373 · 377 · 384 · 391 · 398 · 404 | 155–163 · 163–170 · 170–175 · 175–180 · 180–188 · 188–196 | Aethos 2 Expert - Shimano Ultegra Di2 (6299); Aethos 2 Expert: SRAM Force AXS (6299); Aethos 2 Pro - SRAM Force AXS (8699); Aethos 2 Pro - Shimano Ultegra Di2 (8499); S-Works Aethos 2 - SRAM RED AXS (13999); S-Works Aethos 2 - Shimano Dura-Ace Di2 (13499) |
 | Allez Sport - Shimano Tiagra [32b0aeab] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 519 · 536 · 552 · 569 · 590 · 610 · 643 | 356 · 359 · 364 · 370 · 378 · 386 · 392 | — · — · — · — · — · — · — | Allez Sport - Shimano Tiagra (1749) |
-| Allez Sprint Comp [fe468fa9] | carretera | 49 · 52 · 54 · 56 · 58 · 61 | 508 · 520 · 537 · 558 · 584 · 605 | 378 · 383 · 387 · 398 · 405 · 411 | — · — · — · — · — · — | Allez Sprint Comp (2499) |
+| Allez Sprint Comp [fe468fa9] | carretera | 49 · 52 · 54 · 56 · 58 · 61 | 508 · 520 · 537 · 558 · 584 · 605 | 378 · 383 · 387 · 398 · 405 · 411 | 155–163 · 163–170 · 170–175 · 175–183 · 180–188 · 188–196 | Allez Sprint Comp (2499) |
 | Allez [8c126cca] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 519 · 536 · 552 · 569 · 590 · 610 · 643 | 356 · 359 · 364 · 370 · 378 · 386 · 392 | — · — · — · — · — · — · — | Allez (1499); Allez Comp (1999) |
-| Chisel Hardtail [671a11a9] | mtb | XS · S · M · L · XL | 591 · 605 · 605 · 619 · 633 | 385 · 405 · 430 · 455 · 480 | — · — · — · — · — | Chisel Hardtail (1349+); Chisel Hardtail Comp (1699) |
-| Crux 5 Comp: SRAM Rival XPLR [c9b32aea] | gravel | 49 · 52 · 54 · 56 · 58 · 61 | 530 · 547 · 560 · 578 · 598 · 621 | 375 · 382 · 388 · 400 · 412 · 425 | — · — · — · — · — · — | Crux 5 Comp: SRAM Rival XPLR (4499); Crux 5 Expert: SRAM Force XPLR (6999); Crux 5 S-Level: SRAM RED XPLR (10499); Crux 5 Sport: Shimano GRX 800 (3999); S-Works Crux 5 LTD: Built for Legends (14999); S-Works Crux 5: SRAM RED XPLR (13999) |
-| Crux DSW [ad25210a] | gravel | 49 · 52 · 54 · 56 · 58 · 61 | 530 · 547 · 560 · 578 · 598 · 621 | 375 · 382 · 388 · 397 · 405 · 415 | — · — · — · — · — · — | Crux Comp (3999); Crux DSW (2699); Crux Expert - SRAM Rival XPLR AXS (5999); S-Works Crux (12999) |
+| Chisel Hardtail [671a11a9] | mtb | XS · S · M · L · XL | 591 · 605 · 605 · 619 · 633 | 385 · 405 · 430 · 455 · 480 | 148–155 · 158–165 · 165–178 · 178–185 · 185–193 | Chisel Hardtail (1349+); Chisel Hardtail Comp (1699) |
+| Crux 5 Comp: SRAM Rival XPLR [c9b32aea] | gravel | 49 · 52 · 54 · 56 · 58 · 61 | 530 · 547 · 560 · 578 · 598 · 621 | 375 · 382 · 388 · 400 · 412 · 425 | 155–158 · 163–168 · 168–175 · 175–183 · 183–191 · 191–198 | Crux 5 Comp: SRAM Rival XPLR (4499); Crux 5 Expert: SRAM Force XPLR (6999); Crux 5 S-Level: SRAM RED XPLR (10499); Crux 5 Sport: Shimano GRX 800 (3999); S-Works Crux 5 LTD: Built for Legends (14999); S-Works Crux 5: SRAM RED XPLR (13999) |
+| Crux DSW [ad25210a] | gravel | 49 · 52 · 54 · 56 · 58 · 61 | 530 · 547 · 560 · 578 · 598 · 621 | 375 · 382 · 388 · 397 · 405 · 415 | 155–158 · 163–168 · 168–175 · 175–183 · 183–191 · 191–198 | Crux Comp (3999); Crux DSW (2699); Crux Expert - SRAM Rival XPLR AXS (5999); S-Works Crux (12999) |
 | Diverge 4 Pro: SRAM Force XPLR [87a84ecd] | gravel | 49 · 52 · 54 · 56 · 58 · 61 | 563 · 578 · 592 · 610 · 634 · 659 | 365 · 374 · 387 · 400 · 412 · 425 | — · — · — · — · — · — | Diverge 4 Comp Alloy - SRAM Apex (2799); Diverge 4 Comp Carbon - SRAM Apex AXS/S1000 (4499); Diverge 4 Expert - SRAM Rival XPLR (6299); Diverge 4 Expert - Shimano GRX Di2 (6499); Diverge 4 Expert: SRAM Rival XPLR (6299); Diverge 4 Pro - SRAM Force XPLR (7999); Diverge 4 Pro LTD - Shimano XTR/GRX Di2 (9999); Diverge 4 Pro: SRAM Force XPLR (7999); Diverge 4 Sport Alloy - Shimano CUES (2299); Diverge 4 Sport Carbon - Shimano GRX 600 (3499); S-Works Diverge 4: SRAM RED XPLR (13999) |
 | Diverge E5 [baabaceb] | gravel | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 529 · 545 · 561 · 578 · 599 · 618 · 635 | 357 · 365 · 374 · 383 · 392 · 401 · 410 | — · — · — · — · — · — · — | Diverge E5 (1549) |
-| Enduro Pro [54649f30] | mtb | S2 · S3 · S4 · S5 | 616 · 620 · 629 · 638 | 437 · 464 · 487 · 511 | — · — · — · — | Enduro Pro (6699) |
+| Enduro Pro [54649f30] | mtb | S2 · S3 · S4 · S5 | 616 · 620 · 629 · 638 | 437 · 464 · 487 · 511 | 158–173 · 165–180 · 173–188 · 178–193 | Enduro Pro (6699) |
 | Epic 8 Pro [67b9f449] | mtb | S · M · L · XL | 597 · 598 · 610 · 628 | 420 · 450 · 475 · 500 | — · — · — · — | Epic 8 Pro (7599) |
 | Epic 9 Pro [5bd7416c] | mtb | S · M · L · XL | 594 · 604 · 618 · 645 | 420 · 450 · 480 · 505 | — · — · — · — | Epic 9 Comp (4999); Epic 9 Expert (6999); Epic 9 Pro (9499); Epic 9 Sport (4199); S-Works Epic 9 (14499); S-Works Epic 9 LTD: Built for Legends (15499) |
 | Levo 4 EVO [4a9881ab] | emtb | S2 · S3 · S4 · S5 · S6 | 625 · 633 · 646 · 659 · 675 | 425 · 445 · 470 · 495 · 525 | — · — · — · — · — | Levo 4 EVO Comp (7499); Levo 4 EVO Comp Alloy (6499); Levo 4 EVO Pro (10999) |
 | Rockhopper [8938a1a8] | mtb | XS - 27.5 · S - 27.5 · M - 27.5 · S - 29 · M - 29 · L - 29 · XL - 29 · XXL - 29 | 559 · 573 · 589 · 607 · 616 · 626 · 640 · 654 | 375 · 395 · 415 · 405 · 425 · 445 · 465 · 485 | — · — · — · — · — · — · — · — | Rockhopper Comp (949); Rockhopper Expert (1299) |
 | Rockhopper [99b6e2c4] | mtb | XXS - 26 · XS - 27.5 · S - 27.5 · S - 29 · M - 27.5 · M - 29 · L - 29 · XL - 29 · XXL - 29 | 543 · 559 · 573 · 589 · 607 · 616 · 626 · 640 · 654 | 355 · 375 · 395 · 415 · 405 · 425 · 445 · 465 · 485 | — · — · — · — · — · — · — · — · — | Rockhopper (649) |
-| Roubaix SL8 Sport 105 [a2eae2d5] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 543 · 549 · 566 · 585 · 605 · 630 · 665 | 353 · 363 · 370 · 381 · 389 · 397 · 403 | — · — · — · — · — · — · — | Roubaix SL8 Pro - SRAM Force AXS (7999); Roubaix SL8 Sport 105 (3299); Roubaix SL8: Shimano Tiagra (2499); S-Works Roubaix SL8 - Shimano Dura-Ace Di2 (10499); S-Works Roubaix SL8 – SRAM RED AXS (10499+) |
-| Roubaix SL8 [c3df5ec3] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 543 · 549 · 566 · 585 · 605 · 630 · 665 | 353 · 363 · 370 · 381 · 389 · 397 · 403 | — · — · — · — · — · — · — | Roubaix SL8 (2499) |
+| Roubaix SL8 Sport 105 [a2eae2d5] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 543 · 549 · 566 · 585 · 605 · 630 · 665 | 353 · 363 · 370 · 381 · 389 · 397 · 403 | 142–155 · 155–163 · 163–170 · 170–175 · 175–180 · 180–188 · 188–196 | Roubaix SL8 Pro - SRAM Force AXS (7999); Roubaix SL8 Sport 105 (3299); Roubaix SL8: Shimano Tiagra (2499); S-Works Roubaix SL8 - Shimano Dura-Ace Di2 (10499); S-Works Roubaix SL8 – SRAM RED AXS (10499+) |
+| Roubaix SL8 [c3df5ec3] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 543 · 549 · 566 · 585 · 605 · 630 · 665 | 353 · 363 · 370 · 381 · 389 · 397 · 403 | 142–155 · 155–163 · 163–170 · 170–175 · 175–180 · 180–188 · 188–196 | Roubaix SL8 (2499) |
 | Roubaix SL8 [f1f17ed5] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 · 64 | 543 · 549 · 566 · 585 · 605 · 630 · 665 · 685 | 353 · 363 · 370 · 381 · 389 · 397 · 403 · 409 | — · — · — · — · — · — · — · — | Roubaix SL8 Comp (4299); Roubaix SL8 Expert - Shimano Ultegra Di2 (5999) |
-| S-Works Aethos – Campagnolo LTD [7da9c890] | carretera | 49 · 52 · 54 · 56 · 58 · 61 | 514 · 527 · 544 · 565 · 591 · 612 | 375 · 380 · 384 · 395 · 402 · 408 | — · — · — · — · — · — | S-Works Aethos – Campagnolo LTD (10499) |
-| S-Works Demo 11 [d104b5e8] | mtb | S3 · S4 · S5 | 640 · 640 · 640 | 445 · 475 · 500 | — · — · — | S-Works Demo 11 (12499); S-Works Demo 11 LTD: Built for Legends (13499) |
+| S-Works Aethos – Campagnolo LTD [7da9c890] | carretera | 49 · 52 · 54 · 56 · 58 · 61 | 514 · 527 · 544 · 565 · 591 · 612 | 375 · 380 · 384 · 395 · 402 · 408 | 155–163 · 163–170 · 170–175 · 175–180 · 180–188 · 188–196 | S-Works Aethos – Campagnolo LTD (10499) |
+| S-Works Demo 11 [d104b5e8] | mtb | S3 · S4 · S5 | 640 · 640 · 640 | 445 · 475 · 500 | 168–180 · 175–188 · 185–206 | S-Works Demo 11 (12499); S-Works Demo 11 LTD: Built for Legends (13499) |
 | S-Works Epic 8 [7135f585] | mtb | S · M · L · XL | 597 · 598 · 610 · 628 | 420 · 450 · 475 · 500 | — · — · — · — | S-Works Epic 8 (11599) |
 | S-Works Epic 9 Ultralight LTD [43cf73de] | mtb | S · M · L · XL | 589 · 599 · 612 · 639 | 427 · 457 · 487 · 512 | — · — · — · — | S-Works Epic 9 Ultralight LTD (13999) |
-| S-Works Levo 4 X [988a0a6a] | emtb | S2 · S3 · S4 · S5 · S6 | 618 · 626 · 638 · 652 · 667 | 435 · 455 · 480 · 505 · 535 | — · — · — · — · — | S-Works Levo 4 X (14499); S-Works Turbo Levo 4 (13999); Turbo Levo 4 Expert (9999); Turbo Levo 4 Pro (11999) |
-| S-Works Stumpjumper 15 LTD [76f833c8] | mtb | S2 · S3 · S4 · S5 · S6 | 618 · 627 · 640 · 654 · 667 | 425 · 450 · 475 · 500 · 530 | — · — · — · — · — | S-Works Stumpjumper 15 LTD (14499) |
+| S-Works Levo 4 X [988a0a6a] | emtb | S2 · S3 · S4 · S5 · S6 | 618 · 626 · 638 · 652 · 667 | 435 · 455 · 480 · 505 · 535 | 157–173 · 165–180 · 173–188 · 178–193 · 188–203 | S-Works Levo 4 X (14499); S-Works Turbo Levo 4 (13999); Turbo Levo 4 Expert (9999); Turbo Levo 4 Pro (11999) |
+| S-Works Stumpjumper 15 LTD [76f833c8] | mtb | S2 · S3 · S4 · S5 · S6 | 618 · 627 · 640 · 654 · 667 | 425 · 450 · 475 · 500 · 530 | 157–173 · 165–180 · 173–188 · 178–193 · 188–203 | S-Works Stumpjumper 15 LTD (14499) |
 | S-Works Turbo Levo R Ultra Light [b86c61df] | emtb | S2 - 29 · S3 - 29 · S4 - 29 · S5 - 29 | 607 · 616 · 630 · 644 | 420 · 450 · 475 · 500 | — · — · — · — | S-Works Turbo Levo R Ultra Light (13999) |
-| STATUS 2 170 ZERO [db93eb30] | mtb | S0 | 597 | 390 | — | STATUS 2 170 ZERO (3149) |
+| STATUS 2 170 ZERO [db93eb30] | mtb | S0 | 597 | 390 | 144–157 | STATUS 2 170 ZERO (3149) |
 | Status 170 2 [3504ef13] | mtb | S1 · S2 · S3 · S4 · S5 | 620 · 625 · 634 · 643 · 652 | 420 · 445 · 470 · 495 · 520 | — · — · — · — · — | Status 170 2 (3149) |
-| Stumpjumper 15 EVO Pro [f167adef] | mtb | S1 · S2 · S3 · S4 · S5 · S6 | 611 · 621 · 630 · 644 · 658 · 671 | 400 · 420 · 445 · 470 · 495 · 525 | — · — · — · — · — · — | S-Works Stumpjumper 15 EVO - Shimano XTR Di2, FOX Factory (12499); Stumpjumper 15 EVO Comp (6499); Stumpjumper 15 EVO Comp Alloy (4499); Stumpjumper 15 EVO Expert (6999); Stumpjumper 15 EVO Expert - FACT 11m carbon, FOX Performance Elite w/ GENIE, XT Di2 (6999); Stumpjumper 15 EVO Pro (8999) |
-| Tarmac SL7 Sport - Shimano 105 [39f69c0b] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 501 · 514 · 527 · 544 · 565 · 591 · 612 | 366 · 375 · 380 · 384 · 395 · 402 · 408 | — · — · — · — · — · — · — | Tarmac SL7 Sport - Shimano 105 (3299) |
-| Tarmac SL9 Comp: SRAM Rival AXS [8eb292f2] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 501 · 514 · 527 · 544 · 565 · 591 · 612 | 366 · 375 · 380 · 384 · 395 · 402 · 408 | — · — · — · — · — · — · — | S-Works Tarmac SL9 LTD: Built for Legends (14999); S-Works Tarmac SL9 LTD: Remco Evenepoel (14999); S-Works Tarmac SL9: SRAM RED AXS (13999); S-Works Tarmac SL9: Shimano Dura-Ace Di2 (13999); Tarmac SL9 Comp: SRAM Rival AXS (4499); Tarmac SL9 Comp: Shimano 105 Di2 (4499); Tarmac SL9 Expert: SRAM Force AXS (6999); Tarmac SL9 Expert: Shimano Ultegra Di2 (6999); Tarmac SL9 S-Level: SRAM RED AXS (10499); Tarmac SL9 S-Level: Shimano Dura-Ace Di2 (10499) |
-| Turbo Kenevo SL 2 [335601a2] | emtb | S2 · S3 · S4 · S5 | 618 · 626 · 635 · 644 | 435 · 460 · 485 · 510 | — · — · — · — | Turbo Kenevo SL 2 Comp (5199); Turbo Kenevo SL 2 Expert (5999); Turbo Kenevo SL 2 Ohlins Coil (7799) |
-| Turbo Levo 4 [a58a9052] | emtb | S1 · S2 · S3 · S4 · S5 · S6 | 609 · 618 · 626 · 638 · 652 · 667 | 407 · 435 · 455 · 480 · 505 · 535 | — · — · — · — · — · — | Turbo Levo 4 Alloy (5499); Turbo Levo 4 Comp Alloy (6499) |
+| Stumpjumper 15 EVO Pro [f167adef] | mtb | S1 · S2 · S3 · S4 · S5 · S6 | 611 · 621 · 630 · 644 · 658 · 671 | 400 · 420 · 445 · 470 · 495 · 525 | 150–160 · 157–173 · 165–180 · 173–188 · 178–193 · 188–203 | S-Works Stumpjumper 15 EVO - Shimano XTR Di2, FOX Factory (12499); Stumpjumper 15 EVO Comp (6499); Stumpjumper 15 EVO Comp Alloy (4499); Stumpjumper 15 EVO Expert (6999); Stumpjumper 15 EVO Expert - FACT 11m carbon, FOX Performance Elite w/ GENIE, XT Di2 (6999); Stumpjumper 15 EVO Pro (8999) |
+| Tarmac SL7 Sport - Shimano 105 [39f69c0b] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 501 · 514 · 527 · 544 · 565 · 591 · 612 | 366 · 375 · 380 · 384 · 395 · 402 · 408 | 142–155 · 155–163 · 163–170 · 170–175 · 175–180 · 180–188 · 188–196 | Tarmac SL7 Sport - Shimano 105 (3299) |
+| Tarmac SL9 Comp: SRAM Rival AXS [8eb292f2] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 501 · 514 · 527 · 544 · 565 · 591 · 612 | 366 · 375 · 380 · 384 · 395 · 402 · 408 | 142–155 · 155–163 · 163–170 · 170–175 · 175–180 · 180–188 · 188–196 | S-Works Tarmac SL9 LTD: Built for Legends (14999); S-Works Tarmac SL9 LTD: Remco Evenepoel (14999); S-Works Tarmac SL9: SRAM RED AXS (13999); S-Works Tarmac SL9: Shimano Dura-Ace Di2 (13999); Tarmac SL9 Comp: SRAM Rival AXS (4499); Tarmac SL9 Comp: Shimano 105 Di2 (4499); Tarmac SL9 Expert: SRAM Force AXS (6999); Tarmac SL9 Expert: Shimano Ultegra Di2 (6999); Tarmac SL9 S-Level: SRAM RED AXS (10499); Tarmac SL9 S-Level: Shimano Dura-Ace Di2 (10499) |
+| Turbo Kenevo SL 2 [335601a2] | emtb | S2 · S3 · S4 · S5 | 618 · 626 · 635 · 644 | 435 · 460 · 485 · 510 | 158–173 · 165–180 · 173–188 · 178–193 | Turbo Kenevo SL 2 Comp (5199); Turbo Kenevo SL 2 Expert (5999); Turbo Kenevo SL 2 Ohlins Coil (7799) |
+| Turbo Levo 4 [a58a9052] | emtb | S1 · S2 · S3 · S4 · S5 · S6 | 609 · 618 · 626 · 638 · 652 · 667 | 407 · 435 · 455 · 480 · 505 · 535 | 150–160 · 157–173 · 165–180 · 173–188 · 178–193 · 188–203 | Turbo Levo 4 Alloy (5499); Turbo Levo 4 Comp Alloy (6499) |
 | Turbo Levo R Pro [dd58c52f] | emtb | S2 - 29 · S3 - 29 · S4 - 29 · S5 - 29 · S6 - 29 | 607 · 616 · 630 · 644 · 657 | 420 · 450 · 475 · 500 · 525 | — · — · — · — · — | S-Works Turbo Levo R (13999); Turbo Levo R Pro (11999) |
 | Turbo Levo R [b2b6fdfe] | emtb | S1 - 27.5 · S2 - 29 · S3 - 29 · S4 - 29 · S5 - 29 · S6 - 29 | 602 · 607 · 616 · 630 · 644 · 657 | 400 · 420 · 450 · 475 · 500 · 525 | — · — · — · — · — · — | Turbo Levo R Comp (7999); Turbo Levo R Comp Alloy (6499); Turbo Levo R Expert (9999) |
 
@@ -506,6 +508,50 @@ Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con
 - https://www.specialized.com/es/es/rockhopper-expert/p/4279941 — sin tabla de geometría en la página
 - https://www.specialized.com/es/es/rockhopper-sport/p/4279942 — sin tabla de geometría en la página
 - https://www.specialized.com/es/es/turbo-levo-4-comp/p/4263410 — sin tabla de geometría en la página
+
+</details>
+
+<details><summary>Avisos</summary>
+
+- Allez Comp: guía de tallas 'Allez' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura
+- Allez Sport - Shimano Tiagra: guía de tallas 'Allez' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura
+- Allez: guía de tallas 'Allez' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura
+- Roubaix SL8 Expert - Shimano Ultegra Di2: guía de tallas 'Roubaix' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61', '64']: sin altura
+- Roubaix SL8 Comp: guía de tallas 'Roubaix' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61', '64']: sin altura
+- S-Works Diverge 4: SRAM RED XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Pro LTD - Shimano XTR/GRX Di2: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Pro: SRAM Force XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Pro - SRAM Force XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Expert - Shimano GRX Di2: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Expert: SRAM Rival XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Expert - SRAM Rival XPLR: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Comp Carbon - SRAM Apex AXS/S1000: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Sport Carbon - Shimano GRX 600: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Comp Alloy - SRAM Apex: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge 4 Sport Alloy - Shimano CUES: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
+- Diverge E5: guía de tallas 'Diverge' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura
+- S-Works Epic 9 LTD: Built for Legends: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- S-Works Epic 9: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- S-Works Epic 9 Ultralight LTD: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- Epic 9 Pro: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- Epic 9 Expert: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- Epic 9 Comp: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- Epic 9 Sport: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- S-Works Epic 8: guía de tallas 'Epic' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- Epic 8 Pro: guía de tallas 'Epic' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
+- Epic 8 Expert Di2: guía de tallas 'Epic' no cubre todas las tallas ['XS', 'S', 'M', 'L', 'XL']: sin altura
+- Epic 8 Expert: guía de tallas 'Epic' no cubre todas las tallas ['XS', 'S', 'M', 'L', 'XL']: sin altura
+- Rockhopper Expert: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura
+- Rockhopper Comp: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura
+- Rockhopper Sport: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XXL - 29', 'XL - 29']: sin altura
+- Rockhopper: guía de tallas 'Rockhopper' no cubre todas las tallas ['XXS - 26', 'XS - 27.5', 'S - 27.5', 'S - 29', 'M - 27.5', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura
+- Status 170 2: guía de tallas 'Status' no cubre todas las tallas ['S1', 'S2', 'S3', 'S4', 'S5']: sin altura
+- S-Works Turbo Levo R Ultra Light: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29']: sin altura
+- S-Works Turbo Levo R: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura
+- Turbo Levo R Pro: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura
+- Turbo Levo R Expert: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S1 - 27.5', 'S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura
+- Turbo Levo R Comp: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S1 - 27.5', 'S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura
+- Turbo Levo R Comp Alloy: guía de tallas 'Turbo Levo R' no cubre todas las tallas ['S1 - 27.5', 'S2 - 29', 'S3 - 29', 'S4 - 29', 'S5 - 29', 'S6 - 29']: sin altura
 
 </details>
 
@@ -583,7 +629,7 @@ Descartados: fuera de alcance (categoría): 89
 
 ## Canyon — OK
 
-Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 141. Métodos: html. Descargas: {'httpx': 1, 'browser': 0, 'cache': 99, 'challenges': 0}.
+Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 141. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 100, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -631,6 +677,8 @@ Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con
 Descartados: fuera de alcance (URL/tipo): 42, excluido por nombre (cuadro, kit, junior…): 3
 
 ## Cube — con avisos
+
+**Nota:** Sin altura: la talla solo se ofrece con un calculador (no se usa). Rechazos: reach publicado no creciente (Nuroad, Attain), por eso no queda gravel.
 
 Diff con bikes.csv: **+376** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 234. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 240, 'challenges': 0}.
 
@@ -862,7 +910,7 @@ Descartados: duplicado (mismo modelo): 132
 
 ## Bianchi — con avisos
 
-**Nota:** Stack/Reach leídos de las filas Y/X de la tabla según el dibujo oficial de cotas (revisar). Tienda italiana en EUR; sin año de modelo.
+**Nota:** Stack/Reach leídos de las filas Y/X de la tabla según el dibujo oficial de cotas (aprobado por el usuario). Tienda italiana en EUR; sin año de modelo.
 
 Diff con bikes.csv: **+179** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 81. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 82, 'challenges': 0}.
 
@@ -1182,26 +1230,26 @@ Diff con bikes.csv: **+147** tallas nuevas, **−0** que desaparecen, **~0** con
 
 ## Santa Cruz — con avisos
 
-**Nota:** Sin altura: la guía de tallas usa nombres (X-Small, Small…) y la geometría XS/SM/MD…; la marca no publica la equivalencia. V10 publica 3 posiciones de reach y se rechaza.
+**Nota:** Altura de la guía de tallas (X-Small, Small…) con la equivalencia XS/SM/MD/LG aprobada por el usuario. V10 publica 3 posiciones de reach y se rechaza.
 
 Diff con bikes.csv: **+411** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 98. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 130, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
 | 5010 [b6209291] | mtb | xs · s · m · l · xl · xxl | 599 · 608 · 622 · 631 · 649 · 662 | 410 · 434 · 459 · 479 · 499 · 524 | — · — · — · — · — · — | 5010 GX AXS (8250); 5010 R 2024 (4599); 5010 S 2024 (5399); 5010 X0 AXS (9500); 5010 X0 AXS RSV (11000) |
-| Blur [7ba70fac] | mtb | S · M · L · XL | 588 · 588 · 597 · 611 | 425 · 450 · 475 · 500 | — · — · — · — | Blur 90 (5999); Blur Deore (4999); Blur GX AXS (6999); Blur GX AXS Race RSV (7999); Blur X0 AXS RSV (9499); Blur XTR RSV (10999); Blur XX AXS Race FA RSV (12499) |
+| Blur [7ba70fac] | mtb | S · M · L · XL | 588 · 588 · 597 · 611 | 425 · 450 · 475 · 500 | 152–162 · 165–175 · 175–185 · 185–193 | Blur 90 (5999); Blur Deore (4999); Blur GX AXS (6999); Blur GX AXS Race RSV (7999); Blur X0 AXS RSV (9499); Blur XTR RSV (10999); Blur XX AXS Race FA RSV (12499) |
 | Bronson [a8729eaa] | mtb | s · m · l · xl · xxl | 623 · 632 · 641 · 659 · 668 | 435 · 460 · 480 · 500 · 525 | — · — · — · — · — | Bronson 70 (5499); Bronson 90 (6399); Bronson Deore (5499); Bronson GX AXS (7399); Bronson R (5499); Bronson S (6399); Bronson X0 AXS (8799); Bronson X0 AXS RSV (9999) |
 | Bullit [9cbdcfa4] | emtb | s · m · l · xl · xxl | 622 · 631 · 640 · 654 · 670 | 435 · 460 · 480 · 500 · 525 | — · — · — · — · — | Bullit 90 (7999); Bullit Deore (6999); Bullit GX AXS (8999); Bullit X0 AXS RSV (10999); Bullit XT Di2 RSV (10999) |
-| Chameleon [d8e1824e] | mtb | s · m · l · xl | 620.1 · 629.2 · 638.2 · 647.3 | 420 · 445 · 465 · 490 | — · — · — · — | Chameleon D (2200); Chameleon R (2750); Chameleon S (3100) |
+| Chameleon [d8e1824e] | mtb | s · m · l · xl | 620.1 · 629.2 · 638.2 · 647.3 | 420 · 445 · 465 · 490 | 152–165 · 165–177 · 177–185 · 185–198 | Chameleon D (2200); Chameleon R (2750); Chameleon S (3100) |
 | Heckler SL [0c472810] | emtb | s · m · l · xl · xxl | 614.9 · 624 · 633 · 651 · 664.5 | 435 · 460 · 480 · 500 · 525 | — · — · — · — · — | Heckler SL 70 (4799); Heckler SL 90 (5299); Heckler SL GX AXS (6299); Heckler SL R (7499); Heckler SL S (4999); Heckler SL Stout (6299); Heckler SL X0 AXS RSV (6999); Heckler SL XX AXS RSV (7999) |
 | Heckler [551d298c] | emtb | s · m · l · xl · xxl | 607.3 · 615.8 · 629.4 · 647.5 · 665.6 | 430 · 455 · 475 · 495 · 520 | — · — · — · — · — | Heckler GX AXS 2024 (7999); Heckler R 2024 (6499); Heckler S 2024 (7499); Heckler X0 AXS RSV 2024 (10999); Heckler XX AXS RSV 2024 (10999) |
-| Highball [51069cea] | mtb | s · m · l · xl | 596 · 605 · 614 · 633 | 415 · 440 · 460 · 490 | — · — · — · — | Highball GX AXS (5299); Highball R (3799); Highball S (4499); Highball X0 AXS RSV (9699) |
+| Highball [51069cea] | mtb | s · m · l · xl | 596 · 605 · 614 · 633 | 415 · 440 · 460 · 490 | 152–165 · 165–177 · 177–185 · 185–198 | Highball GX AXS (5299); Highball R (3799); Highball S (4499); Highball X0 AXS RSV (9699) |
 | Hightower [64cefe22] | mtb | s · m · l · xl · xxl | 623 · 632 · 641 · 659 · 668 | 435 · 460 · 480 · 500 · 525 | — · — · — · — · — | Hightower 70 (5499); Hightower 90 (6399); Hightower Deore (5499); Hightower GX AXS (7399); Hightower R (5499); Hightower S (6399); Hightower X0 AXS (8799); Hightower X0 AXS RSV (9999); Hightower XX AXS RSV (11499) |
 | Megatower [b9a72469] | mtb | s · m · l · xl · xxl | 616 · 625 · 638 · 656 · 670 | 430 · 455 · 475 · 495 · 520 | — · — · — · — · — | Megatower 70 (5599); Megatower 90 (6599); Megatower GX AXS (7699); Megatower X0 AXS (9299); Megatower X0 AXS RSV (10499) |
 | Nomad [501c6125] | mtb | S · M · L · XL · XXL | 624 · 633 · 643 · 660 · 669 | 435 · 455 · 475 · 495 · 520 | — · — · — · — · — | Nomad 90 (6299); Nomad Deore (5299); Nomad GX AXS (7499); Nomad X0 AXS RSV Coil (10199); Nomad XT Di2 Coil (8299) |
-| Skitch Apex [701788cc] | gravel | s · m · l · xl · xxl | 563 · 579 · 596 · 610 · 630 | 390 · 405 · 420 · 435 · 450 | — · — · — · — · — | Skitch Apex (6499); Skitch Apex Flat Bar (6499) |
+| Skitch Apex [701788cc] | gravel | s · m · l · xl · xxl | 563 · 579 · 596 · 610 · 630 | 390 · 405 · 420 · 435 · 450 | 154–167 · 162–177 · 170–182 · 177–190 · 185–198 | Skitch Apex (6499); Skitch Apex Flat Bar (6499) |
 | Stigmata Apex [8caa2de4] | gravel | XS · SM · MD · LG · XL · XXL | 550 · 564 · 576 · 600 · 612 · 631 | 375 · 390 · 405 · 420 · 435 · 450 | — · — · — · — · — · — | Stigmata Apex (3599) |
-| Stigmata [305153d3] | gravel | XS · SM · MD · LG · XL · XXL | 550 · 564 · 576 · 600 · 612 · 631 | 375 · 390 · 405 · 420 · 435 · 450 | — · — · — · — · — · — | Stigmata Force 1x AXS RSV (6499); Stigmata Force 1x AXS RSV Rudy 2026 (7799); Stigmata Rival 1x AXS (4999); Stigmata Rival 1x AXS Rudy 2026 (5299) |
+| Stigmata [305153d3] | gravel | XS · SM · MD · LG · XL · XXL | 550 · 564 · 576 · 600 · 612 · 631 | 375 · 390 · 405 · 420 · 435 · 450 | 152–160 · 160–167 · 167–175 · 175–182 · 182–188 · 188–193 | Stigmata Force 1x AXS RSV (6499); Stigmata Force 1x AXS RSV Rudy 2026 (7799); Stigmata Rival 1x AXS (4999); Stigmata Rival 1x AXS Rudy 2026 (5299) |
 | Tallboy [839ee2df] | mtb | XS · S · M · L · XL · XXL | 601 · 610 · 624 · 633 · 646 · 660 | 410 · 435 · 455 · 475 · 495 · 520 | — · — · — · — · — · — | Tallboy 90 (5999); Tallboy GX AXS (6999); Tallboy X0 AXS RSV (9499); Tallboy XT Di2 (7999); Tallboy XX AXS FA RSV (12999) |
 | Vala [1b769861] | emtb | S · M · L · XL · XXL | 623 · 632 · 641 · 655 · 668 | 435 · 460 · 480 · 500 · 525 | — · — · — · — · — | Vala 90 (7999); Vala AL Deore 6200 (4999); Vala C Deore (6999); Vala GX AXS (8999); Vala XT Di2 RSV (9999); Vala XT Lite (7999) |
 
@@ -1684,7 +1732,7 @@ Diff con bikes.csv: **+236** tallas nuevas, **−0** que desaparecen, **~0** con
 
 ## Megamo — con avisos
 
-**Nota:** Sin altura: la FIT GUIDE usa X-SMALL/SMALL… y la geometría XS/S…; sin equivalencia publicada. Reason/Ryal (MY27) solo publican el dibujo SVG sin valores.
+**Nota:** Altura de la FIT GUIDE (X-SMALL…X-LARGE) con equivalencia aprobada por el usuario. Reason/Ryal (MY27) solo publican el dibujo SVG sin valores.
 
 Diff con bikes.csv: **+373** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 130. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 133, 'challenges': 0}.
 
@@ -1692,7 +1740,7 @@ Diff con bikes.csv: **+373** tallas nuevas, **−0** que desaparecen, **~0** con
 |---|---|---|---|---|---|---|
 | DX3 [1531cea1] | mtb | XS · S | 565 · 570 | 363 · 393 | — · — | DX3 (449) |
 | FACTORY [48adcd9f] | mtb | S · M · L · XL | 595 · 600 · 614 · 624 | 404 · 429 · 449 · 471 | — · — · — · — | FACTORY 15 (2299); FACTORY 30 (1999) |
-| FLAME AL 03 [cc9472ce] | emtb | S · M · L | 620 · 629 · 647 | 435 · 453 · 484 | — · — · — | FLAME AL 03 (6999); FLAME AL 05 (6099); FLAME AL 08 (5499); FLAME AL 10 (4999); REACH FS 05 (5699); REACH FS 10 (4999) |
+| FLAME AL 03 [cc9472ce] | emtb | S · M · L | 620 · 629 · 647 | 435 · 453 · 484 | ≤–170 · 170–180 · 180–∞ | FLAME AL 03 (6999); FLAME AL 05 (6099); FLAME AL 08 (5499); FLAME AL 10 (4999); REACH FS 05 (5699); REACH FS 10 (4999) |
 | FLAME CRB [d3a0bef3] | emtb | S · M · L | 613 · 621 · 640 | 435 · 460 · 490 | — · — · — | FLAME CRB 00 (12499); FLAME CRB 01 (11999); FLAME CRB 03 (7999); FLAME CRB 07 (6499); FLAME CRB 10 (5699) |
 | JAKAR BASE [676eb97b] | gravel | ONE SIZE | 527 | 361 | — | JAKAR BASE (999) |
 | JAKAR [3e65aa58] | gravel | XS · S · M · L · XL | 529 · 550 · 570 · 600 · 632 | 347 · 358 · 376 · 392 · 407 | — · — · — · — · — | JAKAR 20 (1699); JAKAR 30 (1399); JAKAR 30 EQUIPPED (1899); JAKAR 30 FLAT-BAR (999); JAKAR FLAT-BAR (1299) |
@@ -1701,13 +1749,13 @@ Diff con bikes.csv: **+373** tallas nuevas, **−0** que desaparecen, **~0** con
 | MEGAMO SILK [7603a225] | gravel | XS · S · M · L · XL | 516 · 535 · 557 · 581 · 605 | 372 · 382 · 395 · 408 · 416 | — · — · — · — · — | MEGAMO SILK 00 SLR (8999); MEGAMO SILK 01 SLR (5999); MEGAMO SILK 02 (5399); MEGAMO SILK 03 SLR (4999); MEGAMO SILK 04 (3999); MEGAMO SILK 04 SLR (3999); MEGAMO SILK 05 SLR (3999); MEGAMO SILK 06 (3299); MEGAMO SILK 07 (2999) |
 | NATURAL [156e14e5] | mtb | S · M · L · XL | 600 · 609 · 619 · 633 | 397 · 419 · 442 · 462 | — · — · — · — | NATURAL 30 (849); NATURAL 40 (699); NATURAL 60 (499); NATURAL ELITE 15 (999) |
 | NEVO 30 [2e39a819] | carretera | XS · S · M · L · XL | 510 · 529 · 549 · 568 · 596 | 368 · 378 · 387 · 397 · 403 | — · — · — · — · — | NEVO 30 (1799) |
-| PULSE [7863ab96] | carretera | XS · S · M · L · XL | 503 · 518 · 538 · 557 · 581 | 375 · 380 · 385 · 390 · 395 | — · — · — · — · — | PULSE 03 (6799); PULSE 04 (5699); PULSE 05 (4199); PULSE 07 (4999); PULSE 20 (2699) |
+| PULSE [7863ab96] | carretera | XS · S · M · L · XL | 503 · 518 · 538 · 557 · 581 | 375 · 380 · 385 · 390 · 395 | ≤–165 · 165–172 · 170–180 · 180–188 · 188–∞ | PULSE 03 (6799); PULSE 04 (5699); PULSE 05 (4199); PULSE 07 (4999); PULSE 20 (2699) |
 | PULSE [ab1816e5] | carretera | XS · S · M · L · XL | 503 · 518 · 538 · 557 · 581 | 373 · 378 · 383 · 392 · 402 | — · — · — · — · — | PULSE 00 SLR (9999); PULSE 01 SLR (8999); PULSE 02 SLR (6499); PULSE 03 CW LTD (5999); PULSE 04 SLR (5499); PULSE 05 CW (4999); PULSE 07 SLR (4999); PULSE 15 (3499); PULSE 15 CW (4499) |
-| RAISE [3b47eb2b] | carretera | XS · S · M · L · XL | 506 · 521 · 534 · 550 · 576 | 376 · 383 · 384 · 396 · 402 | — · — · — · — · — | RAISE 03 (6799); RAISE 04 (5699); RAISE 05 (4199); RAISE 07 (4999); RAISE ENVE EDITION (11999) |
-| RAISE [8bfce48e] | carretera | XS · S · M · L · XL | 506 · 521 · 534 · 550 · 576 | 376 · 383 · 384 · 396 · 402 | — · — · — · — · — | RAISE 00 SLR (9999); RAISE 01 SLR (8499); RAISE 02 SLR (6499); RAISE 03 CW LTD (5999); RAISE 04 SLR (5499); RAISE 05 CW (4999); RAISE 07 CW (4699); RAISE 15 (3499); RAISE 15 CW (4399); RAISE 20 (2699) |
-| REACH HT [55376043] | emtb | S · M · L · XL | 643 · 657 · 670 · 727 | 401 · 432 · 448 · 452 | — · — · — · — | REACH HT 05 (4199); REACH HT 05 EQUIPPED (4399); REACH HT 10 (3799); REACH HT 10 EQUIPPED (3999); REACH HT 20 (3199); REACH HT 20 EQUIPPED (3299) |
-| REACH LOW [07362e21] | emtb | S · M · L | 689 · 689 · 708 | 407 · 417 · 432 | — · — · — | REACH LOW 05 EQUIPPED (4399); REACH LOW 10 EQUIPPED (3999); REACH LOW 20 EQUIPPED (3299) |
-| TRACK [9490ed4a] | mtb | S · M · L · XL | 599 · 599 · 613 · 630 | 410 · 435 · 460 · 485 | — · — · — · — | TRACK 00 SLR (9999); TRACK 01 SLR (8999); TRACK 02 SLR (6999); TRACK 03 SLR RACE (6999); TRACK 04 CW (5999); TRACK 08 (3999); TRACK 10 (3699) |
+| RAISE [3b47eb2b] | carretera | XS · S · M · L · XL | 506 · 521 · 534 · 550 · 576 | 376 · 383 · 384 · 396 · 402 | ≤–165 · 165–172 · 170–180 · 180–188 · 188–∞ | RAISE 03 (6799); RAISE 04 (5699); RAISE 05 (4199); RAISE 07 (4999); RAISE ENVE EDITION (11999) |
+| RAISE [8bfce48e] | carretera | XS · S · M · L · XL | 506 · 521 · 534 · 550 · 576 | 376 · 383 · 384 · 396 · 402 | ≤–165 · 165–172 · 170–180 · 180–188 · 188–∞ | RAISE 00 SLR (9999); RAISE 01 SLR (8499); RAISE 02 SLR (6499); RAISE 03 CW LTD (5999); RAISE 04 SLR (5499); RAISE 05 CW (4999); RAISE 07 CW (4699); RAISE 15 (3499); RAISE 15 CW (4399); RAISE 20 (2699) |
+| REACH HT [55376043] | emtb | S · M · L · XL | 643 · 657 · 670 · 727 | 401 · 432 · 448 · 452 | ≤–163 · 163–176 · 176–185 · 185–∞ | REACH HT 05 (4199); REACH HT 05 EQUIPPED (4399); REACH HT 10 (3799); REACH HT 10 EQUIPPED (3999); REACH HT 20 (3199); REACH HT 20 EQUIPPED (3299) |
+| REACH LOW [07362e21] | emtb | S · M · L | 689 · 689 · 708 | 407 · 417 · 432 | ≤–163 · 163–176 · 175–∞ | REACH LOW 05 EQUIPPED (4399); REACH LOW 10 EQUIPPED (3999); REACH LOW 20 EQUIPPED (3299) |
+| TRACK [9490ed4a] | mtb | S · M · L · XL | 599 · 599 · 613 · 630 | 410 · 435 · 460 · 485 | ≤–169 · 169–180 · 180–185 · 185–∞ | TRACK 00 SLR (9999); TRACK 01 SLR (8999); TRACK 02 SLR (6999); TRACK 03 SLR RACE (6999); TRACK 04 CW (5999); TRACK 08 (3999); TRACK 10 (3699) |
 | WEST [edce1209] | gravel | XS · S · M · L · XL | 548 · 563 · 576 · 600 · 625 | 378 · 391 · 400 · 405 · 415 | — · — · — · — · — | WEST 01 (5999); WEST 02 (5399); WEST 03 (4799); WEST 05 (2999); WEST 10 (2499); WEST 15 (2399) |
 
 <details><summary>Productos en alcance sin datos</summary>
@@ -1950,6 +1998,15 @@ Diff con bikes.csv: **+97** tallas nuevas, **−0** que desaparecen, **~0** con 
 </details>
 
 
+## Decathlon — bloqueada
+
+**Nota:** Pendiente de fichas guardadas a mano: decathlon.es rechaza la verificación humana en el Chrome automatizado (en el Chrome normal del usuario sí funciona). Guardar las fichas en data/manual/decathlon/ y ejecutar python -m extractor run decathlon.
+
+**Motivo:** no se encontraron productos (sitemap/listado/JSON)
+
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 0. Métodos: –. Descargas: {'httpx': 0, 'browser': 0, 'cache': 0, 'challenges': 0}.
+
+
 ## KTM — con avisos
 
 Diff con bikes.csv: **+477** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 112. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 117, 'challenges': 0}.
@@ -2080,7 +2137,7 @@ Diff con bikes.csv: **+212** tallas nuevas, **−0** que desaparecen, **~0** con
 
 ## Colnago — con avisos
 
-Diff con bikes.csv: **+82** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 18. Métodos: pdf. Descargas: {'httpx': 1, 'browser': 0, 'cache': 36, 'challenges': 0}.
+Diff con bikes.csv: **+82** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 18. Métodos: pdf. Descargas: {'httpx': 0, 'browser': 0, 'cache': 37, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2105,7 +2162,7 @@ Descartados: duplicado (mismo modelo): 2
 
 ## Wilier — con avisos
 
-Diff con bikes.csv: **+156** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 38. Métodos: html. Descargas: {'httpx': 1, 'browser': 0, 'cache': 32, 'challenges': 0}.
+Diff con bikes.csv: **+156** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 38. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 33, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2219,7 +2276,7 @@ Diff con bikes.csv: **+15** tallas nuevas, **−0** que desaparecen, **~0** con 
 
 **Motivo:** sin filas válidas: sin tabla de geometría en la página
 
-Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 43. Métodos: –. Descargas: {'httpx': 40, 'browser': 24, 'cache': 6, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 43. Métodos: –. Descargas: {'httpx': 0, 'browser': 0, 'cache': 70, 'challenges': 0}.
 
 <details><summary>Productos en alcance sin datos</summary>
 

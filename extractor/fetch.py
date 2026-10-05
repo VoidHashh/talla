@@ -226,6 +226,25 @@ class Fetcher:
                 return
         raise Blocked(f"verificación sin resolver en {url}")
 
+    def get_after_click(self, url: str, click_text: str) -> str:
+        """HTML de una página en Chrome tras pulsar un elemento con ese texto exacto (pestañas de guías)."""
+        path = self._key(url + "#click=" + click_text, "click").with_suffix(".html")
+        if not self.refresh and path.exists():
+            self.stats["cache"] += 1
+            return path.read_text(encoding="utf-8")
+        if not self.allowed(url):
+            raise Blocked(f"robots.txt no permite {url}")
+        page = self._get_browser(url)  # descarga y espera de verificación como cualquier página
+        tab = self._ctx.pages[0]
+        try:
+            tab.get_by_text(click_text, exact=True).first.click(timeout=15_000)
+            time.sleep(3)
+        except Exception as e:  # noqa: BLE001
+            raise Blocked(f"no se pudo pulsar '{click_text}' en {url}: {e}") from e
+        html = tab.content() or page.text
+        path.write_text(html, encoding="utf-8")
+        return html
+
     def close(self):
         if self._ctx is not None:
             self._ctx.close()

@@ -13,7 +13,8 @@ from pathlib import Path
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from . import readers
-from .fetch import Blocked, Fetcher
+from .fetch import Blocked, Fetcher, Page
+from .geometry import parse_height
 from .geometry import (
     STANDARD_LETTERS, Geometry, apply_row_alias, best_geometry, heights_from_dl, heights_from_tables, heights_from_text,
     order_sizes, parse_matrix,
@@ -54,6 +55,7 @@ def load_size_labels() -> dict[tuple[str, str], str]:
 class Product:
     url: str
     hints: str = ""  # texto extra para clasificar (tipo de producto, etiquetas, colección)
+    local_path: Path | None = None  # ficha guardada a mano por el usuario (discovery = "local")
 
 
 @dataclass
@@ -142,6 +144,16 @@ def discover(cfg: dict, fx: Fetcher, log) -> list[Product]:
                             new += 1
                 if new == 0 and lp != listing:
                     break
+    elif kind == "local":
+        # Páginas guardadas por el usuario desde su navegador ("Guardar como… → Página web, solo HTML").
+        folder = ROOT / cfg["local_dir"]
+        for path in sorted(folder.glob("*.htm*")):
+            html = path.read_text(encoding="utf-8", errors="replace")
+            m = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', html, re.I) or \
+                re.search(r'<meta[^>]+property=["\']og:url["\'][^>]+content=["\']([^"\']+)', html, re.I)
+            url = m.group(1) if m else path.resolve().as_uri()
+            if keep(url):
+                found.setdefault(url, Product(url, "", path))
     else:
         raise ValueError(f"descubrimiento desconocido: {kind}")
     return list(found.values())
@@ -281,7 +293,7 @@ def find_geometry(html: str, page_url: str, cfg: dict, fx: Fetcher, brand_key: s
                 g = best_geometry(gtables, height_re, cfg.get('geometry_unit'))
                 if g:
                     if g.heights is None:
-                        g.heights = heights_from_tables(gtables, g.sizes) or heights_from_text(ghtml, g.sizes)
+                        g.heights = heights_from_tables(gtables, g.sizes) or heights_from_text(ghtml, height_labels(cfg, g.sizes), not cfg.get('height_text_no_cm'))
                     return g, "html", gurl, None
             except Blocked as e:
                 return None, "", gurl, str(e)
@@ -301,7 +313,7 @@ def find_geometry(html: str, page_url: str, cfg: dict, fx: Fetcher, brand_key: s
     g = best_geometry(tables, height_re, cfg.get('geometry_unit'))
     if g:
         if g.heights is None:
-            g.heights = (heights_from_tables(tables, g.sizes) or heights_from_text(html, g.sizes)
+            g.heights = (heights_from_tables(tables, g.sizes) or heights_from_text(html, height_labels(cfg, g.sizes), not cfg.get('height_text_no_cm'))
                          or heights_from_dl(html, g.sizes))
         return g, "html", page_url, None
     json_sources = readers.embedded_json(html)
@@ -359,6 +371,48 @@ def vision_geometry(img_url: str, fx: Fetcher, brand_key: str, height_re) -> tup
     return None, "", img_url, "tabla en imagen pendiente de transcripción por visión"
 
 
+def load_height_guide(cfg: dict, fx: Fetcher, log) -> dict[str, dict[str, object]]:
+    """Guía oficial de alturas: {familia: {talla: Height}} a partir de tablas "Altura | Talla" con su título."""
+    g = cfg["height_guide"]
+    try:
+        html = fx.get_after_click(g["url"], g["click_text"]) if g.get("click_text") else fx.get(g["url"], render=g.get("render", False)).text
+    except Blocked as e:
+        log(f"    · guía de tallas no disponible: {e}")
+        return {}
+    guide = {}
+    for title, m in readers.titled_tables(html):
+        if len(m) < 2 or len(m[0]) < 2:
+            continue
+        head = [c.lower() for c in m[0]]
+        hcol = next((j for j, c in enumerate(head) if re.search(r"height|altura|estatura", c)), None)
+        scol = next((j for j, c in enumerate(head) if re.search(r"^size$|talla", c)), None)
+        if hcol is None or scol is None or not title:
+            continue
+        rows = {r[scol].strip(): parse_height(r[hcol] + " cm") for r in m[1:] if len(r) > max(hcol, scol)}
+        rows = {k: v for k, v in rows.items() if k and v}
+        if rows:
+            guide[title] = rows
+    log(f"    · guía de tallas: {len(guide)} familias")
+    return guide
+
+
+def heights_from_guide(guide: dict, model: str, sizes: list[str]):
+    """Rangos de la familia cuyo nombre aparece en el modelo (la coincidencia más larga); todas las tallas o nada."""
+    fams = [f for f in guide if re.search(rf"(?<![\w-]){re.escape(f)}(?![\w])", model, re.I)]
+    if not fams:
+        return None, None
+    fam = max(fams, key=len)
+    hs = [guide[fam].get(s.strip()) for s in sizes]
+    plausible = all(h and all(x is None or 120 <= x <= 215 for x in (h.min, h.max)) for h in hs)
+    return (hs, fam) if all(hs) and plausible else (None, fam)
+
+
+def height_labels(cfg: dict, sizes: list[str]) -> list[str]:
+    """Etiquetas con que la guía de tallas de la marca nombra cada talla de la geometría (height_label_alias)."""
+    alias = {k.strip().upper(): v for k, v in cfg.get("height_label_alias", {}).items()}
+    return [alias.get(s.strip().upper(), s) for s in sizes]
+
+
 # ---------------------------------------------------------------- normalización y validación
 def fmt(v) -> str:
     if v is None:
@@ -375,6 +429,9 @@ def normalize_label(brand: str, label: str, labels: dict) -> tuple[str, str]:
     if (brand, up) in labels:
         return labels[(brand, up)], ""
     letter, cm = size_parts(label)
+    first = re.split(r"[\s(/]", label.strip().upper())[0]
+    if (brand, first) in labels:  # "SM 50": equivalencia de la letra + cm de la propia etiqueta
+        return labels[(brand, first)], fmt(cm)
     return (NOTATION.get(letter, letter) if letter else ""), fmt(cm)
 
 
@@ -415,10 +472,15 @@ def validate_family(rows: list[dict], vcfg: dict) -> tuple[list[dict], list[tupl
     def rng(name):
         return over.get(name, ranges[name])
 
-    # Altura: mismo número de tallas que la geometría; si no, se descarta la altura (es opcional).
+    # Altura (opcional): mismo número de tallas que la geometría y valores plausibles; si no, se descarta la
+    # altura de ese modelo con un aviso y la geometría sigue adelante.
     with_h = [r for r in rows if r["height_original"]]
-    if with_h and len(with_h) != len(rows):
-        warns.append(f"{rows[0]['model']}: altura en {len(with_h)} de {len(rows)} tallas → altura descartada")
+    h_lo, h_hi = rng("height")
+    bad_h = [r for r in with_h for c in ("height_min", "height_max") if r[c] and not h_lo <= float(r[c]) <= h_hi]
+    if with_h and (len(with_h) != len(rows) or bad_h):
+        why = (f"altura en {len(with_h)} de {len(rows)} tallas" if len(with_h) != len(rows)
+               else f"altura no plausible publicada ({bad_h[0]['height_original']})")
+        warns.append(f"{rows[0]['model']}: {why} → altura descartada")
         for r in rows:
             r.update(height_min="", height_max="", height_original="", height_unit="")
 
@@ -485,6 +547,7 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
             return res
 
         built: list[tuple[dict, Geometry, str]] = []  # (meta, geometría, método)
+        guide = load_height_guide(cfg, fx, log) if cfg.get("height_guide") else {}
         pre_cat = cfg.get("classify_by_url", True)
         n_fetched = 0
         for i, prod in enumerate(products):
@@ -495,7 +558,10 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
                 res.skip("fuera de alcance (URL/tipo)")
                 continue
             try:
-                page = fx.get(prod.url, render=cfg.get("render", False))
+                if prod.local_path:
+                    page = Page(prod.url, prod.url, 200, prod.local_path.read_text(encoding="utf-8", errors="replace"), "manual")
+                else:
+                    page = fx.get(prod.url, render=cfg.get("render", False))
             except Blocked as e:
                 res.failures.append((prod.url, str(e)))
                 continue
@@ -514,7 +580,7 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
                 res.skip("excluido por nombre (cuadro, kit, junior…)")
                 continue
             g, method, src, why = find_geometry(page.text, page.final_url or prod.url, cfg, fx, key)
-            if g is None and page.method == "httpx" and not cfg.get("no_render_retry"):
+            if g is None and page.method == "httpx" and not cfg.get("no_render_retry") and not prod.local_path:
                 # Página vacía o pintada con JS: segundo intento con Chrome.
                 try:
                     rpage = fx.get(prod.url, render=True)
@@ -527,6 +593,12 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
                 res.failures.append((prod.url, why or "sin geometría"))
                 continue
             g = order_sizes(g)
+            if g.heights is None and guide:
+                hs, fam = heights_from_guide(guide, meta["name"], g.sizes)
+                if hs:
+                    g.heights = hs
+                elif fam:
+                    g.warnings.append(f"guía de tallas '{fam}' no cubre todas las tallas {g.sizes}: sin altura")
             meta.update(category=category, url=prod.url)
             built.append((meta, g, method if page.method == "httpx" else method, src))
             if (i + 1) % 25 == 0:

@@ -10,3 +10,5 @@ categories = [
   ['collections/', 'mtb'],
 ]
 exclude_name = '\bframe\b|frameset|\bkit\b'
+# Equivalencia entre las tallas de la geometría y los nombres de la guía de tallas (aprobada por el usuario).
+height_label_alias = { XS = "X-Small", SM = "Small", S = "Small", MD = "Medium", M = "Medium", LG = "Large", L = "Large", XL = "X-Large", XXL = "XX-Large" }
