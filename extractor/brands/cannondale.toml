@@ -1,0 +1,19 @@
+name = "Cannondale"
+discovery = "sitemap"
+# Sitemap alojado fuera del dominio (sitemaphosting6.com), índice con 2 ficheros; solo las fichas es-es de bici (modelo, no familia).
+sitemaps = ["https://a304077.sitemaphosting6.com/4356448/sitemap.xml"]
+include = ['^https://www\.cannondale\.com/es-es/bikes/(road/(race|endurance|gravel)/[^/]+/[^/]+|mountain/[^/]+/[^/]+/[^/]+|electric/e-mountain/[^/]+/[^/]+)$']
+exclude = ['frameset', '/20\d\d$', 'topstone-neo', '/cyclocross/', 'kids']
+categories = [
+  ['/bikes/electric/e-mountain/', 'emtb'],
+  ['/bikes/mountain/', 'mtb'],
+  ['/bikes/road/gravel/', 'gravel'],
+  ['/bikes/road/(race|endurance)/', 'carretera'],
+]
+no_render_retry = true     # la imagen de geometría viene en el HTML del servidor
+# La geometría es una imagen (…_geotable.ashx, el nombre varía): se descarga a data/vision/cannondale/ para transcribirla con visión.
+# La ruta sin parámetros (?h=…&hash=…) devuelve la misma imagen.
+geometry_img_re = 'sizing-image"[^>]*>\s*<picture>\s*<img[^>]*src="([^"?]+)'
+# Año de modelo = colección de la ficha (window.productSalsifyId = "0724-COLL2026-SMU"); el año de la carpeta de imágenes no es fiable.
+year_re = ['COLL(20[2-3]\d)']
+exclude_name = '\bframe ?set\b|\bkit\b'

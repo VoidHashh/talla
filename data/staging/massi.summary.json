@@ -1,0 +1,445 @@
+{
+  "brand": "Massi",
+  "discovered": 82,
+  "rows": 296,
+  "models": 68,
+  "families": 12,
+  "rejected": [
+    {
+      "model": "MASSI TEAM 105 DB XTECH",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB XTECH",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB XTECH",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB XTECH",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB XTECH",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB XTECH",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DI2 MIX DB",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DI2 MIX DB",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DI2 MIX DB",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DI2 MIX DB",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DI2 MIX DB",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DI2 MIX DB",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB TOUR",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB TOUR",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB TOUR",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB TOUR",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB TOUR",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB TOUR",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 11S DB",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 11S DB",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 11S DB",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 11S DB",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 11S DB",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 11S DB",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 DB",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 12S DB",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 12S DB",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 12S DB",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 12S DB",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 12S DB",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM 105 MIX 12S DB",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB X-TECH",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB X-TECH",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB X-TECH",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB X-TECH",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB X-TECH",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB X-TECH",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE DURA ACE DI2 DB",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB X-TECH",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB X-TECH",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB X-TECH",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB X-TECH",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB X-TECH",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB X-TECH",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB X-TECH",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB X-TECH",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB X-TECH",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB X-TECH",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB X-TECH",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB X-TECH",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE ULTEGRA DI2 DB",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB X-TECH",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB X-TECH",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB X-TECH",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB X-TECH",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB X-TECH",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB X-TECH",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DI2 DB",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB",
+      "size": "48",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB",
+      "size": "50",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB",
+      "size": "52",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB",
+      "size": "54",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB",
+      "size": "56",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    },
+    {
+      "model": "MASSI TEAM RACE 105 DB",
+      "size": "58",
+      "reason": "reach decrece al subir de talla (50: 364 < 368)"
+    }
+  ],
+  "skipped": {},
+  "failures": [],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 85,
+    "challenges": 0
+  },
+  "methods": [
+    "vision"
+  ],
+  "with_height": 0,
+  "with_price": 0,
+  "generated_at": "2026-10-05T16:19:39"
+}

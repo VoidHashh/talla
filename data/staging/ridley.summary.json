@@ -1,0 +1,130 @@
+{
+  "brand": "Ridley",
+  "discovered": 43,
+  "rows": 0,
+  "models": 0,
+  "families": 0,
+  "rejected": [],
+  "skipped": {
+    "excluido por nombre (cuadro, kit, junior…)": 5,
+    "fuera de alcance (categoría)": 12
+  },
+  "failures": [
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBINF3RID155",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBINH3RID178",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIFRSRID133",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIFALRID313",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIGRSRID093",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKARRID685",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKALRID058",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKF2RID015",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIARSRID117",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIASTRID158",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKAFRID278",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKADRID338",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKAVRID148",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKAVRID130",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIGRSRID069",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKARRID608",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKALRID070",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIXTARID942",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKECRID013",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIISXRID310",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIFSDRID844",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIFENRID021",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIHEDRID172",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKALRID106",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIKAFRID340",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ridley-bikes.com/es_ES/bikes/SBIGRAINV003",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": "sin filas válidas: sin tabla de geometría en la página",
+  "fetch": {
+    "httpx": 40,
+    "browser": 24,
+    "cache": 6,
+    "challenges": 0
+  },
+  "methods": [],
+  "with_height": 0,
+  "with_price": 0,
+  "generated_at": "2026-10-05T16:28:19"
+}

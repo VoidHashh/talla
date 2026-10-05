@@ -1,0 +1,214 @@
+{
+  "brand": "Specialized",
+  "discovered": 143,
+  "rows": 556,
+  "models": 96,
+  "families": 34,
+  "rejected": [
+    {
+      "model": "Chisel Comp",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel Comp",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel Comp",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel Comp",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel Comp",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (S: 593 < 602.3)"
+    },
+    {
+      "model": "Chisel Comp EVO",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (S: 596 < 606)"
+    },
+    {
+      "model": "Chisel Comp EVO",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (S: 596 < 606)"
+    },
+    {
+      "model": "Chisel Comp EVO",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (S: 596 < 606)"
+    },
+    {
+      "model": "Chisel Comp EVO",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (S: 596 < 606)"
+    },
+    {
+      "model": "Chisel Comp EVO",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (S: 596 < 606)"
+    },
+    {
+      "model": "Epic 8 Expert Di2",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert Di2",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert Di2",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert Di2",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert Di2",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Epic 8 Expert",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (S: 597 < 603)"
+    },
+    {
+      "model": "Rockhopper Sport",
+      "size": "XS - 27.5",
+      "reason": "reach decrece al subir de talla (M - 29: 405 < 415)"
+    },
+    {
+      "model": "Rockhopper Sport",
+      "size": "S - 27.5",
+      "reason": "reach decrece al subir de talla (M - 29: 405 < 415)"
+    },
+    {
+      "model": "Rockhopper Sport",
+      "size": "M - 27.5",
+      "reason": "reach decrece al subir de talla (M - 29: 405 < 415)"
+    },
+    {
+      "model": "Rockhopper Sport",
+      "size": "S - 29",
+      "reason": "reach decrece al subir de talla (M - 29: 405 < 415)"
+    },
+    {
+      "model": "Rockhopper Sport",
+      "size": "M - 29",
+      "reason": "reach decrece al subir de talla (M - 29: 405 < 415)"
+    },
+    {
+      "model": "Rockhopper Sport",
+      "size": "L - 29",
+      "reason": "reach decrece al subir de talla (M - 29: 405 < 415)"
+    },
+    {
+      "model": "Rockhopper Sport",
+      "size": "XXL - 29",
+      "reason": "reach decrece al subir de talla (M - 29: 405 < 415)"
+    },
+    {
+      "model": "Rockhopper Sport",
+      "size": "XL - 29",
+      "reason": "reach decrece al subir de talla (M - 29: 405 < 415)"
+    }
+  ],
+  "skipped": {
+    "excluido por nombre (cuadro, kit, junior…)": 27,
+    "duplicado (mismo modelo)": 9
+  },
+  "failures": [
+    {
+      "url": "https://www.specialized.com/es/es/roubaix-sl8-comp-sram-rival-axs/p/4263268",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.specialized.com/es/es/rockhopper-sport/p/4263616",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.specialized.com/es/es/rockhopper-expert/p/4279941",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.specialized.com/es/es/rockhopper-sport/p/4279942",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.specialized.com/es/es/turbo-levo-4-comp/p/4263410",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 158,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 96,
+  "generated_at": "2026-10-05T16:20:17"
+}

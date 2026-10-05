@@ -1,0 +1,39 @@
+{
+  "brand": "Giant",
+  "discovered": 45,
+  "rows": 212,
+  "models": 38,
+  "families": 11,
+  "rejected": [],
+  "skipped": {
+    "fuera de alcance (URL/tipo)": 4
+  },
+  "failures": [
+    {
+      "url": "https://www.giant-bicycles.com/es/trance-advanced-eplus-0-2027",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.giant-bicycles.com/es/trance-advanced-eplus-1-2027",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.giant-bicycles.com/es/trance-advanced-eplus-2-2027",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 45,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 176,
+  "with_price": 37,
+  "generated_at": "2026-10-05T16:19:27"
+}

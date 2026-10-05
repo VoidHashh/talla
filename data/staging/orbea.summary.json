@@ -1,0 +1,90 @@
+{
+  "brand": "Orbea",
+  "discovered": 101,
+  "rows": 405,
+  "models": 85,
+  "families": 19,
+  "rejected": [],
+  "skipped": {},
+  "failures": [
+    {
+      "url": "https://www.orbea.com/es-es/orca-omx",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/orca-omr",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/terra-omr",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/oiz-omx",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/occam-omr-sl",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/occam-omr-lt-fox-x-2pos-kashim",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rallon-enduro",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-sl-m-ltd",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-sl-m10",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-sl-m20",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-sl-h10",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-lt-m-team",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-lt-m10",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-lt-m20",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-lt-h10",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.orbea.com/es-es/rise-lt-h20",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 214,
+    "challenges": 0
+  },
+  "methods": [
+    "html",
+    "json"
+  ],
+  "with_height": 402,
+  "with_price": 85,
+  "generated_at": "2026-10-05T16:20:34"
+}

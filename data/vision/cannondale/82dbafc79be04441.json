@@ -1,0 +1,132 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my25/bikes/electric/e-mountain/moterra-3-4/pdp/c25_moterraalloy_geotable.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "A Seat Tube Length (cm)",
+      "40.0",
+      "40.0",
+      "42.0",
+      "46.0"
+    ],
+    [
+      "B Top Tube Horizontal (cm)",
+      "56.3",
+      "59.2",
+      "62.2",
+      "66.2"
+    ],
+    [
+      "C Head Tube Angle",
+      "64.8°",
+      "64.8°",
+      "64.8°",
+      "64.8°"
+    ],
+    [
+      "D1 Seat Tube Angle Effective",
+      "78.6°",
+      "78.3°",
+      "78.0°",
+      "77.8°"
+    ],
+    [
+      "D Seat Tube Angle Actual",
+      "72.5°",
+      "72.5°",
+      "72.5°",
+      "72.5°"
+    ],
+    [
+      "E Standover (cm)",
+      "76.8",
+      "77.0",
+      "77.2",
+      "77.5"
+    ],
+    [
+      "F Head Tube Length (cm)",
+      "12.5",
+      "12.5",
+      "13.5",
+      "14.5"
+    ],
+    [
+      "G Wheelbase (cm)",
+      "122.0",
+      "124.5",
+      "127.4",
+      "131.4"
+    ],
+    [
+      "H Front Center (cm)",
+      "76.8",
+      "79.3",
+      "82.2",
+      "86.1"
+    ],
+    [
+      "I Chain Stay Length (cm)",
+      "45.5",
+      "45.5",
+      "45.5",
+      "45.5"
+    ],
+    [
+      "J Bottom Bracket Drop (cm)",
+      "3.7",
+      "3.7",
+      "3.7",
+      "3.7"
+    ],
+    [
+      "K Bottom Bracket Height (cm)",
+      "34.3",
+      "34.3",
+      "34.3",
+      "34.3"
+    ],
+    [
+      "L Fork Rake (cm)",
+      "4.4",
+      "4.4",
+      "4.4",
+      "4.4"
+    ],
+    [
+      "M Trail (cm)",
+      "13.9",
+      "13.9",
+      "13.9",
+      "13.9"
+    ],
+    [
+      "N Stack (cm)",
+      "64.1",
+      "64.1",
+      "64.9",
+      "65.8"
+    ],
+    [
+      "O Reach (cm)",
+      "43.4",
+      "45.9",
+      "48.4",
+      "51.9"
+    ],
+    [
+      "P Axle-to-Crown (cm)",
+      "57.6",
+      "57.6",
+      "57.6",
+      "57.6"
+    ]
+  ]
+}

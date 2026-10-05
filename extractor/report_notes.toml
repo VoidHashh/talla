@@ -1,0 +1,41 @@
+# Notas por marca que se añaden a reports/diff.md (motivos de bloqueo y decisiones pendientes).
+# Clave = nombre exacto de data/brands.csv.
+
+["Decathlon"]
+note = "Bloqueada: decathlon.es responde 403 a httpx y en Chrome pide verificación humana; quedó sin resolver en 2 intentos de 15 min. Reintentar con el usuario delante: python -m extractor run decathlon (falta la configuración de listados, que requiere ver la web)."
+
+["Ridley"]
+note = "Bloqueada: la tabla de geometría solo tiene filas con letras (A…J, S, R) y la web no publica la leyenda; S/R parecen stack/reach pero no está confirmado por la marca."
+
+["Santa Cruz"]
+note = "Sin altura: la guía de tallas usa nombres (X-Small, Small…) y la geometría XS/SM/MD…; la marca no publica la equivalencia. V10 publica 3 posiciones de reach y se rechaza."
+
+["Megamo"]
+note = "Sin altura: la FIT GUIDE usa X-SMALL/SMALL… y la geometría XS/S…; sin equivalencia publicada. Reason/Ryal (MY27) solo publican el dibujo SVG sin valores."
+
+["Lapierre"]
+note = "Rechazos por stack/reach no crecientes publicados así en la web (p. ej. Sensium: S 542 > M 530)."
+
+["Pinarello"]
+note = "Sin precio en la web. Dogma F rechazada: reach publicado no creciente (540: 396,7 > 560: 393,4)."
+
+["Bianchi"]
+note = "Stack/Reach leídos de las filas Y/X de la tabla según el dibujo oficial de cotas (revisar). Tienda italiana en EUR; sin año de modelo."
+
+["Trek"]
+note = "Stack/Reach = 'Altura del cuadro'/'Alcance del cuadro' (geometryFrameStack/Reach de la API de Trek), publicados en cm."
+
+["Orbea"]
+note = "Geometría con etiquetas Stack/Reach de la ficha en-int (la es-es las traduce como Altura/Largo del cuadro); precio de la ficha es-es. Gama Rise y cuadros OMX/OMR sin tabla."
+
+["Cervélo"]
+note = "La web es-ES no publica precios (sí la de-DE, no usada)."
+
+["Conor"]
+note = "Geometría por visión (imágenes transcritas en data/vision/conor/). Tallas XS/SM/MD/LA sin equivalencia publicada."
+
+["Massi"]
+note = "Geometría por visión (data/vision/massi/). Sin precio en la web."
+
+["Cannondale"]
+note = "Geometría por visión (28 tablas en data/vision/cannondale/), publicada en cm."

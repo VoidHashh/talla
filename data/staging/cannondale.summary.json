@@ -1,0 +1,255 @@
+{
+  "brand": "Cannondale",
+  "discovered": 111,
+  "rows": 433,
+  "models": 80,
+  "families": 27,
+  "rejected": [],
+  "skipped": {
+    "año de modelo anterior": 10,
+    "duplicado (mismo modelo)": 2
+  },
+  "failures": [
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/electric/e-mountain/moterra-neo/moterra-neo-carbon-1-c25172u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/electric/e-mountain/moterra-neo/moterra-neo-carbon-2-c25272u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/gravel/superx/superx-lab71-c17075u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/race/supersix-evo/supersix-evo-lab71-team",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/race/supersix-evo/supersix-evo-lab71",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/race/supersix-evo/supersix-evo-lab71-c11135u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/mountain/cross-country/scalpel/scalpel-lab71",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/endurance/synapse-carbon/synapse-lab71-smartsense",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/race/supersix-evo/supersix-evo-lab71-team-c11105u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/electric/e-mountain/trail-neo/trail-neo-3-c61353u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/electric/e-mountain/trail-neo/trail-neo-4-c61453u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/race/supersix-evo/supersix-evo-lab71-sl",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/gravel/superx/superx-lab71",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/electric/e-mountain/moterra-neo/moterra-neo-5",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/electric/e-mountain/moterra-neo/moterra-neo-lab71-c65023u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/race/supersix-evo/supersix-evo-1",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/gravel/topstone-carbon/topstone-carbon-apex-axs",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/gravel/topstone-alloy/topstone-3-c15802u",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.cannondale.com/es-es/bikes/road/race/caad-optimo/caad-optimo-1",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [
+    "Moterra EQ: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra EQ: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO LAB71: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO LAB71: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO LAB71 SL: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO LAB71 SL: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse LAB71 SmartSense: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse LAB71 SmartSense: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel LAB71 Team: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel LAB71 Team: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel HT LAB71: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel HT LAB71: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "CAAD Optimo 3: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "CAAD Optimo 3: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit Carbon LT 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit Carbon LT 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel 3: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel 3: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel 4: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel 4: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 2 RLE: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 2 RLE: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 2 Lefty: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 2 Lefty: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra SL LAB71: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra SL LAB71: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX LAB71: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX LAB71: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 1: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 1: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra SL 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra SL 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit LTD: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit LTD: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel 1 Lefty: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel 1 Lefty: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon LTD Lefty AXS: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon LTD Lefty AXS: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 1 SL: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 1 SL: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 1 Lefty: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 1 Lefty: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 1 RLE: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 1 RLE: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "CAAD14 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "CAAD14 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra LT 1: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra LT 1: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 2: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 2: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra SL 2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra SL 2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX 2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX 2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon LTD Di2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon LTD Di2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 2 SmartSense: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 2 SmartSense: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit Carbon 1 AXS: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit Carbon 1 AXS: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 3: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 3: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 1 Lefty AXS: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 1 Lefty AXS: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel 2 Lefty: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel 2 Lefty: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 1 AXS: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 1 AXS: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX 3: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX 3: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 4: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 4: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 3: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 3: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 3 SmartSense: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 3 SmartSense: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit Carbon 2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit Carbon 2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 5: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 5: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail Neo 2: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail Neo 2: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 4+: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 4+: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 4: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Moterra 4: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 2 AXS SmartSense: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 2 AXS SmartSense: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "CAAD14 2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "CAAD14 2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX 4 AXS: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperX 4 AXS: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 2 AXS - 1x: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 2 AXS - 1x: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 2 GRX - 2x: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 2 GRX - 2x: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit 3: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit 3: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 4: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 4: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel HT Carbon 1: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel HT Carbon 1: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 3 GRX - 1x: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 3 GRX - 1x: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 3 GRX - 2x: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 3 GRX - 2x: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 6: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "SuperSix EVO 6: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 5: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Synapse Carbon 5: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 4 CUES 1x: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone Carbon 4 CUES 1x: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "CAAD14 3: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "CAAD14 3: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel HT Carbon 2: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel HT Carbon 2: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone EQ: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone EQ: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone 2 GRX - 2x: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone 2 GRX - 2x: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone 2 CUES - 1x: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone 2 CUES - 1x: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel HT Carbon 3: 'N Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Scalpel HT Carbon 3: 'O Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit HT 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit HT 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone 3: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Topstone 3: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit HT 2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Habit HT 2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail 5: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail 5: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail 1: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail 1: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail 7: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail 7: 'P Reach (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail 2: 'O Stack (cm)' publicado en cm: convertido a mm (×10)",
+    "Trail 2: 'P Reach (cm)' publicado en cm: convertido a mm (×10)"
+  ],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 114,
+    "challenges": 0
+  },
+  "methods": [
+    "vision"
+  ],
+  "with_height": 0,
+  "with_price": 80,
+  "generated_at": "2026-10-05T16:20:15"
+}

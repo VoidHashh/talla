@@ -1,0 +1,139 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my23/bikes/mountain/trail/habit-ht/c23_habitht_geotable.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "Wheel Size",
+      "29\"",
+      "29\"",
+      "29\"",
+      "29\""
+    ],
+    [
+      "A Seat Tube Length (cm)",
+      "38.0",
+      "40.0",
+      "44.0",
+      "48.0"
+    ],
+    [
+      "B Top Tube Horizontal (cm)",
+      "57.3",
+      "60.0",
+      "62.8",
+      "66.5"
+    ],
+    [
+      "C Top Tube Actual (cm)",
+      "56.9",
+      "58.9",
+      "60.3",
+      "62.9"
+    ],
+    [
+      "D Head Tube Angle",
+      "64.0°",
+      "64.0°",
+      "64.0°",
+      "64.0°"
+    ],
+    [
+      "E Seat Tube Angle",
+      "75.4°",
+      "75.0°",
+      "73.8°",
+      "72.7°"
+    ],
+    [
+      "E Seat Tube Angle Effective",
+      "76.0°",
+      "76.0°",
+      "76.0°",
+      "76.0°"
+    ],
+    [
+      "F Standover (cm)",
+      "71.0",
+      "73.0",
+      "74.0",
+      "76.0"
+    ],
+    [
+      "G Head Tube Length (cm)",
+      "11.0",
+      "12.0",
+      "13.0",
+      "14.0"
+    ],
+    [
+      "H Wheelbase (cm)",
+      "117.7",
+      "120.6",
+      "123.5",
+      "127.5"
+    ],
+    [
+      "I Front Center (cm)",
+      "74.2",
+      "77.1",
+      "80.1",
+      "84.0"
+    ],
+    [
+      "J Chain Stay Length (cm)",
+      "44.0",
+      "44.0",
+      "44.0",
+      "44.0"
+    ],
+    [
+      "K Bottom Bracket Drop (cm)",
+      "5.5",
+      "5.5",
+      "5.5",
+      "5.5"
+    ],
+    [
+      "L Bottom Bracket Height (cm)",
+      "32.5",
+      "32.5",
+      "32.5",
+      "32.5"
+    ],
+    [
+      "M Fork Rake (cm)",
+      "4.4",
+      "4.4",
+      "4.4",
+      "4.4"
+    ],
+    [
+      "N Trail (cm)",
+      "13.2",
+      "13.2",
+      "13.2",
+      "13.2"
+    ],
+    [
+      "O Stack (cm)",
+      "63.4",
+      "64.3",
+      "65.3",
+      "66.2"
+    ],
+    [
+      "P Reach (cm)",
+      "41.5",
+      "44.0",
+      "46.5",
+      "50.0"
+    ]
+  ]
+}

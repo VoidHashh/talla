@@ -1,0 +1,773 @@
+{
+  "brand": "Cube",
+  "discovered": 234,
+  "rows": 376,
+  "models": 78,
+  "families": 22,
+  "rejected": [
+    {
+      "model": "Cube Attain C:62 SLT",
+      "size": "47 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLT",
+      "size": "50 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLT",
+      "size": "53 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLT",
+      "size": "56 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLT",
+      "size": "58 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLT",
+      "size": "60 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLT",
+      "size": "62 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLX",
+      "size": "47 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLX",
+      "size": "50 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLX",
+      "size": "53 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLX",
+      "size": "56 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLX",
+      "size": "58 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLX",
+      "size": "60 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 SLX",
+      "size": "62 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 Race",
+      "size": "47 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 Race",
+      "size": "50 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 Race",
+      "size": "53 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 Race",
+      "size": "56 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 Race",
+      "size": "58 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 Race",
+      "size": "60 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain C:62 Race",
+      "size": "62 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 391 < 392)"
+    },
+    {
+      "model": "Cube Attain SLX",
+      "size": "47 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain SLX",
+      "size": "50 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain SLX",
+      "size": "53 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain SLX",
+      "size": "56 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain SLX",
+      "size": "58 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain SLX",
+      "size": "60 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain SLX",
+      "size": "62 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Race",
+      "size": "47 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Race",
+      "size": "50 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Race",
+      "size": "53 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Race",
+      "size": "56 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Race",
+      "size": "58 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Race",
+      "size": "60 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Race",
+      "size": "62 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Pro",
+      "size": "47 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Pro",
+      "size": "50 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Pro",
+      "size": "53 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Pro",
+      "size": "56 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Pro",
+      "size": "58 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Pro",
+      "size": "60 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Attain Pro",
+      "size": "62 cm",
+      "reason": "reach decrece al subir de talla (62 cm: 393 < 396)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLT",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLT",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLT",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLT",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLT",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLX",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLX",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLX",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLX",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 SLX",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Race",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Race",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Race",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Race",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Race",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EXC",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EXC",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EXC",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EXC",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EXC",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EX",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EX",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EX",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EX",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 EX",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro FE",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro FE",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro FE",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro FE",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro FE",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 Pro",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 ONE",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 ONE",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 ONE",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 ONE",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad C:62 ONE",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 392 < 393)"
+    },
+    {
+      "model": "Cube Nuroad SLX",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad SLX",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad SLX",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad SLX",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad SLX",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad SLX",
+      "size": "XXL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race FE",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race FE",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race FE",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race FE",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race FE",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race FE",
+      "size": "XXL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Race",
+      "size": "XXL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro FE",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro FE",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro FE",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro FE",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro FE",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro FE",
+      "size": "XXL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad EX",
+      "size": "XXS",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad EX",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad EX",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad EX",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad EX",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad EX",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad EX",
+      "size": "XXL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro",
+      "size": "XXS",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad Pro",
+      "size": "XXL",
+      "reason": "reach decrece al subir de talla (L: 389 < 390)"
+    },
+    {
+      "model": "Cube Nuroad ONE FE",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE FE",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE FE",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE FE",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE FE",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE",
+      "size": "XXS",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Nuroad ONE",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (L: 386 < 387)"
+    },
+    {
+      "model": "Cube Stereo HPC TM",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (L: 366 < 627)"
+    },
+    {
+      "model": "Cube Stereo HPC TM",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (L: 366 < 627)"
+    },
+    {
+      "model": "Cube Stereo HPC TM",
+      "size": "L",
+      "reason": "stack=366 fuera del rango plausible [480, 780]; stack decrece al subir de talla (L: 366 < 627)"
+    },
+    {
+      "model": "Cube Stereo HPC TM",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (L: 366 < 627)"
+    },
+    {
+      "model": "Cube Stereo HPC RACE",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (L: 366 < 627)"
+    },
+    {
+      "model": "Cube Stereo HPC RACE",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (L: 366 < 627)"
+    },
+    {
+      "model": "Cube Stereo HPC RACE",
+      "size": "L",
+      "reason": "stack=366 fuera del rango plausible [480, 780]; stack decrece al subir de talla (L: 366 < 627)"
+    },
+    {
+      "model": "Cube Stereo HPC RACE",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (L: 366 < 627)"
+    }
+  ],
+  "skipped": {
+    "duplicado (mismo modelo)": 132
+  },
+  "failures": [],
+  "warnings": [
+    "Cube Reaction C:68X SLX: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Reaction C:68X SLX: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo C:62 SLT: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo C:62 SLT: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube FRITZZ C:62 Super TM: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube FRITZZ C:62 Super TM: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo C:62 Super TM: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo C:62 Super TM: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube TWO15 SLX: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube TWO15 SLX: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube FRITZZ C:62 TM: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube FRITZZ C:62 TM: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo HPC TM: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube TWO15 Race: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube TWO15 Race: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo HPC RACE: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid 177 C:62 Super TM 600X: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid 177 C:62 Super TM 600X: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC SLT 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC SLT 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC SLT 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC SLT 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid 177 C:62 AT 600X: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid 177 C:62 AT 600X: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC AT 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC AT 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC AT 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC AT 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC TM 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC TM 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC TM 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC TM 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid 177 C:62 TM 600X: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid 177 C:62 TM 600X: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC SLX Evo 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC SLX Evo 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC SLX 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC SLX 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC SLX 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC SLX 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid ONE44 C:62 Race 400X: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid ONE44 C:62 Race 400X: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC Race 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC Race 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC Race 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE77 HPC Race 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid ONE44 C:62 Pro 400X: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube AMS Hybrid ONE44 C:62 Pro 400X: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC Pro 800: 'Stack' publica dos posiciones (p. ej. Hi/Lo): se usa la primera",
+    "Cube Stereo Hybrid ONE44 HPC Pro 800: 'Reach' publica dos posiciones (p. ej. Hi/Lo): se usa la primera"
+  ],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 240,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 78,
+  "generated_at": "2026-10-05T16:20:01"
+}

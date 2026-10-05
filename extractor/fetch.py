@@ -57,7 +57,8 @@ def visible_text_len(html: str) -> int:
 
 
 class Fetcher:
-    def __init__(self, root: Path, brand_key: str, force_browser: bool = False, refresh: bool = False, log=print):
+    def __init__(self, root: Path, brand_key: str, force_browser: bool = False, refresh: bool = False, log=print,
+                 delay_s: float | None = None):
         self.cache = root / "data" / "raw" / brand_key
         self.cache.mkdir(parents=True, exist_ok=True)
         self.profile = self.cache / ".chrome-profile"
@@ -71,6 +72,7 @@ class Fetcher:
         )
         self._robots: dict[str, urllib.robotparser.RobotFileParser | None] = {}
         self._last_http = 0.0
+        self.http_delay = delay_s or HTTP_DELAY_S
         self._pw = None
         self._ctx = None
         self.stats = {"httpx": 0, "browser": 0, "cache": 0, "challenges": 0}
@@ -94,7 +96,7 @@ class Fetcher:
         return True if rp is None else rp.can_fetch(ROBOTS_AGENT, url)
 
     def _http_wait(self):
-        wait = HTTP_DELAY_S - (time.time() - self._last_http)
+        wait = self.http_delay - (time.time() - self._last_http)
         if wait > 0:
             time.sleep(wait)
         self._last_http = time.time()
@@ -143,13 +145,22 @@ class Fetcher:
         return Page(url, str(r.url), r.status_code, "", "httpx", path)
 
     def _get_http(self, url: str) -> Page | None:
-        self._http_wait()
-        try:
-            r = self.client.get(url)
-        except httpx.HTTPError as e:
-            self.log(f"    · httpx error {type(e).__name__}: {url}")
-            return None
-        self.stats["httpx"] += 1
+        for attempt in range(4):
+            self._http_wait()
+            try:
+                r = self.client.get(url)
+            except httpx.HTTPError as e:
+                self.log(f"    · httpx error {type(e).__name__}: {url}")
+                return None
+            self.stats["httpx"] += 1
+            if r.status_code != 429:
+                break
+            # Demasiadas peticiones: esperar (Retry-After si viene) y bajar el ritmo, sin cambiar de identidad.
+            retry = r.headers.get("Retry-After", "")
+            wait = float(retry) if retry.isdigit() else 30.0 * (attempt + 1)
+            self.http_delay = max(self.http_delay, 8.0)
+            self.log(f"    · 429 en {url}: espero {wait:.0f} s")
+            time.sleep(wait)
         if r.status_code == 404:
             raise Blocked(f"HTTP 404 en {url}")
         return Page(url, str(r.url), r.status_code, r.text, "httpx")

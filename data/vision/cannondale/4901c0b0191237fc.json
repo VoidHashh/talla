@@ -1,0 +1,139 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my24/bikes/electric/e-mountain/moterra-sl/pdp/c24_moterrasl_geotable_final.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "Wheel Size",
+      "29F 27.5R",
+      "29F 27.5R",
+      "29F 27.5R",
+      "29F 27.5R"
+    ],
+    [
+      "A Seat Tube Length (cm)",
+      "38.0",
+      "40.0",
+      "44.5",
+      "49.0"
+    ],
+    [
+      "B Top Tube Horizontal (cm)",
+      "56.5",
+      "59.2",
+      "61.9",
+      "65.6"
+    ],
+    [
+      "C Top Tube Actual (cm)",
+      "53.7",
+      "55.9",
+      "58.4",
+      "62.1"
+    ],
+    [
+      "D Head Tube Angle",
+      "62.5°",
+      "62.5°",
+      "62.5°",
+      "62.5°"
+    ],
+    [
+      "E Seat Tube Angle Effective",
+      "77.0°",
+      "77.0°",
+      "77.0°",
+      "77.0°"
+    ],
+    [
+      "E1 Seat Tube Angle Actual",
+      "70.7°",
+      "71.3°",
+      "72.3°",
+      "73.1°"
+    ],
+    [
+      "F Standover (cm)",
+      "73.8",
+      "73.7",
+      "73.7",
+      "74.2"
+    ],
+    [
+      "G Head Tube Length (cm)",
+      "11.5",
+      "12.5",
+      "13.5",
+      "14.5"
+    ],
+    [
+      "H Wheelbase (cm)",
+      "121.9",
+      "124.8",
+      "128.3",
+      "132.7"
+    ],
+    [
+      "I Front Center (cm)",
+      "77.1",
+      "80.1",
+      "83.0",
+      "87.0"
+    ],
+    [
+      "J Chain Stay Length (cm)",
+      "44.9",
+      "44.9",
+      "45.3",
+      "45.8"
+    ],
+    [
+      "K Bottom Bracket Drop (cm)",
+      "3.0",
+      "3.0",
+      "3.0",
+      "3.0"
+    ],
+    [
+      "L Bottom Bracket Height (cm)",
+      "33.5",
+      "33.5",
+      "33.5",
+      "33.5"
+    ],
+    [
+      "M Fork Rake (cm)",
+      "4.4",
+      "4.4",
+      "4.4",
+      "4.4"
+    ],
+    [
+      "N Trail (cm)",
+      "14.5",
+      "14.5",
+      "14.5",
+      "14.4"
+    ],
+    [
+      "O Stack (cm)",
+      "63.0",
+      "63.9",
+      "64.8",
+      "65.7"
+    ],
+    [
+      "P Reach (cm)",
+      "42.0",
+      "44.5",
+      "47.0",
+      "50.5"
+    ]
+  ]
+}

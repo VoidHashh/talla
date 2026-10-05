@@ -6,12 +6,13 @@ exclude = ['-2[04]-|scale-2[04]|contessa-2[04]|roxter|junior|-jr-', 'magnet|bolt
 browser = true            # httpx recibe la página de Incapsula: siempre Chrome real
 classify_by_url = false   # categoría por las migas de pan de la propia Scott
 categories = [
+  ['previous season|for kids|junior', ''],
   ['plasma|triat|contrarreloj|time ?trial', ''],
-  ['e-?mtb|e-?mountain|el[ée]ctricas? de monta', 'emtb'],
+  ['monta[ñn]a el[ée]ctrica|el[ée]ctricas? de monta|e-?mtb|electric cross-country', 'emtb'],
   ['eride|e-bike|el[ée]ctric', ''],
   ['gravel', 'gravel'],
   ['carretera|road', 'carretera'],
-  ['monta[ñn]a|mountain|\bmtb\b|trail|enduro|cross.?country|downhill', 'mtb'],
+  ['monta[ñn]a|mountain|\bmtb\b|trail|enduro|cross.?country|downhill|gravity', 'mtb'],
 ]
 # Tabla con cada valor repetido (mm, mm, in) y cabecera de 2 columnas por talla: se colapsa a una columna en mm.
 collapse_unit_columns = true

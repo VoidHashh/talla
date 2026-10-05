@@ -1,0 +1,139 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my25/bikes/electric/e-mountain/moterra/pdp/c25_moterracarbon_geotable.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "Wheel Size",
+      "29 F",
+      "29 F",
+      "29 F",
+      "29 F"
+    ],
+    [
+      "A Seat Tube Length (cm)",
+      "38.0",
+      "40.0",
+      "42.0",
+      "46.0"
+    ],
+    [
+      "B Top Tube Horizontal (cm)",
+      "57.0",
+      "59.5",
+      "62.2",
+      "65.8"
+    ],
+    [
+      "C Head Tube Angle",
+      "64.4°",
+      "64.4°",
+      "64.4°",
+      "64.4°"
+    ],
+    [
+      "D1 Seat Tube Angle Effective",
+      "77.7°",
+      "77.7°",
+      "77.7°",
+      "77.7°"
+    ],
+    [
+      "D Seat Tube Angle Actual",
+      "72.1°",
+      "72.2°",
+      "72.4°",
+      "72.4°"
+    ],
+    [
+      "E Standover (cm)",
+      "75.2",
+      "76.2",
+      "77.5",
+      "78.51"
+    ],
+    [
+      "F Head Tube Length (cm)",
+      "12.5",
+      "12.5",
+      "13.5",
+      "14.5"
+    ],
+    [
+      "G Wheelbase (cm)",
+      "122.5",
+      "125.0",
+      "128.4",
+      "132.3"
+    ],
+    [
+      "H Front Center (cm)",
+      "77.2",
+      "79.7",
+      "82.6",
+      "86.5"
+    ],
+    [
+      "I Chain Stay Length (cm)",
+      "45.5",
+      "45.5",
+      "46.0",
+      "46.0"
+    ],
+    [
+      "J Bottom Bracket Drop (cm)",
+      "3.3",
+      "3.4",
+      "3.4",
+      "3.4"
+    ],
+    [
+      "K Bottom Bracket Height (cm)",
+      "34.6",
+      "34.6",
+      "34.6",
+      "34.6"
+    ],
+    [
+      "L Fork Rake (cm)",
+      "4.4",
+      "4.4",
+      "4.4",
+      "4.4"
+    ],
+    [
+      "M Trail (cm)",
+      "13.3",
+      "13.3",
+      "13.3",
+      "13.3"
+    ],
+    [
+      "N Stack (cm)",
+      "64.4",
+      "64.4",
+      "65.3",
+      "66.1"
+    ],
+    [
+      "O Reach (cm)",
+      "43.0",
+      "45.5",
+      "48.0",
+      "51.5"
+    ],
+    [
+      "P Axle-to-Crown (cm)",
+      "57.6",
+      "57.6",
+      "57.6",
+      "57.6"
+    ]
+  ]
+}

@@ -4,8 +4,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
-STACK_RE = re.compile(r"\bstack\b|^pila$", re.I)
-REACH_RE = re.compile(r"\breach\b|^alcance$", re.I)
+STACK_RE = re.compile(r"\bstacks?\b|^pila$", re.I)
+REACH_RE = re.compile(r"\breachs?\b|^alcance$", re.I)
 # Variantes que no son el stack/reach del cuadro.
 NOT_FRAME_RE = re.compile(
     r"\+|effective|efectiv|effektiv|\b3d\b|cockpit|handlebar|manillar|lenker|with bar|con manillar|to stem|stem\b|potencia|vorbau|spacer",
@@ -42,6 +42,9 @@ class Geometry:
 
 
 def parse_number(text: str) -> float | None:
+    mm = re.match(r"\s*(-?\d+(?:[.,]\d+)?)\s*mm\b", text)
+    if mm:  # valor en mm seguido de otras unidades ("548 mm 21.57 in")
+        text = mm.group(1)
     t = text.strip().replace(" ", "").replace("\xa0", "").replace(" ", "")
     t = re.sub(r"(mm|cm|°|º)$", "", t, flags=re.I)
     if not t or not re.search(r"\d", t):
@@ -63,8 +66,11 @@ def parse_height(text: str) -> Height | None:
     if not t or t in "-–—/" or t.lower() in ("n/a", "na", "x", "xxx"):
         return None
     low = t.lower()
-    lower_open = bool(re.search(r"[≤<]|hasta|up to|bis\b|jusqu|menos de|under|below", low))
-    upper_open = bool(re.search(r"[≥>]|\+\s*$|desde|from|ab\b|à partir|más de|over|above", low))
+    # "< 165" / "165 >" = hasta 165 ; "> 188" / "188 <" / "188+" = desde 188
+    lower_open = bool(re.match(r"\s*[≤<]", t) or re.search(r"\d\s*[≥>]\s*$", t)
+                      or re.search(r"hasta|up to|bis\b|jusqu|menos de|under|below", low))
+    upper_open = bool(re.match(r"\s*[≥>]", t) or re.search(r"\d\s*[≤<]\s*$|\+\s*$", t)
+                      or re.search(r"desde|from|ab\b|à partir|más de|over|above", low))
 
     if _FT_IN.search(t) and ("'" in t or "’" in t or "′" in t or "ft" in low):
         vals = [int(a) * 30.48 + float(b or 0) * 2.54 for a, b in _FT_IN.findall(t)]
@@ -94,6 +100,8 @@ def _is_size_like(cell: str) -> bool:
     c = cell.strip()
     if not c or len(c) > 16 or SIZE_WORD_RE.match(c):
         return False
+    if re.fullmatch(r"\d{2,3}(\.\d)? ?cm", c, re.I):
+        return True
     if re.search(r"mm|°|stack|reach|cm\b", c, re.I):
         return False
     up = c.upper()
@@ -137,6 +145,7 @@ def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None, unit: 
     if len(sizes) < 1:
         return None
     n = len(sizes)
+    pre_warnings: list[str] = []
 
     rows: dict[str, list[str]] = {}
     for row in m[header_idx + 1 :]:
@@ -153,6 +162,23 @@ def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None, unit: 
             label = f"{label} #{sum(1 for k in rows if k.startswith(label))+1}"
         rows[label] = values
 
+    # Columnas consecutivas con la misma talla: copias por colspan (valores iguales) o varias posiciones
+    # publicadas por talla (p. ej. geometría "Alta"/"Baja"); en ese caso se usa la primera publicada.
+    keep = [j for j in range(n) if not (j > 0 and sizes[j] == sizes[j - 1])]
+    if any(j > 0 and sizes[j] == sizes[j - 1] and any(v[j] != v[j - 1] for v in rows.values()) for j in range(n)):
+        pre_warnings.append("varias posiciones de geometría por talla: se usa la primera publicada")
+    # Bloque de tallas repetido (p. ej. S M L XL S M L XL = posición alta/baja): se usa el primero.
+    labels = [sizes[j] for j in keep]
+    for k in range(1, len(labels) // 2 + 1):
+        if labels[k:2 * k] == labels[:k] and len(labels) % k == 0 and labels == labels[:k] * (len(labels) // k):
+            keep = keep[:k]
+            pre_warnings.append("bloques de tallas repetidos (p. ej. posición alta/baja): se usa el primero")
+            break
+    if len(keep) != n:
+        sizes = [sizes[j] for j in keep]
+        rows = {k2: [v[j] for j in keep] for k2, v in rows.items()}
+        n = len(sizes)
+
     def pick(rx):
         # Títulos tipo "Fit (Stack and Reach)" no son una fila de datos.
         cands = [k for k in rows if rx.search(k) and not NOT_FRAME_RE.search(k)
@@ -168,7 +194,7 @@ def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None, unit: 
     if not k_stack or not k_reach:
         return None
 
-    warnings: list[str] = []
+    warnings: list[str] = list(pre_warnings)
 
     def nums(key):
         cells = rows[key]
@@ -271,8 +297,11 @@ def heights_from_tables(matrices, sizes: list[str]) -> list[Height | None] | Non
     for m in matrices:
         if len(m) < 2:
             continue
-        col0 = [r[0].strip() for r in m[1:] if r]
-        if col0 != sizes:
+        def bare(s: str) -> str:
+            return re.sub(r"\s*\(.*\)\s*$", "", s).strip()
+
+        col0 = [bare(r[0]) for r in m[1:] if r]
+        if col0 != [bare(s) for s in sizes]:
             continue
         for j, head in enumerate(m[0]):
             if j == 0 or NOT_HEIGHT_RE.search(head):
@@ -313,3 +342,37 @@ def order_sizes(g: Geometry) -> Geometry:
         sizes=pick(g.sizes), stack=pick(g.stack), reach=pick(g.reach), heights=pick(g.heights),
         rows={k: pick(v) for k, v in g.rows.items()}, warnings=g.warnings + ["columnas de talla reordenadas"],
     )
+
+
+def heights_from_dl(html: str, sizes: list[str]) -> list[Height | None] | None:
+    """Guía de tallas en <dl><dt class="name">S</dt><dd class="graph">… 157 cm … 169 cm …</dd></dl> (Giant).
+
+    Solo se acepta si aparecen TODAS las tallas de la geometría, cada una con dos valores en cm.
+    """
+    found = re.findall(
+        r"<dt[^>]*class=[\"']?name[\"']?[^>]*>\s*([^<]+?)\s*</dt>\s*<dd[^>]*class=[\"']?graph[\"']?[^>]*>(.*?)</dd>",
+        html, re.S,
+    )
+    by_size = {}
+    for label, body in found:
+        nums = re.findall(r"(\d{3})\s*cm", re.sub(r"<[^>]+>", " ", body))
+        if len(nums) == 2:
+            by_size[label.strip()] = parse_height(f"{nums[0]}-{nums[1]} cm")
+    out = [by_size.get(sz) for sz in sizes]
+    return out if all(out) else None
+
+
+def apply_row_alias(matrices, alias: dict[str, str]):
+    """Renombra etiquetas de fila/cabecera según la marca (equivalencias publicadas por ella, ver config)."""
+    norm = {k.strip().lower(): v for k, v in alias.items()}
+    out = []
+    for m in matrices:
+        m = [list(r) for r in m]
+        for r in m:
+            for j in (0, 1):
+                if j < len(r) and r[j].strip().lower() in norm:
+                    r[j] = norm[r[j].strip().lower()]
+        if m:
+            m[0] = [norm.get(c.strip().lower(), c) for c in m[0]]
+        out.append(m)
+    return out

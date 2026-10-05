@@ -12,3 +12,5 @@ categories = [
   ['/es/es/(dune|neat|sly|zendit|crafty|level|scree|prime|mondraker-unlimited-gulf)', 'emtb'],
 ]
 exclude_name = '\bframe ?set\b|\bcuadro\b|\bframe\b|\bkit\b'
+price_re = 'bike-basic-info__price[^>]*>\s*<strong>\s*([\d.,]+)\s*€'
+no_render_retry = true

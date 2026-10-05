@@ -1,0 +1,36 @@
+{
+  "brand": "BH",
+  "discovered": 121,
+  "rows": 355,
+  "models": 84,
+  "families": 30,
+  "rejected": [],
+  "skipped": {
+    "fuera de alcance (URL/tipo)": 34,
+    "duplicado (mismo modelo)": 1
+  },
+  "failures": [
+    {
+      "url": "https://www.bhbikes.com/es_ES/bicicletas/carretera/gravel/gravelx-2-5-r-lg257",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.bhbikes.com/es_ES/bicicletas/carretera/gravel/gravelx-2-0-at-lg207",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 95,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 65,
+  "generated_at": "2026-10-05T16:19:17"
+}

@@ -30,6 +30,8 @@ class _TableParser(HTMLParser):
                 t["row"] = []
                 t["comment"] = None
             elif tag in ("td", "th") and t["row"] is not None:
+                if t["cell"] is not None:  # HTML malformado: <td>a<td>b sin cerrar
+                    self._close_cell(t)
                 span = dict(attrs).get("colspan") or "1"
                 t["cell"] = {"text": [], "span": int(span) if span.isdigit() else 1}
             elif tag == "br" and t["cell"] is not None:
@@ -317,3 +319,37 @@ def collapse_unit_columns(m: Matrix) -> Matrix:
         if len(vals) == n:
             out.append([label] + vals)
     return out
+
+
+def span_tables(html: str, header: str, label: str, value: str, start: str = "", end: str = "") -> list[Matrix]:
+    """Tablas hechas con <span class=…>: cabecera de tallas, etiqueta de fila y valores (clases como regex).
+
+    start/end: regex que delimitan el bloque de la tabla dentro de la página (opcional).
+    """
+    if start:
+        m = re.search(start, html)
+        if not m:
+            return []
+        html = html[m.start():]
+    if end:
+        m = re.search(end, html)
+        if m:
+            html = html[: m.start()]
+
+    def text(s: str) -> str:
+        return htmllib.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s))).replace("\xa0", " ").strip()
+
+    sizes: list[str] = []
+    rows: list[list[str]] = []
+    for m in re.finditer(r'<span[^>]*class="([^"]*)"[^>]*>(.*?)</span>', html, re.S):
+        cls, content = m.group(1), text(m.group(2))
+        if re.fullmatch(header, cls):
+            if not rows and content:
+                sizes.append(content)
+        elif re.fullmatch(label, cls):
+            rows.append([content])
+        elif re.fullmatch(value, cls) and rows:
+            rows[-1].append(content)
+    if not sizes or not rows:
+        return []
+    return [[[""] + sizes] + [r for r in rows if len(r) > 1]]

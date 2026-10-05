@@ -1,0 +1,300 @@
+{
+  "brand": "Pinarello",
+  "discovered": 33,
+  "rows": 212,
+  "models": 28,
+  "families": 9,
+  "rejected": [
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "425",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "450",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "465",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "485",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "510",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "520",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "525",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "540",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "560",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F DURA ACE Di2",
+      "size": "600",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "425",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "450",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "465",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "485",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "510",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "520",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "525",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "540",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "560",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SRAM RED ETAP AXS",
+      "size": "600",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "425",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "450",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "465",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "485",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "510",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "520",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "525",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "540",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "560",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F PQ3 TEAM REPLICA",
+      "size": "600",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "425",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "450",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "465",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "485",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "510",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "520",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "525",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "540",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "560",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F INEOS TEAM REPLICA",
+      "size": "600",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "425",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "450",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "465",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "485",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "510",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "520",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "525",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "540",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "560",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    },
+    {
+      "model": "DOGMA F SUPER RECORD 13",
+      "size": "600",
+      "reason": "reach decrece al subir de talla (560: 393.4 < 396.7)"
+    }
+  ],
+  "skipped": {},
+  "failures": [],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 41,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 0,
+  "generated_at": "2026-10-05T16:19:42"
+}

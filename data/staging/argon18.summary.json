@@ -1,0 +1,92 @@
+{
+  "brand": "Argon 18",
+  "discovered": 29,
+  "rows": 65,
+  "models": 11,
+  "families": 5,
+  "rejected": [
+    {
+      "model": "Anti Matter",
+      "size": "XXS",
+      "reason": "falta stack; falta reach"
+    }
+  ],
+  "skipped": {
+    "duplicado (mismo modelo)": 9
+  },
+  "failures": [
+    {
+      "url": "https://www.argon18.com/en/bikes/road/sum-pro/sram-red-axs",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.argon18.com/en/bikes/road/sum-pro/shimano-dura-ace-di2",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.argon18.com/en/bikes/road/sum-pro/shimano-ultegra-di2-2",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.argon18.com/en/bikes/road/sum/sram-force-axs-2",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.argon18.com/en/bikes/road/sum/shimano-ultegra-di2-3",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.argon18.com/en/bikes/road/sum/shimano-105-di2",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.argon18.com/en/bikes/road/sum/sum",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.argon18.com/en/bikes/gravel/grey-matter/sram-apex-axs-xplr",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.argon18.com/en/bikes/gravel/grey-matter/sram-apex-xplr",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [
+    "Argon 18 Nitrogen Pro Sram Red: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Pro Sram Red: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Pro Shimano Dura-Ace Di2: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Pro Shimano Dura-Ace Di2: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Pro Shimano Ultegra Di2: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Pro Shimano Ultegra Di2: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Sram Force: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Sram Force: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Shimano Ultegra Di2: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Shimano Ultegra Di2: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Shimano 105 Di2: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Argon 18 Nitrogen Shimano 105 Di2: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Equation: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Equation: 'K Reach S cm' publicado en cm: convertido a mm (×10)",
+    "Krypton Pro: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Krypton Pro: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Krypton: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Krypton: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Anti Matter: 'J Stack cm' publicado en cm: convertido a mm (×10)",
+    "Anti Matter: 'K Reach cm' publicado en cm: convertido a mm (×10)",
+    "Dark Matter: 'J Stack min cm' publicado en cm: convertido a mm (×10)",
+    "Dark Matter: 'K Reach cm' publicado en cm: convertido a mm (×10)"
+  ],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 39,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 0,
+  "generated_at": "2026-10-05T16:19:22"
+}

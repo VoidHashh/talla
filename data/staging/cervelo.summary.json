@@ -1,0 +1,24 @@
+{
+  "brand": "Cervélo",
+  "discovered": 7,
+  "rows": 42,
+  "models": 7,
+  "families": 7,
+  "rejected": [],
+  "skipped": {},
+  "failures": [],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 8,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 0,
+  "generated_at": "2026-10-05T16:19:12"
+}

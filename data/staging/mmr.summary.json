@@ -1,0 +1,24 @@
+{
+  "brand": "MMR",
+  "discovered": 58,
+  "rows": 236,
+  "models": 58,
+  "families": 19,
+  "rejected": [],
+  "skipped": {},
+  "failures": [],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 66,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 236,
+  "with_price": 58,
+  "generated_at": "2026-10-05T16:20:19"
+}

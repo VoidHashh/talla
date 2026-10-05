@@ -11,5 +11,5 @@ categories = [
 ]
 exclude_name = '\bframe ?set\b|\btelaio\b|\bkit\b|\bframe\b'
 # La tabla de geometría usa códigos de letra del dibujo oficial de la ficha (X = reach horizontal, Y = stack vertical,
-# comprobado en el dibujo). Requiere la opción header_alias (pendiente de añadir al pipeline).
-header_alias = { X = "Reach", Y = "Stack" }
+# comprobado en el dibujo). Opción row_alias.
+row_alias = { X = "Reach", Y = "Stack" }

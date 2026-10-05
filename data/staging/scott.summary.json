@@ -1,0 +1,112 @@
+{
+  "brand": "Scott",
+  "discovered": 178,
+  "rows": 389,
+  "models": 77,
+  "families": 26,
+  "rejected": [
+    {
+      "model": "Scott Speedster 10",
+      "size": "XXS/47",
+      "reason": "reach decrece al subir de talla (L/56: 385 < 391)"
+    },
+    {
+      "model": "Scott Speedster 10",
+      "size": "XS/49",
+      "reason": "reach decrece al subir de talla (L/56: 385 < 391)"
+    },
+    {
+      "model": "Scott Speedster 10",
+      "size": "S/52",
+      "reason": "reach decrece al subir de talla (L/56: 385 < 391)"
+    },
+    {
+      "model": "Scott Speedster 10",
+      "size": "M/54",
+      "reason": "reach decrece al subir de talla (L/56: 385 < 391)"
+    },
+    {
+      "model": "Scott Speedster 10",
+      "size": "L/56",
+      "reason": "reach decrece al subir de talla (L/56: 385 < 391)"
+    },
+    {
+      "model": "Scott Speedster 10",
+      "size": "XL/58",
+      "reason": "reach decrece al subir de talla (L/56: 385 < 391)"
+    },
+    {
+      "model": "Scott Speedster 10",
+      "size": "XXL/61",
+      "reason": "reach decrece al subir de talla (L/56: 385 < 391)"
+    },
+    {
+      "model": "Scott Contrail 160",
+      "size": "16''",
+      "reason": "stack=325.8 fuera del rango plausible [480, 780]; reach=276.4 fuera del rango plausible [340, 560]"
+    },
+    {
+      "model": "Scott Contrail 200",
+      "size": "20\"",
+      "reason": "stack=460.7 fuera del rango plausible [480, 780]; reach=312.3 fuera del rango plausible [340, 560]"
+    }
+  ],
+  "skipped": {
+    "fuera de alcance (categoría)": 89
+  },
+  "failures": [
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-strike-40-bike",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-spark-dc-40-bike",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-overland-10-bike",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-overland-30-bike",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-spark-dc-factory-bike",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-spark-dc-30-bike",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-spark-dc-10-bike",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-strike-10-bike",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.scott-sports.com/es/es/product/scott-strike-30-bike",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [
+    "Scott Gambler RC: varias posiciones de geometría por talla: se usa la primera publicada",
+    "Scott Gambler 10: varias posiciones de geometría por talla: se usa la primera publicada"
+  ],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 179,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 54,
+  "generated_at": "2026-10-05T16:20:00"
+}

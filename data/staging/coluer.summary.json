@@ -1,0 +1,49 @@
+{
+  "brand": "Coluer",
+  "discovered": 35,
+  "rows": 97,
+  "models": 29,
+  "families": 14,
+  "rejected": [],
+  "skipped": {},
+  "failures": [
+    {
+      "url": "https://coluer.com/catalogue/limbo-293/",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://coluer.com/catalogue/limbo-292/",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://coluer.com/catalogue/ascent-292-mbdtmact292/",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://coluer.com/catalogue/ascent-263-mbdtmact263/",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://coluer.com/catalogue/ascent-262-mbdtmact262/",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://coluer.com/catalogue/limbo-296/",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 38,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 29,
+  "generated_at": "2026-10-05T16:19:17"
+}

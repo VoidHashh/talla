@@ -10,11 +10,14 @@ App web (PWA) que recomienda talla de bicicleta de carretera, gravel, MTB o e-MT
 - Sin backend en el MVP. Datos en `data/bikes.csv`, que se compila a `src/data/bikes.json` mediante un script.
 - Tests con Vitest para la lógica de cálculo.
 - UI en español de España.
+- Carga de datos: extractor en Python (`extractor/`, venv en `.venv`; dependencias autorizadas: httpx, playwright, pdfplumber). Escribe `data/staging/<marca>.csv` y `reports/diff.md`; nunca toca `bikes.csv`.
 
 ## Reglas de datos (críticas)
-1. **Nunca inventar datos.** Ni geometrías, ni rangos de altura, ni precios, ni modelos. Si falta un dato, el campo queda vacío y la fila no entra en el ranking.
-2. Cada fila de `bikes.csv` lleva obligatoriamente `source_url` (la página oficial de la marca de donde sale el dato) y `verified_at` (fecha).
-3. Los rangos de altura por talla son los que publica cada marca en su guía de tallas. No se derivan ni se estiman.
+1. **Nunca inventar datos.** Ni geometrías, ni rangos de altura, ni precios, ni modelos. Si falta un dato, el campo queda vacío.
+2. Cada fila lleva `source_url` (página oficial de la marca de donde sale el dato), `extraction_method` (html/json/pdf/vision) y `loaded_at`.
+3. **Geometría por talla obligatoria** (stack, reach y el resto de cotas publicadas). Una marca sin geometría publicada queda como bloqueada en el informe, nunca descartada en silencio.
+3b. **Rango de altura opcional**: solo si la marca lo publica en su guía de tallas. No se deriva (las calculadoras no se usan). Extremos abiertos se guardan como intervalo abierto (`height_min` o `height_max` vacío). Pies/pulgadas se convierten a cm guardando el valor y la unidad originales.
+3c. Equivalencias de talla solo las que publique la marca, en `data/size-labels.csv`. Familia = misma tabla de geometría del cuadro. Precio oficial en EUR (`price_is_from` para "desde"); USD/CHF vacíos. Solo el año de modelo vigente.
 4. La tabla de talla de la parte gratis **se genera desde la BBDD** (mediana de los rangos de las marcas por talla y categoría). No se escribe a mano.
 5. Solo carretera, gravel, MTB y e-MTB (categorías `carretera`, `gravel`, `mtb`, `emtb`). Sin urbanas ni otras eléctricas.
 6. Solo las marcas de `data/brands.csv`. No añadir marcas sin que yo lo pida.
@@ -29,6 +32,7 @@ App web (PWA) que recomienda talla de bicicleta de carretera, gravel, MTB o e-MT
   4. Una sola talla por modelo (la de mayor score).
   5. Orden por score descendente; desempate por precio ascendente.
   6. Top 5.
+  - Pendiente de definir con el usuario: el ranking premium debe usar stack y reach, una bici por familia, y tratar los extremos de altura vacíos como sin límite.
 - Nada de ángulos, fórmulas de bike fit, calibrados ni avisos técnicos en la UI.
 
 ## UX

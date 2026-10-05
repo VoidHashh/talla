@@ -1,0 +1,125 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my23/bikes/electric/e-mountain/trail-neo-2/c22_trailneo1_geo.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "Wheel Size",
+      "27.5\"",
+      "29\"",
+      "29\"",
+      "29\""
+    ],
+    [
+      "A Seat Tube Length (cm)",
+      "40.0",
+      "43.5",
+      "47.0",
+      "50.0"
+    ],
+    [
+      "B Top Tube Horizontal (cm)",
+      "57.9",
+      "59.9",
+      "61.8",
+      "63.9"
+    ],
+    [
+      "C Head Tube Angle",
+      "68.0°",
+      "68.0°",
+      "68.0°",
+      "68.0°"
+    ],
+    [
+      "D Seat Tube Angle",
+      "74.0°",
+      "74.0°",
+      "74.0°",
+      "74.0°"
+    ],
+    [
+      "E Standover (cm)",
+      "75.0",
+      "78.4",
+      "80.7",
+      "82.9"
+    ],
+    [
+      "F Head Tube Length (cm)",
+      "14.0",
+      "13.0",
+      "14.0",
+      "15.5"
+    ],
+    [
+      "G Wheelbase (cm)",
+      "116.3",
+      "117.8",
+      "119.8",
+      "122.0"
+    ],
+    [
+      "H Front Center (cm)",
+      "68.8",
+      "70.5",
+      "72.5",
+      "74.8"
+    ],
+    [
+      "I Chain Stay Length (cm)",
+      "48.0",
+      "48.0",
+      "48.0",
+      "48.0"
+    ],
+    [
+      "J Bottom Bracket Drop (cm)",
+      "5.2",
+      "6.5",
+      "6.5",
+      "6.5"
+    ],
+    [
+      "K Bottom Bracket Height (cm)",
+      "29.9",
+      "30.5",
+      "30.5",
+      "30.5"
+    ],
+    [
+      "L Fork Rake (cm)",
+      "5.1",
+      "5.1",
+      "5.1",
+      "5.1"
+    ],
+    [
+      "M Trail (cm)",
+      "8.7",
+      "9.4",
+      "9.4",
+      "9.4"
+    ],
+    [
+      "N Stack (cm)",
+      "62.2",
+      "63.5",
+      "64.4",
+      "65.8"
+    ],
+    [
+      "O Reach (cm)",
+      "40.1",
+      "41.7",
+      "43.3",
+      "45.0"
+    ]
+  ]
+}

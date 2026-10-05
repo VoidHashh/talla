@@ -1,0 +1,40 @@
+{
+  "brand": "Berria",
+  "discovered": 35,
+  "rows": 156,
+  "models": 34,
+  "families": 10,
+  "rejected": [
+    {
+      "model": "BRAVO ESSENTIAL E70",
+      "size": "L",
+      "reason": "falta stack"
+    },
+    {
+      "model": "BRAVO ESSENTIAL S100",
+      "size": "L",
+      "reason": "falta stack"
+    }
+  ],
+  "skipped": {},
+  "failures": [
+    {
+      "url": "https://berriabikes.com/en/products/belador-br-red-axs-pwm-2027",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 45,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 156,
+  "with_price": 34,
+  "generated_at": "2026-10-05T16:19:36"
+}

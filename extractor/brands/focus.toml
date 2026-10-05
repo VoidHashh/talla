@@ -9,3 +9,5 @@ categories = [
   ['/es_es/atlas-', 'gravel'],
   ['/es_es/(jam|sam|thron|jarifa2|jam2-sl|vam2-sl)-', 'emtb'],
 ]
+# focus-bikes.com responde 429 por debajo de ~8 s entre peticiones
+delay_s = 9

@@ -37,3 +37,5 @@ price_re = '"@type":"Offer"[^}]*?"price":(\d+(?:\.\d+)?)'
 exclude_name = '\bcuadro\b|\bm.dulo\b|\bkit\b|frameset'
 # Año de modelo en el nombre de la imagen principal: .../DomaneSLR9AXS-27-79928-A-Primary (27 = MY2027).
 year_re = ['-(2\d)-\d+-[A-Z]-Primary']
+# Trek llama "Altura del cuadro" / "Alcance del cuadro" a geometryFrameStack / geometryFrameReach de su propia API.
+row_alias = { "N — Altura del cuadro" = "Stack (cm)", "M — Alcance del cuadro" = "Reach (cm)" }

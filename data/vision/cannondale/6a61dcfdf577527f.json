@@ -1,0 +1,146 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my25/bikes/electric/e-mountain/habit-neo/pdp/habit_neo_webgeo_table.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "Wheel Size",
+      "29\"",
+      "29\"",
+      "29\"",
+      "29\""
+    ],
+    [
+      "A Seat Tube Length (cm)",
+      "38",
+      "40",
+      "44,5",
+      "49"
+    ],
+    [
+      "B Top Tube Horizontal (mm)",
+      "564",
+      "591",
+      "618",
+      "654"
+    ],
+    [
+      "C Top Tube Actual (mm)",
+      "543",
+      "566",
+      "586",
+      "621"
+    ],
+    [
+      "D Head Tube Angle",
+      "64°",
+      "64°",
+      "64°",
+      "64°"
+    ],
+    [
+      "E Seat Tube Angle Effective",
+      "78°",
+      "78°",
+      "78°",
+      "78°"
+    ],
+    [
+      "E1 Seat Tube Angle Actual",
+      "72.4°",
+      "73°",
+      "73.3°",
+      "73.8°"
+    ],
+    [
+      "F Standover (mm)",
+      "753",
+      "753",
+      "755",
+      "755"
+    ],
+    [
+      "G Head Tube Length (cm)",
+      "115",
+      "125",
+      "135",
+      "145"
+    ],
+    [
+      "H Wheelbase (mm)",
+      "1212",
+      "1241",
+      "1277",
+      "1316"
+    ],
+    [
+      "I Front Center (mm)",
+      "768",
+      "797",
+      "826",
+      "866"
+    ],
+    [
+      "J Chain Stay Length (mm)",
+      "448",
+      "448",
+      "453",
+      "453"
+    ],
+    [
+      "K Bottom Bracket Drop (mm)",
+      "39",
+      "39",
+      "39",
+      "39"
+    ],
+    [
+      "L Bottom Bracket Height (mm)",
+      "339",
+      "339",
+      "339",
+      "339"
+    ],
+    [
+      "M Fork Rake (mm)",
+      "44",
+      "44",
+      "44",
+      "44"
+    ],
+    [
+      "N Trail (mm)",
+      "135",
+      "135",
+      "135",
+      "135"
+    ],
+    [
+      "O Stack (mm)",
+      "629",
+      "638",
+      "647",
+      "656"
+    ],
+    [
+      "P Reach (mm)",
+      "430",
+      "455",
+      "480",
+      "515"
+    ],
+    [
+      "Q Axle-to-Crown (mm)",
+      "563",
+      "563",
+      "563",
+      "563"
+    ]
+  ]
+}

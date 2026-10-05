@@ -1,0 +1,41 @@
+{
+  "brand": "KTM",
+  "discovered": 112,
+  "rows": 477,
+  "models": 108,
+  "families": 32,
+  "rejected": [],
+  "skipped": {},
+  "failures": [
+    {
+      "url": "https://www.ktm-bikes.at/bikes/detail/mx2270441115-revelator-alto-prime-axs-pm-m-55-mx2270441115revelator-alto-primegalaxy-dust-carbon-matt2x12-sram-force-axs-pm-2027",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ktm-bikes.at/bikes/detail/mx2270454117-revelator-alto-elite-di2-pm-l-57-mx2270454117revelator-alto-elite-di2-pmdark-sea-silver-black-2x12-shimano-105-di2-pm-2027",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ktm-bikes.at/bikes/detail/mx2270472215-gravelator-20-lfc-m-55-mx2270472215gravelator-20-lfcbright-teal-matt2x10-shimano-cues-2027",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.ktm-bikes.at/bikes/detail/mx2260307108-scarp-master-l-48-mx2260307108scarp-mastercarbon-orange-black-sand-1x12-shimano-deore-xt-di2-2027",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 117,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 108,
+  "generated_at": "2026-10-05T16:19:32"
+}

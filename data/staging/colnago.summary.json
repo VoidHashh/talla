@@ -1,0 +1,39 @@
+{
+  "brand": "Colnago",
+  "discovered": 18,
+  "rows": 82,
+  "models": 13,
+  "families": 8,
+  "rejected": [],
+  "skipped": {
+    "duplicado (mismo modelo)": 2
+  },
+  "failures": [
+    {
+      "url": "https://www.colnago.com/es-es/products/bicicleta-g3-x",
+      "reason": "PDF sin tabla de stack/reach legible"
+    },
+    {
+      "url": "https://www.colnago.com/es-es/products/bicicleta-master",
+      "reason": "PDF sin tabla de stack/reach legible"
+    },
+    {
+      "url": "https://www.colnago.com/es-es/premium-bikes/c72-road-bike",
+      "reason": "PDF sin tabla de stack/reach legible"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 1,
+    "browser": 0,
+    "cache": 36,
+    "challenges": 0
+  },
+  "methods": [
+    "pdf"
+  ],
+  "with_height": 0,
+  "with_price": 5,
+  "generated_at": "2026-10-05T16:19:20"
+}

@@ -12,3 +12,6 @@ data/vision/**/*.jpg
 data/vision/**/*.jpeg
 data/vision/**/*.webp
 data/logs
+data/vision/**/*.ashx
+data/vision/**/*.svg
+data/vision/**/*.gif

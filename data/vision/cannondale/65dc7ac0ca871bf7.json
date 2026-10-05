@@ -1,0 +1,167 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my26/bikes/mountain/enduro/bad-habit/pdp/c26_badhabit_geo_table_v2.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "Wheel Size",
+      "29/27.5",
+      "29/27.5",
+      "29/27.5",
+      "29/27.5"
+    ],
+    [
+      "A Seat Tube Length (mm)",
+      "355",
+      "380",
+      "420",
+      "455"
+    ],
+    [
+      "B Top Tube Horizontal (mm)",
+      "565",
+      "592",
+      "618",
+      "655"
+    ],
+    [
+      "C Top Tube Actual (mm)",
+      "535",
+      "555",
+      "577",
+      "609"
+    ],
+    [
+      "D Head Tube Angle",
+      "64°",
+      "64°",
+      "64°",
+      "64°"
+    ],
+    [
+      "E Seat Tube Angle Effective",
+      "77.7°",
+      "77.7°",
+      "77.8°",
+      "77.8°"
+    ],
+    [
+      "E1 Seat Tube Angle Actual",
+      "69.7°",
+      "70.2°",
+      "71.1°",
+      "71.5°"
+    ],
+    [
+      "F Standover (mm)",
+      "734",
+      "737",
+      "739",
+      "746"
+    ],
+    [
+      "G Head Tube Length (mm)",
+      "110",
+      "120",
+      "130",
+      "140"
+    ],
+    [
+      "H Wheelbase (mm)",
+      "1195",
+      "1224",
+      "1256",
+      "1295"
+    ],
+    [
+      "I Front Center (mm)",
+      "764",
+      "793",
+      "822",
+      "862"
+    ],
+    [
+      "J Chain Stay Length (mm)",
+      "430",
+      "430",
+      "435",
+      "435"
+    ],
+    [
+      "K Bottom Bracket Drop (mm)",
+      "25",
+      "25",
+      "25",
+      "25"
+    ],
+    [
+      "L Bottom Bracket Height (mm)",
+      "342",
+      "342",
+      "342",
+      "342"
+    ],
+    [
+      "M Fork Rake (mm)",
+      "44",
+      "44",
+      "44",
+      "44"
+    ],
+    [
+      "N Trail (mm)",
+      "135",
+      "135",
+      "135",
+      "135"
+    ],
+    [
+      "O Stack (mm)",
+      "630",
+      "641",
+      "648",
+      "657"
+    ],
+    [
+      "P Reach (mm)",
+      "430",
+      "455",
+      "480",
+      "515"
+    ],
+    [
+      "Q Axle-to-Crown",
+      "573",
+      "573",
+      "573",
+      "573"
+    ],
+    [
+      "R Rear Travel (mm)",
+      "155",
+      "155",
+      "155",
+      "155"
+    ],
+    [
+      "S Shock Eye-to-Eye (mm)",
+      "210",
+      "210",
+      "210",
+      "210"
+    ],
+    [
+      "T Shock Stroke (mm)",
+      "55",
+      "55",
+      "55",
+      "55"
+    ]
+  ]
+}

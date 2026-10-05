@@ -1,0 +1,47 @@
+{
+  "brand": "Conor",
+  "discovered": 53,
+  "rows": 115,
+  "models": 30,
+  "families": 11,
+  "rejected": [
+    {
+      "model": "ADRA",
+      "size": "SM",
+      "reason": "stack decrece al subir de talla (LA: 671 < 676)"
+    },
+    {
+      "model": "ADRA",
+      "size": "MD",
+      "reason": "stack decrece al subir de talla (LA: 671 < 676)"
+    },
+    {
+      "model": "ADRA",
+      "size": "LA",
+      "reason": "stack decrece al subir de talla (LA: 671 < 676)"
+    }
+  ],
+  "skipped": {
+    "duplicado (mismo modelo)": 21
+  },
+  "failures": [
+    {
+      "url": "https://conorbikes.com/es/sport/3309-19451-5400-mixta-8424065786624.html",
+      "reason": "transcripción sin stack/reach"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 57,
+    "challenges": 0
+  },
+  "methods": [
+    "vision"
+  ],
+  "with_height": 0,
+  "with_price": 30,
+  "generated_at": "2026-10-05T16:19:20"
+}

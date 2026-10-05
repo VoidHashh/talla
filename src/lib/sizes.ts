@@ -1,15 +1,15 @@
+// Solo variantes de notación de la misma talla. Etiquetas propias de cada marca ("SM", "MD", "ML"…)
+// no se interpretan aquí: sus equivalencias, si la marca las publica, están en data/size-labels.csv.
 const ALIASES: Record<string, string> = {
   XXXS: '3XS',
   '2XS': 'XXS',
-  SM: 'S/M',
-  ML: 'M/L',
   '2XL': 'XXL',
   XXXL: '3XL',
 }
 
 const ORDER = ['3XS', 'XXS', 'XS', 'S', 'S/M', 'M', 'M/L', 'L', 'XL', 'XXL', '3XL']
 
-/** Normaliza una etiqueta de talla ("2xs" → "XXS", "ml" → "M/L"). */
+/** Normaliza la notación de una talla ("2xs" → "XXS", " m/l " → "M/L"). */
 export function canonicalSizeLabel(label: string): string {
   const clean = label.trim().toUpperCase().replace(/\s+/g, '')
   return ALIASES[clean] ?? clean

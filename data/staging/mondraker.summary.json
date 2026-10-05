@@ -1,0 +1,104 @@
+{
+  "brand": "Mondraker",
+  "discovered": 47,
+  "rows": 210,
+  "models": 46,
+  "families": 18,
+  "rejected": [
+    {
+      "model": "SUMMUM R",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    },
+    {
+      "model": "SUMMUM R",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (XL: 510 < 514)"
+    }
+  ],
+  "skipped": {},
+  "failures": [],
+  "warnings": [
+    "SUMMUM RR: varias posiciones de geometría por talla: se usa la primera publicada",
+    "SUMMUM R: varias posiciones de geometría por talla: se usa la primera publicada",
+    "SUMMUM R: columnas de talla reordenadas",
+    "ANARK XR: bloques de tallas repetidos (p. ej. posición alta/baja): se usa el primero",
+    "ANARK R: bloques de tallas repetidos (p. ej. posición alta/baja): se usa el primero",
+    "ZENDIT XR: bloques de tallas repetidos (p. ej. posición alta/baja): se usa el primero",
+    "ZENDIT RR S: bloques de tallas repetidos (p. ej. posición alta/baja): se usa el primero",
+    "ZENDIT RR: bloques de tallas repetidos (p. ej. posición alta/baja): se usa el primero"
+  ],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 48,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 46,
+  "generated_at": "2026-10-05T16:19:49"
+}

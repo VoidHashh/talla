@@ -1,0 +1,38 @@
+{
+  "brand": "Merida",
+  "discovered": 84,
+  "rows": 285,
+  "models": 65,
+  "families": 36,
+  "rejected": [],
+  "skipped": {
+    "fuera de alcance (URL/tipo)": 2,
+    "año de modelo anterior": 17
+  },
+  "failures": [],
+  "warnings": [
+    "LITHOS 6000: varias posiciones de geometría por talla: se usa la primera publicada",
+    "eONE-SIXTY 10K: varias posiciones de geometría por talla: se usa la primera publicada",
+    "eONE-SIXTY 8000: varias posiciones de geometría por talla: se usa la primera publicada",
+    "eONE-SIXTY 7000: varias posiciones de geometría por talla: se usa la primera publicada",
+    "eONE-SIXTY 875: varias posiciones de geometría por talla: se usa la primera publicada",
+    "eONE-SIXTY 675: varias posiciones de geometría por talla: se usa la primera publicada",
+    "eONE-EIGHTY 900: varias posiciones de geometría por talla: se usa la primera publicada",
+    "eONE-EIGHTY 700: varias posiciones de geometría por talla: se usa la primera publicada",
+    "eONE-EIGHTY 500: varias posiciones de geometría por talla: se usa la primera publicada",
+    "ONE-SIXTY 700: varias posiciones de geometría por talla: se usa la primera publicada"
+  ],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 96,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 0,
+  "generated_at": "2026-10-05T16:19:39"
+}

@@ -1,0 +1,27 @@
+{
+  "brand": "Canyon",
+  "discovered": 141,
+  "rows": 556,
+  "models": 96,
+  "families": 40,
+  "rejected": [],
+  "skipped": {
+    "fuera de alcance (URL/tipo)": 42,
+    "excluido por nombre (cuadro, kit, junior…)": 3
+  },
+  "failures": [],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 1,
+    "browser": 0,
+    "cache": 99,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 556,
+  "with_price": 96,
+  "generated_at": "2026-10-05T16:19:15"
+}

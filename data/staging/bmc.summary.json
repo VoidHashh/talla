@@ -1,0 +1,27 @@
+{
+  "brand": "BMC",
+  "discovered": 68,
+  "rows": 208,
+  "models": 37,
+  "families": 20,
+  "rejected": [],
+  "skipped": {
+    "excluido por nombre (cuadro, kit, junior…)": 2,
+    "duplicado (mismo modelo)": 29
+  },
+  "failures": [],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 78,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 208,
+  "with_price": 37,
+  "generated_at": "2026-10-05T16:19:39"
+}

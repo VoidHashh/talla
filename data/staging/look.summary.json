@@ -1,0 +1,35 @@
+{
+  "brand": "Look",
+  "discovered": 17,
+  "rows": 56,
+  "models": 11,
+  "families": 5,
+  "rejected": [],
+  "skipped": {
+    "duplicado (mismo modelo)": 4
+  },
+  "failures": [
+    {
+      "url": "https://www.lookcycle.com/es-es/productos/bicis/carretera/altitude/785-huez-rs",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://www.lookcycle.com/es-es/productos/bicis/carretera/altitude/785-huez-105-di2-look-r40-tlr",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 25,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 10,
+  "generated_at": "2026-10-05T16:19:32"
+}

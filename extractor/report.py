@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import datetime as dt
 import json
+import tomllib
 from collections import defaultdict
 from pathlib import Path
 
@@ -26,6 +27,8 @@ def _read_csv(path: Path) -> list[dict]:
 
 
 def build(brand_order: list[tuple[str, str]]) -> Path:
+    notes_path = ROOT / "extractor" / "report_notes.toml"
+    notes = {k: v.get("note", "") for k, v in tomllib.loads(notes_path.read_text(encoding="utf-8")).items()} if notes_path.exists() else {}
     current = defaultdict(dict)
     for r in _read_csv(ROOT / "data" / "bikes.csv"):
         current[r["brand"]][(r["model"], r["size_label"])] = r
@@ -42,7 +45,7 @@ def build(brand_order: list[tuple[str, str]]) -> Path:
     for key, name in brand_order:
         sp = STAGING / f"{key}.summary.json"
         if key is None:
-            lines.append(f"| {name} | bloqueada | 0 | 0 | 0 | 0 | 0 | sin configuración de descubrimiento |")
+            lines.append(f"| {name} | bloqueada | 0 | 0 | 0 | 0 | 0 | {notes.get(name) or 'sin configuración de descubrimiento'} |")
             continue
         if not sp.exists():
             lines.append(f"| {name} | sin ejecutar | – | – | – | – | – | |")
@@ -61,7 +64,7 @@ def build(brand_order: list[tuple[str, str]]) -> Path:
             f"| {name} | {st} | {s['models']} | {s['rows']} | {s['families']} | {s['with_height']} | {s['with_price']} | "
             f"{'; '.join([reason] + extra if reason else extra)} |"
         )
-        sections.append(_section(key, name, s, st, current.get(name, {})))
+        sections.append(_section(key, name, s, st, current.get(name, {}), notes.get(name, "")))
 
     lines += ["", "Columnas: *Tallas* = filas (modelo × talla); *Con altura* = tallas con rango de altura publicado; "
               "*Con precio €* = modelos con precio oficial en euros.", ""]
@@ -70,8 +73,10 @@ def build(brand_order: list[tuple[str, str]]) -> Path:
     return REPORT
 
 
-def _section(key: str, name: str, s: dict, st: str, current: dict) -> str:
+def _section(key: str, name: str, s: dict, st: str, current: dict, note: str = "") -> str:
     out = ["", f"## {name} — {st}", ""]
+    if note:
+        out += [f"**Nota:** {note}", ""]
     if s["blocked_reason"]:
         out.append(f"**Motivo:** {s['blocked_reason']}")
         out.append("")

@@ -1,0 +1,132 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my21/bikes/mountain/cross-country/scalpel-ht/pdp/c21_scalpelht110_geotable.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "Wheel Size",
+      "29\"",
+      "29\"",
+      "29\"",
+      "29\""
+    ],
+    [
+      "A Seat Tube Length (cm)",
+      "39.0",
+      "44.0",
+      "48.0",
+      "53.0"
+    ],
+    [
+      "B Top Tube Horizontal (cm)",
+      "57.2",
+      "59.4",
+      "61.7",
+      "64.2"
+    ],
+    [
+      "C Head Tube Angle",
+      "66.5°",
+      "66.5°",
+      "66.5°",
+      "66.5°"
+    ],
+    [
+      "D Seat Tube Angle",
+      "72.7°",
+      "73.5°",
+      "74.1°",
+      "74.6°"
+    ],
+    [
+      "D1 Seat Tube Angle Effective",
+      "74.5°",
+      "74.5°",
+      "74.6°",
+      "74.6°"
+    ],
+    [
+      "E Standover (cm)",
+      "75.4",
+      "79.0",
+      "81.9",
+      "85.5"
+    ],
+    [
+      "F Head Tube Length (cm)",
+      "9.9",
+      "11.0",
+      "12.2",
+      "13.5"
+    ],
+    [
+      "G Wheelbase (cm)",
+      "112.3",
+      "115.1",
+      "118.1",
+      "121.2"
+    ],
+    [
+      "H Front Center (cm)",
+      "69.9",
+      "72.3",
+      "74.8",
+      "77.4"
+    ],
+    [
+      "I Chain Stay Length (cm)",
+      "43.0",
+      "43.5",
+      "44.0",
+      "44.5"
+    ],
+    [
+      "J Bottom Bracket Drop (cm)",
+      "5.9",
+      "5.9",
+      "5.9",
+      "5.9"
+    ],
+    [
+      "K Bottom Bracket Height (cm)",
+      "31.8",
+      "31.8",
+      "31.8",
+      "31.8"
+    ],
+    [
+      "L Fork Rake (cm)",
+      "5.0",
+      "5.0",
+      "5.0",
+      "5.0"
+    ],
+    [
+      "M Trail (cm)",
+      "10.9",
+      "10.9",
+      "10.9",
+      "10.9"
+    ],
+    [
+      "N Stack (cm)",
+      "60.7",
+      "61.7",
+      "62.9",
+      "64.1"
+    ],
+    [
+      "O Reach (cm)",
+      "40.4",
+      "42.3",
+      "44.4",
+      "46.5"
+    ]
+  ]
+}

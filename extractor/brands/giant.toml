@@ -16,3 +16,5 @@ categories = [
 exclude_name = '\bcuadro\b|\bframe ?set\b|\bkit\b|\bframe\b'
 # El precio está en <meta property=product:price:amount content=" 4599"> (moneda EUR), no en JSON-LD.
 price_re = 'product:price:amount"?\s+content="?\s*([\d.,]+)'
+# Cada cota lleva además su valor en pulgadas en <span class="… value-inch">: se elimina antes de leer.
+strip_html_re = '<span[^>]*value-inch[^>]*>.*?</span>'

@@ -1,0 +1,224 @@
+{
+  "brand": "Lapierre",
+  "discovered": 66,
+  "rows": 270,
+  "models": 57,
+  "families": 21,
+  "rejected": [
+    {
+      "model": "Xelius DRS 8.0 AXS",
+      "size": "XS",
+      "reason": "reach decrece al subir de talla (S: 376 < 383)"
+    },
+    {
+      "model": "Xelius DRS 8.0 AXS",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (S: 376 < 383)"
+    },
+    {
+      "model": "Xelius DRS 8.0 AXS",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (S: 376 < 383)"
+    },
+    {
+      "model": "Xelius DRS 8.0 AXS",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (S: 376 < 383)"
+    },
+    {
+      "model": "Xelius DRS 8.0 AXS",
+      "size": "XL",
+      "reason": "reach decrece al subir de talla (S: 376 < 383)"
+    },
+    {
+      "model": "Xelius DRS 8.0 AXS",
+      "size": "XXL",
+      "reason": "reach decrece al subir de talla (S: 376 < 383)"
+    },
+    {
+      "model": "Sensium 3.0 Disc",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0 Disc",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0 Disc",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0 Disc",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0 Disc",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0 Disc",
+      "size": "XXL",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 3.0",
+      "size": "XXL",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 2.0",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 2.0",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 2.0",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 2.0",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 2.0",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 2.0",
+      "size": "XXL",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 1.0",
+      "size": "XS",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 1.0",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 1.0",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 1.0",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 1.0",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Sensium 1.0",
+      "size": "XXL",
+      "reason": "stack decrece al subir de talla (M: 530 < 542)"
+    },
+    {
+      "model": "Prorace CF 7.9",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (M: 597 < 598)"
+    },
+    {
+      "model": "Prorace CF 7.9",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (M: 597 < 598)"
+    },
+    {
+      "model": "Prorace CF 7.9",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (M: 597 < 598)"
+    },
+    {
+      "model": "Prorace CF 7.9",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (M: 597 < 598)"
+    },
+    {
+      "model": "Prorace CF 5.9",
+      "size": "S",
+      "reason": "stack decrece al subir de talla (M: 597 < 598)"
+    },
+    {
+      "model": "Prorace CF 5.9",
+      "size": "M",
+      "reason": "stack decrece al subir de talla (M: 597 < 598)"
+    },
+    {
+      "model": "Prorace CF 5.9",
+      "size": "L",
+      "reason": "stack decrece al subir de talla (M: 597 < 598)"
+    },
+    {
+      "model": "Prorace CF 5.9",
+      "size": "XL",
+      "reason": "stack decrece al subir de talla (M: 597 < 598)"
+    }
+  ],
+  "skipped": {},
+  "failures": [
+    {
+      "url": "https://lapierrebikes.com/es-es/products/prorace-sl-24-lpaud",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://lapierrebikes.com/es-es/products/prorace-20-sl-lpauc",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 80,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 57,
+  "generated_at": "2026-10-05T16:19:34"
+}

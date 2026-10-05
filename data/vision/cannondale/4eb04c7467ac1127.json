@@ -1,0 +1,158 @@
+{
+  "image_url": "https://www.cannondale.com/-/media/images/my22/bikes/road/gravel/topstone-carbon/pdp-non-lefty/c22_topstone_carbon_geotable_v2.ashx",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "XS",
+    "SM",
+    "MD",
+    "LG",
+    "XL"
+  ],
+  "rows": [
+    [
+      "Wheel Size",
+      "700c",
+      "700c",
+      "700c",
+      "700c",
+      "700c"
+    ],
+    [
+      "A Seat Tube Length (cm)",
+      "41.0",
+      "45.8",
+      "50.5",
+      "55.3",
+      "59.0"
+    ],
+    [
+      "B Top Tube Horizontal (cm)",
+      "53.3",
+      "54.4",
+      "55.7",
+      "57.2",
+      "58.7"
+    ],
+    [
+      "C Top Tube Actual (cm)",
+      "50.3",
+      "51.6",
+      "53.2",
+      "55.0",
+      "56.7"
+    ],
+    [
+      "D Head Tube Angle",
+      "70.0°",
+      "71.2°",
+      "71.2°",
+      "71.2°",
+      "71.2°"
+    ],
+    [
+      "E Seat Tube Angle Effective",
+      "73.1°",
+      "73.1°",
+      "73.1°",
+      "73.1°",
+      "73.1°"
+    ],
+    [
+      "E Seat Tube Angle Actual",
+      "71.4°",
+      "71.6°",
+      "71.8°",
+      "71.9°",
+      "72.1°"
+    ],
+    [
+      "F Standover (cm)",
+      "70.4",
+      "74.5",
+      "78.5",
+      "82.3",
+      "85.7"
+    ],
+    [
+      "G Head Tube Length (cm)",
+      "10.5",
+      "12.3",
+      "15.0",
+      "17.7",
+      "20.5"
+    ],
+    [
+      "H Wheelbase (cm)",
+      "101.0",
+      "101.3",
+      "102.9",
+      "104.4",
+      "106.1"
+    ],
+    [
+      "I Front Center (cm)",
+      "60.1",
+      "60.3",
+      "61.7",
+      "63.3",
+      "64.9"
+    ],
+    [
+      "J Chain Stay Length (cm)",
+      "42.0",
+      "42.0",
+      "42.0",
+      "42.0",
+      "42.0"
+    ],
+    [
+      "K Bottom Bracket Drop (cm)",
+      "7.4",
+      "6.9",
+      "6.7",
+      "6.7",
+      "6.4"
+    ],
+    [
+      "L Bottom Bracket Height (cm)",
+      "27.8",
+      "28.3",
+      "28.5",
+      "28.5",
+      "28.8"
+    ],
+    [
+      "M Fork Rake (cm)",
+      "5.5",
+      "5.5",
+      "5.5",
+      "5.5",
+      "5.5"
+    ],
+    [
+      "N Trail (cm)",
+      "6.9",
+      "6.2",
+      "6.2",
+      "6.2",
+      "6.2"
+    ],
+    [
+      "O Stack (cm)",
+      "53.4",
+      "55.1",
+      "57.4",
+      "60.0",
+      "62.4"
+    ],
+    [
+      "P Reach (cm)",
+      "37.1",
+      "37.7",
+      "38.3",
+      "39.0",
+      "39.7"
+    ]
+  ]
+}

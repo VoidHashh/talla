@@ -15,7 +15,8 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 from . import readers
 from .fetch import Blocked, Fetcher
 from .geometry import (
-    STANDARD_LETTERS, Geometry, best_geometry, heights_from_tables, heights_from_text, order_sizes, parse_matrix,
+    STANDARD_LETTERS, Geometry, apply_row_alias, best_geometry, heights_from_dl, heights_from_tables, heights_from_text,
+    order_sizes, parse_matrix,
     size_parts,
 )
 
@@ -246,6 +247,9 @@ def product_meta(html: str, url: str, cfg: dict) -> dict:
 def find_geometry(html: str, page_url: str, cfg: dict, fx: Fetcher, brand_key: str) -> tuple[Geometry | None, str, str, str | None]:
     """(geometría, método, url fuente, motivo si falla) probando HTML → JSON → PDF → imagen."""
     height_re = re.compile(cfg["height_re"], re.I) if cfg.get("height_re") else None
+    if cfg.get("strip_html_re"):
+        # Fragmentos que estorban la lectura (p. ej. cotas duplicadas en pulgadas pegadas a las de mm).
+        html = re.sub(cfg["strip_html_re"], "", html, flags=re.S)
 
     if cfg.get("geometry_url"):
         m = re.search(cfg["geometry_url_param"], page_url + " " + html)
@@ -283,16 +287,22 @@ def find_geometry(html: str, page_url: str, cfg: dict, fx: Fetcher, brand_key: s
                 return None, "", gurl, str(e)
 
     tables = readers.html_tables(html)
+    if cfg.get("span_table"):
+        st = cfg["span_table"]
+        tables += readers.span_tables(html, st["header"], st["label"], st["value"], st.get("start", ""), st.get("end", ""))
     if cfg.get("collapse_unit_columns"):
         tables = [readers.collapse_unit_columns(t) for t in tables]
     if cfg.get("size_attr"):
         tables += readers.attr_tables(html, cfg["size_attr"])
     if cfg.get("size_tabs_re"):
         tables += readers.tab_tables(html, cfg["size_tabs_re"])
+    if cfg.get("row_alias"):
+        tables = apply_row_alias(tables, cfg["row_alias"])
     g = best_geometry(tables, height_re, cfg.get('geometry_unit'))
     if g:
         if g.heights is None:
-            g.heights = heights_from_tables(tables, g.sizes) or heights_from_text(html, g.sizes)
+            g.heights = (heights_from_tables(tables, g.sizes) or heights_from_text(html, g.sizes)
+                         or heights_from_dl(html, g.sizes))
         return g, "html", page_url, None
     json_sources = readers.embedded_json(html)
     if cfg.get("json_key"):
@@ -459,7 +469,8 @@ def validate_family(rows: list[dict], vcfg: dict) -> tuple[list[dict], list[tupl
 def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh: bool = False, log=print) -> Result:
     res = Result(cfg["name"])
     labels = load_size_labels()
-    fx = Fetcher(ROOT, key, force_browser=cfg.get("browser", False), refresh=refresh, log=log)
+    fx = Fetcher(ROOT, key, force_browser=cfg.get("browser", False), refresh=refresh, log=log,
+                 delay_s=cfg.get("delay_s"))
     today = dt.date.today().isoformat()
     try:
         try:

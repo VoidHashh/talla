@@ -1,0 +1,116 @@
+{
+  "brand": "Megamo",
+  "discovered": 130,
+  "rows": 373,
+  "models": 87,
+  "families": 19,
+  "rejected": [],
+  "skipped": {
+    "fuera de alcance (URL/tipo)": 2,
+    "año de modelo anterior": 19
+  },
+  "failures": [
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-crb-00-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-crb-01-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-crb-02-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-crb-03-axs-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-crb-03-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-crb-05-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-crb-07-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-air-crb-00-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-air-crb-03-axs-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-air-crb-05-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-air-crb-07-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-al-03-axs-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-al-03-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-al-05-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-al-07-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-air-al-05-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/reason/reason-air-al-07-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/ryal/ryal-03-axs-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/ryal/ryal-05-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/ryal/ryal-08-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/ryal/ryal-10-(27)",
+      "reason": "transcripción sin stack/reach"
+    },
+    {
+      "url": "https://www.megamo.com/es/e-bike/e-full-suspension/flame-crb/flame-crb-05-(26)",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 133,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 87,
+  "generated_at": "2026-10-05T16:19:37"
+}

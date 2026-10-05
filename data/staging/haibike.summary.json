@@ -1,0 +1,99 @@
+{
+  "brand": "Haibike",
+  "discovered": 41,
+  "rows": 112,
+  "models": 29,
+  "families": 14,
+  "rejected": [
+    {
+      "model": "ALLTRAIL 8",
+      "size": "XL",
+      "reason": "falta stack; falta reach"
+    },
+    {
+      "model": "ALLMTN 7",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 7",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 7",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 7",
+      "size": "XL",
+      "reason": "falta stack; falta reach; reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 3",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 3",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 3",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 3",
+      "size": "XL",
+      "reason": "falta stack; falta reach; reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 2",
+      "size": "S",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 2",
+      "size": "M",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 2",
+      "size": "L",
+      "reason": "reach decrece al subir de talla (M: 451 < 475)"
+    },
+    {
+      "model": "ALLMTN 2",
+      "size": "XL",
+      "reason": "falta stack; falta reach; reach decrece al subir de talla (M: 451 < 475)"
+    }
+  ],
+  "skipped": {
+    "duplicado (mismo modelo)": 8
+  },
+  "failures": [
+    {
+      "url": "https://haibike.com/es-es/products/allmtn-2-hmbu1",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [
+    "ALLTRACK 11 ABS: columnas de talla reordenadas"
+  ],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 44,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 29,
+  "generated_at": "2026-10-05T16:19:30"
+}

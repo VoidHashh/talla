@@ -1,0 +1,106 @@
+{
+  "brand": "3T",
+  "discovered": 47,
+  "rows": 86,
+  "models": 20,
+  "families": 3,
+  "rejected": [],
+  "skipped": {
+    "excluido por nombre (cuadro, kit, junior…)": 9
+  },
+  "failures": [
+    {
+      "url": "https://3t.bike/products/strada-wpnt-ultegra-di2-2x12-discus-40-30",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/racemax-wpnt-rival-axs-1x13",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/racemax-wpnt-grx-di2-2x12",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/racemax-wpnt-rival-axs-1x13discus-40-30",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/racemax-wpnt-grx-di2-2x12-discus-40-30",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-grx-1x12",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-rival-gx-axs-1x12",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-grx-di2-1x12",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-grx-1x12-dt-swiss-f-132-one",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-rival-gx-axs-1x12-dt-swiss-f-132-one",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-grx-di2-1x12-dt-swiss-f-132-one",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-rival-gx-axs-1x12-discus-45-40",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-grx-di2-1x12-discus-45-40",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-rival-gx-axs-1x12-discus-45-40-dt-swiss-f-132-one",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/ultra-2-italia-grx-di2-1x12-discus-45-40-dt-swiss-f-132-one",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/primo2-wpnt-grx-1x12-10th-anniversary",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/primo2-wpnt-rival-xplr-axs-1x13-discus-40-30-10th-anniversary",
+      "reason": "sin tabla de geometría en la página"
+    },
+    {
+      "url": "https://3t.bike/products/primo2-wpnt-ultegra-di2-2-12-discus-40-30",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [
+    "STRADA ITALIA_X ~ ULTEGRA Di2 2X12 SHARQ: altura en 4 de 5 tallas → altura descartada",
+    "STRADA ITALIA_X ~ FORCE 1X13 XPLR SHARQ: altura en 4 de 5 tallas → altura descartada",
+    "STRADA ITALIA_X ~ DURA-ACE PM Di2 2X12 SHARQ: altura en 4 de 5 tallas → altura descartada",
+    "STRADA ITALIA ~ ULTEGRA Di2 2X12 SHARQ: altura en 4 de 5 tallas → altura descartada",
+    "STRADA ITALIA ~ FORCE 1X13 XPLR SHARQ: altura en 4 de 5 tallas → altura descartada",
+    "STRADA ITALIA ~ DURA-ACE PM Di2 2X12 SHARQ: altura en 4 de 5 tallas → altura descartada"
+  ],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 79,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 56,
+  "with_price": 20,
+  "generated_at": "2026-10-05T16:19:58"
+}

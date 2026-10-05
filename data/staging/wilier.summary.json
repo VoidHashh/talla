@@ -1,0 +1,32 @@
+{
+  "brand": "Wilier",
+  "discovered": 38,
+  "rows": 156,
+  "models": 30,
+  "families": 24,
+  "rejected": [],
+  "skipped": {
+    "fuera de alcance (URL/tipo)": 6,
+    "duplicado (mismo modelo)": 1
+  },
+  "failures": [
+    {
+      "url": "https://www.wilier.com/es/bicicletas/carretera/superleggera",
+      "reason": "sin tabla de geometría en la página"
+    }
+  ],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 1,
+    "browser": 0,
+    "cache": 32,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 30,
+  "generated_at": "2026-10-05T16:20:08"
+}

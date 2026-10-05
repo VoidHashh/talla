@@ -133,7 +133,10 @@ describe('validateBikes', () => {
 describe('tallas', () => {
   it('normaliza etiquetas y las ordena', () => {
     expect(canonicalSizeLabel(' 2xs ')).toBe('XXS')
-    expect(canonicalSizeLabel('ml')).toBe('M/L')
+    expect(canonicalSizeLabel(' m/l ')).toBe('M/L')
+    // "SM" es S en unas marcas y S/M en otras: sin equivalencia publicada no se normaliza.
+    expect(canonicalSizeLabel('sm')).toBe('SM')
+    expect(sizeRank('SM')).toBeNull()
     expect(sizeRank('XS')! < sizeRank('S/M')!).toBe(true)
     expect(sizeRank('54')).toBeNull()
   })

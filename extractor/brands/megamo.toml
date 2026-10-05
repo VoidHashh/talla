@@ -22,3 +22,6 @@ exclude_name = '\bframe ?set\b|\bcuadro\b|\bkit\b'
 no_render_retry = true   # páginas estáticas: sin tabla = sin tabla, no repetir con Chrome
 # Reason/Ryal (MY27 e-MTB) publican la geometría solo como SVG sin texto: se encola para transcripción.
 geometry_img_re = '(/biblioteca/items/\d+/\d*geometria_(?:Reason|Ryal)[^"\s]*\.svg)'
+price_re = 'num_preu">\s*([\d.,]+)\s*€'
+# Geometría maquetada con <span>: tallas (class="tallas"), etiqueta (geoseccion) y valores (geomedida), dentro de "tabla9".
+span_table = { header = "tallas", label = "geoseccion2?", value = "geomedida2?", start = 'class="taula_geometria"', end = 'fitguide|class="tabla3' }

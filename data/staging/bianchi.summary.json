@@ -1,0 +1,218 @@
+{
+  "brand": "Bianchi",
+  "discovered": 81,
+  "rows": 179,
+  "models": 33,
+  "families": 13,
+  "rejected": [
+    {
+      "model": "Specialissima COMP",
+      "size": "470",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima COMP",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima COMP",
+      "size": "530",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima COMP",
+      "size": "550",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima COMP",
+      "size": "570",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima COMP",
+      "size": "590",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima PRO",
+      "size": "470",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima PRO",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima PRO",
+      "size": "530",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima PRO",
+      "size": "550",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima PRO",
+      "size": "570",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima PRO",
+      "size": "590",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC",
+      "size": "470",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC",
+      "size": "530",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC",
+      "size": "550",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC",
+      "size": "570",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC",
+      "size": "590",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Founder Edition",
+      "size": "470",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Founder Edition",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Founder Edition",
+      "size": "530",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Founder Edition",
+      "size": "550",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Founder Edition",
+      "size": "570",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Founder Edition",
+      "size": "590",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Pantani",
+      "size": "470",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Pantani",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Pantani",
+      "size": "530",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Pantani",
+      "size": "550",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Pantani",
+      "size": "570",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Specialissima RC Pantani",
+      "size": "590",
+      "reason": "reach decrece al subir de talla (530: 386 < 387)"
+    },
+    {
+      "model": "Oltre RACE",
+      "size": "440",
+      "reason": "reach decrece al subir de talla (530: 385 < 387)"
+    },
+    {
+      "model": "Oltre RACE",
+      "size": "470",
+      "reason": "reach decrece al subir de talla (530: 385 < 387)"
+    },
+    {
+      "model": "Oltre RACE",
+      "size": "500",
+      "reason": "reach decrece al subir de talla (530: 385 < 387)"
+    },
+    {
+      "model": "Oltre RACE",
+      "size": "530",
+      "reason": "reach decrece al subir de talla (530: 385 < 387)"
+    },
+    {
+      "model": "Oltre RACE",
+      "size": "550",
+      "reason": "reach decrece al subir de talla (530: 385 < 387)"
+    },
+    {
+      "model": "Oltre RACE",
+      "size": "570",
+      "reason": "reach decrece al subir de talla (530: 385 < 387)"
+    },
+    {
+      "model": "Oltre RACE",
+      "size": "590",
+      "reason": "reach decrece al subir de talla (530: 385 < 387)"
+    },
+    {
+      "model": "Oltre RACE",
+      "size": "610",
+      "reason": "reach decrece al subir de talla (530: 385 < 387)"
+    }
+  ],
+  "skipped": {
+    "excluido por nombre (cuadro, kit, junior…)": 8,
+    "duplicado (mismo modelo)": 34
+  },
+  "failures": [],
+  "warnings": [],
+  "blocked_reason": null,
+  "fetch": {
+    "httpx": 0,
+    "browser": 0,
+    "cache": 82,
+    "challenges": 0
+  },
+  "methods": [
+    "html"
+  ],
+  "with_height": 0,
+  "with_price": 30,
+  "generated_at": "2026-10-05T16:19:11"
+}
