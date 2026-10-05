@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  // Permite leer PREMIUM_UNLOCKED del .env sin el prefijo VITE_.
+  envPrefix: ['VITE_', 'PREMIUM_'],
   plugins: [
     react(),
     tailwindcss(),
