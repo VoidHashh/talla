@@ -1,0 +1,9 @@
+name = "3T"
+discovery = "shopify"
+shopify_base = "https://3t.bike"
+shopify_collections = ["strada-italia", "strada-wpnt", "racemax-2-italia", "racemax-wpnt", "extrema-italia", "ultra-2-italia", "primo-2-wpnt"]
+categories = [
+  ['collections/strada', 'carretera'],
+  ['collections/(racemax|extrema|ultra|primo)', 'gravel'],
+]
+exclude_name = '\bframe\b|frameset|\bkit\b|module'

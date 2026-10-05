@@ -1,0 +1,11 @@
+name = "Berria"
+discovery = "shopify"
+shopify_base = "https://berriabikes.com/en"
+shopify_collections = ["bicicletas-carretera", "bicicletas-gravel", "bicicletas-montana", "ebike-montana"]
+categories = [
+  ['collections/ebike-montana/', 'emtb'],
+  ['collections/bicicletas-montana/', 'mtb'],
+  ['collections/bicicletas-gravel/', 'gravel'],
+  ['collections/bicicletas-carretera/', 'carretera'],
+]
+exclude_name = '\bcuadro\b|\bframe\b|\bkit\b'

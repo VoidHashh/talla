@@ -1,0 +1,11 @@
+name = "Lapierre"
+discovery = "shopify"
+shopify_base = "https://lapierrebikes.com/es-es"
+shopify_collections = ["performance-road-bikes", "endurance-road-bikes", "sport-road-bikes", "gravel-bikes", "mountain-bikes", "electric-mountain-bikes"]
+categories = [
+  ['collections/electric-mountain-bikes/', 'emtb'],
+  ['collections/mountain-bikes/', 'mtb'],
+  ['collections/gravel-bikes/', 'gravel'],
+  ['collections/(performance|endurance|sport)-road-bikes/', 'carretera'],
+]
+exclude_name = '\bcuadro\b|\bframe\b|\bkit\b|kids'

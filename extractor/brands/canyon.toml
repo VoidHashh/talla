@@ -1,0 +1,16 @@
+name = "Canyon"
+discovery = "sitemap"
+sitemaps = ["https://www.canyon.com/sitemap-es_ES.xml"]
+include = ['/es-es/bicicletas-[^/]+/.*/\d+\.html$', '/es-es/electric-bikes/.*/\d+\.html$']
+exclude = ['/outlet-', '/lp/']
+categories = [
+  ['triatlon|ciclocross|youth|road-track|kids|dirt-jump', ''],
+  ['mountain-bike-electrica|electric-mountain', 'emtb'],
+  ['bicicletas-electricas|electric-bikes', ''],
+  ['bicicletas-hibridas', ''],
+  ['bicicletas-de-montana', 'mtb'],
+  ['bicicletas-gravel', 'gravel'],
+  ['bicicletas-de-carretera', 'carretera'],
+]
+year_re = ['(20[2-3]\d)_FULL_']
+exclude_name = '\bframe ?set\b|\bcuadro\b|\bframe kit\b'

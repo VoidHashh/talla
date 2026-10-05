@@ -1,0 +1,11 @@
+name = "MMR"
+discovery = "shopify"
+shopify_base = "https://mmrbikes.com"
+shopify_collections = ["bicicletas-carretera", "bicicletas-gravel", "bicicletas-montana", "e-bikes-mtb"]
+categories = [
+  ['collections/e-bikes-mtb/', 'emtb'],
+  ['collections/bicicletas-montana/', 'mtb'],
+  ['collections/bicicletas-gravel/', 'gravel'],
+  ['collections/bicicletas-carretera/', 'carretera'],
+]
+exclude_name = '\bcuadro\b|\bframe\b|frameset|\bkit\b'

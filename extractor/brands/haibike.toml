@@ -1,0 +1,6 @@
+name = "Haibike"
+discovery = "shopify"
+shopify_base = "https://haibike.com/es-es"
+shopify_collections = ["e-mountainbikes"]
+categories = [['collections/e-mountainbikes/', 'emtb']]
+exclude_name = '\bcuadro\b|\bframe\b|\bkit\b'

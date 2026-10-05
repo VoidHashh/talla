@@ -1,0 +1,30 @@
+name = "Specialized"
+discovery = "listing"
+browser = true            # httpx recibe 403/404: siempre Chrome real
+listing_render = true
+listing_pages = [
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-ruta/bicis-de-rendimiento-carretera/aethos",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-ruta/bicis-de-rendimiento-carretera/allez",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-ruta/bicis-de-rendimiento-carretera/roubaix",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-ruta/bicis-de-rendimiento-carretera/tarmac",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicis-de-gravel/crux",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicis-de-gravel/diverge",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-montana/bicis-de-xc/chisel",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-montana/bicis-de-xc/epic",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-montana/bicis-de-trail/rockhopper",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-montana/bicis-de-trail/stumpjumper",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-montana/bicis-de-trail/enduro",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-montana/bicis-de-trail/status",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-de-montana/bicis-de-descenso/demo",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-electricas/bicis-electricas-montana/turbo-levo",
+  "https://www.specialized.com/es/es/shop/bicicletas/bicicletas-electricas/bicis-electricas-montana/turbo-kenevo",
+]
+link_re = '/es/es/[^/]+/p/\d+'
+classify_by_url = false
+categories = [
+  ['bicis-electricas-montana', 'emtb'],
+  ['bicicletas-de-montana', 'mtb'],
+  ['bicis-de-gravel', 'gravel'],
+  ['bicicletas-de-ruta', 'carretera'],
+]
+exclude_name = '\bcuadro\b|frameset|\bkit\b'

@@ -4,3 +4,10 @@ dev-dist
 *.tsbuildinfo
 .env
 .env.local
+.venv
+__pycache__
+data/raw
+data/vision/**/*.png
+data/vision/**/*.jpg
+data/vision/**/*.jpeg
+data/vision/**/*.webp

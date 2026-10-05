@@ -1,0 +1,10 @@
+name = "Ghost"
+discovery = "shopify"
+shopify_base = "https://ghost-bikes.com/es-es"
+shopify_collections = ["gravel", "mountain-bikes", "e-mountain-bikes"]
+categories = [
+  ['collections/e-mountain-bikes/', 'emtb'],
+  ['collections/mountain-bikes/', 'mtb'],
+  ['collections/gravel/', 'gravel'],
+]
+exclude_name = '\bcuadro\b|\bframe\b|\bkit\b|urban'

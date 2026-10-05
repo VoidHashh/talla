@@ -1,0 +1,12 @@
+name = "Santa Cruz"
+discovery = "shopify"
+shopify_base = "https://www.santacruzbicycles.com/en-eu"
+shopify_collections = ["stigmata", "skitch", "heckler", "heckler-sl", "vala", "bullit", "5010", "blur", "bronson", "chameleon", "highball", "hightower", "megatower", "nomad", "tallboy", "v10"]
+exclude = ['(?i)\bframe\b|frameset|kit\b|parts|Parts']
+categories = [
+  ['collections/(heckler|heckler-sl|vala|bullit)/', 'emtb'],
+  ['collections/stigmata/', 'gravel'],
+  ['collections/skitch/', 'gravel'],
+  ['collections/', 'mtb'],
+]
+exclude_name = '\bframe\b|frameset|\bkit\b'

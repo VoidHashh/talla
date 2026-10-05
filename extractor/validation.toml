@@ -1,0 +1,16 @@
+# Rangos plausibles para la validación del staging. Un valor fuera de rango rechaza la talla.
+# Se pueden sobrescribir por categoría con una sección [carretera], [gravel], [mtb] o [emtb].
+
+[ranges]
+stack = [430, 780]      # mm
+reach = [320, 540]      # mm
+height = [120, 215]     # cm
+price_eur = [150, 25000]
+
+[mtb]
+stack = [520, 780]
+reach = [360, 560]
+
+[emtb]
+stack = [520, 800]
+reach = [360, 560]

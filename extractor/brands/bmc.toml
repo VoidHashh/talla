@@ -1,0 +1,12 @@
+name = "BMC"
+discovery = "shopify"
+shopify_base = "https://es.bmc-switzerland.com/es"
+shopify_collections = ["road-racing-bikes", "endurance-road-bikes", "gravel-bikes", "mountain-bikes", "mountain-e-bikes"]
+exclude = ['Frames|frameset|Spare Parts']
+categories = [
+  ['collections/mountain-e-bikes/', 'emtb'],
+  ['collections/mountain-bikes/', 'mtb'],
+  ['collections/gravel-bikes/', 'gravel'],
+  ['collections/(road-racing|endurance-road)-bikes/', 'carretera'],
+]
+exclude_name = '\bframe ?set\b|\bmodule\b|\bAMP\b'
