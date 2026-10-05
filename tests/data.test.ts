@@ -96,7 +96,7 @@ describe('validateBikes', () => {
       row({ size_label: 'S', verified_at: '01/01/2026' }),
       'MarcaFicticiaA,corta',
     ).errors.map((e) => `${e.line}: ${e.message}`)
-    expect(msgs[0]).toBe('2: category "bmx" no válida (carretera / gravel / mtb)')
+    expect(msgs[0]).toBe('2: category "bmx" no válida (carretera / gravel / mtb / emtb)')
     expect(msgs[1]).toBe('3: price_eur "mil" no es un número positivo')
     expect(msgs[2]).toBe('4: source_url no es una URL http(s)')
     expect(msgs[3]).toBe('5: verified_at "01/01/2026" no es una fecha AAAA-MM-DD')
@@ -164,6 +164,6 @@ describe('buildSizeTable', () => {
 
   it('ignora filas sin rango de altura', () => {
     const { bikes } = validate(row({ height_min: '', height_max: '' }))
-    expect(buildSizeTable(bikes)).toEqual({ carretera: [], gravel: [], mtb: [] })
+    expect(buildSizeTable(bikes)).toEqual({ carretera: [], gravel: [], mtb: [], emtb: [] })
   })
 })

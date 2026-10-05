@@ -1,4 +1,4 @@
-export const CATEGORIES = ['carretera', 'gravel', 'mtb'] as const
+export const CATEGORIES = ['carretera', 'gravel', 'mtb', 'emtb'] as const
 export type Category = (typeof CATEGORIES)[number]
 
 /** Una fila de data/bikes.csv ya validada. Los datos ausentes son null, nunca estimados. */
