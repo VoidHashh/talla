@@ -56,7 +56,7 @@ describe('validateBikes', () => {
   it('acepta el fixture ficticio y convierte los campos', () => {
     const { errors, bikes } = validateBikes(parseCsv(fixture('bikes-ficticio.csv')), BRANDS)
     expect(errors).toEqual([])
-    expect(bikes).toHaveLength(5)
+    expect(bikes).toHaveLength(6)
     expect(bikes[3]).toMatchObject({ stack: null, reach: null, price_eur: null, product_url: null })
     expect(bikes[4]).toMatchObject({ category: 'gravel', price_eur: 1800 })
   })
@@ -90,13 +90,13 @@ describe('validateBikes', () => {
 
   it('valida categoría, números, URLs, fecha y columnas', () => {
     const msgs = validate(
-      row({ category: 'mtb' }),
+      row({ category: 'bmx' }),
       row({ size_label: 'L', price_eur: 'mil' }),
       row({ size_label: 'XL', source_url: 'web de la marca' }),
       row({ size_label: 'S', verified_at: '01/01/2026' }),
       'MarcaFicticiaA,corta',
     ).errors.map((e) => `${e.line}: ${e.message}`)
-    expect(msgs[0]).toBe('2: category "mtb" no válida (carretera / gravel)')
+    expect(msgs[0]).toBe('2: category "bmx" no válida (carretera / gravel / mtb)')
     expect(msgs[1]).toBe('3: price_eur "mil" no es un número positivo')
     expect(msgs[2]).toBe('4: source_url no es una URL http(s)')
     expect(msgs[3]).toBe('5: verified_at "01/01/2026" no es una fecha AAAA-MM-DD')
@@ -157,10 +157,13 @@ describe('buildSizeTable', () => {
     expect(table.gravel).toEqual([
       { size_label: 'M', height_min: 170, height_max: 180, size_cm_values: [54], brands: 1 },
     ])
+    expect(table.mtb).toEqual([
+      { size_label: 'L', height_min: 175, height_max: 188, size_cm_values: [], brands: 1 },
+    ])
   })
 
   it('ignora filas sin rango de altura', () => {
     const { bikes } = validate(row({ height_min: '', height_max: '' }))
-    expect(buildSizeTable(bikes)).toEqual({ carretera: [], gravel: [] })
+    expect(buildSizeTable(bikes)).toEqual({ carretera: [], gravel: [], mtb: [] })
   })
 })

@@ -1,7 +1,7 @@
 # CLAUDE.md — App Talla Bici
 
 ## Qué es
-App web (PWA) que recomienda talla de bicicleta de carretera o gravel a partir de las medidas del usuario.
+App web (PWA) que recomienda talla de bicicleta de carretera, gravel o MTB a partir de las medidas del usuario.
 - **Gratis:** talla recomendada (letra + cm, p. ej. "M · 54/55").
 - **Premium:** top 5 de bicis concretas (marca, modelo, talla, precio, enlace) de la base de datos.
 
@@ -16,11 +16,11 @@ App web (PWA) que recomienda talla de bicicleta de carretera o gravel a partir d
 2. Cada fila de `bikes.csv` lleva obligatoriamente `source_url` (la página oficial de la marca de donde sale el dato) y `verified_at` (fecha).
 3. Los rangos de altura por talla son los que publica cada marca en su guía de tallas. No se derivan ni se estiman.
 4. La tabla de talla de la parte gratis **se genera desde la BBDD** (mediana de los rangos de las marcas por talla y categoría). No se escribe a mano.
-5. Solo carretera y gravel. Sin MTB, urbanas ni eléctricas.
+5. Solo carretera, gravel y MTB. Sin urbanas ni eléctricas.
 6. Solo las marcas de `data/brands.csv`. No añadir marcas sin que yo lo pida.
 
 ## Lógica (mantenerla simple)
-- **Entrada:** altura (cm), entrepierna (cm), categoría (carretera / gravel) y presupuesto máximo opcional.
+- **Entrada:** altura (cm), entrepierna (cm), categoría (carretera / gravel / MTB) y presupuesto máximo opcional.
 - **Gratis:** la talla cuyo rango mediano contiene la altura. Si cae en dos, se muestran las dos.
 - **Premium:**
   1. Filtrar por categoría y presupuesto.
