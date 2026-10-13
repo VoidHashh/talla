@@ -1,16 +1,16 @@
 # Informe de carga — staging vs data/bikes.csv
 
-Generado: 2026-10-05 18:32. `data/bikes.csv` no se ha modificado.
+Generado: 2026-10-13 19:15. `data/bikes.csv` no se ha modificado.
 
 | Marca | Estado | Modelos | Tallas | Familias | Con altura | Con precio € | Motivo / avisos |
 |---|---|---:|---:|---:|---:|---:|---|
 | Giant | con avisos | 38 | 212 | 11 | 176 | 37 | 3 productos sin datos |
 | Merida | con avisos | 65 | 285 | 36 | 0 | 0 | 10 avisos |
 | Trek | con avisos | 148 | 643 | 61 | 549 | 148 | 5 productos sin datos; 330 avisos |
-| Specialized | con avisos | 96 | 556 | 34 | 328 | 96 | 5 productos sin datos; 33 tallas rechazadas; 39 avisos |
+| Specialized | con avisos | 96 | 556 | 34 | 364 | 96 | 5 productos sin datos; 33 tallas rechazadas; 28 avisos |
 | Scott | con avisos | 77 | 389 | 26 | 0 | 54 | 9 productos sin datos; 9 tallas rechazadas; 2 avisos |
 | Canyon | OK | 96 | 556 | 40 | 556 | 96 |  |
-| Cube | con avisos | 78 | 376 | 22 | 0 | 78 | 139 tallas rechazadas; 50 avisos |
+| Cube | con avisos | 78 | 376 | 22 | 376 | 78 | 139 tallas rechazadas; 50 avisos |
 | Bianchi | con avisos | 33 | 179 | 13 | 0 | 30 | 38 tallas rechazadas |
 | Cannondale | con avisos | 80 | 433 | 27 | 0 | 80 | 19 productos sin datos; 150 avisos |
 | Cervélo | OK | 7 | 42 | 7 | 0 | 0 |  |
@@ -422,7 +422,7 @@ Descartados: fuera de alcance (URL/tipo): 39, año de modelo anterior: 28, dupli
 
 ## Specialized — con avisos
 
-**Nota:** Altura de la guía oficial /es/es/size-guide (pestaña Bikes) por familia; sin altura si la guía no cubre todas las tallas de la geometría. Rechazos: stack/reach publicados no crecientes (Chisel, Epic). El botón 'Guía de tallas' de la ficha es una calculadora (no se usa).
+**Nota:** Altura de la guía oficial /es/es/size-guide (pestaña Bikes) por familia; errata '1 78 - 185' (Epic L) corregida a 178 con aprobación del usuario. Sin altura donde la guía no cubre todas las tallas. Rechazos: stack/reach publicados no crecientes (Chisel, Epic).
 
 Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 143. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 159, 'challenges': 0}.
 
@@ -438,8 +438,8 @@ Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con
 | Diverge 4 Pro: SRAM Force XPLR [87a84ecd] | gravel | 49 · 52 · 54 · 56 · 58 · 61 | 563 · 578 · 592 · 610 · 634 · 659 | 365 · 374 · 387 · 400 · 412 · 425 | — · — · — · — · — · — | Diverge 4 Comp Alloy - SRAM Apex (2799); Diverge 4 Comp Carbon - SRAM Apex AXS/S1000 (4499); Diverge 4 Expert - SRAM Rival XPLR (6299); Diverge 4 Expert - Shimano GRX Di2 (6499); Diverge 4 Expert: SRAM Rival XPLR (6299); Diverge 4 Pro - SRAM Force XPLR (7999); Diverge 4 Pro LTD - Shimano XTR/GRX Di2 (9999); Diverge 4 Pro: SRAM Force XPLR (7999); Diverge 4 Sport Alloy - Shimano CUES (2299); Diverge 4 Sport Carbon - Shimano GRX 600 (3499); S-Works Diverge 4: SRAM RED XPLR (13999) |
 | Diverge E5 [baabaceb] | gravel | 44 · 49 · 52 · 54 · 56 · 58 · 61 | 529 · 545 · 561 · 578 · 599 · 618 · 635 | 357 · 365 · 374 · 383 · 392 · 401 · 410 | — · — · — · — · — · — · — | Diverge E5 (1549) |
 | Enduro Pro [54649f30] | mtb | S2 · S3 · S4 · S5 | 616 · 620 · 629 · 638 | 437 · 464 · 487 · 511 | 158–173 · 165–180 · 173–188 · 178–193 | Enduro Pro (6699) |
-| Epic 8 Pro [67b9f449] | mtb | S · M · L · XL | 597 · 598 · 610 · 628 | 420 · 450 · 475 · 500 | — · — · — · — | Epic 8 Pro (7599) |
-| Epic 9 Pro [5bd7416c] | mtb | S · M · L · XL | 594 · 604 · 618 · 645 | 420 · 450 · 480 · 505 | — · — · — · — | Epic 9 Comp (4999); Epic 9 Expert (6999); Epic 9 Pro (9499); Epic 9 Sport (4199); S-Works Epic 9 (14499); S-Works Epic 9 LTD: Built for Legends (15499) |
+| Epic 8 Pro [67b9f449] | mtb | S · M · L · XL | 597 · 598 · 610 · 628 | 420 · 450 · 475 · 500 | 158–165 · 165–178 · 178–185 · 185–193 | Epic 8 Pro (7599) |
+| Epic 9 Pro [5bd7416c] | mtb | S · M · L · XL | 594 · 604 · 618 · 645 | 420 · 450 · 480 · 505 | 158–165 · 165–178 · 178–185 · 185–193 | Epic 9 Comp (4999); Epic 9 Expert (6999); Epic 9 Pro (9499); Epic 9 Sport (4199); S-Works Epic 9 (14499); S-Works Epic 9 LTD: Built for Legends (15499) |
 | Levo 4 EVO [4a9881ab] | emtb | S2 · S3 · S4 · S5 · S6 | 625 · 633 · 646 · 659 · 675 | 425 · 445 · 470 · 495 · 525 | — · — · — · — · — | Levo 4 EVO Comp (7499); Levo 4 EVO Comp Alloy (6499); Levo 4 EVO Pro (10999) |
 | Rockhopper [8938a1a8] | mtb | XS - 27.5 · S - 27.5 · M - 27.5 · S - 29 · M - 29 · L - 29 · XL - 29 · XXL - 29 | 559 · 573 · 589 · 607 · 616 · 626 · 640 · 654 | 375 · 395 · 415 · 405 · 425 · 445 · 465 · 485 | — · — · — · — · — · — · — · — | Rockhopper Comp (949); Rockhopper Expert (1299) |
 | Rockhopper [99b6e2c4] | mtb | XXS - 26 · XS - 27.5 · S - 27.5 · S - 29 · M - 27.5 · M - 29 · L - 29 · XL - 29 · XXL - 29 | 543 · 559 · 573 · 589 · 607 · 616 · 626 · 640 · 654 | 355 · 375 · 395 · 415 · 405 · 425 · 445 · 465 · 485 | — · — · — · — · — · — · — · — · — | Rockhopper (649) |
@@ -448,8 +448,8 @@ Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con
 | Roubaix SL8 [f1f17ed5] | carretera | 44 · 49 · 52 · 54 · 56 · 58 · 61 · 64 | 543 · 549 · 566 · 585 · 605 · 630 · 665 · 685 | 353 · 363 · 370 · 381 · 389 · 397 · 403 · 409 | — · — · — · — · — · — · — · — | Roubaix SL8 Comp (4299); Roubaix SL8 Expert - Shimano Ultegra Di2 (5999) |
 | S-Works Aethos – Campagnolo LTD [7da9c890] | carretera | 49 · 52 · 54 · 56 · 58 · 61 | 514 · 527 · 544 · 565 · 591 · 612 | 375 · 380 · 384 · 395 · 402 · 408 | 155–163 · 163–170 · 170–175 · 175–180 · 180–188 · 188–196 | S-Works Aethos – Campagnolo LTD (10499) |
 | S-Works Demo 11 [d104b5e8] | mtb | S3 · S4 · S5 | 640 · 640 · 640 | 445 · 475 · 500 | 168–180 · 175–188 · 185–206 | S-Works Demo 11 (12499); S-Works Demo 11 LTD: Built for Legends (13499) |
-| S-Works Epic 8 [7135f585] | mtb | S · M · L · XL | 597 · 598 · 610 · 628 | 420 · 450 · 475 · 500 | — · — · — · — | S-Works Epic 8 (11599) |
-| S-Works Epic 9 Ultralight LTD [43cf73de] | mtb | S · M · L · XL | 589 · 599 · 612 · 639 | 427 · 457 · 487 · 512 | — · — · — · — | S-Works Epic 9 Ultralight LTD (13999) |
+| S-Works Epic 8 [7135f585] | mtb | S · M · L · XL | 597 · 598 · 610 · 628 | 420 · 450 · 475 · 500 | 158–165 · 165–178 · 178–185 · 185–193 | S-Works Epic 8 (11599) |
+| S-Works Epic 9 Ultralight LTD [43cf73de] | mtb | S · M · L · XL | 589 · 599 · 612 · 639 | 427 · 457 · 487 · 512 | 158–165 · 165–178 · 178–185 · 185–193 | S-Works Epic 9 Ultralight LTD (13999) |
 | S-Works Levo 4 X [988a0a6a] | emtb | S2 · S3 · S4 · S5 · S6 | 618 · 626 · 638 · 652 · 667 | 435 · 455 · 480 · 505 · 535 | 157–173 · 165–180 · 173–188 · 178–193 · 188–203 | S-Works Levo 4 X (14499); S-Works Turbo Levo 4 (13999); Turbo Levo 4 Expert (9999); Turbo Levo 4 Pro (11999) |
 | S-Works Stumpjumper 15 LTD [76f833c8] | mtb | S2 · S3 · S4 · S5 · S6 | 618 · 627 · 640 · 654 · 667 | 425 · 450 · 475 · 500 · 530 | 157–173 · 165–180 · 173–188 · 178–193 · 188–203 | S-Works Stumpjumper 15 LTD (14499) |
 | S-Works Turbo Levo R Ultra Light [b86c61df] | emtb | S2 - 29 · S3 - 29 · S4 - 29 · S5 - 29 | 607 · 616 · 630 · 644 | 420 · 450 · 475 · 500 | — · — · — · — | S-Works Turbo Levo R Ultra Light (13999) |
@@ -530,17 +530,6 @@ Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con
 - Diverge 4 Comp Alloy - SRAM Apex: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
 - Diverge 4 Sport Alloy - Shimano CUES: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura
 - Diverge E5: guía de tallas 'Diverge' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura
-- S-Works Epic 9 LTD: Built for Legends: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- S-Works Epic 9: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- S-Works Epic 9 Ultralight LTD: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- Epic 9 Pro: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- Epic 9 Expert: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- Epic 9 Comp: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- Epic 9 Sport: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- S-Works Epic 8: guía de tallas 'Epic' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- Epic 8 Pro: guía de tallas 'Epic' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura
-- Epic 8 Expert Di2: guía de tallas 'Epic' no cubre todas las tallas ['XS', 'S', 'M', 'L', 'XL']: sin altura
-- Epic 8 Expert: guía de tallas 'Epic' no cubre todas las tallas ['XS', 'S', 'M', 'L', 'XL']: sin altura
 - Rockhopper Expert: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura
 - Rockhopper Comp: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura
 - Rockhopper Sport: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XXL - 29', 'XL - 29']: sin altura
@@ -678,34 +667,34 @@ Descartados: fuera de alcance (URL/tipo): 42, excluido por nombre (cuadro, kit, 
 
 ## Cube — con avisos
 
-**Nota:** Sin altura: la talla solo se ofrece con un calculador (no se usa). Rechazos: reach publicado no creciente (Nuroad, Attain), por eso no queda gravel.
+**Nota:** Altura por talla tomada de su calculador oficial (bikesizing.cube.eu), usado como una persona desde la ventana de Chrome del usuario con su autorización expresa aunque su robots.txt lo prohíbe (Disallow: /) y aunque la regla general excluye calculadoras: por familia, alturas 140–210 cm → tallas recomendadas (data/heights/cube.json). Rechazos: reach publicado no creciente (Nuroad, Attain), por eso no queda gravel.
 
 Diff con bikes.csv: **+376** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 234. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 240, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
-| Cube AMS Hybrid 177 C:62 [be184ff8] | emtb | S · M · L · XL | 631 · 631 · 636 · 654 | 427 · 452 · 477 · 507 | — · — · — · — | Cube AMS Hybrid 177 C:62 AT 600X (7499); Cube AMS Hybrid 177 C:62 Super TM 600X (9999); Cube AMS Hybrid 177 C:62 TM 600X (5799) |
-| Cube AMS Hybrid ONE44 C:62 [53c1333e] | emtb | S · M · L · XL | 615 · 624 · 633 · 652 | 429 · 449 · 474 · 501 | — · — · — · — | Cube AMS Hybrid ONE44 C:62 Pro 400X (4199); Cube AMS Hybrid ONE44 C:62 Race 400X (4499) |
-| Cube AMS Hybrid ONE44 C:68X [97afe5f2] | emtb | S · M · L · XL | 617 · 626 · 635 · 653 | 428 · 448 · 473 · 500 | — · — · — · — | Cube AMS Hybrid ONE44 C:68X SLT 400X (7999); Cube AMS Hybrid ONE44 C:68X SLX 400X (5999); Cube AMS Hybrid ONE44 C:68X TM 400X (6499) |
-| Cube Agree C:62 [2dc1f593] | carretera | 47 cm · 50 cm · 53 cm · 56 cm · 58 cm · 60 cm · 62 cm | 513 · 523 · 544 · 572 · 591 · 606 · 628 | 376 · 378 · 383 · 391 · 394 · 399 · 402 | — · — · — · — · — · — · — | Cube Agree C:62 Pro (3299); Cube Agree C:62 Race (3699); Cube Agree C:62 SLX (3999) |
-| Cube Agree C:62 [fb630f22] | carretera | 50 cm · 53 cm · 56 cm · 58 cm · 60 cm · 62 cm | 523 · 544 · 572 · 591 · 606 · 628 | 378 · 383 · 391 · 394 · 399 · 402 | — · — · — · — · — · — | Cube Agree C:62 EX (2999); Cube Agree C:62 ONE (2799); Cube Agree C:62 SLT AXS (5299); Cube Agree C:62 SLT Di2 (4999) |
-| Cube Aim [ec9dead2] | mtb | XS · S · M · L · XL | 602 · 619 · 641 · 655 · 678 | 384 · 398 · 414 · 431 · 446 | — · — · — · — · — | Cube Aim ONE (499); Cube Aim ONE FE (599); Cube Aim Pro (599); Cube Aim Pro FE (699); Cube Aim SLT (799); Cube Aim SLX (699); Cube Aim SLX FE (799) |
-| Cube FRITZZ C:62 [acc58039] | mtb | S · M · L · XL | 628 · 628 · 629 · 647 | 426 · 452 · 476 · 496 | — · — · — · — | Cube FRITZZ C:62 Super TM (4999); Cube FRITZZ C:62 TM (2999) |
-| Cube Litening AERO C:68X [40edd974] | carretera | 50 cm · 52 cm · 54 cm · 56 cm · 58 cm · 60 cm · 62 cm | 514 · 524 · 542 · 563 · 580 · 594 · 609 | 389 · 389 · 389 · 398 · 403 · 405 · 412 | — · — · — · — · — · — · — | Cube Litening AERO C:68X Orbit (6999); Cube Litening AERO C:68X Pro (4999); Cube Litening AERO C:68X Race (4999); Cube Litening AERO C:68X SLT (7299); Cube Litening AERO C:68X SLX (7299) |
-| Cube Litening AIR C:68X [c10592c6] | carretera | 50 cm · 52 cm · 54 cm · 56 cm · 58 cm · 60 cm | 514 · 524 · 542 · 563 · 580 · 594 | 389 · 389 · 390 · 398 · 403 · 405 | — · — · — · — · — · — | Cube Litening AIR C:68X Pro (4999); Cube Litening AIR C:68X Race (5299); Cube Litening AIR C:68X SLT (7499); Cube Litening AIR C:68X SLX (7499) |
-| Cube Reaction C:62 ONE [eb2937c5] | mtb | XS · S · M · L · XL · XXL | 600 · 612 · 621 · 630 · 639 · 653 | 385 · 405 · 422 · 439 · 456 · 472 | — · — · — · — · — · — | Cube Reaction C:62 ONE (1499) |
-| Cube Reaction C:62 [16061129] | mtb | S · M · L · XL · XXL | 612 · 621 · 630 · 639 · 653 | 405 · 422 · 439 · 456 · 472 | — · — · — · — · — | Cube Reaction C:62 Pro (1999); Cube Reaction C:62 Race (2799) |
-| Cube Reaction C:68X SLX [d8af8984] | mtb | S · M · L · XL | 607 · 610 · 622 · 637 | 412 · 436 · 457 · 483 | — · — · — · — | Cube Reaction C:68X SLX (3499) |
-| Cube Reaction Hybrid [f34b1363] | emtb | S · M · L · XL · XXL | 646 · 653 · 662 · 674 · 685 | 409 · 420 · 437 · 455 · 471 | — · — · — · — · — | Cube Reaction Hybrid ONE 720 (2799); Cube Reaction Hybrid ONE 720 FE (2999); Cube Reaction Hybrid Performance 720 (2499); Cube Reaction Hybrid Performance 720 FE (2699); Cube Reaction Hybrid Pro 800 (3199); Cube Reaction Hybrid Pro 800 FE (3399); Cube Reaction Hybrid Race 800 (3699); Cube Reaction Hybrid Race 800 FE (3899); Cube Reaction Hybrid SLT 800 (4799); Cube Reaction Hybrid SLX 800 (4199); Cube Reaction Hybrid SLX 800 FE (4399) |
-| Cube Reaction TM [1d8616f3] | mtb | XS · S · M · L · XL | 605 · 605 · 635 · 635 · 644 | 404 · 424 · 442 · 462 · 482 | — · — · — · — · — | Cube Reaction TM ONE (1099); Cube Reaction TM Pro (1699) |
-| Cube Reaction [b5582c5d] | mtb | XS · S · M · L · XL | 601 · 616 · 630 · 644 · 658 | 383 · 400 · 417 · 434 · 452 | — · — · — · — · — | Cube Reaction Pro (999); Cube Reaction SLX (1299) |
-| Cube Stereo C:62 [4dd258eb] | mtb | S · M · L · XL | 619 · 625 · 634 · 652 | 430 · 455 · 480 · 505 | — · — · — · — | Cube Stereo C:62 SLT (5499); Cube Stereo C:62 Super TM (4999) |
-| Cube Stereo Hybrid ONE22 [34593e3a] | emtb | S · M · L · XL | 638 · 647 · 656 · 670 | 417 · 444 · 471 · 496 | — · — · — · — | Cube Stereo Hybrid ONE22 Pro 800 (3699); Cube Stereo Hybrid ONE22 Pro 800 FE (3899); Cube Stereo Hybrid ONE22 SLX 800 (4199); Cube Stereo Hybrid ONE22 SLX 800 FE (4399) |
-| Cube Stereo Hybrid ONE44 HPC [9715755c] | emtb | S · M · L · XL | 606 · 621 · 634 · 660 | 425 · 450 · 475 · 510 | — · — · — · — | Cube Stereo Hybrid ONE44 HPC EXC 800 (4799); Cube Stereo Hybrid ONE44 HPC Super TM 800 (6999) |
-| Cube Stereo Hybrid ONE44 HPC [a143eb9c] | emtb | S · M · L · XL | 604 · 620 · 632 · 658 | 427 · 452 · 477 · 512 | — · — · — · — | Cube Stereo Hybrid ONE44 HPC AT 800 (6999); Cube Stereo Hybrid ONE44 HPC Pro 800 (4099); Cube Stereo Hybrid ONE44 HPC Race 800 (4399); Cube Stereo Hybrid ONE44 HPC SLT 800 (8499); Cube Stereo Hybrid ONE44 HPC SLX 800 (4999); Cube Stereo Hybrid ONE44 HPC SLX Evo 800 (5699); Cube Stereo Hybrid ONE44 HPC TM 800 (5999) |
-| Cube Stereo Hybrid ONE44 [22e3adaa] | emtb | S · M · L · XL | 622 · 631 · 640 · 660 | 420 · 447 · 474 · 510 | — · — · — · — | Cube Stereo Hybrid ONE44 Pro 800 (3899); Cube Stereo Hybrid ONE44 Pro 800 FE (4099); Cube Stereo Hybrid ONE44 SLX 800 (4699); Cube Stereo Hybrid ONE44 SLX 800 FE (4899) |
-| Cube Stereo Hybrid ONE77 HPC [d10a4b65] | emtb | S · M · L · XL | 635 · 635 · 645 · 659 | 427 · 452 · 477 · 506 | — · — · — · — | Cube Stereo Hybrid ONE77 HPC AT 800 (7199); Cube Stereo Hybrid ONE77 HPC Race 800 (4399); Cube Stereo Hybrid ONE77 HPC SLT 800 (8699); Cube Stereo Hybrid ONE77 HPC SLX 800 (4999); Cube Stereo Hybrid ONE77 HPC TM 800 (6199) |
-| Cube TWO15 [374456a2] | mtb | M · L · XL | 655 · 655 · 655 | 447 · 467 · 486 | — · — · — | Cube TWO15 Race (2999); Cube TWO15 SLX (3999) |
+| Cube AMS Hybrid 177 C:62 [be184ff8] | emtb | S · M · L · XL | 631 · 631 · 636 · 654 | 427 · 452 · 477 · 507 | 157–169 · 167–179 · 177–189 · 187–199 | Cube AMS Hybrid 177 C:62 AT 600X (7499); Cube AMS Hybrid 177 C:62 Super TM 600X (9999); Cube AMS Hybrid 177 C:62 TM 600X (5799) |
+| Cube AMS Hybrid ONE44 C:62 [53c1333e] | emtb | S · M · L · XL | 615 · 624 · 633 · 652 | 429 · 449 · 474 · 501 | 157–169 · 167–179 · 177–189 · 187–199 | Cube AMS Hybrid ONE44 C:62 Pro 400X (4199); Cube AMS Hybrid ONE44 C:62 Race 400X (4499) |
+| Cube AMS Hybrid ONE44 C:68X [97afe5f2] | emtb | S · M · L · XL | 617 · 626 · 635 · 653 | 428 · 448 · 473 · 500 | 157–169 · 167–179 · 177–189 · 187–199 | Cube AMS Hybrid ONE44 C:68X SLT 400X (7999); Cube AMS Hybrid ONE44 C:68X SLX 400X (5999); Cube AMS Hybrid ONE44 C:68X TM 400X (6499) |
+| Cube Agree C:62 [2dc1f593] | carretera | 47 cm · 50 cm · 53 cm · 56 cm · 58 cm · 60 cm · 62 cm | 513 · 523 · 544 · 572 · 591 · 606 · 628 | 376 · 378 · 383 · 391 · 394 · 399 · 402 | 152–160 · 158–166 · 164–176 · 174–181 · 179–186 · 184–191 · 189–202 | Cube Agree C:62 Pro (3299); Cube Agree C:62 Race (3699); Cube Agree C:62 SLX (3999) |
+| Cube Agree C:62 [fb630f22] | carretera | 50 cm · 53 cm · 56 cm · 58 cm · 60 cm · 62 cm | 523 · 544 · 572 · 591 · 606 · 628 | 378 · 383 · 391 · 394 · 399 · 402 | 158–166 · 164–176 · 174–181 · 179–186 · 184–191 · 189–202 | Cube Agree C:62 EX (2999); Cube Agree C:62 ONE (2799); Cube Agree C:62 SLT AXS (5299); Cube Agree C:62 SLT Di2 (4999) |
+| Cube Aim [ec9dead2] | mtb | XS · S · M · L · XL | 602 · 619 · 641 · 655 · 678 | 384 · 398 · 414 · 431 · 446 | 147–159 · 157–169 · 167–179 · 177–189 · 187–199 | Cube Aim ONE (499); Cube Aim ONE FE (599); Cube Aim Pro (599); Cube Aim Pro FE (699); Cube Aim SLT (799); Cube Aim SLX (699); Cube Aim SLX FE (799) |
+| Cube FRITZZ C:62 [acc58039] | mtb | S · M · L · XL | 628 · 628 · 629 · 647 | 426 · 452 · 476 · 496 | 157–169 · 167–179 · 177–189 · 187–199 | Cube FRITZZ C:62 Super TM (4999); Cube FRITZZ C:62 TM (2999) |
+| Cube Litening AERO C:68X [40edd974] | carretera | 50 cm · 52 cm · 54 cm · 56 cm · 58 cm · 60 cm · 62 cm | 514 · 524 · 542 · 563 · 580 · 594 · 609 | 389 · 389 · 389 · 398 · 403 · 405 · 412 | 158–166 · 164–171 · 169–176 · 174–181 · 179–186 · 184–191 · 189–202 | Cube Litening AERO C:68X Orbit (6999); Cube Litening AERO C:68X Pro (4999); Cube Litening AERO C:68X Race (4999); Cube Litening AERO C:68X SLT (7299); Cube Litening AERO C:68X SLX (7299) |
+| Cube Litening AIR C:68X [c10592c6] | carretera | 50 cm · 52 cm · 54 cm · 56 cm · 58 cm · 60 cm | 514 · 524 · 542 · 563 · 580 · 594 | 389 · 389 · 390 · 398 · 403 · 405 | 158–166 · 164–171 · 169–176 · 174–181 · 179–186 · 184–191 | Cube Litening AIR C:68X Pro (4999); Cube Litening AIR C:68X Race (5299); Cube Litening AIR C:68X SLT (7499); Cube Litening AIR C:68X SLX (7499) |
+| Cube Reaction C:62 ONE [eb2937c5] | mtb | XS · S · M · L · XL · XXL | 600 · 612 · 621 · 630 · 639 · 653 | 385 · 405 · 422 · 439 · 456 · 472 | 147–159 · 157–169 · 167–179 · 177–189 · 187–199 · 193–205 | Cube Reaction C:62 ONE (1499) |
+| Cube Reaction C:62 [16061129] | mtb | S · M · L · XL · XXL | 612 · 621 · 630 · 639 · 653 | 405 · 422 · 439 · 456 · 472 | 157–169 · 167–179 · 177–189 · 187–199 · 193–205 | Cube Reaction C:62 Pro (1999); Cube Reaction C:62 Race (2799) |
+| Cube Reaction C:68X SLX [d8af8984] | mtb | S · M · L · XL | 607 · 610 · 622 · 637 | 412 · 436 · 457 · 483 | 157–169 · 167–179 · 177–189 · 187–199 | Cube Reaction C:68X SLX (3499) |
+| Cube Reaction Hybrid [f34b1363] | emtb | S · M · L · XL · XXL | 646 · 653 · 662 · 674 · 685 | 409 · 420 · 437 · 455 · 471 | 157–169 · 167–179 · 177–189 · 187–199 · 193–205 | Cube Reaction Hybrid ONE 720 (2799); Cube Reaction Hybrid ONE 720 FE (2999); Cube Reaction Hybrid Performance 720 (2499); Cube Reaction Hybrid Performance 720 FE (2699); Cube Reaction Hybrid Pro 800 (3199); Cube Reaction Hybrid Pro 800 FE (3399); Cube Reaction Hybrid Race 800 (3699); Cube Reaction Hybrid Race 800 FE (3899); Cube Reaction Hybrid SLT 800 (4799); Cube Reaction Hybrid SLX 800 (4199); Cube Reaction Hybrid SLX 800 FE (4399) |
+| Cube Reaction TM [1d8616f3] | mtb | XS · S · M · L · XL | 605 · 605 · 635 · 635 · 644 | 404 · 424 · 442 · 462 · 482 | 147–159 · 157–169 · 167–179 · 177–189 · 187–199 | Cube Reaction TM ONE (1099); Cube Reaction TM Pro (1699) |
+| Cube Reaction [b5582c5d] | mtb | XS · S · M · L · XL | 601 · 616 · 630 · 644 · 658 | 383 · 400 · 417 · 434 · 452 | 147–159 · 157–169 · 167–179 · 177–189 · 187–199 | Cube Reaction Pro (999); Cube Reaction SLX (1299) |
+| Cube Stereo C:62 [4dd258eb] | mtb | S · M · L · XL | 619 · 625 · 634 · 652 | 430 · 455 · 480 · 505 | 157–169 · 167–179 · 177–189 · 187–199 | Cube Stereo C:62 SLT (5499); Cube Stereo C:62 Super TM (4999) |
+| Cube Stereo Hybrid ONE22 [34593e3a] | emtb | S · M · L · XL | 638 · 647 · 656 · 670 | 417 · 444 · 471 · 496 | 157–169 · 167–179 · 177–189 · 187–199 | Cube Stereo Hybrid ONE22 Pro 800 (3699); Cube Stereo Hybrid ONE22 Pro 800 FE (3899); Cube Stereo Hybrid ONE22 SLX 800 (4199); Cube Stereo Hybrid ONE22 SLX 800 FE (4399) |
+| Cube Stereo Hybrid ONE44 HPC [9715755c] | emtb | S · M · L · XL | 606 · 621 · 634 · 660 | 425 · 450 · 475 · 510 | 157–169 · 167–179 · 177–189 · 187–199 | Cube Stereo Hybrid ONE44 HPC EXC 800 (4799); Cube Stereo Hybrid ONE44 HPC Super TM 800 (6999) |
+| Cube Stereo Hybrid ONE44 HPC [a143eb9c] | emtb | S · M · L · XL | 604 · 620 · 632 · 658 | 427 · 452 · 477 · 512 | 157–169 · 167–179 · 177–189 · 187–199 | Cube Stereo Hybrid ONE44 HPC AT 800 (6999); Cube Stereo Hybrid ONE44 HPC Pro 800 (4099); Cube Stereo Hybrid ONE44 HPC Race 800 (4399); Cube Stereo Hybrid ONE44 HPC SLT 800 (8499); Cube Stereo Hybrid ONE44 HPC SLX 800 (4999); Cube Stereo Hybrid ONE44 HPC SLX Evo 800 (5699); Cube Stereo Hybrid ONE44 HPC TM 800 (5999) |
+| Cube Stereo Hybrid ONE44 [22e3adaa] | emtb | S · M · L · XL | 622 · 631 · 640 · 660 | 420 · 447 · 474 · 510 | 157–169 · 167–179 · 177–189 · 187–199 | Cube Stereo Hybrid ONE44 Pro 800 (3899); Cube Stereo Hybrid ONE44 Pro 800 FE (4099); Cube Stereo Hybrid ONE44 SLX 800 (4699); Cube Stereo Hybrid ONE44 SLX 800 FE (4899) |
+| Cube Stereo Hybrid ONE77 HPC [d10a4b65] | emtb | S · M · L · XL | 635 · 635 · 645 · 659 | 427 · 452 · 477 · 506 | 157–169 · 167–179 · 177–189 · 187–199 | Cube Stereo Hybrid ONE77 HPC AT 800 (7199); Cube Stereo Hybrid ONE77 HPC Race 800 (4399); Cube Stereo Hybrid ONE77 HPC SLT 800 (8699); Cube Stereo Hybrid ONE77 HPC SLX 800 (4999); Cube Stereo Hybrid ONE77 HPC TM 800 (6199) |
+| Cube TWO15 [374456a2] | mtb | M · L · XL | 655 · 655 · 655 | 447 · 467 · 486 | 167–179 · 177–189 · 187–199 | Cube TWO15 Race (2999); Cube TWO15 SLX (3999) |
 
 <details><summary>Tallas rechazadas por la validación</summary>
 
@@ -2000,7 +1989,7 @@ Diff con bikes.csv: **+97** tallas nuevas, **−0** que desaparecen, **~0** con 
 
 ## Decathlon — bloqueada
 
-**Nota:** Pendiente de fichas guardadas a mano: decathlon.es rechaza la verificación humana en el Chrome automatizado (en el Chrome normal del usuario sí funciona). Guardar las fichas en data/manual/decathlon/ y ejecutar python -m extractor run decathlon.
+**Nota:** Geometría y altura por talla tomadas de las fotos de la galería de cada ficha (la propia ficha remite a ellas): imágenes identificadas a mano y transcritas con visión (data/vision/decathlon, extraction_method = vision). Acceso con la ventana de Chrome verificada por el usuario (autorizado), 5 s entre páginas (Crawl-delay de robots.txt). Sin bicis de niño, marketplace (otras marcas), ciclocross ni urbanas/trekking. Fichas sin foto de geometría: sin filas.
 
 **Motivo:** no se encontraron productos (sitemap/listado/JSON)
 

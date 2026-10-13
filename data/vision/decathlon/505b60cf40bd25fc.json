@@ -1,0 +1,120 @@
+{
+  "name": "EDR AF",
+  "image_url": "https://contents.mediadecathlon.com/p2926264/k$f46668f31a101e732d600f3992ea805c/picture.jpg",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "rows": [
+    [
+      "ST: seat tube length",
+      "450",
+      "480",
+      "500",
+      "520",
+      "530"
+    ],
+    [
+      "HT: head tube length",
+      "115",
+      "130",
+      "155",
+      "185",
+      "215"
+    ],
+    [
+      "TT: top tube length",
+      "515",
+      "530",
+      "548",
+      "564",
+      "580"
+    ],
+    [
+      "HTA: head tube angle",
+      "69,8",
+      "70,8",
+      "71,5",
+      "73",
+      "73"
+    ],
+    [
+      "STA: seat tube angle",
+      "75",
+      "74,5",
+      "73,5",
+      "73,5",
+      "73"
+    ],
+    [
+      "CS: chainstay length",
+      "425",
+      "425",
+      "425",
+      "425",
+      "425"
+    ],
+    [
+      "FL: fork length",
+      "384",
+      "384",
+      "384",
+      "384",
+      "384"
+    ],
+    [
+      "FR: fork rake",
+      "45",
+      "45",
+      "45",
+      "45",
+      "45"
+    ],
+    [
+      "BB: bottom bracket drop",
+      "67",
+      "67",
+      "67",
+      "67",
+      "67"
+    ],
+    [
+      "S: stack",
+      "524",
+      "540",
+      "569",
+      "601",
+      "629"
+    ],
+    [
+      "R: reach",
+      "375",
+      "380",
+      "380",
+      "386",
+      "387"
+    ],
+    [
+      "E: wheel base",
+      "1010",
+      "1012",
+      "1015",
+      "1016",
+      "1026"
+    ],
+    [
+      "SIZE (cm)",
+      "154/165",
+      "165/173",
+      "173/180",
+      "180/188",
+      "188/200"
+    ]
+  ],
+  "height_image_url": "https://contents.mediadecathlon.com/p2926267/k$9805ec9af4ec76ab8c56c94bbccf7a89/picture.jpg"
+}

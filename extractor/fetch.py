@@ -58,7 +58,7 @@ def visible_text_len(html: str) -> int:
 
 class Fetcher:
     def __init__(self, root: Path, brand_key: str, force_browser: bool = False, refresh: bool = False, log=print,
-                 delay_s: float | None = None):
+                 delay_s: float | None = None, cdp_url: str | None = None):
         self.cache = root / "data" / "raw" / brand_key
         self.cache.mkdir(parents=True, exist_ok=True)
         self.profile = self.cache / ".chrome-profile"
@@ -73,6 +73,7 @@ class Fetcher:
         self._robots: dict[str, urllib.robotparser.RobotFileParser | None] = {}
         self._last_http = 0.0
         self.http_delay = delay_s or HTTP_DELAY_S
+        self.cdp_url = cdp_url
         self._pw = None
         self._ctx = None
         self.stats = {"httpx": 0, "browser": 0, "cache": 0, "challenges": 0}
@@ -144,6 +145,34 @@ class Fetcher:
         path.write_bytes(r.content)
         return Page(url, str(r.url), r.status_code, "", "httpx", path)
 
+    def get_binary_browser(self, url: str, suffix: str) -> Page:
+        """Como get_binary, pero abierto en la pestaña de Chrome (con su verificación); para sitemaps que dan 403 a httpx.
+
+        Se guarda el cuerpo de la respuesta tal cual (no lo que Chrome pinta). Si salta una verificación, se espera a
+        que la resuelva una persona (como en get) y se vuelve a pedir.
+        """
+        path = self._key(url, "bin").with_suffix(suffix)
+        if not self.refresh and path.exists():
+            self.stats["cache"] += 1
+            return Page(url, url, 200, "", "cache", path)
+        if not self.allowed(url):
+            raise Blocked(f"robots.txt no permite {url}")
+        # La pestaña abre la portada (no el XML: Chrome se cuelga pintando sitemaps de decenas de MB) y espera a una
+        # persona si sale una verificación; después el XML se pide desde ella.
+        tab = getattr(self, "_tab", None)
+        parts = urlsplit(url)
+        home = f"{parts.scheme}://{parts.netloc}/"
+        if tab is None or not tab.url.startswith(home):
+            self._get_browser(home)
+            tab = getattr(self, "_tab", None) or self._ctx.pages[0]
+        # El cuerpo se pide con fetch() desde la propia pestaña (mismo origen y cookies): las respuestas grandes
+        # no siempre quedan disponibles en la caché del inspector.
+        res = tab.evaluate("u => fetch(u).then(async r => [r.status, await r.text()])", url)
+        if res[0] != 200:
+            raise Blocked(f"HTTP {res[0]} en {url} (Chrome)")
+        path.write_bytes(res[1].encode("utf-8"))
+        return Page(url, url, 200, "", "browser", path)
+
     def _get_http(self, url: str) -> Page | None:
         for attempt in range(4):
             self._http_wait()
@@ -171,6 +200,12 @@ class Fetcher:
             from playwright.sync_api import sync_playwright
 
             self._pw = sync_playwright().start()
+            if self.cdp_url:
+                # Ventana de Chrome del usuario (ya verificada por él): se usa tal cual, sin lanzar otro navegador.
+                self._cdp_browser = self._pw.chromium.connect_over_cdp(self.cdp_url)
+                self._ctx = self._cdp_browser.contexts[0]
+                self._tab = self._ctx.new_page()  # pestaña propia: no tocar las que use el usuario
+                return self._ctx
             self._ctx = self._pw.chromium.launch_persistent_context(
                 str(self.profile), channel="chrome", headless=False, locale="es-ES",
                 viewport={"width": 1280, "height": 900},
@@ -179,8 +214,9 @@ class Fetcher:
 
     def _get_browser(self, url: str) -> Page:
         ctx = self._browser()
-        page = ctx.pages[0] if ctx.pages else ctx.new_page()
-        time.sleep(random.uniform(*BROWSER_DELAY_S))
+        page = getattr(self, "_tab", None) or (ctx.pages[0] if ctx.pages else ctx.new_page())
+        # Pausa entre páginas; nunca menor que el delay_s de la marca (p. ej. Crawl-delay de su robots.txt).
+        time.sleep(max(random.uniform(*BROWSER_DELAY_S), self.http_delay))
         try:
             resp = page.goto(url, wait_until="domcontentloaded", timeout=60_000)
         except Exception as e:  # noqa: BLE001 - errores de red de Playwright
@@ -235,7 +271,7 @@ class Fetcher:
         if not self.allowed(url):
             raise Blocked(f"robots.txt no permite {url}")
         page = self._get_browser(url)  # descarga y espera de verificación como cualquier página
-        tab = self._ctx.pages[0]
+        tab = getattr(self, "_tab", None) or self._ctx.pages[0]
         try:
             tab.get_by_text(click_text, exact=True).first.click(timeout=15_000)
             time.sleep(3)
@@ -247,6 +283,9 @@ class Fetcher:
 
     def close(self):
         if self._ctx is not None:
-            self._ctx.close()
+            if not self.cdp_url:  # la ventana del usuario no se cierra
+                self._ctx.close()
+            elif getattr(self, "_tab", None) is not None:
+                self._tab.close()  # solo la pestaña propia
             self._pw.stop()
         self.client.close()

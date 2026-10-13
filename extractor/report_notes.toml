@@ -2,7 +2,7 @@
 # Clave = nombre exacto de data/brands.csv.
 
 ["Decathlon"]
-note = "Pendiente de fichas guardadas a mano: decathlon.es rechaza la verificación humana en el Chrome automatizado (en el Chrome normal del usuario sí funciona). Guardar las fichas en data/manual/decathlon/ y ejecutar python -m extractor run decathlon."
+note = "Geometría y altura por talla tomadas de las fotos de la galería de cada ficha (la propia ficha remite a ellas): imágenes identificadas a mano y transcritas con visión (data/vision/decathlon, extraction_method = vision). Acceso con la ventana de Chrome verificada por el usuario (autorizado), 5 s entre páginas (Crawl-delay de robots.txt). Sin bicis de niño, marketplace (otras marcas), ciclocross ni urbanas/trekking. Fichas sin foto de geometría: sin filas."
 
 ["Ridley"]
 note = "Bloqueada: la tabla de geometría solo tiene filas con letras (A…J, S, R) y la web no publica la leyenda; S/R parecen stack/reach pero no está confirmado por la marca."
@@ -41,7 +41,7 @@ note = "Geometría por visión (data/vision/massi/). Sin precio en la web."
 note = "Geometría por visión (28 tablas en data/vision/cannondale/), publicada en cm."
 
 ["Specialized"]
-note = "Altura de la guía oficial /es/es/size-guide (pestaña Bikes) por familia; sin altura si la guía no cubre todas las tallas de la geometría. Rechazos: stack/reach publicados no crecientes (Chisel, Epic). El botón 'Guía de tallas' de la ficha es una calculadora (no se usa)."
+note = "Altura de la guía oficial /es/es/size-guide (pestaña Bikes) por familia; errata '1 78 - 185' (Epic L) corregida a 178 con aprobación del usuario. Sin altura donde la guía no cubre todas las tallas. Rechazos: stack/reach publicados no crecientes (Chisel, Epic)."
 
 ["Cube"]
-note = "Sin altura: la talla solo se ofrece con un calculador (no se usa). Rechazos: reach publicado no creciente (Nuroad, Attain), por eso no queda gravel."
+note = "Altura por talla tomada de su calculador oficial (bikesizing.cube.eu), usado como una persona desde la ventana de Chrome del usuario con su autorización expresa aunque su robots.txt lo prohíbe (Disallow: /) y aunque la regla general excluye calculadoras: por familia, alturas 140–210 cm → tallas recomendadas (data/heights/cube.json). Rechazos: reach publicado no creciente (Nuroad, Attain), por eso no queda gravel."

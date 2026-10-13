@@ -1,0 +1,119 @@
+{
+  "name": "RACE 500 / 540 / 700 / 720",
+  "image_url": "https://contents.mediadecathlon.com/p2540363/k$a33338f1bbed070936bce0a63216c364/picture.jpg",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "SIZE S",
+    "SIZE M",
+    "SIZE L",
+    "SIZE XL"
+  ],
+  "rows": [
+    [
+      "ST: SEAT TUBE LENGTH",
+      "370",
+      "400",
+      "450",
+      "520"
+    ],
+    [
+      "HT: HEAD TUBE LENGTH",
+      "95",
+      "100",
+      "110",
+      "125"
+    ],
+    [
+      "TT: TOP TUBE LENGTH",
+      "590",
+      "604",
+      "622",
+      "650"
+    ],
+    [
+      "STA: EFFECTIVE SEAT TUBE ANGLE",
+      "75°",
+      "75°",
+      "75°",
+      "75°"
+    ],
+    [
+      "HTA: HEAD TUBE ANGLE",
+      "67.5°",
+      "67.5°",
+      "67.5°",
+      "67.5°"
+    ],
+    [
+      "FL: FORK LENGTH",
+      "510",
+      "510",
+      "510",
+      "510"
+    ],
+    [
+      "FR: FORK RAKE",
+      "44",
+      "44",
+      "44",
+      "44"
+    ],
+    [
+      "CS: CHAIN STAY LENGTH (HORIZONTAL)",
+      "430",
+      "430",
+      "430",
+      "430"
+    ],
+    [
+      "BBD: BOTTOM BRAKET DROP",
+      "60",
+      "60",
+      "60",
+      "60"
+    ],
+    [
+      "BBH: BOTTOM BRAKET HEIGHT",
+      "322",
+      "322",
+      "322",
+      "322"
+    ],
+    [
+      "S: STACK",
+      "605",
+      "610",
+      "619",
+      "633"
+    ],
+    [
+      "R: REACH",
+      "405",
+      "429",
+      "450",
+      "475"
+    ],
+    [
+      "WHEEL BASE",
+      "1101",
+      "1127",
+      "1152",
+      "1182"
+    ],
+    [
+      "STAND OVER HEIGHT MAX (X=50)",
+      "729",
+      "749",
+      "786",
+      "831"
+    ],
+    [
+      "STEM",
+      "60",
+      "60",
+      "70",
+      "70"
+    ]
+  ]
+}

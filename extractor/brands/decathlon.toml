@@ -1,16 +1,34 @@
 name = "Decathlon"
-# decathlon.es rechaza la verificación humana en el Chrome controlado por el extractor (y responde 403 a httpx).
-# Por eso las fichas las guarda el usuario desde su propio navegador en data/manual/decathlon/
-# ("Guardar como…" → "Página web, solo HTML"). La URL de cada ficha sale de su <link rel="canonical">.
-discovery = "local"
-local_dir = "data/manual/decathlon"
+# decathlon.es rechaza la verificación humana en un Chrome lanzado por Playwright. Con autorización del usuario se
+# trabaja en una ventana de su Chrome abierta con --remote-debugging-port=9333 (perfil data/raw/decathlon/.chrome-human)
+# en la que él se verifica como humano. robots.txt pide Crawl-delay 5 → delay_s = 5.
+# La geometría (stack/reach) y la altura por talla NO están en el HTML: están en fotos de la galería de cada ficha
+# ("Podrás encontrar más información sobre geometría y correspondencia de tallas en las fotos del producto").
+# Esas fotos se identificaron a mano y se transcribieron con visión: data/vision/decathlon/<sha>.json, índice map.json.
+discovery = "sitemap"
+sitemaps = ["https://www.decathlon.es/decathlon-products-index.xml"]
+browser = true
+cdp_url = "http://127.0.0.1:9333"
+delay_s = 5
+# Solo bicis de marcas propias (Van Rysel, Triban, Rockrider); las de otras marcas del marketplace llevan id "X…".
+include = ['/es/p/(bici|bicicleta)-[^/]*(van-rysel|triban|rockrider|edr|rcr|ncr|grvl|xcr|e-expl|e-st|race-\d|expl-\d|xc-|feel-\d|-af[-/])']
+# Sin bicis de niño (indicación del usuario), ni marketplace, ni ciclocross/urbanas/trekking.
+exclude = [
+  'ni[nñ]os?-|ni[nñ]as?-|infantil|junior|-(1[2468]|2[04])-pulgadas|-anos[-/]',
+  '/X\d+/',
+  'ciclocross|rcx|trekking|urbana|ciudad|plegable|estatica|eliptica|todocamino|viaje',
+]
 classify_by_url = false
 categories = [
-  ['ocasi[oó]n|segunda mano|reacondicionad', ''],
-  ['el[ée]ctric[ao].*monta|e-?mtb|e-st|e-expl', 'emtb'],
+  ['ocasi[oó]n|segunda mano|reacondicionad|ciclocross', ''],
+  ['el[ée]ctric[ao].*monta|e-expl|e-st|e-feel', 'emtb'],
   ['el[ée]ctric|e-edr|e-grvl', ''],
   ['gravel|grvl', 'gravel'],
-  ['monta[ñn]a|mtb|rockrider', 'mtb'],
-  ['carretera|van rysel|triban|edr|ncr|rcr', 'carretera'],
+  ['monta[ñn]a|mtb|rockrider|xc|feel', 'mtb'],
+  ['carretera|van rysel|triban|edr|ncr|rcr|xcr|triatl[oó]n|contrarreloj', 'carretera'],
 ]
 exclude_name = '\bcuadro\b|\bframe\b|\bkit\b|infantil|niñ[oa]s?\b|\b2[04]"'
+vision_map = "data/vision/decathlon/map.json"
+vision_map_only = true
+vision_gallery_alt_re = '\s\d+/\d+\s*$'
+height_re = 'SIZE \(cm\)|^altura \(cm'

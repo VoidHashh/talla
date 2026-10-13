@@ -97,8 +97,13 @@ def parse_height(text: str) -> Height | None:
     return None  # un número suelto sin signo no es un rango publicado
 
 
+def _strip_size_word(cell: str) -> str:
+    """"SIZE S" / "Talla M" → "S" / "M"."""
+    return re.sub(r"^(size|talla)\s+(?=\S)", "", cell.strip(), flags=re.I)
+
+
 def _is_size_like(cell: str) -> bool:
-    c = cell.strip()
+    c = _strip_size_word(cell)
     if not c or len(c) > 16 or SIZE_WORD_RE.match(c):
         return False
     if re.fullmatch(r"\d{2,3}(\.\d)? ?cm", c, re.I):
@@ -140,7 +145,7 @@ def parse_matrix(m: list[list[str]], height_re: re.Pattern | None = None, unit: 
         # Sin cabecera de tallas reconocible: usar la primera fila tal cual.
         header_idx, start = 0, 1
     header = m[header_idx]
-    sizes = [c.strip() for c in header[start:]]
+    sizes = [_strip_size_word(c) for c in header[start:]]
     while sizes and not sizes[-1]:
         sizes.pop()
     if len(sizes) < 1:

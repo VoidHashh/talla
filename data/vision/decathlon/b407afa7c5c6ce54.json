@@ -1,0 +1,120 @@
+{
+  "name": "EDR CF ULTRA",
+  "image_url": "https://contents.mediadecathlon.com/p2972694/k$4c75a6ea0a6d7d71ea5242da847c6ba4/picture.jpg",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "rows": [
+    [
+      "ST: seat tube length",
+      "450",
+      "480",
+      "500",
+      "520",
+      "530"
+    ],
+    [
+      "HT: head tube length",
+      "115",
+      "130",
+      "155",
+      "185",
+      "215"
+    ],
+    [
+      "TT: top tube length",
+      "515",
+      "530",
+      "548",
+      "564",
+      "580"
+    ],
+    [
+      "HTA: head tube angle",
+      "70",
+      "71",
+      "72",
+      "73",
+      "73"
+    ],
+    [
+      "STA: seat tube angle",
+      "75,1",
+      "74,6",
+      "73,5",
+      "73,5",
+      "72,9"
+    ],
+    [
+      "CS: chainstay length",
+      "425",
+      "425",
+      "425",
+      "425",
+      "425"
+    ],
+    [
+      "FL: fork length",
+      "384",
+      "384",
+      "384",
+      "384",
+      "384"
+    ],
+    [
+      "FR: fork rake",
+      "45",
+      "45",
+      "45",
+      "45",
+      "45"
+    ],
+    [
+      "BB: bottom bracket drop",
+      "67",
+      "67",
+      "67",
+      "67",
+      "67"
+    ],
+    [
+      "S: stack",
+      "524",
+      "540",
+      "568",
+      "601",
+      "630"
+    ],
+    [
+      "R: reach",
+      "375",
+      "380",
+      "380",
+      "386",
+      "388"
+    ],
+    [
+      "E: wheel base",
+      "1010",
+      "1012",
+      "1015",
+      "1016",
+      "1026"
+    ],
+    [
+      "SIZE (cm)",
+      "154/165",
+      "165/173",
+      "173/180",
+      "180/188",
+      "188/200"
+    ]
+  ],
+  "height_image_url": "https://contents.mediadecathlon.com/p2972695/k$e43b21ce6d5ef0f7483911d608a271f4/picture.jpg"
+}

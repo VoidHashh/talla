@@ -23,3 +23,6 @@ price_re = 'PVP\*\s*([\d.,]+)\s*EUR'
 # El nombre incluye el color en minúsculas al final ("… SLT slategrey´n´prizm"): se quita para no duplicar el modelo por colores.
 name_strip = ['(?-i:(\s+[a-z]\S*)+$)']
 exclude_name = '\bframeset\b|\bcuadro\b|\bkit\b|\bkids?\b'
+# Alturas del calculador oficial bikesizing.cube.eu (autorizado por el usuario sobre la regla 1 y su robots.txt),
+# generadas con: python -m extractor.cube_sizing
+height_map = "data/heights/cube.json"

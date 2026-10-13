@@ -9,12 +9,13 @@ import json
 import re
 import tomllib
 from dataclasses import dataclass, field
+from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from . import readers
 from .fetch import Blocked, Fetcher, Page
-from .geometry import parse_height
+from .geometry import Height, parse_height
 from .geometry import (
     STANDARD_LETTERS, Geometry, apply_row_alias, best_geometry, heights_from_dl, heights_from_tables, heights_from_text,
     order_sizes, parse_matrix,
@@ -97,9 +98,10 @@ def discover(cfg: dict, fx: Fetcher, log) -> list[Product]:
                 continue
             seen.add(sm)
             text = _sitemap_text(fx, sm)
+            is_index = "<sitemapindex" in text  # una sola vez: hay sitemaps de decenas de MB
             for loc in re.findall(r"<loc>\s*(.*?)\s*</loc>", text):
                 loc = loc.replace("&amp;", "&")
-                if "<sitemapindex" in text:
+                if is_index:
                     if not cfg.get("sitemap_filter") or re.search(cfg["sitemap_filter"], loc):
                         queue.append(loc)
                 elif keep(loc):
@@ -167,7 +169,11 @@ def _sitemap_text(fx: Fetcher, url: str) -> str:
     try:
         return fx.get_binary(url, ".xml").path.read_text(encoding="utf-8", errors="replace")
     except Blocked:
-        return fx.get(url).text
+        if not fx.force_browser:
+            return fx.get(url).text
+        # httpx rechazado (403): el XML se pide desde el Chrome, con sus cookies de verificación.
+        data = fx.get_binary_browser(url, ".xml").path.read_bytes()
+        return (gzip.decompress(data) if data[:2] == b"\x1f\x8b" else data).decode("utf-8", "replace")
 
 
 # ---------------------------------------------------------------- lectura de producto
@@ -259,6 +265,23 @@ def product_meta(html: str, url: str, cfg: dict) -> dict:
 def find_geometry(html: str, page_url: str, cfg: dict, fx: Fetcher, brand_key: str) -> tuple[Geometry | None, str, str, str | None]:
     """(geometría, método, url fuente, motivo si falla) probando HTML → JSON → PDF → imagen."""
     height_re = re.compile(cfg["height_re"], re.I) if cfg.get("height_re") else None
+    if cfg.get("vision_map"):
+        # Galerías de fotos donde la tabla de geometría es una imagen identificada a mano
+        # (data/vision/<marca>/map.json = {url de la imagen: nombre}). Se usa la que aparezca en la galería de la ficha
+        # (imágenes cuyo alt cumple vision_gallery_alt_re), no en carruseles de otros productos.
+        vmap = json.loads((ROOT / cfg["vision_map"]).read_text(encoding="utf-8"))
+        gallery = html
+        if cfg.get("vision_gallery_alt_re"):
+            alt_re = re.compile(cfg["vision_gallery_alt_re"])
+            gallery = " ".join(
+                tag for tag in re.findall(r"<img[^>]*>", html)
+                if (a := re.search(r'alt="([^"]*)"', tag)) and alt_re.search(unescape(a.group(1)).replace("\xa0", " "))
+            )
+        for img in vmap:
+            if urlsplit(img).path in gallery:
+                return vision_geometry(img, fx, brand_key, height_re)
+        if cfg.get("vision_map_only"):
+            return None, "", page_url, "sin imagen de geometría identificada en la galería"
     if cfg.get("strip_html_re"):
         # Fragmentos que estorban la lectura (p. ej. cotas duplicadas en pulgadas pegadas a las de mm).
         html = re.sub(cfg["strip_html_re"], "", html, flags=re.S)
@@ -388,7 +411,9 @@ def load_height_guide(cfg: dict, fx: Fetcher, log) -> dict[str, dict[str, object
         scol = next((j for j, c in enumerate(head) if re.search(r"^size$|talla", c)), None)
         if hcol is None or scol is None or not title:
             continue
-        rows = {r[scol].strip(): parse_height(r[hcol] + " cm") for r in m[1:] if len(r) > max(hcol, scol)}
+        fixes = g.get("text_fixes", {})  # erratas de la web corregidas con aprobación del usuario
+        rows = {r[scol].strip(): parse_height(fixes.get(r[hcol].strip(), r[hcol]) + " cm")
+                for r in m[1:] if len(r) > max(hcol, scol)}
         rows = {k: v for k, v in rows.items() if k and v}
         if rows:
             guide[title] = rows
@@ -532,7 +557,7 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
     res = Result(cfg["name"])
     labels = load_size_labels()
     fx = Fetcher(ROOT, key, force_browser=cfg.get("browser", False), refresh=refresh, log=log,
-                 delay_s=cfg.get("delay_s"))
+                 delay_s=cfg.get("delay_s"), cdp_url=cfg.get("cdp_url"))
     today = dt.date.today().isoformat()
     try:
         try:
@@ -625,6 +650,16 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
                 res.failures.append((meta["url"], "sin nombre de modelo"))
                 continue
             fam = family_key(g)
+            if g.heights is None and cfg.get("height_map"):
+                # Rangos obtenidos del calculador oficial de la marca (autorizado por el usuario), por familia.
+                hmap = json.loads((ROOT / cfg["height_map"]).read_text(encoding="utf-8")) if (ROOT / cfg["height_map"]).exists() else {}
+                entry = hmap.get(fam, {})
+                norm = {re.sub(r"\s+", "", k).lower(): v for k, v in entry.get("sizes", {}).items()}
+                found = [norm.get(re.sub(r"\s+", "", sz).lower()) for sz in g.sizes]
+                if entry and all(found):
+                    g.heights = [Height(lo, hi, f"calculador de la marca: {lo}-{hi} cm", "cm") for lo, hi in found]
+                elif entry:
+                    g.warnings.append(f"calculador sin todas las tallas {g.sizes} (tiene {list(entry.get('sizes', {}))})")
             rows = []
             for j, size in enumerate(g.sizes):
                 h = g.heights[j] if g.heights and j < len(g.heights) else None

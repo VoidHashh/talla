@@ -1,0 +1,120 @@
+{
+  "name": "XCR",
+  "image_url": "https://contents.mediadecathlon.com/p2926285/k$e3f0d2ffe5d018e1ddfe68b7322fa470/picture.jpg",
+  "extraction_method": "vision",
+  "header": [
+    "",
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "rows": [
+    [
+      "ST: seat tube length",
+      "485",
+      "495",
+      "516",
+      "530",
+      "550"
+    ],
+    [
+      "HT: head tube length",
+      "65",
+      "74",
+      "92",
+      "115",
+      "136"
+    ],
+    [
+      "TT: top tube length",
+      "489",
+      "513",
+      "534",
+      "556",
+      "571"
+    ],
+    [
+      "HTA: head tube angle",
+      "71",
+      "72",
+      "72",
+      "72",
+      "72"
+    ],
+    [
+      "STA: seat tube angle",
+      "79,0",
+      "79,0",
+      "79,0",
+      "79,0",
+      "79,8"
+    ],
+    [
+      "CS: chainstay length",
+      "422",
+      "422",
+      "422",
+      "422",
+      "422"
+    ],
+    [
+      "FL: fork length",
+      "366",
+      "366",
+      "366",
+      "366",
+      "366"
+    ],
+    [
+      "FR: fork rake",
+      "45",
+      "45",
+      "45",
+      "45",
+      "45"
+    ],
+    [
+      "BB: bottom bracket drop",
+      "75",
+      "75",
+      "75",
+      "75",
+      "75"
+    ],
+    [
+      "S: stack",
+      "469",
+      "480",
+      "498",
+      "519",
+      "539"
+    ],
+    [
+      "R: reach",
+      "380",
+      "402",
+      "419",
+      "436",
+      "444"
+    ],
+    [
+      "E: wheel base",
+      "979",
+      "996",
+      "1019",
+      "1043",
+      "1058"
+    ],
+    [
+      "SIZE (cm)",
+      "155/166",
+      "166/173",
+      "173/181",
+      "181/186",
+      "186/196"
+    ]
+  ],
+  "height_image_url": "https://contents.mediadecathlon.com/p2926286/k$3ec3b427b1fc448d30122b4e931e641a/picture.jpg"
+}

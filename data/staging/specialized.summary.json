@@ -215,17 +215,6 @@
     "Diverge 4 Comp Alloy - SRAM Apex: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
     "Diverge 4 Sport Alloy - Shimano CUES: guía de tallas 'Diverge' no cubre todas las tallas ['49', '52', '54', '56', '58', '61']: sin altura",
     "Diverge E5: guía de tallas 'Diverge' no cubre todas las tallas ['44', '49', '52', '54', '56', '58', '61']: sin altura",
-    "S-Works Epic 9 LTD: Built for Legends: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "S-Works Epic 9: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "S-Works Epic 9 Ultralight LTD: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "Epic 9 Pro: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "Epic 9 Expert: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "Epic 9 Comp: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "Epic 9 Sport: guía de tallas 'Epic 9' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "S-Works Epic 8: guía de tallas 'Epic' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "Epic 8 Pro: guía de tallas 'Epic' no cubre todas las tallas ['S', 'M', 'L', 'XL']: sin altura",
-    "Epic 8 Expert Di2: guía de tallas 'Epic' no cubre todas las tallas ['XS', 'S', 'M', 'L', 'XL']: sin altura",
-    "Epic 8 Expert: guía de tallas 'Epic' no cubre todas las tallas ['XS', 'S', 'M', 'L', 'XL']: sin altura",
     "Rockhopper Expert: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura",
     "Rockhopper Comp: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XL - 29', 'XXL - 29']: sin altura",
     "Rockhopper Sport: guía de tallas 'Rockhopper' no cubre todas las tallas ['XS - 27.5', 'S - 27.5', 'M - 27.5', 'S - 29', 'M - 29', 'L - 29', 'XXL - 29', 'XL - 29']: sin altura",
@@ -248,7 +237,7 @@
   "methods": [
     "html"
   ],
-  "with_height": 328,
+  "with_height": 364,
   "with_price": 96,
-  "generated_at": "2026-10-05T18:31:31"
+  "generated_at": "2026-10-05T18:39:45"
 }

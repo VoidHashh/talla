@@ -1,2 +1,0 @@
-Guarda aquí las fichas de bici de decathlon.es desde tu navegador: Ctrl+S → "Página web, solo HTML".
-Una ficha por modelo (no hace falta un archivo por talla ni por color).
