@@ -97,14 +97,16 @@ describe('rankBikes', () => {
     expect(ranked.map((b) => b.model)).toEqual(['Ficticio 0', 'Ficticio 1', 'Ficticio 2', 'Ficticio 3', 'Ficticio 4'])
   })
 
-  it('excluye filas sin rango de altura, precio o enlace de producto', () => {
+  it('excluye filas sin rango de altura cerrado, precio o enlace de producto', () => {
     const bikes = [
       fakeBike({ model: 'Sin rango', height_min: null, height_max: null }),
+      // Intervalos abiertos: pendiente de definir con el usuario cómo puntuarlos (CLAUDE.md).
+      fakeBike({ model: 'Rango abierto', height_max: null }),
       fakeBike({ model: 'Sin precio', price_eur: null }),
       fakeBike({ model: 'Sin enlace', product_url: null }),
-      fakeBike({ model: 'Sin geometría', stack: null, reach: null, size_cm: null }),
+      fakeBike({ model: 'Sin talla en cm', size_cm: null }),
     ]
-    expect(rankBikes(bikes, input).map((b) => b.model)).toEqual(['Sin geometría'])
+    expect(rankBikes(bikes, input).map((b) => b.model)).toEqual(['Sin talla en cm'])
   })
 
   it('devuelve lista vacía si no hay datos', () => {

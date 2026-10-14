@@ -1,6 +1,8 @@
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { loadAndValidate, reportErrors, ROOT } from './lib/load.ts'
 import { buildSizeTable } from './lib/size-table.ts'
+import { catalogStats } from '../src/lib/format.ts'
+import { CATEGORIES, type CatalogStats } from '../src/lib/types.ts'
 
 const result = loadAndValidate()
 if (reportErrors(result)) {
@@ -8,14 +10,21 @@ if (reportErrors(result)) {
   process.exit(1)
 }
 
-const outDir = `${ROOT}src/data/`
-mkdirSync(outDir, { recursive: true })
+const srcDir = `${ROOT}src/data/`
+const publicDir = `${ROOT}public/data/`
+mkdirSync(srcDir, { recursive: true })
+mkdirSync(publicDir, { recursive: true })
 
+// La tabla gratis y los contadores van en el JS (pequeños). Las bicis son miles de filas: van aparte como
+// fichero estático que la app descarga (y la PWA guarda para usar sin conexión), compacto.
 const sizeTable = buildSizeTable(result.bikes)
-writeFileSync(`${outDir}bikes.json`, JSON.stringify(result.bikes, null, 2) + '\n')
-writeFileSync(`${outDir}size-table.json`, JSON.stringify(sizeTable, null, 2) + '\n')
+const stats = Object.fromEntries(CATEGORIES.map((c) => [c, catalogStats(result.bikes, c)])) as CatalogStats
+writeFileSync(`${publicDir}bikes.json`, JSON.stringify(result.bikes) + '\n')
+writeFileSync(`${srcDir}size-table.json`, JSON.stringify(sizeTable, null, 2) + '\n')
+writeFileSync(`${srcDir}catalog-stats.json`, JSON.stringify(stats, null, 2) + '\n')
+rmSync(`${srcDir}bikes.json`, { force: true })
 
-console.log(`src/data/bikes.json: ${result.bikes.length} filas`)
+console.log(`public/data/bikes.json: ${result.bikes.length} filas`)
 for (const [category, rows] of Object.entries(sizeTable)) {
-  console.log(`src/data/size-table.json [${category}]: ${rows.length} tallas`)
+  console.log(`src/data/size-table.json [${category}]: ${rows.length} tallas · ${stats[category as keyof CatalogStats].models} modelos`)
 }

@@ -1,0 +1,18 @@
+{
+  "carretera": {
+    "models": 479,
+    "brands": 31
+  },
+  "gravel": {
+    "models": 311,
+    "brands": 33
+  },
+  "mtb": {
+    "models": 523,
+    "brands": 26
+  },
+  "emtb": {
+    "models": 439,
+    "brands": 24
+  }
+}

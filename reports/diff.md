@@ -1,6 +1,6 @@
 # Informe de carga — staging vs data/bikes.csv
 
-Generado: 2026-10-13 19:15. `data/bikes.csv` no se ha modificado.
+Generado: 2026-10-14 10:18. `data/bikes.csv` no se ha modificado.
 
 | Marca | Estado | Modelos | Tallas | Familias | Con altura | Con precio € | Motivo / avisos |
 |---|---|---:|---:|---:|---:|---:|---|
@@ -47,7 +47,7 @@ Columnas: *Tallas* = filas (modelo × talla); *Con altura* = tallas con rango de
 
 ## Giant — con avisos
 
-Diff con bikes.csv: **+212** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 45. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 45, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 45. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 45, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -75,7 +75,7 @@ Descartados: fuera de alcance (URL/tipo): 4
 
 ## Merida — con avisos
 
-Diff con bikes.csv: **+285** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 84. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 96, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 84. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 96, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -137,7 +137,7 @@ Descartados: fuera de alcance (URL/tipo): 2, año de modelo anterior: 17
 
 **Nota:** Stack/Reach = 'Altura del cuadro'/'Alcance del cuadro' (geometryFrameStack/Reach de la API de Trek), publicados en cm.
 
-Diff con bikes.csv: **+643** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 221. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 198, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 221. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 198, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -424,7 +424,7 @@ Descartados: fuera de alcance (URL/tipo): 39, año de modelo anterior: 28, dupli
 
 **Nota:** Altura de la guía oficial /es/es/size-guide (pestaña Bikes) por familia; errata '1 78 - 185' (Epic L) corregida a 178 con aprobación del usuario. Sin altura donde la guía no cubre todas las tallas. Rechazos: stack/reach publicados no crecientes (Chisel, Epic).
 
-Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 143. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 159, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 143. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 159, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -548,7 +548,7 @@ Descartados: excluido por nombre (cuadro, kit, junior…): 27, duplicado (mismo 
 
 ## Scott — con avisos
 
-Diff con bikes.csv: **+389** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 178. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 179, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~12** con cambios. Productos candidatos: 178. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 179, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -574,7 +574,7 @@ Diff con bikes.csv: **+389** tallas nuevas, **−0** que desaparecen, **~0** con
 | Scott Scale [25db3a35] | mtb | S · M · L · XL | 600.3 · 604.9 · 618.9 · 628.1 | 418.5 · 442.3 · 463.6 · 491.2 | — · — · — · — | Scott Scale 910 (2249.1); Scott Scale 920 (1799.1); Scott Scale Gravel RC (5099); Scott Scale RC Team (3149.1); Scott Scale RC World Cup (7559.1) |
 | Scott Scale [8c9d20c6] | mtb | XS · S · M · L · XL · XXL | 596.1 · 596.1 · 605.3 · 614.6 · 623.8 · 623.8 | 400.3 · 420.3 · 442.8 · 463.3 · 492.9 · 512.9 | — · — · — · — · — · — | Scott Scale 10 (2299); Scott Scale 30 (1799); Scott Scale 40 (1599); Scott Scale 50 (1299); Scott Scale 60 (1099) |
 | Scott Scale [e7084d00] | mtb | S · M · L · XL | 600.3 · 604.9 · 618.9 · 628.1 | 418.5 · 442.3 · 463.6 · 491.2 | — · — · — · — | Scott Scale Gravel 10 (5199); Scott Scale Gravel 30 (1599); Scott Scale RC Comp (2799); Scott Scale RC Expert (3799) |
-| Scott Spark RC [8dd6ebcb] | mtb | S · M · L · XL | 602.5 · 602.5 · 616 · 625 | 411 · 441 · 471 · 501 | — · — · — · — | Scott Spark RC Comp (3526.7); Scott Spark RC SL (12834.1); Scott Spark RC World Cup EVO (10454.1) |
+| Scott Spark RC [8dd6ebcb] | mtb | S · M · L · XL | 602.5 · 602.5 · 616 · 625 | 411 · 441 · 471 · 501 | — · — · — · — | Scott Spark RC Comp (3526.65); Scott Spark RC SL (12834.15); Scott Spark RC World Cup EVO (10454.15) |
 | Scott Spark [f0f9841f] | mtb | S · M · L · XL | 607.5 · 607.5 · 617.7 · 627 | 410 · 440 · 470 · 500 | — · — · — · — | Scott Spark 900 EVO (7649.1); Scott Spark 920 (4229.1) |
 | Scott Speedster Gravel [a9336be0] | gravel | XXS/47 · XS/49 · S/52 · M/54 · L/56 · XL/58 · XXL/61 | 523.7 · 533.1 · 551.9 · 574.8 · 593.7 · 612.6 · 631.5 | 372.3 · 376.3 · 380.3 · 385.4 · 390.4 · 394.4 · 401.4 | — · — · — · — · — · — · — | Scott Speedster Gravel 10 (2199); Scott Speedster Gravel 30 (1799); Scott Speedster Gravel 30 black (s/p); Scott Speedster Gravel 40 (1599) |
 | Scott Voltage [97773058] | emtb | S · M · L · XL | 622.3 · 622.4 · 631.3 · 640.2 | 437.4 · 457.2 · 485 · 512.7 | — · — · — · — | Scott Voltage 900 Tuned (9899.1); Scott Voltage 910 (7918.2); Scott Voltage 920 (s/p); Scott Voltage eRIDE 920 (s/p) |
@@ -618,7 +618,7 @@ Descartados: fuera de alcance (categoría): 89
 
 ## Canyon — OK
 
-Diff con bikes.csv: **+556** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 141. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 100, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 141. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 100, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -669,7 +669,7 @@ Descartados: fuera de alcance (URL/tipo): 42, excluido por nombre (cuadro, kit, 
 
 **Nota:** Altura por talla tomada de su calculador oficial (bikesizing.cube.eu), usado como una persona desde la ventana de Chrome del usuario con su autorización expresa aunque su robots.txt lo prohíbe (Disallow: /) y aunque la regla general excluye calculadoras: por familia, alturas 140–210 cm → tallas recomendadas (data/heights/cube.json). Rechazos: reach publicado no creciente (Nuroad, Attain), por eso no queda gravel.
 
-Diff con bikes.csv: **+376** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 234. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 240, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 234. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 240, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -901,7 +901,7 @@ Descartados: duplicado (mismo modelo): 132
 
 **Nota:** Stack/Reach leídos de las filas Y/X de la tabla según el dibujo oficial de cotas (aprobado por el usuario). Tienda italiana en EUR; sin año de modelo.
 
-Diff con bikes.csv: **+179** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 81. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 82, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 81. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 82, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -968,7 +968,7 @@ Descartados: excluido por nombre (cuadro, kit, junior…): 8, duplicado (mismo m
 
 **Nota:** Geometría por visión (28 tablas en data/vision/cannondale/), publicada en cm.
 
-Diff con bikes.csv: **+433** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 111. Métodos: vision. Descargas: {'httpx': 0, 'browser': 0, 'cache': 114, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 111. Métodos: vision. Descargas: {'httpx': 0, 'browser': 0, 'cache': 114, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1185,7 +1185,7 @@ Descartados: año de modelo anterior: 10, duplicado (mismo modelo): 2
 
 **Nota:** La web es-ES no publica precios (sí la de-DE, no usada).
 
-Diff con bikes.csv: **+42** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 7. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 8, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 7. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 8, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1200,7 +1200,7 @@ Diff con bikes.csv: **+42** tallas nuevas, **−0** que desaparecen, **~0** con 
 
 ## Focus — OK
 
-Diff con bikes.csv: **+147** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 30. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 31, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 30. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 31, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1221,7 +1221,7 @@ Diff con bikes.csv: **+147** tallas nuevas, **−0** que desaparecen, **~0** con
 
 **Nota:** Altura de la guía de tallas (X-Small, Small…) con la equivalencia XS/SM/MD/LG aprobada por el usuario. V10 publica 3 posiciones de reach y se rechaza.
 
-Diff con bikes.csv: **+411** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 98. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 130, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 98. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 130, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1376,7 +1376,7 @@ Descartados: año de modelo anterior: 11, duplicado (mismo modelo): 3
 
 **Nota:** Rechazos por stack/reach no crecientes publicados así en la web (p. ej. Sensium: S 542 > M 530).
 
-Diff con bikes.csv: **+270** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 66. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 80, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 66. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 80, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1455,16 +1455,16 @@ Diff con bikes.csv: **+270** tallas nuevas, **−0** que desaparecen, **~0** con
 
 ## Ghost — con avisos
 
-Diff con bikes.csv: **+157** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 40. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 46, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~9** con cambios. Productos candidatos: 40. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 46, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
 | ASKET CF [b7d7a1d3] | gravel | XS · S · M · L · XL | 542 · 560 · 581 · 612 · 642 | 375 · 387 · 400 · 418 · 443 | — · — · — · — · — | ASKET CF FULL PARTY (3499); ASKET CF LTD (6999); ASKET CF PRO (2999); ASKET CF X (4999) |
 | ASKET [10344203] | gravel | XS · S · M · L · XL | 558 · 587 · 612 · 641 · 666 | 373 · 392 · 407 · 427 · 444 | — · — · — · — · — | ASKET (1599); ASKET ADVANCED (2299); ASKET ADVANCED EQ (2499); ASKET EQ (1799) |
 | E-ASX [ccc720f4] | emtb | S · M · L · XL | 628 · 632 · 646 · 659 | 430 · 455 · 480 · 510 | — · — · — · — | E-ASX ABS (6499); E-ASX ADVANCED (5999); E-ASX UNIVERSAL (4699+) |
-| E-RIOT LTD [d4af3c94] | emtb | S · M · L · XL | 617.9 · 626.9 · 640.4 · 653.9 | 435 · 465 · 490 · 515 | — · — · — · — | E-RIOT LTD (11000) |
+| E-RIOT LTD [d4af3c94] | emtb | S · M · L · XL | 617.9 · 626.89 · 640.37 · 653.85 | 435 · 465 · 490 · 515 | — · — · — · — | E-RIOT LTD (11000) |
 | E-RIOT PRO [173e8486] | emtb | S · M · L · XL | 617.9 · 626.9 · 640.4 · 653.9 | 435 · 465 · 490 · 515 | — · — · — · — | E-RIOT PRO (8000) |
-| E-RIOT [88715ea1] | emtb | S · M · L · XL | 617.9 · 626.9 · 640.4 · 653.9 | 435 · 465 · 490 · 515 | — · — · — · — | E-RIOT ADVANCED (6499); E-RIOT FULL PARTY (9500) |
+| E-RIOT [88715ea1] | emtb | S · M · L · XL | 617.9 · 626.89 · 640.37 · 653.85 | 435 · 465 · 490 · 515 | — · — · — · — | E-RIOT ADVANCED (6499); E-RIOT FULL PARTY (9500) |
 | KATO FS UNIVERSAL 29 [aa9c7e77] | mtb | M · L | 625 · 639 | 463 · 494 | — · — | KATO FS UNIVERSAL 29 (1999) |
 | KATO FS [16202ffc] | mtb | XS · S | 587 · 587 | 415 · 451 | — · — | KATO FS 27.5 (1499); KATO FS PRO 27.5 (2499); KATO FS UNIVERSAL 27.5 (1999) |
 | KATO FS [a296e156] | mtb | M · L · XL | 625 · 639 · 662 | 463 · 494 · 521 | — · — · — | KATO FS 29 (1499); KATO FS PRO 29 (2499) |
@@ -1487,7 +1487,7 @@ Descartados: excluido por nombre (cuadro, kit, junior…): 1
 
 ## Haibike — con avisos
 
-Diff con bikes.csv: **+112** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 41. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 44, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 41. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 44, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1542,7 +1542,7 @@ Descartados: duplicado (mismo modelo): 8
 
 **Nota:** Geometría con etiquetas Stack/Reach de la ficha en-int (la es-es las traduce como Altura/Largo del cuadro); precio de la ficha es-es. Gama Rise y cuadros OMX/OMR sin tabla.
 
-Diff con bikes.csv: **+405** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 101. Métodos: html, json. Descargas: {'httpx': 0, 'browser': 0, 'cache': 214, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~56** con cambios. Productos candidatos: 101. Métodos: html, json. Descargas: {'httpx': 0, 'browser': 0, 'cache': 214, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1563,8 +1563,8 @@ Diff con bikes.csv: **+405** tallas nuevas, **−0** que desaparecen, **~0** con
 | Terra [04162f26] | gravel | XS · S · M · L · XL · XXL | 535 · 558 · 580 · 602 · 625 · 645 | 386 · 392 · 400 · 406 · 412 · 417 | 155–166 · 167–172 · 173–179 · 180–185 · 186–191 · 192–207 | Terra H30 (1999); Terra H30 1X (1999); Terra H40 (1799); Terra H40 1X (1799); Terra H50 (1699) |
 | Terra [8d0ebc75] | gravel | XS · S · M · L · XL · XXL | 535 · 558 · 580 · 602 · 625 · 645 | 386 · 392 · 400 · 406 · 412 · 417 | 155–166 · 167–172 · 173–179 · 180–185 · 186–191 · 192–207 | Terra M20TEAM (3699); Terra M20iTEAM (5799); Terra M21eTEAM 1X (5999); Terra M22 TEAM 1X (5999); Terra M30TEAM (2999); Terra M30TEAM 1X (2999); Terra M31eTEAM 1X (4199); Terra M35TEAM (3999) |
 | Urrun [6e46cd6a] | emtb | S · M · L · XL | 625 · 630 · 639 · 657 | 410 · 430 · 455 · 475 | 150–175 · 160–185 · 170–195 · 180–205 | Urrun 10 (4199); Urrun 20 (3599); Urrun 30 (2899) |
-| Wild LT [13653a71] | emtb | S · M · L · XL | 624.5 · 633.5 · 642.5 · 651.4 | 436.2 · 461.2 · 486.2 · 511.2 | 150–175 · 160–185 · 170–195 · 180–205 | Wild LT H-TEAM (7999); Wild LT H-TEAM Mullet (7999); Wild LT H10 (6999); Wild LT H10 Mullet (6999); Wild LT H20 (5599); Wild LT H20 Mullet (5599) |
-| Wild LT [14f8a25f] | emtb | S · M · L · XL | 624.5 · 633.5 · 642.5 · 651.5 | 436.2 · 461.2 · 486.2 · 511.2 | 150–175 · 160–185 · 170–195 · 180–205 | Wild LT M-LTD RS (13499); Wild LT M-LTD RS Mullet (12699); Wild LT M-TEAM RS (9999); Wild LT M-TEAM RS Mullet (9999); Wild LT M10 (8499); Wild LT M10 Mullet (8499); Wild LT M20 (6999); Wild LT M20 Mullet (6999) |
+| Wild LT [13653a71] | emtb | S · M · L · XL | 624.5 · 633.48 · 642.46 · 651.44 | 436.25 · 461.25 · 486.25 · 511.25 | 150–175 · 160–185 · 170–195 · 180–205 | Wild LT H-TEAM (7999); Wild LT H-TEAM Mullet (7999); Wild LT H10 (6999); Wild LT H10 Mullet (6999); Wild LT H20 (5599); Wild LT H20 Mullet (5599) |
+| Wild LT [14f8a25f] | emtb | S · M · L · XL | 624.51 · 633.49 · 642.47 · 651.45 | 436.24 · 461.24 · 486.24 · 511.24 | 150–175 · 160–185 · 170–195 · 180–205 | Wild LT M-LTD RS (13499); Wild LT M-LTD RS Mullet (12699); Wild LT M-TEAM RS (9999); Wild LT M-TEAM RS Mullet (9999); Wild LT M10 (8499); Wild LT M10 Mullet (8499); Wild LT M20 (6999); Wild LT M20 Mullet (6999) |
 
 <details><summary>Productos en alcance sin datos</summary>
 
@@ -1590,7 +1590,7 @@ Diff con bikes.csv: **+405** tallas nuevas, **−0** que desaparecen, **~0** con
 
 ## BH — con avisos
 
-Diff con bikes.csv: **+355** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 121. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 95, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 121. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 95, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1636,7 +1636,7 @@ Descartados: fuera de alcance (URL/tipo): 34, duplicado (mismo modelo): 1
 
 ## Mondraker — con avisos
 
-Diff con bikes.csv: **+210** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 47. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 48, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 47. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 48, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1694,7 +1694,7 @@ Diff con bikes.csv: **+210** tallas nuevas, **−0** que desaparecen, **~0** con
 
 ## MMR — OK
 
-Diff con bikes.csv: **+236** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 58. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 66, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 58. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 66, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1723,7 +1723,7 @@ Diff con bikes.csv: **+236** tallas nuevas, **−0** que desaparecen, **~0** con
 
 **Nota:** Altura de la FIT GUIDE (X-SMALL…X-LARGE) con equivalencia aprobada por el usuario. Reason/Ryal (MY27) solo publican el dibujo SVG sin valores.
 
-Diff con bikes.csv: **+373** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 130. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 133, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 130. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 133, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1778,7 +1778,7 @@ Descartados: fuera de alcance (URL/tipo): 2, año de modelo anterior: 19
 
 ## Berria — con avisos
 
-Diff con bikes.csv: **+156** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 35. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 45, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 35. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 45, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1811,7 +1811,7 @@ Diff con bikes.csv: **+156** tallas nuevas, **−0** que desaparecen, **~0** con
 
 **Nota:** Geometría por visión (data/vision/massi/). Sin precio en la web.
 
-Diff con bikes.csv: **+296** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 82. Métodos: vision. Descargas: {'httpx': 0, 'browser': 0, 'cache': 85, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 82. Métodos: vision. Descargas: {'httpx': 0, 'browser': 0, 'cache': 85, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1922,7 +1922,7 @@ Diff con bikes.csv: **+296** tallas nuevas, **−0** que desaparecen, **~0** con
 
 **Nota:** Geometría por visión (imágenes transcritas en data/vision/conor/). Tallas XS/SM/MD/LA sin equivalencia publicada.
 
-Diff con bikes.csv: **+115** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 53. Métodos: vision. Descargas: {'httpx': 0, 'browser': 0, 'cache': 57, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 53. Métodos: vision. Descargas: {'httpx': 0, 'browser': 0, 'cache': 57, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1956,7 +1956,7 @@ Descartados: duplicado (mismo modelo): 21
 
 ## Coluer — con avisos
 
-Diff con bikes.csv: **+97** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 35. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 38, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 35. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 38, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1998,7 +1998,7 @@ Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con c
 
 ## KTM — con avisos
 
-Diff con bikes.csv: **+477** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 112. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 117, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 112. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 117, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2049,7 +2049,7 @@ Diff con bikes.csv: **+477** tallas nuevas, **−0** que desaparecen, **~0** con
 
 **Nota:** Sin precio en la web. Dogma F rechazada: reach publicado no creciente (540: 396,7 > 560: 393,4).
 
-Diff con bikes.csv: **+212** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 33. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 41, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 33. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 41, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2126,7 +2126,7 @@ Diff con bikes.csv: **+212** tallas nuevas, **−0** que desaparecen, **~0** con
 
 ## Colnago — con avisos
 
-Diff con bikes.csv: **+82** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 18. Métodos: pdf. Descargas: {'httpx': 0, 'browser': 0, 'cache': 37, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 18. Métodos: pdf. Descargas: {'httpx': 0, 'browser': 0, 'cache': 37, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2151,7 +2151,7 @@ Descartados: duplicado (mismo modelo): 2
 
 ## Wilier — con avisos
 
-Diff con bikes.csv: **+156** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 38. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 33, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 38. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 33, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2190,7 +2190,7 @@ Descartados: fuera de alcance (URL/tipo): 6, duplicado (mismo modelo): 1
 
 ## Basso — OK
 
-Diff con bikes.csv: **+39** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 6. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 8, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 6. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 8, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2204,7 +2204,7 @@ Diff con bikes.csv: **+39** tallas nuevas, **−0** que desaparecen, **~0** con 
 
 ## 3T — con avisos
 
-Diff con bikes.csv: **+86** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 47. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 79, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 47. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 79, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2250,13 +2250,13 @@ Descartados: excluido por nombre (cuadro, kit, junior…): 9
 
 ## Aurum — OK
 
-Diff con bikes.csv: **+15** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 3. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 7, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~15** con cambios. Productos candidatos: 3. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 7, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
-| ESSENTIA [a4938a0f] | carretera | 48 · 51 · 54 · 56 · 58 | 505 · 525 · 545 · 567 · 589 | 370 · 376 · 384 · 392 · 400 | 152–163 · 161–170 · 170–177 · 175–181 · 180–188 | ESSENTIA (6532.8+) |
-| MAGMA [732e89f9] | carretera | 48 · 51 · 54 · 56 · 58 | 505 · 525 · 545 · 570 · 592 | 371 · 377 · 386 · 393 · 401 | 152–163 · 161–170 · 170–177 · 175–181 · 180–188 | MAGMA (9073.8+) |
-| MANTO [1a784aa3] | gravel | 48 · 51 · 54 · 56 · 58 | 515 · 535 · 555 · 570 · 590 | 380 · 386 · 394 · 402 · 411 | 152–163 · 161–170 · 170–177 · 175–181 · 180–188 | MANTO (6411.8+) |
+| ESSENTIA [a4938a0f] | carretera | 48 · 51 · 54 · 56 · 58 | 505 · 525 · 545 · 567 · 589 | 370 · 376 · 384 · 392 · 400 | 152–163 · 161–170 · 170–177 · 175–181 · 180–188 | ESSENTIA (6532.79+) |
+| MAGMA [732e89f9] | carretera | 48 · 51 · 54 · 56 · 58 | 505 · 525 · 545 · 570 · 592 | 371 · 377 · 386 · 393 · 401 | 152–163 · 161–170 · 170–177 · 175–181 · 180–188 | MAGMA (9073.79+) |
+| MANTO [1a784aa3] | gravel | 48 · 51 · 54 · 56 · 58 | 515 · 535 · 555 · 570 · 590 | 380 · 386 · 394 · 402 · 411 | 152–163 · 161–170 · 170–177 · 175–181 · 180–188 | MANTO (6411.79+) |
 
 
 ## Ridley — bloqueada
@@ -2302,7 +2302,7 @@ Descartados: excluido por nombre (cuadro, kit, junior…): 5, fuera de alcance (
 
 ## BMC — OK
 
-Diff con bikes.csv: **+208** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 68. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 78, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 68. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 78, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2331,7 +2331,7 @@ Descartados: excluido por nombre (cuadro, kit, junior…): 2, duplicado (mismo m
 
 ## Factor — OK
 
-Diff con bikes.csv: **+51** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 9. Métodos: json. Descargas: {'httpx': 0, 'browser': 0, 'cache': 10, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 9. Métodos: json. Descargas: {'httpx': 0, 'browser': 0, 'cache': 10, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2348,7 +2348,7 @@ Diff con bikes.csv: **+51** tallas nuevas, **−0** que desaparecen, **~0** con 
 
 ## Look — con avisos
 
-Diff con bikes.csv: **+56** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 17. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 25, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 17. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 25, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2369,7 +2369,7 @@ Descartados: duplicado (mismo modelo): 4
 
 ## Argon 18 — con avisos
 
-Diff con bikes.csv: **+65** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 29. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 39, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 29. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 39, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|

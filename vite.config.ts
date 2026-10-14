@@ -13,10 +13,15 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg'],
+      // El catálogo (public/data/bikes.json, varios MB sin comprimir) se guarda para usar la app sin conexión.
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,json}'],
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+      },
       manifest: {
         name: 'Talla Bici',
         short_name: 'Talla Bici',
-        description: 'Encuentra tu talla de bicicleta de carretera o gravel.',
+        description: 'Encuentra tu talla de bicicleta de carretera, gravel, MTB o e-MTB.',
         lang: 'es-ES',
         theme_color: '#0f172a',
         background_color: '#ffffff',

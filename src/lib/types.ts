@@ -1,22 +1,38 @@
 export const CATEGORIES = ['carretera', 'gravel', 'mtb', 'emtb'] as const
 export type Category = (typeof CATEGORIES)[number]
 
-/** Una fila de data/bikes.csv ya validada. Los datos ausentes son null, nunca estimados. */
+export const EXTRACTION_METHODS = ['html', 'json', 'pdf', 'vision'] as const
+export type ExtractionMethod = (typeof EXTRACTION_METHODS)[number]
+
+/**
+ * Una fila de data/bikes.csv ya validada, con los campos que usa la app (bikes.json).
+ * Los datos ausentes son null, nunca estimados. geometry_raw, height_original y height_unit
+ * se quedan en el CSV (trazabilidad) y no van al JSON.
+ */
 export interface Bike {
   brand: string
+  /** Misma tabla de geometría del cuadro. */
+  family: string
   model: string
-  year: number
+  /** Año de modelo solo si la marca lo publica. */
+  model_year: number | null
   category: Category
   size_label: string
+  /** Talla en letra: la etiqueta si ya es una letra estándar o su equivalencia publicada (data/size-labels.csv);
+   *  null si la talla no es una letra ("54") o la marca no publica equivalencia. */
+  size_normalized: string | null
   size_cm: number | null
+  /** Intervalo abierto: un extremo null significa "sin límite" publicado por ese lado. */
   height_min: number | null
   height_max: number | null
-  stack: number | null
-  reach: number | null
+  stack: number
+  reach: number
   price_eur: number | null
+  price_is_from: boolean
   product_url: string | null
   source_url: string
-  verified_at: string
+  extraction_method: ExtractionMethod
+  loaded_at: string
 }
 
 /** Fila de la tabla de tallas gratuita: mediana de los rangos publicados por las marcas. */
@@ -31,3 +47,6 @@ export interface SizeTableRow {
 }
 
 export type SizeTable = Record<Category, SizeTableRow[]>
+
+/** Modelos y marcas distintos por categoría (para la pantalla "Calculando"). */
+export type CatalogStats = Record<Category, { models: number; brands: number }>

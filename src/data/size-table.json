@@ -1,6 +1,185 @@
 {
-  "carretera": [],
-  "gravel": [],
-  "mtb": [],
-  "emtb": []
+  "carretera": [
+    {
+      "size_label": "XS",
+      "height_min": 156,
+      "height_max": 165.5,
+      "size_cm_values": [],
+      "brands": 4
+    },
+    {
+      "size_label": "S",
+      "height_min": 165,
+      "height_max": 174,
+      "size_cm_values": [],
+      "brands": 5
+    },
+    {
+      "size_label": "M",
+      "height_min": 171,
+      "height_max": 181,
+      "size_cm_values": [],
+      "brands": 5
+    },
+    {
+      "size_label": "M/L",
+      "height_min": 177,
+      "height_max": 187,
+      "size_cm_values": [],
+      "brands": 1
+    },
+    {
+      "size_label": "L",
+      "height_min": 180,
+      "height_max": 190,
+      "size_cm_values": [],
+      "brands": 5
+    },
+    {
+      "size_label": "XL",
+      "height_min": 189,
+      "height_max": 198,
+      "size_cm_values": [],
+      "brands": 3
+    }
+  ],
+  "gravel": [
+    {
+      "size_label": "XS",
+      "height_min": 155,
+      "height_max": 162,
+      "size_cm_values": [],
+      "brands": 7
+    },
+    {
+      "size_label": "S",
+      "height_min": 160,
+      "height_max": 171,
+      "size_cm_values": [],
+      "brands": 9
+    },
+    {
+      "size_label": "M",
+      "height_min": 169,
+      "height_max": 180,
+      "size_cm_values": [],
+      "brands": 9
+    },
+    {
+      "size_label": "M/L",
+      "height_min": 174,
+      "height_max": 186,
+      "size_cm_values": [],
+      "brands": 1
+    },
+    {
+      "size_label": "L",
+      "height_min": 179,
+      "height_max": 190,
+      "size_cm_values": [],
+      "brands": 9
+    },
+    {
+      "size_label": "XL",
+      "height_min": 187.5,
+      "height_max": 195.5,
+      "size_cm_values": [],
+      "brands": 6
+    },
+    {
+      "size_label": "XXL",
+      "height_min": 190,
+      "height_max": 200,
+      "size_cm_values": [],
+      "brands": 2
+    }
+  ],
+  "mtb": [
+    {
+      "size_label": "XXS",
+      "height_min": 135,
+      "height_max": 145,
+      "size_cm_values": [],
+      "brands": 1
+    },
+    {
+      "size_label": "XS",
+      "height_min": 147.5,
+      "height_max": 157,
+      "size_cm_values": [],
+      "brands": 4
+    },
+    {
+      "size_label": "S",
+      "height_min": 155.5,
+      "height_max": 170,
+      "size_cm_values": [],
+      "brands": 8
+    },
+    {
+      "size_label": "M",
+      "height_min": 166,
+      "height_max": 179.5,
+      "size_cm_values": [],
+      "brands": 10
+    },
+    {
+      "size_label": "L",
+      "height_min": 178,
+      "height_max": 188,
+      "size_cm_values": [],
+      "brands": 10
+    },
+    {
+      "size_label": "XL",
+      "height_min": 185,
+      "height_max": 196,
+      "size_cm_values": [],
+      "brands": 5
+    },
+    {
+      "size_label": "XXL",
+      "height_min": 194.5,
+      "height_max": 204,
+      "size_cm_values": [],
+      "brands": 2
+    }
+  ],
+  "emtb": [
+    {
+      "size_label": "S",
+      "height_min": 157,
+      "height_max": 174,
+      "size_cm_values": [],
+      "brands": 7
+    },
+    {
+      "size_label": "M",
+      "height_min": 167.5,
+      "height_max": 182.5,
+      "size_cm_values": [],
+      "brands": 8
+    },
+    {
+      "size_label": "L",
+      "height_min": 178,
+      "height_max": 192,
+      "size_cm_values": [],
+      "brands": 7
+    },
+    {
+      "size_label": "XL",
+      "height_min": 185.5,
+      "height_max": 199.5,
+      "size_cm_values": [],
+      "brands": 4
+    },
+    {
+      "size_label": "XXL",
+      "height_min": 194.5,
+      "height_max": 204,
+      "size_cm_values": [],
+      "brands": 2
+    }
+  ]
 }

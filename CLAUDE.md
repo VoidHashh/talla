@@ -7,7 +7,8 @@ App web (PWA) que recomienda talla de bicicleta de carretera, gravel, MTB o e-MT
 
 ## Stack (no cambiar sin preguntar)
 - Vite + React + TypeScript + Tailwind.
-- Sin backend en el MVP. Datos en `data/bikes.csv`, que se compila a `src/data/bikes.json` mediante un script.
+- Sin backend en el MVP. Datos en `data/bikes.csv`, que se compila con `npm run build:data` a `public/data/bikes.json` (la app lo descarga; la PWA lo guarda sin conexión), `src/data/size-table.json` y `src/data/catalog-stats.json`.
+- `data/bikes.csv` solo se rellena desde staging con `npm run promote -- <marcas>` (marcas aprobadas por el usuario; sin argumentos, informe sin escribir).
 - Tests con Vitest para la lógica de cálculo.
 - UI en español de España.
 - Carga de datos: extractor en Python (`extractor/`, venv en `.venv`; dependencias autorizadas: httpx, playwright, pdfplumber). Escribe `data/staging/<marca>.csv` y `reports/diff.md`; nunca toca `bikes.csv`.

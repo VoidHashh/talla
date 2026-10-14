@@ -75,3 +75,8 @@ export function parseCsv(text: string): CsvTable {
   })
   return { header, records }
 }
+
+/** Una línea CSV: entrecomilla los campos con coma, comillas o saltos de línea. */
+export function toCsvLine(fields: string[]): string {
+  return fields.map((f) => (/[",\r\n]/.test(f) ? `"${f.replace(/"/g, '""')}"` : f)).join(',')
+}

@@ -11,7 +11,9 @@ export function median(values: number[]): number {
  * Tabla de tallas gratuita. Para cada categoría y talla:
  * 1. Mediana de los rangos de cada marca (para que una marca con muchos modelos no pese más).
  * 2. Mediana entre marcas.
- * Solo entran filas con height_min y height_max publicados.
+ * Solo entran filas con height_min y height_max publicados (los intervalos abiertos no tienen centro).
+ * La talla es la letra normalizada (equivalencias publicadas por la marca en data/size-labels.csv); las filas
+ * sin letra (tallas solo en cm o etiquetas propias sin equivalencia publicada) no entran.
  */
 export function buildSizeTable(bikes: Bike[]): SizeTable {
   const table = {} as SizeTable
@@ -20,8 +22,8 @@ export function buildSizeTable(bikes: Bike[]): SizeTable {
     // talla → marca → filas
     const bySize = new Map<string, Map<string, Bike[]>>()
     for (const b of bikes) {
-      if (b.category !== category || b.height_min === null || b.height_max === null) continue
-      const label = canonicalSizeLabel(b.size_label)
+      if (b.category !== category || b.height_min === null || b.height_max === null || b.size_normalized === null) continue
+      const label = canonicalSizeLabel(b.size_normalized)
       const byBrand = bySize.get(label) ?? new Map<string, Bike[]>()
       byBrand.set(b.brand, [...(byBrand.get(b.brand) ?? []), b])
       bySize.set(label, byBrand)

@@ -5,19 +5,23 @@ import type { Bike, SizeTable } from '../../src/lib/types.ts'
 export function fakeBike(overrides: Partial<Bike> = {}): Bike {
   return {
     brand: 'MarcaFicticiaA',
+    family: 'Familia Ficticia',
     model: 'Modelo Ficticio',
-    year: 2026,
+    model_year: 2026,
     category: 'carretera',
     size_label: 'M',
+    size_normalized: 'M',
     size_cm: 54,
     height_min: 170,
     height_max: 180,
     stack: 550,
     reach: 390,
     price_eur: 2000,
+    price_is_from: false,
     product_url: 'https://ficticia.invalid/producto',
     source_url: 'https://ficticia.invalid/tallas',
-    verified_at: '2026-01-01',
+    extraction_method: 'html',
+    loaded_at: '2026-01-01',
     ...overrides,
   }
 }

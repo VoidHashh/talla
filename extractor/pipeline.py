@@ -443,7 +443,8 @@ def fmt(v) -> str:
     if v is None:
         return ""
     if isinstance(v, float):
-        return str(int(v)) if v.is_integer() else f"{v:.1f}"
+        # Hasta 2 decimales (precios con céntimos, cotas como 411,75): el valor publicado, sin redondear a 1.
+        return str(int(v)) if v.is_integer() else f"{v:.2f}".rstrip("0").rstrip(".")
     return str(v)
 
 

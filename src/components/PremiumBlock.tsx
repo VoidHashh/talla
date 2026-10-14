@@ -4,14 +4,25 @@ import type { RankedBike } from '../lib/sizing.ts'
 
 interface Props {
   unlocked: boolean
-  bikes: RankedBike[]
+  /** null mientras se descarga el catálogo. */
+  bikes: RankedBike[] | null
+  /** El catálogo no se pudo descargar. */
+  failed: boolean
 }
 
-export function PremiumBlock({ unlocked, bikes }: Props) {
+export function PremiumBlock({ unlocked, bikes, failed }: Props) {
   return (
     <section className="rounded-2xl border border-slate-200 p-5">
       <h2 className="text-lg font-bold text-slate-900">Las 5 bicis que mejor te encajan</h2>
-      {unlocked ? <BikeList bikes={bikes} /> : <Locked />}
+      {!unlocked ? (
+        <Locked />
+      ) : failed ? (
+        <p className="mt-4 text-sm text-slate-600">No hemos podido cargar las bicis. Revisa tu conexión y vuelve a intentarlo.</p>
+      ) : bikes === null ? (
+        <p role="status" className="mt-4 text-sm text-slate-600">Cargando bicis…</p>
+      ) : (
+        <BikeList bikes={bikes} />
+      )}
     </section>
   )
 }
@@ -74,7 +85,9 @@ function BikeList({ bikes }: { bikes: RankedBike[] }) {
             </div>
           </div>
           <div className="mt-3 flex items-center justify-between gap-3">
-            <p className="text-lg font-bold text-slate-900">{formatPrice(b.price_eur!)}</p>
+            <p className="text-lg font-bold text-slate-900">{b.price_is_from ? 'Desde ' : ''}
+              {formatPrice(b.price_eur!)}
+            </p>
             <a
               href={b.product_url!}
               target="_blank"

@@ -4,24 +4,25 @@ import { PremiumBlock } from './components/PremiumBlock.tsx'
 import { SizeForm } from './components/SizeForm.tsx'
 import { SizeResult } from './components/SizeResult.tsx'
 import { PREMIUM_UNLOCKED } from './config.ts'
-import bikesJson from './data/bikes.json'
+import catalogStatsJson from './data/catalog-stats.json'
 import sizeTableJson from './data/size-table.json'
-import { catalogStats } from './lib/format.ts'
 import { rankBikes, recommendSize, type UserInput } from './lib/sizing.ts'
-import type { Bike, SizeTable } from './lib/types.ts'
+import type { CatalogStats, SizeTable } from './lib/types.ts'
+import { useBikes } from './lib/useBikes.ts'
 
-const BIKES = bikesJson as Bike[]
 const SIZE_TABLE = sizeTableJson as SizeTable
+const CATALOG_STATS = catalogStatsJson as CatalogStats
 
 type Screen = 'form' | 'calculating' | 'result'
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>('form')
   const [input, setInput] = useState<UserInput | null>(null)
+  const catalog = useBikes()
 
   const messages = useMemo(() => {
     if (!input) return []
-    const { models, brands } = catalogStats(BIKES, input.category)
+    const { models, brands } = CATALOG_STATS[input.category]
     return [
       'Analizando proporciones…',
       `Comparando geometrías de ${models} bicicletas…`,
@@ -30,10 +31,11 @@ export default function App() {
     ]
   }, [input])
 
-  const result = useMemo(() => {
-    if (!input) return null
-    return { sizes: recommendSize(SIZE_TABLE, input), bikes: rankBikes(BIKES, input) }
-  }, [input])
+  const sizes = useMemo(() => (input ? recommendSize(SIZE_TABLE, input) : null), [input])
+  const ranked = useMemo(
+    () => (input && catalog.status === 'ready' ? rankBikes(catalog.bikes, input) : null),
+    [input, catalog],
+  )
 
   const showResult = useCallback(() => setScreen('result'), [])
 
@@ -56,10 +58,10 @@ export default function App() {
 
         {screen === 'calculating' && <Calculating messages={messages} onDone={showResult} />}
 
-        {screen === 'result' && input && result && (
+        {screen === 'result' && input && sizes && (
           <div className="space-y-6">
-            <SizeResult sizes={result.sizes} category={input.category} height={input.height} />
-            <PremiumBlock unlocked={PREMIUM_UNLOCKED} bikes={result.bikes} />
+            <SizeResult sizes={sizes} category={input.category} height={input.height} />
+            <PremiumBlock unlocked={PREMIUM_UNLOCKED} bikes={ranked} failed={catalog.status === 'error'} />
             <button
               type="button"
               onClick={() => setScreen('form')}
