@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { formatPrice } from '../lib/format.ts'
+import { formatPrice, formatSizeLabel } from '../lib/format.ts'
 import type { RankedBike } from '../lib/sizing.ts'
 
 interface Props {
@@ -67,7 +67,7 @@ function BikeList({ bikes }: { bikes: RankedBike[] }) {
   return (
     <ol className="mt-4 space-y-3">
       {bikes.map((b, i) => (
-        <li key={`${b.brand}|${b.model}`} className="rounded-xl border border-slate-200 p-4">
+        <li key={`${b.brand}|${b.family}`} className="rounded-xl border border-slate-200 p-4">
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
@@ -75,9 +75,10 @@ function BikeList({ bikes }: { bikes: RankedBike[] }) {
               </p>
               <p className="text-base font-semibold text-slate-900">{b.model}</p>
               <p className="mt-1 text-sm text-slate-600">
-                Talla {b.size_label}
+                Talla {formatSizeLabel(b.size_label)}
                 {b.size_cm !== null ? ` · ${b.size_cm}` : ''}
               </p>
+              {b.variants > 1 && <p className="text-sm text-slate-500">{b.variants} montajes de este cuadro</p>}
             </div>
             <div className="text-right">
               <p className="text-2xl font-extrabold text-slate-900">{Math.round(b.score)}</p>
@@ -85,7 +86,8 @@ function BikeList({ bikes }: { bikes: RankedBike[] }) {
             </div>
           </div>
           <div className="mt-3 flex items-center justify-between gap-3">
-            <p className="text-lg font-bold text-slate-900">{b.price_is_from ? 'Desde ' : ''}
+            <p className="text-lg font-bold text-slate-900">
+              {b.price_is_from || b.variants > 1 ? 'Desde ' : ''}
               {formatPrice(b.price_eur!)}
             </p>
             <a

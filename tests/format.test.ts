@@ -1,6 +1,6 @@
 // Tests de src/lib/format.ts. Todos los datos son FICTICIOS: ver tests/fixtures/sizing-ficticio.ts.
 import { describe, expect, it } from 'vitest'
-import { catalogStats, formatNumber, formatPrice, formatSize } from '../src/lib/format.ts'
+import { catalogStats, formatNumber, formatPrice, formatSize, formatSizeLabel } from '../src/lib/format.ts'
 import { fakeBike } from './fixtures/sizing-ficticio.ts'
 
 describe('format', () => {
@@ -25,5 +25,11 @@ describe('format', () => {
     ]
     expect(catalogStats(bikes, 'carretera')).toEqual({ models: 3, brands: 2 })
     expect(catalogStats(bikes, 'mtb')).toEqual({ models: 0, brands: 0 })
+  })
+
+  it('formatSizeLabel quita el ".0" de las tallas numéricas y deja el resto igual', () => {
+    expect(formatSizeLabel('56.0')).toBe('56')
+    expect(formatSizeLabel('56.5')).toBe('56.5')
+    expect(formatSizeLabel('L (57)')).toBe('L (57)')
   })
 })

@@ -26,3 +26,6 @@ export function catalogStats(bikes: Bike[], category: Category): { models: numbe
     brands: new Set(inCategory.map((b) => b.brand)).size,
   }
 }
+
+/** Etiqueta de talla para mostrar: "56.0" → "56" (el dato guardado no cambia). */
+export const formatSizeLabel = (label: string) => label.replace(/^(\d+)\.0$/, '$1')

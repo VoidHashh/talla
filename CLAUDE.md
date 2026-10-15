@@ -26,14 +26,13 @@ App web (PWA) que recomienda talla de bicicleta de carretera, gravel, MTB o e-MT
 ## Lógica (mantenerla simple)
 - **Entrada:** altura (cm), entrepierna (cm), categoría (carretera / gravel / MTB / e-MTB) y presupuesto máximo opcional.
 - **Gratis:** la talla cuyo rango mediano contiene la altura. Si cae en dos, se muestran las dos.
-- **Premium:**
-  1. Filtrar por categoría y presupuesto.
-  2. Quedarse con las tallas cuyo rango [altura_min, altura_max] contiene la altura del usuario.
-  3. `score = 100 × (1 − |altura − centro| / (semirango))`.
-  4. Una sola talla por modelo (la de mayor score).
-  5. Orden por score descendente; desempate por precio ascendente.
-  6. Top 5.
-  - Pendiente de definir con el usuario: el ranking premium debe usar stack y reach, una bici por familia, y tratar los extremos de altura vacíos como sin límite.
+- **Premium** (decidido con el usuario):
+  1. Filtrar por categoría, presupuesto, precio y enlace. Si la marca publica rango de altura para esa talla, debe admitir la altura del usuario (un extremo vacío = sin límite por ese lado).
+  2. Geometría de referencia: mediana de stack y de reach de las tallas cuyo rango publicado admite la altura (mediana por marca y luego entre marcas).
+  3. Salto de talla de la categoría: distancia stack/reach mediana entre tallas consecutivas de un mismo cuadro.
+  4. `score = 100 × (1 − distancia(stack/reach, referencia) / salto)`; score ≤ 0 queda fuera.
+  5. Una bici por familia: la talla de mayor score en su montaje más barato, indicando cuántos montajes hay.
+  6. Orden por score descendente; desempate por precio ascendente. Top 5.
 - Nada de ángulos, fórmulas de bike fit, calibrados ni avisos técnicos en la UI.
 
 ## UX

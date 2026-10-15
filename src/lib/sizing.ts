@@ -10,6 +10,13 @@ export interface UserInput {
 
 export interface RankedBike extends Bike {
   score: number
+  /** Montajes (modelos) del mismo cuadro dentro del presupuesto; se muestra el más barato. */
+  variants: number
+}
+
+export interface Geometry {
+  stack: number
+  reach: number
 }
 
 const TOP_N = 5
@@ -19,16 +26,68 @@ export function recommendSize(sizeTable: SizeTable, input: Pick<UserInput, 'heig
   return sizeTable[input.category].filter((s) => s.height_min <= input.height && input.height <= s.height_max)
 }
 
-/** 100 en el centro del rango de la talla, 0 en los extremos. */
-export function sizeScore(height: number, min: number, max: number): number {
-  const center = (min + max) / 2
-  const halfRange = (max - min) / 2
-  return 100 * (1 - Math.abs(height - center) / halfRange)
+function median(values: number[]): number {
+  const s = [...values].sort((a, b) => a - b)
+  const mid = Math.floor(s.length / 2)
+  return s.length % 2 === 1 ? s[mid] : (s[mid - 1] + s[mid]) / 2
 }
 
-/** Una fila entra en el ranking solo si tiene todos los datos que usa: rango de altura, precio y enlace. */
-function isRankable(b: Bike): b is Bike & { height_min: number; height_max: number; price_eur: number; product_url: string } {
-  return b.height_min !== null && b.height_max !== null && b.price_eur !== null && b.product_url !== null
+/** El rango publicado por la marca admite la altura. Un extremo vacío no limita por ese lado. */
+export function heightFits(b: Pick<Bike, 'height_min' | 'height_max'>, height: number): boolean {
+  return (b.height_min === null || b.height_min <= height) && (b.height_max === null || height <= b.height_max)
+}
+
+const hasRange = (b: Bike) => b.height_min !== null || b.height_max !== null
+
+/**
+ * Geometría de referencia para una altura: mediana del stack y del reach de las tallas que las marcas
+ * recomiendan para esa altura (primero mediana por marca, luego entre marcas, para que una marca con
+ * muchos modelos no pese más). null si ninguna marca publica una talla para esa altura.
+ */
+export function referenceGeometry(bikes: Bike[], category: Category, height: number): Geometry | null {
+  const byBrand = new Map<string, Bike[]>()
+  for (const b of bikes) {
+    if (b.category !== category || !hasRange(b) || !heightFits(b, height)) continue
+    const rows = byBrand.get(b.brand) ?? []
+    rows.push(b)
+    byBrand.set(b.brand, rows)
+  }
+  if (byBrand.size === 0) return null
+  const brands = [...byBrand.values()]
+  return {
+    stack: median(brands.map((rows) => median(rows.map((b) => b.stack)))),
+    reach: median(brands.map((rows) => median(rows.map((b) => b.reach)))),
+  }
+}
+
+const distance = (a: Geometry, b: Geometry) => Math.hypot(a.stack - b.stack, a.reach - b.reach)
+
+/** Salto de talla típico de la categoría: distancia stack/reach mediana entre tallas consecutivas de un mismo cuadro. */
+export function sizeStep(bikes: Bike[], category: Category): number | null {
+  const families = new Map<string, Map<string, Geometry>>()
+  for (const b of bikes) {
+    if (b.category !== category) continue
+    const key = `${b.brand}|${b.family}`
+    const sizes = families.get(key) ?? new Map<string, Geometry>()
+    sizes.set(`${b.stack}|${b.reach}`, { stack: b.stack, reach: b.reach })
+    families.set(key, sizes)
+  }
+  const steps: number[] = []
+  for (const sizes of families.values()) {
+    const sorted = [...sizes.values()].sort((a, b) => a.stack - b.stack || a.reach - b.reach)
+    for (let i = 1; i < sorted.length; i++) steps.push(distance(sorted[i - 1], sorted[i]))
+  }
+  return steps.length > 0 ? median(steps) : null
+}
+
+/** 100 si la geometría coincide con la referencia; 0 a un salto de talla; negativo más allá. */
+export function geometryScore(bike: Geometry, reference: Geometry, step: number): number {
+  return 100 * (1 - distance(bike, reference) / step)
+}
+
+/** Una fila entra en el ranking solo si tiene precio y enlace (la geometría es obligatoria en la BBDD). */
+function isRankable(b: Bike): b is Bike & { price_eur: number; product_url: string } {
+  return b.price_eur !== null && b.product_url !== null
 }
 
 const byScoreThenPrice = (a: RankedBike, b: RankedBike) =>
@@ -37,21 +96,37 @@ const byScoreThenPrice = (a: RankedBike, b: RankedBike) =>
   a.brand.localeCompare(b.brand) ||
   a.model.localeCompare(b.model)
 
-/** Premium: top 5 de bicis para el usuario, una talla por modelo. */
+/**
+ * Premium: top 5 de bicis para el usuario.
+ * 1. Categoría, presupuesto, precio y enlace; si la marca publica rango de altura, debe admitir la altura.
+ * 2. Score por cercanía de stack/reach a la geometría de referencia (0 a un salto de talla; más lejos, fuera).
+ * 3. Una bici por familia (mismo cuadro): la talla con mejor score en su montaje más barato.
+ * 4. Orden por score y, a igualdad, por precio.
+ */
 export function rankBikes(bikes: Bike[], input: UserInput): RankedBike[] {
   const { height, category, budget } = input
+  const reference = referenceGeometry(bikes, category, height)
+  const step = sizeStep(bikes, category)
+  if (!reference || !step) return []
 
-  const bestPerModel = new Map<string, RankedBike>()
+  const families = new Map<string, RankedBike[]>()
   for (const b of bikes) {
     if (b.category !== category || !isRankable(b)) continue
     if (budget !== undefined && b.price_eur > budget) continue
-    if (height < b.height_min || height > b.height_max) continue
-
-    const ranked = { ...b, score: sizeScore(height, b.height_min, b.height_max) }
-    const key = `${b.brand}|${b.model}`
-    const current = bestPerModel.get(key)
-    if (!current || byScoreThenPrice(ranked, current) < 0) bestPerModel.set(key, ranked)
+    if (!heightFits(b, height)) continue
+    const score = geometryScore(b, reference, step)
+    if (score <= 0) continue
+    const key = `${b.brand}|${b.family}`
+    const rows = families.get(key) ?? []
+    rows.push({ ...b, score, variants: 1 })
+    families.set(key, rows)
   }
 
-  return [...bestPerModel.values()].sort(byScoreThenPrice).slice(0, TOP_N)
+  const best: RankedBike[] = []
+  for (const rows of families.values()) {
+    const top = [...rows].sort(byScoreThenPrice)[0]
+    const variants = new Set(rows.filter((r) => r.size_label === top.size_label).map((r) => r.model)).size
+    best.push({ ...top, variants })
+  }
+  return best.sort(byScoreThenPrice).slice(0, TOP_N)
 }
