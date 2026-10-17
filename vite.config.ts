@@ -11,6 +11,9 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
+      // Primeras pruebas en modo web (sin instalación ni service worker), por decisión del usuario.
+      // Para volver a la PWA instalable: disable: false.
+      disable: true,
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg'],
       // El catálogo (public/data/bikes.json, varios MB sin comprimir) se guarda para usar la app sin conexión.

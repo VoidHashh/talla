@@ -16,7 +16,7 @@ mkdirSync(srcDir, { recursive: true })
 mkdirSync(publicDir, { recursive: true })
 
 // La tabla gratis y los contadores van en el JS (pequeños). Las bicis son miles de filas: van aparte como
-// fichero estático que la app descarga (y la PWA guarda para usar sin conexión), compacto.
+// fichero estático que la app descarga al abrirse, compacto.
 const sizeTable = buildSizeTable(result.bikes)
 const stats = Object.fromEntries(CATEGORIES.map((c) => [c, catalogStats(result.bikes, c)])) as CatalogStats
 writeFileSync(`${publicDir}bikes.json`, JSON.stringify(result.bikes) + '\n')

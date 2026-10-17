@@ -412,13 +412,45 @@ def load_height_guide(cfg: dict, fx: Fetcher, log) -> dict[str, dict[str, object
         if hcol is None or scol is None or not title:
             continue
         fixes = g.get("text_fixes", {})  # erratas de la web corregidas con aprobación del usuario
-        rows = {r[scol].strip(): parse_height(fixes.get(r[hcol].strip(), r[hcol]) + " cm")
-                for r in m[1:] if len(r) > max(hcol, scol)}
+        if g.get("points"):
+            rows = height_points(m[1:], hcol, scol)
+        else:
+            rows = {r[scol].strip(): parse_height(fixes.get(r[hcol].strip(), r[hcol]) + " cm")
+                    for r in m[1:] if len(r) > max(hcol, scol)}
         rows = {k: v for k, v in rows.items() if k and v}
         if rows:
-            guide[title] = rows
+            # Un título puede nombrar varios modelos ("V5Rs, C72 Road, V4"): la tabla vale para cada uno.
+            names = [t.strip() for t in title.split(g["split_titles"])] if g.get("split_titles") else [title]
+            for name in names:
+                if name:
+                    guide[name] = rows
     log(f"    · guía de tallas: {len(guide)} familias")
     return guide
+
+
+def height_points(rows: list[list[str]], hcol: int, scol: int) -> dict[str, Height]:
+    """Guías "una altura por fila → talla" (155 cm → 420, 158 cm → 420…): rango de cada talla = de la primera a la
+    última altura que la marca le asigna, sin rellenar los huecos entre filas. "430/460" o "45s-48s" en una celda
+    asignan esa altura a las dos tallas."""
+    seen: dict[str, list[int]] = {}
+    for r in rows:
+        if len(r) <= max(hcol, scol):
+            continue
+        m = re.fullmatch(r"\s*(\d{3})\s*cm\s*", r[hcol])
+        if not m:
+            continue
+        cell = r[scol].strip()
+        # "430/460" o "45s-48s" son dos tallas; "S/M" es una talla propia.
+        for size in re.split(r"\s*[/-]\s*", cell) if re.search(r"\d", cell) else [cell]:
+            if size:
+                seen.setdefault(size, []).append(int(m.group(1)))
+    out = {}
+    for size, hs in seen.items():
+        lo, hi = min(hs), max(hs)
+        listed = ", ".join(str(h) for h in sorted(set(hs)))
+        if lo < hi:
+            out[size] = Height(lo, hi, f"guía de tallas: {listed} cm → {size}", "cm")
+    return out
 
 
 def heights_from_guide(guide: dict, model: str, sizes: list[str]):

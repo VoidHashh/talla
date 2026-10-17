@@ -22,10 +22,14 @@
       "reason": "PDF sin tabla de stack/reach legible"
     }
   ],
-  "warnings": [],
+  "warnings": [
+    "C68 Road: guía de tallas 'C68 Road' no cubre todas las tallas ['R420', 'R455', 'R485', 'R510', 'R530', 'R550', 'R570']: sin altura",
+    "C68 Road Ti: guía de tallas 'C68 Road' no cubre todas las tallas ['R420', 'R455', 'R485', 'R510', 'R530', 'R550', 'R570']: sin altura",
+    "C68 Gravel: guía de tallas 'C68 Gravel' no cubre todas las tallas ['450', '480', '510', '540', '570']: sin altura"
+  ],
   "blocked_reason": null,
   "fetch": {
-    "httpx": 0,
+    "httpx": 1,
     "browser": 0,
     "cache": 37,
     "challenges": 0
@@ -33,7 +37,7 @@
   "methods": [
     "pdf"
   ],
-  "with_height": 0,
+  "with_height": 42,
   "with_price": 5,
-  "generated_at": "2026-10-14T10:07:00"
+  "generated_at": "2026-10-17T13:23:54"
 }

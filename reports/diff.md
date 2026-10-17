@@ -1,6 +1,6 @@
 # Informe de carga — staging vs data/bikes.csv
 
-Generado: 2026-10-14 10:18. `data/bikes.csv` no se ha modificado.
+Generado: 2026-10-17 13:23. `data/bikes.csv` no se ha modificado.
 
 | Marca | Estado | Modelos | Tallas | Familias | Con altura | Con precio € | Motivo / avisos |
 |---|---|---:|---:|---:|---:|---:|---|
@@ -31,7 +31,7 @@ Generado: 2026-10-14 10:18. `data/bikes.csv` no se ha modificado.
 | Decathlon | bloqueada | 0 | 0 | 0 | 0 | 0 | no se encontraron productos (sitemap/listado/JSON) |
 | KTM | con avisos | 108 | 477 | 32 | 0 | 108 | 4 productos sin datos |
 | Pinarello | con avisos | 28 | 212 | 9 | 0 | 0 | 55 tallas rechazadas |
-| Colnago | con avisos | 13 | 82 | 8 | 0 | 5 | 3 productos sin datos |
+| Colnago | con avisos | 13 | 82 | 8 | 42 | 5 | 3 productos sin datos; 3 avisos |
 | Wilier | con avisos | 30 | 156 | 24 | 0 | 30 | 1 productos sin datos |
 | Basso | OK | 6 | 39 | 6 | 0 | 0 |  |
 | 3T | con avisos | 20 | 86 | 3 | 56 | 20 | 18 productos sin datos; 6 avisos |
@@ -548,7 +548,7 @@ Descartados: excluido por nombre (cuadro, kit, junior…): 27, duplicado (mismo 
 
 ## Scott — con avisos
 
-Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~12** con cambios. Productos candidatos: 178. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 179, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 178. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 179, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1455,7 +1455,7 @@ Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con c
 
 ## Ghost — con avisos
 
-Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~9** con cambios. Productos candidatos: 40. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 46, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 40. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 46, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -1542,7 +1542,7 @@ Descartados: duplicado (mismo modelo): 8
 
 **Nota:** Geometría con etiquetas Stack/Reach de la ficha en-int (la es-es las traduce como Altura/Largo del cuadro); precio de la ficha es-es. Gama Rise y cuadros OMX/OMR sin tabla.
 
-Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~56** con cambios. Productos candidatos: 101. Métodos: html, json. Descargas: {'httpx': 0, 'browser': 0, 'cache': 214, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 101. Métodos: html, json. Descargas: {'httpx': 0, 'browser': 0, 'cache': 214, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
@@ -2126,24 +2126,32 @@ Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con c
 
 ## Colnago — con avisos
 
-Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 18. Métodos: pdf. Descargas: {'httpx': 0, 'browser': 0, 'cache': 37, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~42** con cambios. Productos candidatos: 18. Métodos: pdf. Descargas: {'httpx': 1, 'browser': 0, 'cache': 37, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
-| C68 Allroad [c3c82927] | carretera | 430 · 460 · 490 · 520 · 550 · 580 | 523 · 543 · 563 · 583 · 603 · 623 | 370 · 375 · 380 · 386 · 393 · 400 | — · — · — · — · — · — | C68 Allroad (s/p) |
+| C68 Allroad [c3c82927] | carretera | 430 · 460 · 490 · 520 · 550 · 580 | 523 · 543 · 563 · 583 · 603 · 623 | 370 · 375 · 380 · 386 · 393 · 400 | 155–164 · 164–170 · 172–176 · 178–182 · 182–190 · 190–196 | C68 Allroad (s/p) |
 | C68 Gravel [dcc4dc47] | gravel | 450 · 480 · 510 · 540 · 570 | 541 · 555 · 580 · 605 · 630 | 375 · 386 · 397 · 408 · 419 | — · — · — · — · — | C68 Gravel (s/p) |
 | C68 [dc1018d9] | carretera | R420 · R455 · R485 · R510 · R530 · R550 · R570 | 510 · 522 · 539 · 557 · 575 · 593 · 612 | 370 · 375 · 383 · 388 · 395 · 403 · 410 | — · — · — · — · — · — · — | C68 Rim Brake (6930); C68 Road (s/p); C68 Road Ti (s/p) |
-| G4-X [c1328a62] | gravel | 45 · 48 · 52 · 54 · 57 | 535 · 554 · 573 · 591 · 610 | 371 · 380 · 390 · 400 · 410 | — · — · — · — · — | G4-X (4330+); G4-X ICBL (4330+) |
+| G4-X [c1328a62] | gravel | 45 · 48 · 52 · 54 · 57 | 535 · 554 · 573 · 591 · 610 | 371 · 380 · 390 · 400 · 410 | 155–167 · 170–174 · 176–182 · 184–190 · 192–196 | G4-X (4330+); G4-X ICBL (4330+) |
 | Steelnovo [adb90377] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 512 · 525 · 543 · 562 · 580 · 599 · 619 | 370 · 375 · 382 · 387 · 394 · 402 · 409 | — · — · — · — · — · — · — | Steelnovo (17500); Steelnovo Road (s/p) |
-| V4 [af2ac260] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 510 · 522 · 539 · 557 · 575 · 593 · 612 | 370 · 375 · 383 · 388 · 395 · 403 · 410 | — · — · — · — · — · — · — | V4 (5200+); V4Rs (s/p) |
-| V5Rs [55456fed] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 509 · 523 · 539 · 557 · 575 · 593 · 612 | 371 · 377 · 384 · 390 · 397 · 404 · 411 | — · — · — · — · — · — · — | V5Rs (s/p) |
-| Y1Rs [6830562b] | carretera | XS · S · M · L · XL | 495 · 520 · 540 · 565 · 590 | 368 · 377 · 386 · 395 · 404 | — · — · — · — · — | Y1Rs (s/p) |
+| V4 [af2ac260] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 510 · 522 · 539 · 557 · 575 · 593 · 612 | 370 · 375 · 383 · 388 · 395 · 403 · 410 | 155–161 · 164–170 · 172–176 · 178–180 · 182–186 · 188–190 · 192–196 | V4 (5200+); V4Rs (s/p) |
+| V5Rs [55456fed] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 509 · 523 · 539 · 557 · 575 · 593 · 612 | 371 · 377 · 384 · 390 · 397 · 404 · 411 | 155–161 · 164–170 · 172–176 · 178–180 · 182–186 · 188–190 · 192–196 | V5Rs (s/p) |
+| Y1Rs [6830562b] | carretera | XS · S · M · L · XL | 495 · 520 · 540 · 565 · 590 | 368 · 377 · 386 · 395 · 404 | 155–161 · 164–170 · 172–176 · 178–184 · 186–196 | Y1Rs (s/p) |
 
 <details><summary>Productos en alcance sin datos</summary>
 
 - https://www.colnago.com/es-es/products/bicicleta-g3-x — PDF sin tabla de stack/reach legible
 - https://www.colnago.com/es-es/products/bicicleta-master — PDF sin tabla de stack/reach legible
 - https://www.colnago.com/es-es/premium-bikes/c72-road-bike — PDF sin tabla de stack/reach legible
+
+</details>
+
+<details><summary>Avisos</summary>
+
+- C68 Road: guía de tallas 'C68 Road' no cubre todas las tallas ['R420', 'R455', 'R485', 'R510', 'R530', 'R550', 'R570']: sin altura
+- C68 Road Ti: guía de tallas 'C68 Road' no cubre todas las tallas ['R420', 'R455', 'R485', 'R510', 'R530', 'R550', 'R570']: sin altura
+- C68 Gravel: guía de tallas 'C68 Gravel' no cubre todas las tallas ['450', '480', '510', '540', '570']: sin altura
 
 </details>
 
@@ -2250,7 +2258,7 @@ Descartados: excluido por nombre (cuadro, kit, junior…): 9
 
 ## Aurum — OK
 
-Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~15** con cambios. Productos candidatos: 3. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 7, 'challenges': 0}.
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con cambios. Productos candidatos: 3. Métodos: html. Descargas: {'httpx': 0, 'browser': 0, 'cache': 7, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|

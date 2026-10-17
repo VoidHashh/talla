@@ -2,24 +2,24 @@
   "carretera": [
     {
       "size_label": "XS",
-      "height_min": 156,
-      "height_max": 165.5,
+      "height_min": 155,
+      "height_max": 162,
       "size_cm_values": [],
-      "brands": 4
+      "brands": 5
     },
     {
       "size_label": "S",
-      "height_min": 165,
-      "height_max": 174,
+      "height_min": 164.5,
+      "height_max": 173,
       "size_cm_values": [],
-      "brands": 5
+      "brands": 6
     },
     {
       "size_label": "M",
-      "height_min": 171,
-      "height_max": 181,
+      "height_min": 171.5,
+      "height_max": 180.5,
       "size_cm_values": [],
-      "brands": 5
+      "brands": 6
     },
     {
       "size_label": "M/L",
@@ -31,16 +31,16 @@
     {
       "size_label": "L",
       "height_min": 180,
-      "height_max": 190,
+      "height_max": 189,
       "size_cm_values": [],
-      "brands": 5
+      "brands": 6
     },
     {
       "size_label": "XL",
-      "height_min": 189,
-      "height_max": 198,
+      "height_min": 188.5,
+      "height_max": 197,
       "size_cm_values": [],
-      "brands": 3
+      "brands": 4
     }
   ],
   "gravel": [

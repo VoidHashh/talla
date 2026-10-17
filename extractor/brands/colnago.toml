@@ -14,3 +14,6 @@ name_strip = ['\s*\|.*$', '^Bicicleta (?:de carreras |de acero |Gravel )?(?:de )
 geometry_pdf_re = '''(https://[^"'\s\\]*(?:Geometrie%20schede/|geometry-chart|geomtries|geometry-table|scheda-a4|scheda-geometria|C68_road|sloping%20guide)[^"'\s\\]*\.pdf)'''
 no_render_retry = true
 exclude_name = '\bframe\b|frameset|\bkit\b'
+# Guía oficial de tallas: una altura por fila (155, 158, 161… cm) → talla, por grupo de modelos. Rango de cada talla =
+# primera y última altura que Colnago le asigna (sin rellenar huecos). Steelnovo y C68 Gravel no figuran en la guía.
+height_guide = { url = "https://www.colnago.com/es-es/size-guide", points = true, split_titles = "," }

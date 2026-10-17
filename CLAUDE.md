@@ -1,13 +1,14 @@
 # CLAUDE.md — App Talla Bici
 
 ## Qué es
-App web (PWA) que recomienda talla de bicicleta de carretera, gravel, MTB o e-MTB a partir de las medidas del usuario.
+App web que recomienda talla de bicicleta de carretera, gravel, MTB o e-MTB a partir de las medidas del usuario.
 - **Gratis:** talla recomendada (letra + cm, p. ej. "M · 54/55").
 - **Premium:** top 5 de bicis concretas (marca, modelo, talla, precio, enlace) de la base de datos.
 
 ## Stack (no cambiar sin preguntar)
 - Vite + React + TypeScript + Tailwind.
-- Sin backend en el MVP. Datos en `data/bikes.csv`, que se compila con `npm run build:data` a `public/data/bikes.json` (la app lo descarga; la PWA lo guarda sin conexión), `src/data/size-table.json` y `src/data/catalog-stats.json`.
+- Primeras pruebas en modo web: PWA desactivada (`disable: true` en vite.config.ts). La versión de móvil instalable se hace cuando todo funcione.
+- Sin backend en el MVP. Datos en `data/bikes.csv`, que se compila con `npm run build:data` a `public/data/bikes.json` (la app lo descarga al abrirse), `src/data/size-table.json` y `src/data/catalog-stats.json`.
 - `data/bikes.csv` solo se rellena desde staging con `npm run promote -- <marcas>` (marcas aprobadas por el usuario; sin argumentos, informe sin escribir).
 - Tests con Vitest para la lógica de cálculo.
 - UI en español de España.
@@ -33,7 +34,7 @@ App web (PWA) que recomienda talla de bicicleta de carretera, gravel, MTB o e-MT
   4. `score = 100 × (1 − distancia(stack/reach, referencia) / salto)`; score ≤ 0 queda fuera.
   5. Una bici por familia: la talla de mayor score en su montaje más barato, indicando cuántos montajes hay.
   6. Orden por score descendente; desempate por precio ascendente. Top 5.
-- Nada de ángulos, fórmulas de bike fit, calibrados ni avisos técnicos en la UI.
+- Nada de ángulos, fórmulas de bike fit, calibrados ni avisos técnicos en la UI. Excepción pedida por el usuario: cada bici del top 5 muestra su stack y reach.
 
 ## UX
 - Formulario → pantalla "Calculando" de 3–4 s con 4 mensajes secuenciales (p. ej. "Analizando proporciones…", "Comparando geometrías de N bicicletas…" con N real) → resultado.

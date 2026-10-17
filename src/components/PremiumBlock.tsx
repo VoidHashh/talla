@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { formatPrice, formatSizeLabel } from '../lib/format.ts'
+import { formatNumber, formatPrice, formatSizeLabel } from '../lib/format.ts'
 import type { RankedBike } from '../lib/sizing.ts'
 
 interface Props {
@@ -77,6 +77,9 @@ function BikeList({ bikes }: { bikes: RankedBike[] }) {
               <p className="mt-1 text-sm text-slate-600">
                 Talla {formatSizeLabel(b.size_label)}
                 {b.size_cm !== null ? ` · ${b.size_cm}` : ''}
+              </p>
+              <p className="text-sm text-slate-600">
+                Stack {formatNumber(b.stack)} mm · Reach {formatNumber(b.reach)} mm
               </p>
               {b.variants > 1 && <p className="text-sm text-slate-500">{b.variants} montajes de este cuadro</p>}
             </div>
