@@ -3,7 +3,7 @@
     {
       "size_label": "XS",
       "height_min": 155,
-      "height_max": 162,
+      "height_max": 162.5,
       "size_cm_values": [],
       "brands": 5
     },
@@ -16,7 +16,7 @@
     },
     {
       "size_label": "M",
-      "height_min": 171.5,
+      "height_min": 171,
       "height_max": 180.5,
       "size_cm_values": [],
       "brands": 6

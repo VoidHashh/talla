@@ -1,6 +1,6 @@
 # Informe de carga — staging vs data/bikes.csv
 
-Generado: 2026-10-17 13:23. `data/bikes.csv` no se ha modificado.
+Generado: 2026-10-20 07:43. `data/bikes.csv` no se ha modificado.
 
 | Marca | Estado | Modelos | Tallas | Familias | Con altura | Con precio € | Motivo / avisos |
 |---|---|---:|---:|---:|---:|---:|---|
@@ -31,7 +31,7 @@ Generado: 2026-10-17 13:23. `data/bikes.csv` no se ha modificado.
 | Decathlon | bloqueada | 0 | 0 | 0 | 0 | 0 | no se encontraron productos (sitemap/listado/JSON) |
 | KTM | con avisos | 108 | 477 | 32 | 0 | 108 | 4 productos sin datos |
 | Pinarello | con avisos | 28 | 212 | 9 | 0 | 0 | 55 tallas rechazadas |
-| Colnago | con avisos | 13 | 82 | 8 | 42 | 5 | 3 productos sin datos; 3 avisos |
+| Colnago | con avisos | 13 | 82 | 8 | 63 | 5 | 3 productos sin datos; 1 avisos |
 | Wilier | con avisos | 30 | 156 | 24 | 0 | 30 | 1 productos sin datos |
 | Basso | OK | 6 | 39 | 6 | 0 | 0 |  |
 | 3T | con avisos | 20 | 86 | 3 | 56 | 20 | 18 productos sin datos; 6 avisos |
@@ -2126,18 +2126,20 @@ Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~0** con c
 
 ## Colnago — con avisos
 
-Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~42** con cambios. Productos candidatos: 18. Métodos: pdf. Descargas: {'httpx': 1, 'browser': 0, 'cache': 37, 'challenges': 0}.
+**Nota:** Altura de la guía oficial /es-es/size-guide (una altura por fila → talla). Interpretaciones aprobadas por el usuario: rango de cada talla de la primera a la última altura listada con los huecos entre tallas repartidos a mitad; C68 Road R420… = 420… de la guía; C68 Rim Brake usa la tabla de C68 Road (mismo cuadro). Steelnovo y C68 Gravel no figuran en la guía: sin altura.
+
+Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~60** con cambios. Productos candidatos: 18. Métodos: pdf. Descargas: {'httpx': 0, 'browser': 0, 'cache': 38, 'challenges': 0}.
 
 | Familia | Cat. | Tallas | Stack | Reach | Altura (cm) | Modelos (precio €) |
 |---|---|---|---|---|---|---|
-| C68 Allroad [c3c82927] | carretera | 430 · 460 · 490 · 520 · 550 · 580 | 523 · 543 · 563 · 583 · 603 · 623 | 370 · 375 · 380 · 386 · 393 · 400 | 155–164 · 164–170 · 172–176 · 178–182 · 182–190 · 190–196 | C68 Allroad (s/p) |
+| C68 Allroad [c3c82927] | carretera | 430 · 460 · 490 · 520 · 550 · 580 | 523 · 543 · 563 · 583 · 603 · 623 | 370 · 375 · 380 · 386 · 393 · 400 | 155–164 · 164–171 · 171–177 · 177–182 · 182–190 · 190–196 | C68 Allroad (s/p) |
 | C68 Gravel [dcc4dc47] | gravel | 450 · 480 · 510 · 540 · 570 | 541 · 555 · 580 · 605 · 630 | 375 · 386 · 397 · 408 · 419 | — · — · — · — · — | C68 Gravel (s/p) |
-| C68 [dc1018d9] | carretera | R420 · R455 · R485 · R510 · R530 · R550 · R570 | 510 · 522 · 539 · 557 · 575 · 593 · 612 | 370 · 375 · 383 · 388 · 395 · 403 · 410 | — · — · — · — · — · — · — | C68 Rim Brake (6930); C68 Road (s/p); C68 Road Ti (s/p) |
-| G4-X [c1328a62] | gravel | 45 · 48 · 52 · 54 · 57 | 535 · 554 · 573 · 591 · 610 | 371 · 380 · 390 · 400 · 410 | 155–167 · 170–174 · 176–182 · 184–190 · 192–196 | G4-X (4330+); G4-X ICBL (4330+) |
+| C68 [dc1018d9] | carretera | R420 · R455 · R485 · R510 · R530 · R550 · R570 | 510 · 522 · 539 · 557 · 575 · 593 · 612 | 370 · 375 · 383 · 388 · 395 · 403 · 410 | 155–162.5 · 162.5–171 · 171–177 · 177–181 · 181–187 · 187–191 · 191–196 | C68 Rim Brake (6930); C68 Road (s/p); C68 Road Ti (s/p) |
+| G4-X [c1328a62] | gravel | 45 · 48 · 52 · 54 · 57 | 535 · 554 · 573 · 591 · 610 | 371 · 380 · 390 · 400 · 410 | 155–168.5 · 168.5–175 · 175–183 · 183–191 · 191–196 | G4-X (4330+); G4-X ICBL (4330+) |
 | Steelnovo [adb90377] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 512 · 525 · 543 · 562 · 580 · 599 · 619 | 370 · 375 · 382 · 387 · 394 · 402 · 409 | — · — · — · — · — · — · — | Steelnovo (17500); Steelnovo Road (s/p) |
-| V4 [af2ac260] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 510 · 522 · 539 · 557 · 575 · 593 · 612 | 370 · 375 · 383 · 388 · 395 · 403 · 410 | 155–161 · 164–170 · 172–176 · 178–180 · 182–186 · 188–190 · 192–196 | V4 (5200+); V4Rs (s/p) |
-| V5Rs [55456fed] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 509 · 523 · 539 · 557 · 575 · 593 · 612 | 371 · 377 · 384 · 390 · 397 · 404 · 411 | 155–161 · 164–170 · 172–176 · 178–180 · 182–186 · 188–190 · 192–196 | V5Rs (s/p) |
-| Y1Rs [6830562b] | carretera | XS · S · M · L · XL | 495 · 520 · 540 · 565 · 590 | 368 · 377 · 386 · 395 · 404 | 155–161 · 164–170 · 172–176 · 178–184 · 186–196 | Y1Rs (s/p) |
+| V4 [af2ac260] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 510 · 522 · 539 · 557 · 575 · 593 · 612 | 370 · 375 · 383 · 388 · 395 · 403 · 410 | 155–162.5 · 162.5–171 · 171–177 · 177–181 · 181–187 · 187–191 · 191–196 | V4 (5200+); V4Rs (s/p) |
+| V5Rs [55456fed] | carretera | 420 · 455 · 485 · 510 · 530 · 550 · 570 | 509 · 523 · 539 · 557 · 575 · 593 · 612 | 371 · 377 · 384 · 390 · 397 · 404 · 411 | 155–162.5 · 162.5–171 · 171–177 · 177–181 · 181–187 · 187–191 · 191–196 | V5Rs (s/p) |
+| Y1Rs [6830562b] | carretera | XS · S · M · L · XL | 495 · 520 · 540 · 565 · 590 | 368 · 377 · 386 · 395 · 404 | 155–162.5 · 162.5–171 · 171–177 · 177–185 · 185–196 | Y1Rs (s/p) |
 
 <details><summary>Productos en alcance sin datos</summary>
 
@@ -2149,8 +2151,6 @@ Diff con bikes.csv: **+0** tallas nuevas, **−0** que desaparecen, **~42** con 
 
 <details><summary>Avisos</summary>
 
-- C68 Road: guía de tallas 'C68 Road' no cubre todas las tallas ['R420', 'R455', 'R485', 'R510', 'R530', 'R550', 'R570']: sin altura
-- C68 Road Ti: guía de tallas 'C68 Road' no cubre todas las tallas ['R420', 'R455', 'R485', 'R510', 'R530', 'R550', 'R570']: sin altura
 - C68 Gravel: guía de tallas 'C68 Gravel' no cubre todas las tallas ['450', '480', '510', '540', '570']: sin altura
 
 </details>

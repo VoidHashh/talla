@@ -413,7 +413,7 @@ def load_height_guide(cfg: dict, fx: Fetcher, log) -> dict[str, dict[str, object
             continue
         fixes = g.get("text_fixes", {})  # erratas de la web corregidas con aprobación del usuario
         if g.get("points"):
-            rows = height_points(m[1:], hcol, scol)
+            rows = height_points(m[1:], hcol, scol, g.get("fill_gaps", False))
         else:
             rows = {r[scol].strip(): parse_height(fixes.get(r[hcol].strip(), r[hcol]) + " cm")
                     for r in m[1:] if len(r) > max(hcol, scol)}
@@ -424,14 +424,19 @@ def load_height_guide(cfg: dict, fx: Fetcher, log) -> dict[str, dict[str, object
             for name in names:
                 if name:
                     guide[name] = rows
+    # Modelos que la guía no nombra pero comparten cuadro con uno que sí (aprobado por el usuario).
+    for name, same_as in g.get("title_alias", {}).items():
+        if same_as in guide:
+            guide[name] = guide[same_as]
     log(f"    · guía de tallas: {len(guide)} familias")
     return guide
 
 
-def height_points(rows: list[list[str]], hcol: int, scol: int) -> dict[str, Height]:
+def height_points(rows: list[list[str]], hcol: int, scol: int, fill_gaps: bool = False) -> dict[str, Height]:
     """Guías "una altura por fila → talla" (155 cm → 420, 158 cm → 420…): rango de cada talla = de la primera a la
-    última altura que la marca le asigna, sin rellenar los huecos entre filas. "430/460" o "45s-48s" en una celda
-    asignan esa altura a las dos tallas."""
+    última altura que la marca le asigna. "430/460" o "45s-48s" en una celda asignan esa altura a las dos tallas.
+    fill_gaps (interpretación aprobada por el usuario): las alturas de la tabla son muestras, así que el hueco entre
+    la última altura de una talla y la primera de la siguiente se reparte a mitad (176 → 485, 178 → 510: frontera 177)."""
     seen: dict[str, list[int]] = {}
     for r in rows:
         if len(r) <= max(hcol, scol):
@@ -444,12 +449,22 @@ def height_points(rows: list[list[str]], hcol: int, scol: int) -> dict[str, Heig
         for size in re.split(r"\s*[/-]\s*", cell) if re.search(r"\d", cell) else [cell]:
             if size:
                 seen.setdefault(size, []).append(int(m.group(1)))
+    bounds = {size: [min(hs), max(hs)] for size, hs in seen.items()}
+    gap_note = ""
+    if fill_gaps:
+        ordered = sorted(bounds, key=lambda k: (bounds[k][0], bounds[k][1]))
+        for a, b in zip(ordered, ordered[1:]):
+            if bounds[a][1] < bounds[b][0]:
+                mid = (bounds[a][1] + bounds[b][0]) / 2
+                bounds[a][1], bounds[b][0] = mid, mid
+        gap_note = "; huecos repartidos a mitad"
     out = {}
-    for size, hs in seen.items():
-        lo, hi = min(hs), max(hs)
-        listed = ", ".join(str(h) for h in sorted(set(hs)))
+    for size, (lo, hi) in bounds.items():
+        listed = ", ".join(str(h) for h in sorted(set(seen[size])))
+        lo = int(lo) if float(lo).is_integer() else lo
+        hi = int(hi) if float(hi).is_integer() else hi
         if lo < hi:
-            out[size] = Height(lo, hi, f"guía de tallas: {listed} cm → {size}", "cm")
+            out[size] = Height(lo, hi, f"guía de tallas: {listed} cm → {size}{gap_note}", "cm")
     return out
 
 
@@ -652,7 +667,10 @@ def run_brand(key: str, cfg: dict, vcfg: dict, limit: int | None = None, refresh
                 continue
             g = order_sizes(g)
             if g.heights is None and guide:
-                hs, fam = heights_from_guide(guide, meta["name"], g.sizes)
+                # label_re: cómo nombra la guía cada talla de la geometría (p. ej. "R420" → "420", aprobado por el usuario).
+                lre = cfg["height_guide"].get("label_re")
+                labels = [re.sub(lre[0], lre[1], sz.strip()) for sz in g.sizes] if lre else g.sizes
+                hs, fam = heights_from_guide(guide, meta["name"], labels)
                 if hs:
                     g.heights = hs
                 elif fam:

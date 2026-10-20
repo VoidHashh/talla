@@ -15,5 +15,7 @@ geometry_pdf_re = '''(https://[^"'\s\\]*(?:Geometrie%20schede/|geometry-chart|ge
 no_render_retry = true
 exclude_name = '\bframe\b|frameset|\bkit\b'
 # Guía oficial de tallas: una altura por fila (155, 158, 161… cm) → talla, por grupo de modelos. Rango de cada talla =
-# primera y última altura que Colnago le asigna (sin rellenar huecos). Steelnovo y C68 Gravel no figuran en la guía.
-height_guide = { url = "https://www.colnago.com/es-es/size-guide", points = true, split_titles = "," }
+# primera y última altura que Colnago le asigna; los huecos entre tallas se reparten a mitad (interpretación aprobada
+# por el usuario). C68 Road nombra sus tallas R420, R455…: equivalen a 420, 455… de la guía (aprobado por el usuario).
+# C68 Rim Brake comparte cuadro con C68 Road: usa su tabla (aprobado). Steelnovo y C68 Gravel no figuran: sin altura.
+height_guide = { url = "https://www.colnago.com/es-es/size-guide", points = true, split_titles = ",", fill_gaps = true, label_re = ['^R(\d{3})$', '\1'], title_alias = { "C68 Rim Brake" = "C68 Road" } }

@@ -45,3 +45,6 @@ note = "Altura de la guía oficial /es/es/size-guide (pestaña Bikes) por famili
 
 ["Cube"]
 note = "Altura por talla tomada de su calculador oficial (bikesizing.cube.eu), usado como una persona desde la ventana de Chrome del usuario con su autorización expresa aunque su robots.txt lo prohíbe (Disallow: /) y aunque la regla general excluye calculadoras: por familia, alturas 140–210 cm → tallas recomendadas (data/heights/cube.json). Rechazos: reach publicado no creciente (Nuroad, Attain), por eso no queda gravel."
+
+["Colnago"]
+note = "Altura de la guía oficial /es-es/size-guide (una altura por fila → talla). Interpretaciones aprobadas por el usuario: rango de cada talla de la primera a la última altura listada con los huecos entre tallas repartidos a mitad; C68 Road R420… = 420… de la guía; C68 Rim Brake usa la tabla de C68 Road (mismo cuadro). Steelnovo y C68 Gravel no figuran en la guía: sin altura."
