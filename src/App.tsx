@@ -6,6 +6,7 @@ import { SizeResult } from './components/SizeResult.tsx'
 import { PREMIUM_UNLOCKED } from './config.ts'
 import catalogStatsJson from './data/catalog-stats.json'
 import sizeTableJson from './data/size-table.json'
+import { computeFit } from './lib/fit.ts'
 import { rankBikes, recommendSize, type UserInput } from './lib/sizing.ts'
 import type { CatalogStats, SizeTable } from './lib/types.ts'
 import { useBikes } from './lib/useBikes.ts'
@@ -37,6 +38,8 @@ export default function App() {
     [input, catalog],
   )
 
+  const fit = useMemo(() => (input ? computeFit(input.inseam, input.category, input.fit ?? {}) : null), [input])
+
   const showResult = useCallback(() => setScreen('result'), [])
 
   function handleSubmit(next: UserInput) {
@@ -58,10 +61,14 @@ export default function App() {
 
         {screen === 'calculating' && <Calculating messages={messages} onDone={showResult} />}
 
-        {screen === 'result' && input && (
+        {screen === 'result' && input && fit && (
           <div className="space-y-6">
             <SizeResult size={size} category={input.category} height={input.height} />
-            <PremiumBlock unlocked={PREMIUM_UNLOCKED} bikes={ranked} failed={catalog.status === 'error'} height={input.height} />
+            <PremiumBlock unlocked={PREMIUM_UNLOCKED} bikes={ranked} failed={catalog.status === 'error'}
+              height={input.height}
+              fit={fit}
+              dropBar={input.category === 'carretera' || input.category === 'gravel'}
+            />
             <button
               type="button"
               onClick={() => setScreen('form')}

@@ -1,6 +1,7 @@
 import { CATEGORIES, EXTRACTION_METHODS, type Bike, type Category, type ExtractionMethod } from '../../src/lib/types.ts'
 import { sizeRank } from '../../src/lib/sizes.ts'
 import type { CsvTable } from './csv.ts'
+import { effectiveTopTube } from './top-tube.ts'
 
 export const BRAND_COLUMNS = ['brand', 'group', 'country', 'status', 'sizing_url', 'geometry_url']
 export const BRAND_STATUSES = ['activo', 'incierto']
@@ -148,6 +149,7 @@ export function validateBikes(table: CsvTable, brands: Set<string>): { errors: R
         height_max: hMax,
         stack: Number(v.stack),
         reach: Number(v.reach),
+        top_tube_eff: effectiveTopTube(v.geometry_raw ?? ''),
         price_eur: num(v.price_eur),
         price_is_from: v.price_is_from === 'true',
         product_url: v.product_url || null,

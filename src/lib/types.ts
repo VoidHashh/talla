@@ -27,6 +27,8 @@ export interface Bike {
   height_max: number | null
   stack: number
   reach: number
+  /** Tubo horizontal efectivo en mm si la marca lo publica como tal (para la potencia del bike fit); si no, null. */
+  top_tube_eff: number | null
   price_eur: number | null
   price_is_from: boolean
   product_url: string | null

@@ -1,3 +1,4 @@
+import type { FitMeasures } from './fit.ts'
 import type { Bike, Category, SizeTable, SizeTableRow } from './types.ts'
 
 export interface UserInput {
@@ -6,6 +7,8 @@ export interface UserInput {
   category: Category
   /** Presupuesto máximo en euros; undefined = sin límite. */
   budget?: number
+  /** Medidas del bike fit premium (opcionales). */
+  fit?: FitMeasures
 }
 
 export interface RankedBike extends Bike {

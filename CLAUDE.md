@@ -34,7 +34,11 @@ App web que recomienda talla de bicicleta de carretera, gravel, MTB o e-MTB a pa
   4. `score = 100 × (1 − distancia(stack/reach, referencia) / salto)`; score ≤ 0 queda fuera.
   5. Una bici por familia: la talla de mayor score en su montaje más barato, indicando cuántos montajes hay.
   6. Orden por score descendente; desempate por precio ascendente. Top 5.
-- Nada de ángulos, fórmulas de bike fit, calibrados ni avisos técnicos en la UI. Excepción pedida por el usuario: cada bici del top 5 muestra su stack y reach y de dónde sale su talla (rango de la guía de la marca o "por geometría").
+- Nada de ángulos, calibrados ni avisos técnicos en la UI, salvo lo que el usuario ha pedido: cada bici del top 5 muestra su stack y reach y de dónde sale su talla (rango de la guía de la marca o "por geometría").
+- **Bike fit premium** (decidido con el usuario; `src/lib/fit.ts`): solo fórmulas publicadas y siempre con su fuente en la UI. Medidas opcionales: esternón (torso = esternón − entrepierna), brazo y hombros.
+  - Altura de sillín = entrepierna × 0,883 (LeMond/Guimard), todas las categorías.
+  - Carretera/gravel: alcance total = (torso + brazo) / 2 + 4 cm (Competitive Cyclist, orientativo); manillar ≈ ancho de hombros (orientativo); potencia por bici = alcance total − tubo horizontal efectivo publicado (solo si la marca lo publica como efectivo/horizontal/virtual).
+  - No hay fórmula publicada fiable de cuerpo → stack/reach: el bike fit no cambia el orden del top 5.
 
 ## UX
 - Formulario → pantalla "Calculando" de 3–4 s con 4 mensajes secuenciales (p. ej. "Analizando proporciones…", "Comparando geometrías de N bicicletas…" con N real) → resultado.

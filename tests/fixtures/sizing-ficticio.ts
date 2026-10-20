@@ -16,6 +16,7 @@ export function fakeBike(overrides: Partial<Bike> = {}): Bike {
     height_max: 180,
     stack: 550,
     reach: 390,
+    top_tube_eff: null,
     price_eur: 2000,
     price_is_from: false,
     product_url: 'https://ficticia.invalid/producto',

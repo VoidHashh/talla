@@ -1,7 +1,9 @@
 import { useState, type FormEvent } from 'react'
+import type { FitMeasures } from '../lib/fit.ts'
 import { CATEGORY_LABELS } from '../lib/format.ts'
 import type { UserInput } from '../lib/sizing.ts'
 import { CATEGORIES, type Category } from '../lib/types.ts'
+import { BodyDiagram, type Measure } from './BodyDiagram.tsx'
 
 interface Props {
   initial: UserInput | null
@@ -9,13 +11,29 @@ interface Props {
 }
 
 const toText = (n: number | undefined) => (n === undefined ? '' : String(n))
+const parseNum = (s: string) => (s.trim() === '' ? undefined : Number(s.replace(',', '.')))
 
-function validate(height: number, inseam: number, budget: number | undefined): string | null {
+function validate(height: number, inseam: number, budget: number | undefined, fit: FitMeasures): string | null {
   if (!(height >= 120 && height <= 220)) return 'Introduce una altura entre 120 y 220 cm.'
   if (!(inseam >= 50 && inseam <= 110)) return 'Introduce una entrepierna entre 50 y 110 cm.'
   if (inseam >= height) return 'La entrepierna tiene que ser menor que la altura.'
   if (budget !== undefined && !(budget > 0)) return 'El presupuesto tiene que ser un número positivo.'
+  if (fit.sternum !== undefined && !(fit.sternum >= inseam + 30 && fit.sternum <= height - 15)) {
+    return 'La altura del esternón tiene que estar entre tu entrepierna + 30 cm y tu altura − 15 cm. Revisa la medida B.'
+  }
+  if (fit.arm !== undefined && !(fit.arm >= 45 && fit.arm <= 90)) return 'Introduce un largo de brazo (E) entre 45 y 90 cm.'
+  if (fit.shoulders !== undefined && !(fit.shoulders >= 28 && fit.shoulders <= 55)) {
+    return 'Introduce un ancho de hombros (F) entre 28 y 55 cm.'
+  }
   return null
+}
+
+const HELP: Record<Measure, string> = {
+  A: 'De pie, descalzo y contra la pared: del suelo a lo alto de la cabeza.',
+  C: 'Descalzo, con un libro entre las piernas apretado hacia arriba como un sillín: del suelo al canto del libro.',
+  B: 'De pie y descalzo: del suelo a la hendidura del esternón (la “V” entre las clavículas).',
+  E: 'Brazo estirado hacia un lado: de la punta del hombro (el hueso del acromion) al centro del puño cerrado.',
+  F: 'De la punta de un hombro a la del otro (de acromion a acromion), por la espalda.',
 }
 
 export function SizeForm({ initial, onSubmit }: Props) {
@@ -23,6 +41,11 @@ export function SizeForm({ initial, onSubmit }: Props) {
   const [inseam, setInseam] = useState(toText(initial?.inseam))
   const [category, setCategory] = useState<Category>(initial?.category ?? 'carretera')
   const [budget, setBudget] = useState(toText(initial?.budget))
+  const [sternum, setSternum] = useState(toText(initial?.fit?.sternum))
+  const [arm, setArm] = useState(toText(initial?.fit?.arm))
+  const [shoulders, setShoulders] = useState(toText(initial?.fit?.shoulders))
+  const [showFit, setShowFit] = useState(initial?.fit !== undefined)
+  const [active, setActive] = useState<Measure | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   function handleSubmit(e: FormEvent) {
@@ -32,14 +55,37 @@ export function SizeForm({ initial, onSubmit }: Props) {
       inseam: Number(inseam.replace(',', '.')),
       budget: budget.trim() === '' ? undefined : Number(budget.replace(/\./g, '').replace(',', '.')),
     }
-    const message = validate(parsed.height, parsed.inseam, parsed.budget)
+    const fit: FitMeasures = showFit ? { sternum: parseNum(sternum), arm: parseNum(arm), shoulders: parseNum(shoulders) } : {}
+    const message = validate(parsed.height, parsed.inseam, parsed.budget, fit)
     setError(message)
-    if (!message) onSubmit({ ...parsed, category })
+    const hasFit = Object.values(fit).some((v) => v !== undefined)
+    if (!message) onSubmit({ ...parsed, category, fit: hasFit ? fit : undefined })
   }
 
   const inputClass =
     'mt-1 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-lg text-slate-900 ' +
-    'focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/20'
+    'focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30'
+
+  const field = (m: Measure, label: string, value: string, set: (v: string) => void, placeholder: string) => (
+    <label className="block text-sm font-medium text-slate-700">
+      <span className="mr-1.5 inline-flex h-5 w-5 items-center justify-center rounded bg-slate-900 text-xs font-bold text-white">
+        {m}
+      </span>
+      {label}
+      <input
+        type="text"
+        inputMode="decimal"
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => set(e.target.value)}
+        onFocus={() => setActive(m)}
+        onBlur={() => setActive(null)}
+        className={inputClass}
+      />
+    </label>
+  )
+
+  const shown: Measure[] = showFit ? ['A', 'B', 'C', 'E', 'F'] : ['A', 'C']
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
@@ -69,31 +115,16 @@ export function SizeForm({ initial, onSubmit }: Props) {
         </div>
       </fieldset>
 
+      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+        <BodyDiagram active={active} shown={shown} />
+        <p className="mt-2 min-h-10 text-center text-sm text-slate-600">
+          {active ? HELP[active] : 'Toca una medida para ver cómo tomarla.'}
+        </p>
+      </div>
+
       <div className="grid grid-cols-2 gap-3">
-        <label className="block text-sm font-medium text-slate-700">
-          Altura (cm)
-          <input
-            type="text"
-            inputMode="decimal"
-            placeholder="175"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-            className={inputClass}
-            required
-          />
-        </label>
-        <label className="block text-sm font-medium text-slate-700">
-          Entrepierna (cm)
-          <input
-            type="text"
-            inputMode="decimal"
-            placeholder="82"
-            value={inseam}
-            onChange={(e) => setInseam(e.target.value)}
-            className={inputClass}
-            required
-          />
-        </label>
+        {field('A', 'Altura (cm)', height, setHeight, '175')}
+        {field('C', 'Entrepierna (cm)', inseam, setInseam, '82')}
       </div>
 
       <label className="block text-sm font-medium text-slate-700">
@@ -107,6 +138,35 @@ export function SizeForm({ initial, onSubmit }: Props) {
           className={inputClass}
         />
       </label>
+
+      <div className="rounded-2xl border border-amber-300 bg-amber-50/60 p-4">
+        <button
+          type="button"
+          onClick={() => setShowFit((v) => !v)}
+          aria-expanded={showFit}
+          className="flex w-full items-center justify-between text-left"
+        >
+          <span>
+            <span className="block font-semibold text-slate-900">Bike fit premium</span>
+            <span className="block text-sm text-slate-600">
+              Altura de sillín, alcance, ancho de manillar y la potencia que necesitarías en cada bici.
+            </span>
+          </span>
+          <span aria-hidden className="ml-3 text-xl text-slate-500">
+            {showFit ? '−' : '+'}
+          </span>
+        </button>
+        {showFit && (
+          <div className="mt-4 space-y-3">
+            {field('B', 'Altura del esternón (cm)', sternum, setSternum, '143')}
+            <div className="grid grid-cols-2 gap-3">
+              {field('E', 'Largo de brazo (cm)', arm, setArm, '61')}
+              {field('F', 'Ancho de hombros (cm)', shoulders, setShoulders, '40')}
+            </div>
+            <p className="text-xs text-slate-500">Opcional. Con la altura y la entrepierna ya calculamos la altura de sillín.</p>
+          </div>
+        )}
+      </div>
 
       {error && (
         <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
