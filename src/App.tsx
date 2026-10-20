@@ -31,7 +31,7 @@ export default function App() {
     ]
   }, [input])
 
-  const sizes = useMemo(() => (input ? recommendSize(SIZE_TABLE, input) : null), [input])
+  const size = useMemo(() => (input ? recommendSize(SIZE_TABLE, input) : null), [input])
   const ranked = useMemo(
     () => (input && catalog.status === 'ready' ? rankBikes(catalog.bikes, input) : null),
     [input, catalog],
@@ -58,10 +58,10 @@ export default function App() {
 
         {screen === 'calculating' && <Calculating messages={messages} onDone={showResult} />}
 
-        {screen === 'result' && input && sizes && (
+        {screen === 'result' && input && (
           <div className="space-y-6">
-            <SizeResult sizes={sizes} category={input.category} height={input.height} />
-            <PremiumBlock unlocked={PREMIUM_UNLOCKED} bikes={ranked} failed={catalog.status === 'error'} />
+            <SizeResult size={size} category={input.category} height={input.height} />
+            <PremiumBlock unlocked={PREMIUM_UNLOCKED} bikes={ranked} failed={catalog.status === 'error'} height={input.height} />
             <button
               type="button"
               onClick={() => setScreen('form')}

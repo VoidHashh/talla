@@ -1,6 +1,6 @@
 // Tests de src/lib/format.ts. Todos los datos son FICTICIOS: ver tests/fixtures/sizing-ficticio.ts.
 import { describe, expect, it } from 'vitest'
-import { catalogStats, formatNumber, formatPrice, formatBikeSize, formatSize, formatSizeLabel } from '../src/lib/format.ts'
+import { catalogStats, formatNumber, formatPrice, formatBikeSize, formatSize, formatSizeLabel, sizeOrigin } from '../src/lib/format.ts'
 import { fakeBike } from './fixtures/sizing-ficticio.ts'
 
 describe('format', () => {
@@ -39,5 +39,15 @@ describe('format', () => {
     expect(formatBikeSize({ size_label: '45.5', size_cm: 45.5 })).toBe('45.5')
     expect(formatBikeSize({ size_label: 'M', size_cm: 54 })).toBe('M · 54')
     expect(formatBikeSize({ size_label: 'M', size_cm: null })).toBe('M')
+  })
+
+  it('sizeOrigin explica de dónde sale la talla', () => {
+    const b = { brand: 'MarcaFicticiaA', height_min: 171, height_max: 178 }
+    expect(sizeOrigin(b)).toBe('MarcaFicticiaA recomienda esta talla de 171 a 178 cm')
+    expect(sizeOrigin({ ...b, height_max: null })).toBe('MarcaFicticiaA recomienda esta talla a partir de 171 cm')
+    expect(sizeOrigin({ ...b, height_min: null })).toBe('MarcaFicticiaA recomienda esta talla hasta 178 cm')
+    expect(sizeOrigin({ ...b, height_min: null, height_max: null })).toBe(
+      'Talla elegida por geometría: MarcaFicticiaA no publica alturas por talla',
+    )
   })
 })

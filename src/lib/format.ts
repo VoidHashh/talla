@@ -37,3 +37,12 @@ export function formatBikeSize(b: { size_label: string; size_cm: number | null }
   const cm = formatNumber(b.size_cm)
   return label.replace(',', '.').includes(String(b.size_cm)) || label.includes(cm) ? label : `${label} · ${cm}`
 }
+
+/** De dónde sale la talla de una bici del top 5: la guía de la marca o, si no publica alturas, la geometría. */
+export function sizeOrigin(b: { brand: string; height_min: number | null; height_max: number | null }): string {
+  const { brand, height_min: min, height_max: max } = b
+  if (min !== null && max !== null) return `${brand} recomienda esta talla de ${formatNumber(min)} a ${formatNumber(max)} cm`
+  if (min !== null) return `${brand} recomienda esta talla a partir de ${formatNumber(min)} cm`
+  if (max !== null) return `${brand} recomienda esta talla hasta ${formatNumber(max)} cm`
+  return `Talla elegida por geometría: ${brand} no publica alturas por talla`
+}

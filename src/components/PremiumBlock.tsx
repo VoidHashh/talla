@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { formatBikeSize, formatNumber, formatPrice } from '../lib/format.ts'
+import { formatBikeSize, formatNumber, formatPrice, sizeOrigin } from '../lib/format.ts'
 import type { RankedBike } from '../lib/sizing.ts'
 
 interface Props {
@@ -8,9 +8,10 @@ interface Props {
   bikes: RankedBike[] | null
   /** El catálogo no se pudo descargar. */
   failed: boolean
+  height: number
 }
 
-export function PremiumBlock({ unlocked, bikes, failed }: Props) {
+export function PremiumBlock({ unlocked, bikes, failed, height }: Props) {
   return (
     <section className="rounded-2xl border border-slate-200 p-5">
       <h2 className="text-lg font-bold text-slate-900">Las 5 bicis que mejor te encajan</h2>
@@ -21,7 +22,13 @@ export function PremiumBlock({ unlocked, bikes, failed }: Props) {
       ) : bikes === null ? (
         <p role="status" className="mt-4 text-sm text-slate-600">Cargando bicis…</p>
       ) : (
-        <BikeList bikes={bikes} />
+        <>
+          <p className="mt-1 text-sm text-slate-600">
+            Para cada bici, la talla cuyo stack y reach más se parecen a lo que las marcas recomiendan para{' '}
+            {formatNumber(height)} cm. El ajuste es 100 si coincide y baja cuanto más se aleja.
+          </p>
+          <BikeList bikes={bikes} />
+        </>
       )}
     </section>
   )
@@ -77,6 +84,7 @@ function BikeList({ bikes }: { bikes: RankedBike[] }) {
               <p className="mt-1 text-sm text-slate-600">
                 Talla {formatBikeSize(b)}
               </p>
+              <p className="text-sm text-slate-500">{sizeOrigin(b)}</p>
               <p className="text-sm text-slate-600">
                 Stack {formatNumber(b.stack)} mm · Reach {formatNumber(b.reach)} mm
               </p>

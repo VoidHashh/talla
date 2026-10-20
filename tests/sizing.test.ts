@@ -3,32 +3,42 @@ import { describe, expect, it } from 'vitest'
 import { geometryScore, heightFits, rankBikes, recommendSize, referenceGeometry, sizeStep } from '../src/lib/sizing.ts'
 import { FAKE_SIZE_TABLE, fakeBike } from './fixtures/sizing-ficticio.ts'
 
-const labels = (rows: { size_label: string }[]) => rows.map((r) => r.size_label)
 const input = { height: 175, inseam: 82, category: 'carretera' as const }
 
 describe('recommendSize', () => {
-  it('devuelve la talla cuyo rango contiene la altura', () => {
-    expect(labels(recommendSize(FAKE_SIZE_TABLE, { height: 165, category: 'carretera' }))).toEqual(['S'])
-    expect(labels(recommendSize(FAKE_SIZE_TABLE, { height: 185, category: 'carretera' }))).toEqual(['L'])
+  const size = (height: number, category: 'carretera' | 'gravel' | 'mtb' = 'carretera') =>
+    recommendSize(FAKE_SIZE_TABLE, { height, category })?.size_label ?? null
+
+  it('devuelve una sola talla: la que contiene la altura', () => {
+    expect(size(165)).toBe('S')
+    expect(size(185)).toBe('L')
   })
 
-  it('devuelve las dos tallas si la altura cae en ambas', () => {
-    expect(labels(recommendSize(FAKE_SIZE_TABLE, { height: 171, category: 'carretera' }))).toEqual(['S', 'M'])
+  it('si la altura cae en dos tallas, la del centro más cercano', () => {
+    // S 160-172 (centro 166), M 170-181 (centro 175.5): 171 está más cerca del centro de M.
+    expect(size(171)).toBe('M')
+    expect(size(170)).toBe('S')
   })
 
   it('incluye los extremos del rango', () => {
-    expect(labels(recommendSize(FAKE_SIZE_TABLE, { height: 160, category: 'carretera' }))).toEqual(['S'])
-    expect(labels(recommendSize(FAKE_SIZE_TABLE, { height: 192, category: 'carretera' }))).toEqual(['L'])
+    expect(size(160)).toBe('S')
+    expect(size(192)).toBe('L')
   })
 
-  it('no devuelve nada fuera de rango o en un hueco entre tallas', () => {
-    expect(recommendSize(FAKE_SIZE_TABLE, { height: 150, category: 'carretera' })).toEqual([])
-    expect(recommendSize(FAKE_SIZE_TABLE, { height: 181.2, category: 'carretera' })).toEqual([])
-    expect(recommendSize(FAKE_SIZE_TABLE, { height: 175, category: 'mtb' })).toEqual([])
+  it('en un hueco entre tallas elige la más cercana', () => {
+    // M acaba en 181 y L empieza en 181.5.
+    expect(size(181.2)).toBe('M')
+    expect(size(181.4)).toBe('L')
+  })
+
+  it('no devuelve nada fuera de la tabla o sin datos de la categoría', () => {
+    expect(size(150)).toBeNull()
+    expect(size(193)).toBeNull()
+    expect(size(175, 'mtb')).toBeNull()
   })
 
   it('usa la tabla de la categoría pedida', () => {
-    expect(labels(recommendSize(FAKE_SIZE_TABLE, { height: 169, category: 'gravel' }))).toEqual(['M'])
+    expect(size(169, 'gravel')).toBe('M')
   })
 })
 

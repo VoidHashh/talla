@@ -21,9 +21,18 @@ export interface Geometry {
 
 const TOP_N = 5
 
-/** Gratis: las tallas cuyo rango mediano contiene la altura (una o dos si se solapan). */
-export function recommendSize(sizeTable: SizeTable, input: Pick<UserInput, 'height' | 'category'>): SizeTableRow[] {
-  return sizeTable[input.category].filter((s) => s.height_min <= input.height && input.height <= s.height_max)
+/**
+ * Gratis: una sola talla. La que tiene el centro de su rango mediano más cerca de la altura entre las que la
+ * contienen; si la altura cae en un hueco entre dos tallas, la más cercana. null fuera de la tabla.
+ */
+export function recommendSize(sizeTable: SizeTable, input: Pick<UserInput, 'height' | 'category'>): SizeTableRow | null {
+  const rows = sizeTable[input.category]
+  const { height } = input
+  if (rows.length === 0) return null
+  if (height < Math.min(...rows.map((r) => r.height_min)) || height > Math.max(...rows.map((r) => r.height_max))) return null
+  const gap = (r: SizeTableRow) => Math.max(r.height_min - height, 0, height - r.height_max)
+  const offCenter = (r: SizeTableRow) => Math.abs(height - (r.height_min + r.height_max) / 2)
+  return [...rows].sort((a, b) => gap(a) - gap(b) || offCenter(a) - offCenter(b))[0]
 }
 
 function median(values: number[]): number {

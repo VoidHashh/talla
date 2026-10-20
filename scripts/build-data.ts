@@ -17,7 +17,8 @@ mkdirSync(publicDir, { recursive: true })
 
 // La tabla gratis y los contadores van en el JS (pequeños). Las bicis son miles de filas: van aparte como
 // fichero estático que la app descarga al abrirse, compacto.
-const sizeTable = buildSizeTable(result.bikes)
+// Parte gratis: solo tallas estándar (las publican al menos 3 marcas), decisión del usuario.
+const sizeTable = buildSizeTable(result.bikes, 3)
 const stats = Object.fromEntries(CATEGORIES.map((c) => [c, catalogStats(result.bikes, c)])) as CatalogStats
 writeFileSync(`${publicDir}bikes.json`, JSON.stringify(result.bikes) + '\n')
 writeFileSync(`${srcDir}size-table.json`, JSON.stringify(sizeTable, null, 2) + '\n')

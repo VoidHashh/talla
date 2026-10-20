@@ -14,8 +14,9 @@ export function median(values: number[]): number {
  * Solo entran filas con height_min y height_max publicados (los intervalos abiertos no tienen centro).
  * La talla es la letra normalizada (equivalencias publicadas por la marca en data/size-labels.csv); las filas
  * sin letra (tallas solo en cm o etiquetas propias sin equivalencia publicada) no entran.
+ * minBrands: solo tallas estándar, publicadas por al menos ese número de marcas ("M/L" de una sola marca no).
  */
-export function buildSizeTable(bikes: Bike[]): SizeTable {
+export function buildSizeTable(bikes: Bike[], minBrands = 1): SizeTable {
   const table = {} as SizeTable
 
   for (const category of CATEGORIES) {
@@ -39,6 +40,7 @@ export function buildSizeTable(bikes: Bike[]): SizeTable {
         brandMaxs.push(median(brandBikes.map((b) => b.height_max!)))
         for (const b of brandBikes) if (b.size_cm !== null) cms.add(b.size_cm)
       }
+      if (byBrand.size < minBrands) continue
       rows.push({
         size_label,
         height_min: median(brandMins),

@@ -194,6 +194,12 @@ describe('buildSizeTable', () => {
     ])
   })
 
+  it('con minBrands deja solo las tallas que publican al menos esas marcas', () => {
+    const { bikes } = validateBikes(parseCsv(fixture('bikes-ficticio.csv')), BRANDS)
+    expect(buildSizeTable(bikes, 2).carretera.map((r) => r.size_label)).toEqual(['M'])
+    expect(buildSizeTable(bikes, 2).gravel).toEqual([])
+  })
+
   it('ignora filas sin rango de altura o con intervalo abierto', () => {
     const { bikes } = validate(
       row({ height_min: '', height_max: '', height_original: '', height_unit: '' }),
