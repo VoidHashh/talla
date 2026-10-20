@@ -29,3 +29,11 @@ export function catalogStats(bikes: Bike[], category: Category): { models: numbe
 
 /** Etiqueta de talla para mostrar: "56.0" → "56" (el dato guardado no cambia). */
 export const formatSizeLabel = (label: string) => label.replace(/^(\d+)\.0$/, '$1')
+
+/** Talla de una bici del top 5: la etiqueta de la marca y, si no la incluye ya, la talla en cm ("M · 54"). */
+export function formatBikeSize(b: { size_label: string; size_cm: number | null }): string {
+  const label = formatSizeLabel(b.size_label)
+  if (b.size_cm === null) return label
+  const cm = formatNumber(b.size_cm)
+  return label.replace(',', '.').includes(String(b.size_cm)) || label.includes(cm) ? label : `${label} · ${cm}`
+}

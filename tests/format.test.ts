@@ -1,6 +1,6 @@
 // Tests de src/lib/format.ts. Todos los datos son FICTICIOS: ver tests/fixtures/sizing-ficticio.ts.
 import { describe, expect, it } from 'vitest'
-import { catalogStats, formatNumber, formatPrice, formatSize, formatSizeLabel } from '../src/lib/format.ts'
+import { catalogStats, formatNumber, formatPrice, formatBikeSize, formatSize, formatSizeLabel } from '../src/lib/format.ts'
 import { fakeBike } from './fixtures/sizing-ficticio.ts'
 
 describe('format', () => {
@@ -31,5 +31,13 @@ describe('format', () => {
     expect(formatSizeLabel('56.0')).toBe('56')
     expect(formatSizeLabel('56.5')).toBe('56.5')
     expect(formatSizeLabel('L (57)')).toBe('L (57)')
+  })
+
+  it('formatBikeSize no repite la talla en cm si ya está en la etiqueta', () => {
+    expect(formatBikeSize({ size_label: '56.0', size_cm: 56 })).toBe('56')
+    expect(formatBikeSize({ size_label: 'L (57)', size_cm: 57 })).toBe('L (57)')
+    expect(formatBikeSize({ size_label: '45.5', size_cm: 45.5 })).toBe('45.5')
+    expect(formatBikeSize({ size_label: 'M', size_cm: 54 })).toBe('M · 54')
+    expect(formatBikeSize({ size_label: 'M', size_cm: null })).toBe('M')
   })
 })
