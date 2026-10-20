@@ -8,7 +8,8 @@ export const CATEGORY_LABELS: Record<Category, string> = {
 }
 
 const number = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 })
-const euros = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 })
+// useGrouping 'always': "1.500 €" (por defecto es-ES no separa los miles en números de 4 cifras).
+const euros = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0, useGrouping: 'always' })
 
 export const formatNumber = (n: number) => number.format(n)
 export const formatPrice = (eur: number) => euros.format(eur)

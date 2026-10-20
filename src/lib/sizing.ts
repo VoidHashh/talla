@@ -7,6 +7,8 @@ export interface UserInput {
   category: Category
   /** Presupuesto máximo en euros; undefined = sin límite. */
   budget?: number
+  /** Precio mínimo en euros (filtro de precio del top 5); undefined = sin mínimo. */
+  minPrice?: number
   /** Medidas del bike fit premium (opcionales). */
   fit?: FitMeasures
 }
@@ -116,7 +118,7 @@ const byScoreThenPrice = (a: RankedBike, b: RankedBike) =>
  * 4. Orden por score y, a igualdad, por precio.
  */
 export function rankBikes(bikes: Bike[], input: UserInput): RankedBike[] {
-  const { height, category, budget } = input
+  const { height, category, budget, minPrice } = input
   const reference = referenceGeometry(bikes, category, height)
   const step = sizeStep(bikes, category)
   if (!reference || !step) return []
@@ -125,6 +127,7 @@ export function rankBikes(bikes: Bike[], input: UserInput): RankedBike[] {
   for (const b of bikes) {
     if (b.category !== category || !isRankable(b)) continue
     if (budget !== undefined && b.price_eur > budget) continue
+    if (minPrice !== undefined && b.price_eur < minPrice) continue
     if (!heightFits(b, height)) continue
     const score = geometryScore(b, reference, step)
     if (score <= 0) continue

@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
 import { Calculating } from './components/Calculating.tsx'
 import { PremiumBlock } from './components/PremiumBlock.tsx'
+import type { PriceRange } from './components/PriceFilter.tsx'
 import { SizeForm } from './components/SizeForm.tsx'
 import { SizeResult } from './components/SizeResult.tsx'
 import { PREMIUM_UNLOCKED } from './config.ts'
@@ -19,6 +20,7 @@ type Screen = 'form' | 'calculating' | 'result'
 export default function App() {
   const [screen, setScreen] = useState<Screen>('form')
   const [input, setInput] = useState<UserInput | null>(null)
+  const [price, setPrice] = useState<PriceRange>({})
   const catalog = useBikes()
 
   const messages = useMemo(() => {
@@ -34,8 +36,11 @@ export default function App() {
 
   const size = useMemo(() => (input ? recommendSize(SIZE_TABLE, input) : null), [input])
   const ranked = useMemo(
-    () => (input && catalog.status === 'ready' ? rankBikes(catalog.bikes, input) : null),
-    [input, catalog],
+    () =>
+      input && catalog.status === 'ready'
+        ? rankBikes(catalog.bikes, { ...input, budget: price.max, minPrice: price.min })
+        : null,
+    [input, catalog, price],
   )
 
   const fit = useMemo(() => (input ? computeFit(input.inseam, input.category, input.fit ?? {}) : null), [input])
@@ -44,6 +49,7 @@ export default function App() {
 
   function handleSubmit(next: UserInput) {
     setInput(next)
+    setPrice(next.budget !== undefined ? { max: next.budget } : {})
     setScreen('calculating')
   }
 
@@ -67,6 +73,9 @@ export default function App() {
             <PremiumBlock unlocked={PREMIUM_UNLOCKED} bikes={ranked} failed={catalog.status === 'error'}
               height={input.height}
               fit={fit}
+              price={price}
+              onPriceChange={setPrice}
+              budget={input.budget}
               dropBar={input.category === 'carretera' || input.category === 'gravel'}
             />
             <button

@@ -11,7 +11,7 @@ describe('format', () => {
 
   it('formatea números y precios en español', () => {
     expect(formatNumber(169.5)).toBe('169,5')
-    expect(formatPrice(2499).replace(/\s/g, ' ')).toBe('2499 €')
+    expect(formatPrice(2499).replace(/\s/g, ' ')).toBe('2.499 €')
     expect(formatPrice(12499).replace(/\s/g, ' ')).toBe('12.499 €')
   })
 

@@ -148,6 +148,12 @@ describe('rankBikes', () => {
     expect(rankBikes(CATALOG, { ...input, budget: 1999 })).toEqual([])
   })
 
+  it('filtra por precio mínimo (incluido el límite) para el filtro de precio', () => {
+    const cara = fakeBike({ ...C, family: 'Cara', model: 'Cara', stack: 555, reach: 391, price_eur: 4000 })
+    expect(models(rankBikes([...CATALOG, cara], { ...input, minPrice: 4000 }))).toEqual(['Cara M'])
+    expect(models(rankBikes([...CATALOG, cara], { ...input, minPrice: 2000, budget: 3000 }))).toEqual(['A1 M', 'B1 M', 'C1 M'])
+  })
+
   it('filtra por categoría', () => {
     expect(rankBikes(CATALOG, { ...input, category: 'gravel' })).toEqual([])
   })

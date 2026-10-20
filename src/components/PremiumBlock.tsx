@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { stemLength, type FitResult, type FitValue } from '../lib/fit.ts'
 import { formatBikeSize, formatNumber, formatPrice, sizeOrigin } from '../lib/format.ts'
 import type { RankedBike } from '../lib/sizing.ts'
+import { PriceFilter, type PriceRange } from './PriceFilter.tsx'
 
 interface Props {
   unlocked: boolean
@@ -13,9 +14,12 @@ interface Props {
   fit: FitResult
   /** Carretera/gravel: el bike fit calcula alcance y manillar. */
   dropBar: boolean
+  price: PriceRange
+  onPriceChange: (range: PriceRange) => void
+  budget?: number
 }
 
-export function PremiumBlock({ unlocked, bikes, failed, height, fit, dropBar }: Props) {
+export function PremiumBlock({ unlocked, bikes, failed, height, fit, dropBar, price, onPriceChange, budget }: Props) {
   return (
     <section className="rounded-2xl border border-slate-200 p-5">
       <h2 className="text-lg font-bold text-slate-900">Las 5 bicis que mejor te encajan</h2>
@@ -32,6 +36,7 @@ export function PremiumBlock({ unlocked, bikes, failed, height, fit, dropBar }: 
             Para cada bici, la talla cuyo stack y reach más se parecen a lo que las marcas recomiendan para{' '}
             {formatNumber(height)} cm. El ajuste es 100 si coincide y baja cuanto más se aleja.
           </p>
+          <PriceFilter value={price} onChange={onPriceChange} budget={budget} />
           <BikeList bikes={bikes} totalReach={fit.totalReach?.value ?? null} />
         </>
       )}
@@ -127,7 +132,7 @@ function BikeList({ bikes, totalReach }: { bikes: RankedBike[]; totalReach: numb
   if (bikes.length === 0) {
     return (
       <p className="mt-4 text-sm text-slate-600">
-        Ahora mismo no tenemos bicis en la base de datos que encajen con tus medidas y presupuesto.
+        No tenemos bicis que encajen con tus medidas en este rango de precio. Prueba con otro rango.
       </p>
     )
   }
