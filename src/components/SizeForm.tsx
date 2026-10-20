@@ -3,7 +3,7 @@ import type { FitMeasures } from '../lib/fit.ts'
 import { CATEGORY_LABELS } from '../lib/format.ts'
 import type { UserInput } from '../lib/sizing.ts'
 import { CATEGORIES, type Category } from '../lib/types.ts'
-import { BodyDiagram, type Measure } from './BodyDiagram.tsx'
+import { BodyDiagram, DIAGRAM_BG, type Measure } from './BodyDiagram.tsx'
 
 interface Props {
   initial: UserInput | null
@@ -85,8 +85,6 @@ export function SizeForm({ initial, onSubmit }: Props) {
     </label>
   )
 
-  const shown: Measure[] = showFit ? ['A', 'B', 'C', 'E', 'F'] : ['A', 'C']
-
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <fieldset>
@@ -115,8 +113,8 @@ export function SizeForm({ initial, onSubmit }: Props) {
         </div>
       </fieldset>
 
-      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-        <BodyDiagram active={active} shown={shown} />
+      <div className="rounded-2xl border border-slate-200 p-4" style={{ backgroundColor: DIAGRAM_BG }}>
+        <BodyDiagram active={active} premium={showFit} />
         <p className="mt-2 min-h-10 text-center text-sm text-slate-600">
           {active ? HELP[active] : 'Toca una medida para ver cómo tomarla.'}
         </p>

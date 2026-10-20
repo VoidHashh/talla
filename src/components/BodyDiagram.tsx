@@ -1,87 +1,100 @@
-/** Medidas del formulario, con la letra con que aparecen en la silueta. */
+/** Medidas del formulario, con la letra con que aparecen en la ilustración. */
 export type Measure = 'A' | 'B' | 'C' | 'E' | 'F'
 
 interface Props {
   /** Medida que se está rellenando: se resalta. */
   active: Measure | null
-  /** Medidas que se dibujan (el bike fit añade B, E y F). */
-  shown: Measure[]
+  /** Bike fit premium: ilustración con el brazo estirado y las cotas B, E y F. */
+  premium: boolean
 }
 
-const LINE = { idle: '#94a3b8', active: '#f59e0b' }
+const BASE = import.meta.env.BASE_URL
+/** Color de fondo de las ilustraciones, para que el recuadro no tenga borde. */
+export const DIAGRAM_BG = '#f1f4f9'
 
-/** Silueta de pie con el brazo derecho en horizontal y las cotas que se piden en el formulario. */
-export function BodyDiagram({ active, shown }: Props) {
-  const color = (m: Measure) => (active === m ? LINE.active : LINE.idle)
-  const width = (m: Measure) => (active === m ? 3 : 1.5)
-  const has = (m: Measure) => shown.includes(m)
+// Puntos medidos sobre las ilustraciones (píxeles de la imagen original 1792 × 2400; las dos comparten encuadre).
+const P = {
+  head: 138,
+  floor: 2273,
+  axis: 896,
+  crotch: 1255,
+  sternum: 505,
+  shoulderL: 642,
+  shoulderR: 1150,
+  shoulderY: 575,
+  fistX: 1718,
+  fistY: 590,
+}
+
+const COLOR = { idle: '#64748b', active: '#f59e0b' }
+
+/** Ilustración de las medidas con las cotas superpuestas (la activa en ámbar). */
+export function BodyDiagram({ active, premium }: Props) {
+  const stroke = (m: Measure) => (active === m ? COLOR.active : COLOR.idle)
+  const sw = (m: Measure) => (active === m ? 12 : 6)
 
   const Tag = ({ m, x, y }: { m: Measure; x: number; y: number }) => (
     <g>
-      <rect x={x - 9} y={y - 9} width={18} height={18} rx={4} fill={active === m ? LINE.active : '#0f172a'} />
-      <text x={x} y={y + 4.5} textAnchor="middle" fontSize={12} fontWeight={700} fill="#fff">
+      <rect x={x - 40} y={y - 40} width={80} height={80} rx={18} fill={active === m ? COLOR.active : '#0f172a'} />
+      <text x={x} y={y + 17} textAnchor="middle" fontSize={50} fontWeight={800} fill="#fff" fontFamily="system-ui, sans-serif">
         {m}
       </text>
     </g>
   )
+  const dash = { strokeDasharray: '18 14' }
 
   return (
-    <svg viewBox="0 0 260 300" role="img" aria-label="Cómo tomar las medidas" className="mx-auto h-64 w-auto">
-      {/* Silueta */}
-      <g fill="#cbd5e1">
-        <circle cx={110} cy={36} r={17} />
-        <rect x={103} y={51} width={14} height={12} rx={4} />
-        <path d="M80 62 Q110 56 140 62 L138 150 Q110 158 82 150 Z" />
-        <path d="M80 64 L68 68 L60 150 L71 151 L80 92 Z" />
-        <path d="M138 62 L222 66 Q230 71 222 78 L138 82 Z" />
-        <circle cx={226} cy={72} r={7} />
-        <path d="M84 148 L108 152 L106 284 L90 284 Z" />
-        <path d="M112 152 L136 148 L130 284 L114 284 Z" />
-      </g>
-      <line x1={20} y1={286} x2={250} y2={286} stroke="#cbd5e1" strokeWidth={2} />
+    <div className="relative mx-auto aspect-[1792/2400] w-full max-w-[17rem]">
+      <img
+        src={`${BASE}img/${premium ? 'medidas-premium' : 'medidas-basico'}.webp`}
+        alt=""
+        width={896}
+        height={1200}
+        className="absolute inset-0 h-full w-full select-none"
+        draggable={false}
+      />
+      <svg viewBox="0 0 1792 2400" role="img" aria-label="Cómo tomar las medidas" className="absolute inset-0 h-full w-full">
+        {/* A: altura */}
+        <g stroke={stroke('A')} strokeWidth={sw('A')} fill="none">
+          <line x1={250} y1={P.head} x2={250} y2={P.floor} />
+          <line x1={210} y1={P.head} x2={P.axis} y2={P.head} {...dash} />
+        </g>
+        <Tag m="A" x={250} y={1200} />
 
-      {/* A: altura */}
-      {has('A') && (
-        <g stroke={color('A')} strokeWidth={width('A')}>
-          <line x1={22} y1={19} x2={22} y2={286} />
-          <line x1={16} y1={19} x2={110} y2={19} strokeDasharray="3 3" />
-          <Tag m="A" x={22} y={150} />
+        {/* C: entrepierna, entre las piernas */}
+        <g stroke={stroke('C')} strokeWidth={sw('C')} fill="none">
+          <line x1={P.axis} y1={P.crotch} x2={P.axis} y2={P.floor} />
+          <line x1={P.axis - 70} y1={P.crotch} x2={P.axis + 70} y2={P.crotch} />
         </g>
-      )}
-      {/* B: esternón */}
-      {has('B') && (
-        <g stroke={color('B')} strokeWidth={width('B')}>
-          <line x1={46} y1={64} x2={46} y2={286} />
-          <line x1={40} y1={64} x2={110} y2={64} strokeDasharray="3 3" />
-          <Tag m="B" x={46} y={190} />
-        </g>
-      )}
-      {/* C: entrepierna */}
-      {has('C') && (
-        <g stroke={color('C')} strokeWidth={width('C')}>
-          <line x1={156} y1={152} x2={156} y2={286} />
-          <line x1={110} y1={152} x2={162} y2={152} strokeDasharray="3 3" />
-          <Tag m="C" x={156} y={220} />
-        </g>
-      )}
-      {/* E: brazo */}
-      {has('E') && (
-        <g stroke={color('E')} strokeWidth={width('E')}>
-          <line x1={140} y1={98} x2={226} y2={98} />
-          <line x1={140} y1={60} x2={140} y2={104} strokeDasharray="3 3" />
-          <line x1={226} y1={78} x2={226} y2={104} strokeDasharray="3 3" />
-          <Tag m="E" x={183} y={98} />
-        </g>
-      )}
-      {/* F: hombros */}
-      {has('F') && (
-        <g stroke={color('F')} strokeWidth={width('F')}>
-          <line x1={80} y1={50} x2={140} y2={50} />
-          <line x1={80} y1={44} x2={80} y2={62} strokeDasharray="3 3" />
-          <line x1={140} y1={44} x2={140} y2={62} strokeDasharray="3 3" />
-          <Tag m="F" x={154} y={44} />
-        </g>
-      )}
-    </svg>
+        <Tag m="C" x={P.axis} y={1900} />
+
+        {premium && (
+          <>
+            {/* B: altura del esternón */}
+            <g stroke={stroke('B')} strokeWidth={sw('B')} fill="none">
+              <line x1={420} y1={P.sternum} x2={420} y2={P.floor} />
+              <line x1={380} y1={P.sternum} x2={P.axis} y2={P.sternum} {...dash} />
+            </g>
+            <Tag m="B" x={420} y={1500} />
+
+            {/* E: brazo, del hombro al centro del puño */}
+            <g stroke={stroke('E')} strokeWidth={sw('E')} fill="none">
+              <line x1={P.shoulderR} y1={720} x2={P.fistX} y2={720} />
+              <line x1={P.shoulderR} y1={P.shoulderY - 40} x2={P.shoulderR} y2={760} {...dash} />
+              <line x1={P.fistX} y1={P.fistY + 30} x2={P.fistX} y2={760} {...dash} />
+            </g>
+            <Tag m="E" x={(P.shoulderR + P.fistX) / 2} y={720} />
+
+            {/* F: ancho de hombros, de acromion a acromion */}
+            <g stroke={stroke('F')} strokeWidth={sw('F')} fill="none">
+              <line x1={P.shoulderL} y1={430} x2={P.shoulderR} y2={430} />
+              <line x1={P.shoulderL} y1={390} x2={P.shoulderL} y2={P.shoulderY} {...dash} />
+              <line x1={P.shoulderR} y1={390} x2={P.shoulderR} y2={P.shoulderY} {...dash} />
+            </g>
+            <Tag m="F" x={P.shoulderL - 90} y={430} />
+          </>
+        )}
+      </svg>
+    </div>
   )
 }
