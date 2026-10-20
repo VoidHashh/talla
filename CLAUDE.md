@@ -43,6 +43,8 @@ App web que recomienda talla de bicicleta de carretera, gravel, MTB o e-MTB a pa
 ## UX
 - Formulario → pantalla "Calculando" de 3–4 s con 4 mensajes secuenciales (p. ej. "Analizando proporciones…", "Comparando geometrías de N bicicletas…" con N real) → resultado.
 - Bloque premium bloqueado con CTA. En el MVP el desbloqueo es un flag (`PREMIUM_UNLOCKED`); el pago se integra después.
+- Marketing (decidido con el usuario): el resultado gratis muestra la talla estándar y un adelanto del premium con cifras reales (nº de bicis y marcas que encajan, precio mínimo, ajuste de las 5 mejores con nombres ocultos) y la lista de lo que incluye. CTA «Desbloquear mi informe completo», sin precio hasta definirlo. Las medidas del bike fit se piden en el formulario gratuito, marcadas como premium.
+- Los textos de marketing solo afirman lo que los datos respaldan (nada de "el error más común", porcentajes o testimonios inventados).
 
 ## Estilo de trabajo
 - Cambios pequeños y verificables. Ejecutar tests antes de dar algo por terminado.

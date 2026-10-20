@@ -145,9 +145,15 @@ export function SizeForm({ initial, onSubmit }: Props) {
           className="flex w-full items-center justify-between text-left"
         >
           <span>
-            <span className="block font-semibold text-slate-900">Bike fit premium</span>
+            <span className="flex items-center gap-2 font-semibold text-slate-900">
+              Bike fit
+              <span className="rounded bg-slate-900 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-amber-400">
+                PREMIUM
+              </span>
+            </span>
             <span className="block text-sm text-slate-600">
-              Altura de sillín, alcance, ancho de manillar y la potencia que necesitarías en cada bici.
+              3 medidas más y tu informe incluye altura de sillín, alcance, ancho de manillar y la potencia para cada
+              bici.
             </span>
           </span>
           <span aria-hidden className="ml-3 text-xl text-slate-500">
@@ -161,7 +167,9 @@ export function SizeForm({ initial, onSubmit }: Props) {
               {field('E', 'Largo de brazo (cm)', arm, setArm, '61')}
               {field('F', 'Ancho de hombros (cm)', shoulders, setShoulders, '40')}
             </div>
-            <p className="text-xs text-slate-500">Opcional. Con la altura y la entrepierna ya calculamos la altura de sillín.</p>
+            <p className="text-xs text-slate-500">
+              Opcional. Tardas un par de minutos con una cinta métrica; el resultado aparece en tu informe premium.
+            </p>
           </div>
         )}
       </div>

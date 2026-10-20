@@ -111,13 +111,13 @@ const byScoreThenPrice = (a: RankedBike, b: RankedBike) =>
   a.model.localeCompare(b.model)
 
 /**
- * Premium: top 5 de bicis para el usuario.
+ * Todas las bicis (una por familia) que encajan con el usuario, ordenadas; el top 5 son las primeras.
  * 1. Categoría, presupuesto, precio y enlace; si la marca publica rango de altura, debe admitir la altura.
  * 2. Score por cercanía de stack/reach a la geometría de referencia (0 a un salto de talla; más lejos, fuera).
  * 3. Una bici por familia (mismo cuadro): la talla con mejor score en su montaje más barato.
  * 4. Orden por score y, a igualdad, por precio.
  */
-export function rankBikes(bikes: Bike[], input: UserInput): RankedBike[] {
+export function rankAll(bikes: Bike[], input: UserInput): RankedBike[] {
   const { height, category, budget, minPrice } = input
   const reference = referenceGeometry(bikes, category, height)
   const step = sizeStep(bikes, category)
@@ -143,5 +143,30 @@ export function rankBikes(bikes: Bike[], input: UserInput): RankedBike[] {
     const variants = new Set(rows.filter((r) => r.size_label === top.size_label).map((r) => r.model)).size
     best.push({ ...top, variants })
   }
-  return best.sort(byScoreThenPrice).slice(0, TOP_N)
+  return best.sort(byScoreThenPrice)
+}
+
+/** Premium: top 5 de bicis para el usuario. */
+export function rankBikes(bikes: Bike[], input: UserInput): RankedBike[] {
+  return rankAll(bikes, input).slice(0, TOP_N)
+}
+
+export interface MatchStats {
+  /** Bicis (una por cuadro) que encajan. */
+  bikes: number
+  brands: number
+  /** Precio más bajo entre ellas. */
+  minPrice: number | null
+  /** Ajuste de la mejor. */
+  bestScore: number | null
+}
+
+/** Cifras reales para el adelanto gratuito del premium. */
+export function matchStats(ranked: RankedBike[]): MatchStats {
+  return {
+    bikes: ranked.length,
+    brands: new Set(ranked.map((b) => b.brand)).size,
+    minPrice: ranked.length > 0 ? Math.min(...ranked.map((b) => b.price_eur!)) : null,
+    bestScore: ranked.length > 0 ? ranked[0].score : null,
+  }
 }

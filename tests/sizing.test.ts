@@ -1,6 +1,6 @@
 // Tests de src/lib/sizing.ts. Todos los datos son FICTICIOS: ver tests/fixtures/sizing-ficticio.ts.
 import { describe, expect, it } from 'vitest'
-import { geometryScore, heightFits, rankBikes, recommendSize, referenceGeometry, sizeStep } from '../src/lib/sizing.ts'
+import { geometryScore, heightFits, matchStats, rankAll, rankBikes, recommendSize, referenceGeometry, sizeStep } from '../src/lib/sizing.ts'
 import { FAKE_SIZE_TABLE, fakeBike } from './fixtures/sizing-ficticio.ts'
 
 const input = { height: 175, inseam: 82, category: 'carretera' as const }
@@ -180,5 +180,24 @@ describe('rankBikes', () => {
   it('devuelve lista vacía si no hay datos o ninguna marca publica talla para esa altura', () => {
     expect(rankBikes([], input)).toEqual([])
     expect(rankBikes(CATALOG, { ...input, height: 140 })).toEqual([])
+  })
+})
+
+describe('rankAll y matchStats', () => {
+  it('rankAll devuelve todas las que encajan; el top 5 son las primeras', () => {
+    const many = Array.from({ length: 8 }, (_, i) =>
+      fakeBike({ ...C, family: `F${i}`, model: `Ficticio ${i}`, stack: 555, reach: 391, price_eur: 1000 + i }),
+    )
+    const all = rankAll([...CATALOG, ...many], input)
+    expect(all).toHaveLength(11)
+    expect(rankBikes([...CATALOG, ...many], input)).toEqual(all.slice(0, 5))
+  })
+
+  it('matchStats cuenta bicis y marcas, el precio mínimo y el mejor ajuste', () => {
+    const barata = fakeBike({ ...C, family: 'Barata', model: 'Barata', stack: 550, reach: 390, price_eur: 900 })
+    const stats = matchStats(rankAll([...CATALOG, barata], input))
+    expect(stats).toMatchObject({ bikes: 4, brands: 3, minPrice: 900 })
+    expect(stats.bestScore).toBeCloseTo(100 * (1 - Math.hypot(5, 1) / STEP), 6)
+    expect(matchStats([])).toEqual({ bikes: 0, brands: 0, minPrice: null, bestScore: null })
   })
 })

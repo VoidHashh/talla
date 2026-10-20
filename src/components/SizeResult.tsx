@@ -38,9 +38,18 @@ export function SizeResult({ size, category, height }: Props) {
         </p>
       </div>
       <p className="mt-3 text-sm text-slate-600">
-        Es la talla que recomiendan para tu altura las guías de {size.brands} marcas. Cada marca mide a su manera:
-        en el top 5 te decimos la talla exacta de cada bici.
+        Es la talla que recomiendan para tu altura las guías de {size.brands} marcas.
       </p>
+      <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-left">
+        <p className="text-sm font-semibold text-slate-900">Ojo: cada marca mide a su manera</p>
+        <p className="mt-1 text-sm text-slate-700">
+          Con la misma altura puedes ser una S en una marca y una M en otra, así que antes de comprar conviene mirar la
+          geometría de cada bici.{' '}
+          <a href="#premium" className="font-semibold text-amber-700 underline underline-offset-2">
+            Mira tu talla exacta en cada bici
+          </a>
+        </p>
+      </div>
     </section>
   )
 }

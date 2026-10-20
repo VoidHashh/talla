@@ -7,7 +7,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   emtb: 'e-MTB',
 }
 
-const number = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 })
+const number = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1, useGrouping: 'always' })
 // useGrouping 'always': "1.500 €" (por defecto es-ES no separa los miles en números de 4 cifras).
 const euros = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0, useGrouping: 'always' })
 

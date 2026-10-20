@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { stemLength, type FitResult, type FitValue } from '../lib/fit.ts'
 import { formatBikeSize, formatNumber, formatPrice, sizeOrigin } from '../lib/format.ts'
-import type { RankedBike } from '../lib/sizing.ts'
+import type { MatchStats, RankedBike } from '../lib/sizing.ts'
 import { PriceFilter, type PriceRange } from './PriceFilter.tsx'
 
 interface Props {
@@ -17,15 +17,17 @@ interface Props {
   price: PriceRange
   onPriceChange: (range: PriceRange) => void
   budget?: number
+  /** Adelanto gratuito: cifras reales de las bicis que encajan (null mientras carga el catálogo). */
+  teaser: { stats: MatchStats; scores: number[] } | null
 }
 
-export function PremiumBlock({ unlocked, bikes, failed, height, fit, dropBar, price, onPriceChange, budget }: Props) {
+export function PremiumBlock(props: Props) {
+  const { unlocked, bikes, failed, height, fit, dropBar, price, onPriceChange, budget, teaser } = props
+  if (!unlocked) return <Locked teaser={teaser} failed={failed} dropBar={dropBar} />
   return (
-    <section className="rounded-2xl border border-slate-200 p-5">
+    <section id="premium" className="rounded-2xl border border-slate-200 p-5">
       <h2 className="text-lg font-bold text-slate-900">Las 5 bicis que mejor te encajan</h2>
-      {!unlocked ? (
-        <Locked />
-      ) : failed ? (
+      {failed ? (
         <p className="mt-4 text-sm text-slate-600">No hemos podido cargar las bicis. Revisa tu conexión y vuelve a intentarlo.</p>
       ) : bikes === null ? (
         <p role="status" className="mt-4 text-sm text-slate-600">Cargando bicis…</p>
@@ -85,32 +87,101 @@ function FitSummary({ fit, dropBar }: { fit: FitResult; dropBar: boolean }) {
   )
 }
 
-function Locked() {
+const BENEFITS_DROP = [
+  ['Tu top 5 de bicis', 'Marca, modelo, talla exacta, precio y enlace a la web oficial, elegidas entre todo el catálogo.'],
+  ['La talla exacta en cada marca', 'Cada marca mide distinto: te decimos qué talla pedir en cada bici y por qué.'],
+  ['Tu bike fit', 'Altura de sillín, alcance y ancho de manillar calculados con métodos publicados.'],
+  ['La potencia para cada bici', 'Cuánta potencia necesitarías con esa talla para ir cómodo.'],
+  ['Filtro de precio', 'Cambia el rango y el top 5 se recalcula al momento.'],
+] as const
+
+const BENEFITS_MTB = [
+  BENEFITS_DROP[0],
+  BENEFITS_DROP[1],
+  ['Tu altura de sillín', 'Calculada con el método LeMond a partir de tu entrepierna.'],
+  BENEFITS_DROP[4],
+] as const
+
+function Locked({ teaser, failed, dropBar }: { teaser: Props['teaser']; failed: boolean; dropBar: boolean }) {
   const [requested, setRequested] = useState(false)
+  const stats = teaser?.stats
+  const rows = teaser ? teaser.scores : [0, 0, 0, 0, 0]
   return (
-    <div className="mt-4">
-      <div aria-hidden className="space-y-2 select-none blur-sm">
-        {[0, 1, 2].map((i) => (
-          <div key={i} className="h-16 rounded-xl bg-slate-100" />
-        ))}
+    <section id="premium" className="overflow-hidden rounded-2xl border border-amber-300 bg-white shadow-sm">
+      <div className="bg-slate-900 px-5 py-5 text-white">
+        <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Informe premium</p>
+        <h2 className="mt-1 text-xl font-bold leading-snug">
+          {failed
+            ? 'Tu informe con las bicis que mejor te encajan'
+            : !stats
+              ? 'Buscando las bicis que encajan contigo…'
+              : stats.bikes === 0
+                ? 'Con este presupuesto no encontramos bicis para tus medidas'
+                : `${formatNumber(stats.bikes)} bicis de ${stats.brands} marcas encajan con tus medidas`}
+        </h2>
+        {stats && stats.bikes > 0 && (
+          <p className="mt-1 text-sm text-slate-300">
+            {stats.minPrice !== null && <>Desde {formatPrice(stats.minPrice)}. </>}
+            Te enseñamos las 5 que mejor te quedan.
+          </p>
+        )}
       </div>
-      <p className="mt-4 text-sm text-slate-600">
-        Marca, modelo, talla exacta y precio de las bicis de nuestra base de datos que mejor se ajustan a tus
-        medidas y presupuesto, con tu bike fit.
-      </p>
-      <button
-        type="button"
-        onClick={() => setRequested(true)}
-        className="mt-4 w-full rounded-xl bg-amber-400 px-4 py-4 text-lg font-semibold text-slate-900 transition hover:bg-amber-300"
-      >
-        Desbloquear mi top 5
-      </button>
-      {requested && (
-        <p role="status" className="mt-3 text-center text-sm text-slate-600">
-          El desbloqueo estará disponible muy pronto.
-        </p>
-      )}
-    </div>
+
+      <div className="px-5 pt-4">
+        <ol aria-hidden className="space-y-2">
+          {rows.map((score, i) => (
+            <li key={i} className="flex items-center gap-3 rounded-xl border border-slate-200 px-3 py-2.5">
+              <span className="w-6 text-sm font-bold text-slate-400">#{i + 1}</span>
+              <span className="flex-1 space-y-1.5 blur-[3px] select-none">
+                <span className="block h-2.5 w-24 rounded bg-slate-300" />
+                <span className="block h-3 w-40 rounded bg-slate-400" />
+              </span>
+              {score > 0 ? (
+                <span className="text-right">
+                  <span className="block text-lg font-extrabold leading-none text-slate-900">{Math.round(score)}</span>
+                  <span className="block text-[10px] text-slate-500">ajuste</span>
+                </span>
+              ) : (
+                <span className="h-6 w-8 rounded bg-slate-100" />
+              )}
+            </li>
+          ))}
+        </ol>
+
+        <ul className="mt-5 space-y-3">
+          {(dropBar ? BENEFITS_DROP : BENEFITS_MTB).map(([title, text]) => (
+            <li key={title} className="flex gap-3">
+              <span aria-hidden className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-400 text-xs font-bold text-slate-900">
+                ✓
+              </span>
+              <span>
+                <span className="block text-sm font-semibold text-slate-900">{title}</span>
+                <span className="block text-sm text-slate-600">{text}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="px-5 pt-5 pb-5">
+        <button
+          type="button"
+          onClick={() => setRequested(true)}
+          className="w-full rounded-xl bg-amber-400 px-4 py-4 text-lg font-bold text-slate-900 shadow-sm transition hover:bg-amber-300 active:scale-[0.99]"
+        >
+          Desbloquear mi informe completo
+        </button>
+        {requested ? (
+          <p role="status" className="mt-3 text-center text-sm text-slate-600">
+            El pago estará disponible muy pronto.
+          </p>
+        ) : (
+          <p className="mt-3 text-center text-xs text-slate-500">
+            Datos oficiales de las marcas: guías de tallas, geometrías y precios.
+          </p>
+        )}
+      </div>
+    </section>
   )
 }
 

@@ -23,6 +23,12 @@ const stats = Object.fromEntries(CATEGORIES.map((c) => [c, catalogStats(result.b
 writeFileSync(`${publicDir}bikes.json`, JSON.stringify(result.bikes) + '\n')
 writeFileSync(`${srcDir}size-table.json`, JSON.stringify(sizeTable, null, 2) + '\n')
 writeFileSync(`${srcDir}catalog-stats.json`, JSON.stringify(stats, null, 2) + '\n')
+// Totales del catálogo para los textos de portada (modelos y marcas distintos en todas las categorías).
+const total = {
+  models: new Set(result.bikes.map((b) => `${b.brand}|${b.model}`)).size,
+  brands: new Set(result.bikes.map((b) => b.brand)).size,
+}
+writeFileSync(`${srcDir}catalog-total.json`, JSON.stringify(total, null, 2) + '\n')
 rmSync(`${srcDir}bikes.json`, { force: true })
 
 console.log(`public/data/bikes.json: ${result.bikes.length} filas`)
